@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="no">
+    <body>
+        <div id="divPoeng">
+            <!--Antall poeng-->
+            <h1 id="hdnSpiller1">Spiller 1: 0</h1>
+            <!--Vinner av spillet-->
+            <h1 id="vinner"></h1>
+            <!--Rekord på spillet-->
+            <h1 id="hdnSpiller2">Spiller 2: 0</h1>
+            
+        </div>
+        <style>
+            #minCanvas {
+                border:20px solid DarkOrange;
+                border-top: none;
+            }
+            #divPoeng {
+                width: 580px;
+                background-color: DarkOrange;
+                height: 30px;
+                line-height: 30px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #hdnSpiller1, #hdnSpiller2 {
+                font-size: 20px;
+                color: white;
+                font-family: arial;
+                margin: 0;
+            }
+            #vinner {
+                font-size: 20px;
+                color: gold;
+                position: absolute;
+                margin-left: 215px;
+                margin-top: 230px;
+                
+            }
+            #hdnSpiller1 {
+                float: left;
+            }
+            #hdnSpiller2 {
+                float: right;
+            }
+            #fart{
+                margin-left: 230px;
+            }
+        </style>
+        <canvas width="580" height="400" id="minCanvas"></canvas>
+        <script>
+            var hdnSpiller1 = document.getElementById("hdnSpiller1");
+            var hdnSpiller2 = document.getElementById("hdnSpiller2");
+            var vinner = document.getElementById("vinner");
+            var btn = document.getElementById("btn");
+            var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
+            var poeng = 0;
+            var tall = 0;
+
+            var minCanvas = document.getElementById("minCanvas");
+            var ctx = minCanvas.getContext("2d");
+            var theGameIsOn = true; //Forteller at spillet er i gang 
+            var bane = { //Objekt bane
+                bredde : minCanvas.width, //Setter bredde lik canvas 
+                hoyde : minCanvas.height, //Setter høyde lik canvas 
+                gressfarge : "DarkGreen",
+                linjefarge : "White",
+                linjetykkelse : 4
+            };
+            function tegnBane() { //Funksjon som tegner banen
+                ctx.fillStyle = bane.gressfarge; //Setter fargen på banen til grønn
+                ctx.fillRect(0, 0, bane.bredde, bane.hoyde); //Hele banen blir grønn 
+                ctx.fillStyle = bane.linjefarge; //Setter fargen til midtlinjen til hvit
+                ctx.fillRect(bane.bredde/2 - bane.linjetykkelse/2, 0,
+                bane.linjetykkelse, bane.hoyde); //Hele midtlinjen blir hvit
+            }
+            function sakte(){
+                ball.xfart = 3;
+                ball.yfart = 3;    
+            }
+            function moderat(){
+                ball.xfart = 4;
+                ball.yfart = 4;
+            }
+            function rask(){
+                ball.xfart = 6;
+                ball.yfart = 6;  
+            }
+            var ball = { //Objekt ball
+                radius : 7,
+                xpos: bane.hoyde / 2, //Start x-posisjon
+                ypos: 200, //Start y-posisjon
+                farge: "yellow",
+                xretning: 1, //Mot høyre
+                yretning: 1, //Nedover
+                xfart: "", //Hastigheten på ballen xretning
+                yfart: "", //Hastigheten på ballen yretning
+            };
+            function tegnBall() { //Funksjon som tegner ballen
+                ctx.beginPath(); //Start tegningen av ballen
+                ctx.arc(ball.xpos, ball.ypos, ball.radius, 0, Math.PI * 2); //Tegner en sirkel
+                ctx.closePath(); //Lukker sirkelbuen
+                ctx.fillStyle = ball.farge; //Setter fargen til ballen til gul
+                ctx.fill(); //Hele ballen blir gul
+                ball.xpos = ball.xpos + ball.xfart * ball.xretning; //Endrer x-posisjon
+
+                ball.ypos = ball.ypos + ball.yfart * ball.yretning; //Endrer y-posisjon   
+            }
+            var racket1 = {
+                "bredde" : 10,
+                "hoyde" : 50,
+                "farge" : "White",
+                "xpos" : bane.bredde - 15, //Startposisjon xretning
+                "ypos" : bane.hoyde / 2, //Startposisjon yretning
+                "yretning" : 0, //Står stille
+                "xretning" : 0, //Står stille
+                "yfart" : 8, //Hastigheten på racket xretning 
+                "xfart" : 8, //Hastigheten på racket yretning
+            };
+            var racket2 = {
+                "bredde" : 10,
+                "hoyde" : 50,
+                "farge" : "White",
+                "xpos" : 5, //Startposisjon xretning
+                "ypos" : bane.hoyde / 2, //Startposisjon yretning
+                "yretning" : 0, //Står stille
+                "xretning" : 0, //Står stille
+                "yfart" : 8, //Hastigheten på racket yretning
+                "xfart" : 8, //Hastigheten på racket xretning
+            };
+            function tegnRacket1() { //Tegner racket1
+                ctx.fillStyle = racket1.farge; //Setter fargen til racket1 til hvit
+                ctx.fillRect(racket1.xpos, racket1.ypos, racket1.bredde, racket1.hoyde); //Hele racketen blir hvit
+
+                if (racket1.ypos <= 0 && racket1.yretning === -1) {
+                    return; //Avslutter funksjonen
+                }
+                if (racket1.ypos + racket1.hoyde >= bane.hoyde && racket1.yretning === 1) {
+                    return; //Avslutter funksjonen
+                }
+                if (racket1.xpos <= 0 && racket1.xretning === -1) {
+                    return; //Avslutter funksjonen
+                }
+                if (racket1.xpos >= racket1.xretning === 1) {
+                    return; //Avslutter funksjonen
+                }
+                racket1.xpos = racket1.xpos + racket1.xfart * racket1.xretning;
+                racket1.ypos = racket1.ypos + racket1.yfart * racket1.yretning;
+            }
+            function tegnRacket2() { //Tegner racket1
+                ctx.fillStyle = racket2.farge; //Setter fargen til racket1 til hvit
+                ctx.fillRect(racket2.xpos, racket2.ypos, racket2.bredde, racket2.hoyde); //Hele racketen blir hvit
+                if (racket2.ypos <= 0 && racket2.yretning === -1) {
+                    return; //Avslutter funksjonen
+                }
+                if (racket2.ypos + racket2.hoyde >= bane.hoyde && racket2.yretning === 1) {
+                    return; //Avslutter funksjonen
+                }
+                if (racket2.xpos <= 0 && racket2.xretning === -1) {
+                    return; //Avslutter funksjonen
+                }
+                if (racket2.xpos >= racket2.xretning === 1) {
+                    return; //Avslutter funksjonen
+                }
+                racket2.xpos = racket2.xpos + racket2.xfart * racket2.xretning;
+                racket2.ypos = racket2.ypos + racket2.yfart * racket2.yretning;
+            }
+            function sjekkOmBallTrefferVegg() {
+                if(ball.xpos <= ball.radius) { 
+                    ball.xretning = 1;
+                    tall = tall + 1;
+                    hdnSpiller2.innerHTML = "Spiller 2: " + tall;
+                    if(tall >= 5){
+                        vinner.innerHTML = "Spiller 2 vant " + tall + "-" + poeng + "";
+                        theGameIsOn = false;
+                    }
+                }
+                if(ball.xpos + ball.radius >= bane.bredde){
+                    ball.xretning = -1;
+                    poeng = poeng + 1;
+                    hdnSpiller1.innerHTML = "Spiller 1: " + poeng;
+                    if(poeng >= 5){
+                        vinner.innerHTML = "Spiller 1 vant " + poeng + "-" +tall + "";
+                        theGameIsOn = false;
+                    }
+                }
+                if(ball.ypos + ball.radius >= bane.hoyde) { 
+                    ball.yretning = -1; 
+                }
+                if(ball.ypos <= ball.radius) { 
+                    ball.yretning = 1; 
+                }
+
+            }
+            function sjekkOmBallTrefferRacket1() {
+                var ballenErTilVenstre = ball.xpos + ball.radius < racket1.xpos;
+                var ballenErtilHoyre = ball.xpos - ball.radius > racket1.xpos + racket1.bredde;
+                var ballenErOver = ball.ypos + ball.radius < racket1.ypos;
+                var ballenErUnder = ball.ypos - ball.radius > racket1.ypos + racket1.hoyde;
+
+                if(!ballenErTilVenstre && ! ballenErtilHoyre && ! ballenErOver && ! ballenErUnder) {
+                    ball.xretning = -1; //Får ballen til å gå i motsatt retning når den treffer racketen
+                }    
+            }
+            function sjekkOmBallTrefferRacket2() {
+                var ballenErTilVenstre = ball.xpos + ball.radius < racket2.xpos;
+                var ballenErtilHoyre = ball.xpos - ball.radius > racket2.xpos + racket2.bredde;
+                var ballenErOver = ball.ypos + ball.radius < racket2.ypos;
+                var ballenErUnder = ball.ypos - ball.radius > racket2.ypos + racket2.hoyde;
+                
+                if(!ballenErTilVenstre && ! ballenErtilHoyre && ! ballenErOver && ! ballenErUnder) {
+                    ball.xretning = 1; //Får ballen til å gå i motsatt retning når den treffer racketen
+                }
+            }
+
+            function sjekkOmBallErUtenforBanen() {
+                if(ball.x > bane.bredde + ball.radius * 2) {
+                    theGameIsOn = false;
+                }
+                if(ball.x > 5 + ball.radius * 2) {
+                    theGameIsOn = false;
+                }
+            }
+            function gameLoop() { //En funksjon som kjører de andre funksjonen og kaller på seg selv
+                tegnBane();
+                tegnBall();
+                tegnRacket1();
+                tegnRacket2();
+                sjekkOmBallTrefferVegg();
+                sjekkOmBallTrefferRacket1();
+                sjekkOmBallTrefferRacket2();
+                sjekkOmBallErUtenforBanen();
+                if (theGameIsOn) {
+                    requestAnimationFrame(gameLoop);
+                }
+            }
+            gameLoop();
+            //Taster til racket 1 og 2 
+            document.onkeydown = function(evt) {
+                var tastekode = evt.keyCode;
+                if(tastekode === 38) { //Tester om tastekode 38 eller pil opp er trykt
+                racket1.yretning = -1; //Racket1 går opp 1
+                }
+                if(tastekode === 40) { //Tester om tastekode 40 eller pil ned er trykt
+                    racket1.yretning = 1; //Racket1 går ned 1
+                }
+                if(tastekode === 37) { //Tester om tastekode 37 eller pil til venstre 
+                racket1.xretning = -1; //Racket1 går 1 til venstre
+                }
+                if(tastekode === 39) { //Tester om tastekode 39 eller pil til høyre
+                    racket1.xretning = 1; //Racket1 går 1 til høyre
+                }
+
+                if(tastekode === 87) { //Tester om tastekode 87 eller w er trykt
+                racket2.yretning = -1; //Racket2 går opp 1
+                }
+                if(tastekode === 83) { //Tester om tastekode 83 eller s er trykt
+                    racket2.yretning = 1; //Racket2 går ned 1
+                }
+                if(tastekode === 65) { //Tester om tastekode 65 eller a er trykt
+                racket2.xretning = -1; //Racket2 går 1 til venstre
+                }
+                if(tastekode === 68) { //Tester om tastekode 83 eller d er trykt
+                    racket2.xretning = 1; //Racket2 går 1 til høyre 
+                }
+            }
+            document.onkeyup = function(evt) {
+                var tastekode = evt.keyCode;
+                if(tastekode === 38 && racket1.yretning === -1) {
+                    racket1.yretning = 0;
+                }
+                if(tastekode === 40 && racket1.yretning === 1) {
+                    racket1.yretning = 0;
+                }
+                if(tastekode === 37 && racket1.xretning === -1) {
+                    racket1.xretning = 0;
+                }
+                if(tastekode === 39 && racket1.xretning === 1) {
+                    racket1.xretning = 0;
+                }
+
+
+                if(tastekode === 87 && racket2.yretning === -1) {
+                    racket2.yretning = 0;
+                }
+                if(tastekode === 83 && racket2.yretning === 1) {
+                    racket2.yretning = 0;
+                }
+                if(tastekode === 65 && racket2.xretning === -1) {
+                    racket2.xretning = 0;
+                }
+                if(tastekode === 68 && racket2.xretning === 1) {
+                    racket2.xretning = 0;
+                }
+            }
+        </script>
+        <div id="fart">
+            <p>Fart på ball:</p>
+            <button onclick="sakte()">Sakte</button>
+            <button onclick="moderat()">Moderat</button>
+            <button onclick="rask()">Rask</button>
+        </div>
+    </body>
+</html>
