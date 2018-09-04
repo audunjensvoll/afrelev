@@ -1,0 +1,31 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: lightgrey; 
+}
+h1,h2 {
+    padding: 10px;
+    border-radius: 5px;
+}
+h1 {
+    
+    background-color: lightcoral;
+    color: whitesmoke;             
+}
+
+h2 {
+    background-color: #112233; 
+    color: cornflowerblue
+}
+strong {
+    color: red; 
+}
+.box {
+    background-color:rgb(157, 197, 157); 
+    border-radius: 25px;
+    padding:1cm; /* innenfor elementet */
+    margin:1cm; /* utenfor elementet */     
+    border: 3px solid #73AD21;       
+}
+.box:hover {
+    background-color: rgba(24, 105, 24, 0.87);
+}

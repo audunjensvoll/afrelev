@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript eksempel 1</title>
+    <style>
+        #box {
+            padding: 1cm;
+            margin: 1cm;
+            background-color: rgb(57, 57, 168);
+            text-align: center;
+            color: rgb(230, 211, 211); 
+        }
+    </style>
+    <script>
+        function onRedClick() {
+            document.getElementById('box').style.background = 'rgb(184, 62, 62)';
+        }
+
+        function onBlueClick() {
+            document.getElementById('box').style.background = 'rgb(57, 57, 168)';
+        }
+
+        function onColorClick(color) {
+            document.getElementById('box').style.background = color;
+        }
+
+        function onColorTextClick(color,textinbox) {
+            document.getElementById('box').style.background = color;
+            document.getElementById('box').innerHTML = textinbox; 
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        Her er boksen
+    </div>
+    
+    <button onclick="onColorTextClick('rgb(184, 62, 62)','Nå er jeg rød')">Rød</button>
+
+    <button onclick="onColorTextClick('rgb(57, 57, 168)','Nå er jeg blå')">Blå</button>    
+
+</body>
