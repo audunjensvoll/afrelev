@@ -3,21 +3,67 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Matias</title>
+		<link rel="stylesheet" type="text/css" href="stil.css">
 		<style>
+			main{
+				text-align: center;
+			}
+			ol{
+				float: left;
+				margin-left: 670px;
+			}
+			body{
+				height: 350px;
+				background-color: black;
+			}
+			.stjerne{
+				position: absolute;
+				background-color: yellow;
+				border-radius: 50%;
+				transition: 1s;
+        	}
 		</style>
 	</head>
 	<body>
-		<h1>Matias Amundsen</h1>
-        <p>Epost: matias.amundsen@outlook.com</p>
-		<p>Tlf: 95081226</p>
+		<header>
+			<nav>
+				<h1>Matias Amundsen</h1>
+			</nav>
+		</header>
+		<main>
+			<p>Epost: matias.amundsen@outlook.com</p>
+			<p>Tlf: 95081226</p>
 
-		<a href="pages/minby.html"><img src="bilder/bergen.jpg"></a><br><br>
-		<a href="pages/spill.html">Spill</a>
-		
-        <h2>Mine interesser</h2>
-        <ul>
-        	<li>Spille</li>
-			<li>Spille</li>
-        </ul>
+			<a href="pages/minby.html"><img src="bilder/bergen.jpg"></a><br><br>
+			<a href="pages/spill.html">Spill</a><br><br>
+			
+			<h2>Mine interesser</h2>
+			<ol>
+				<li>Spille</li>
+				<li>Spille</li>
+			</ol>
+			<script>
+					for(var i=0; i<600; i++){
+					  var stjerne = document.createElement("div");
+					  stjerne.className = "stjerne";
+					  document.body.appendChild(stjerne);
+					}
+			
+					var stjerner = document.getElementsByClassName("stjerne");
+					stjerner = Array.from(stjerner);
+			
+					function scramble(){
+					  for(var stjerne of stjerner){
+						  stjerne.style.width = Math.random()*3 + "px";
+						stjerne.style.height = stjerne.style.width;
+						stjerne.style.left = Math.random()*innerWidth + "px";
+						stjerne.style.top = Math.random()*innerHeight + "px";
+					  }
+					}
+					scramble();
+					setInterval(scramble, 1000);
+			
+			</script>
+		</main>
 	</body>
 </html>
