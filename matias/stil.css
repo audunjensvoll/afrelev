@@ -1,0 +1,79 @@
+body{
+    font-family: verdana;
+    min-width: 1400px;
+}
+
+h1, h2, h3{
+    font-family: verdana;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    padding-top: 0.5rem;
+    color: #ECECEA;
+    margin: 0;
+}
+
+h2 {
+	/*Størrelse på overskrift*/
+    font-size: 2rem;
+    margin: 0;
+    color: cadetblue;
+    padding-bottom: 0.5rem;   
+}
+
+header, nav, main {
+	/*Bredde*/
+    width: 95%;
+}
+
+header {
+    height: 20vh;
+    /*Midtstiller*/
+    margin: auto;
+    background-color: cadetblue;
+}
+
+nav, main {
+    position: relative;
+    /*Midtstiller*/
+    margin: auto;
+}
+
+nav ul {
+    display: flex;
+    /*Midtstiller*/
+    margin: auto;
+    text-align: center; 
+}
+
+nav li {
+	/*Posisjon til elementen i navbaren*/
+    flex: 1 1 auto;
+    /*Midtstiller*/
+    margin: auto;
+}
+
+nav a {
+	/*Størrelsen på elementene*/
+    padding: 1rem 3rem;
+    background-color: lightgreen;
+    color: green;
+    /*Tar vekk understrek*/
+    text-decoration: none;
+    font-size: 2em;
+    /*Gjør elementene mer gjennomsiktige*/
+    opacity: 0.6;
+}
+
+main {
+    margin-top: 30px;
+    /*Skjuler elementer utenfor main*/
+    overflow: hidden;
+}
+p{
+	text-align: center;
+}
+
+ 
