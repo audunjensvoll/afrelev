@@ -1,0 +1,62 @@
+body{
+    height: 350px;
+    background-color: black;
+}
+h1, h2, h3{
+    font-family: verdana;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    padding-top: 0.5rem;
+    color: #ECECEA;
+    margin: 0;
+}
+
+h2 {
+	/*Størrelse på overskrift*/
+    font-size: 2rem;
+    margin: 0;
+    color: cadetblue;
+    padding-bottom: 0.5rem;   
+}
+
+header, nav, main {
+	/*Bredde*/
+    width: 95%;
+}
+
+header {
+    height: 20vh;
+    /*Midtstiller*/
+    margin: auto;
+    background-color: cadetblue;
+}
+
+nav, main {
+    position: relative;
+    /*Midtstiller*/
+    margin: auto;
+}
+
+nav a {
+	/*Størrelsen på elementene*/
+    padding: 0.5rem 2rem;
+    background-color: lightgreen;
+    color: purple;
+    /*Tar vekk understrek*/
+    text-decoration: none;
+    font-size: 2em;
+    border-radius: 9px;
+    /*Gjør elementene mer gjennomsiktige*/
+    opacity: 0.6;
+}
+.link{
+    margin-left: 150px;
+}
+p{
+	text-align: center;
+}
+
+ 
