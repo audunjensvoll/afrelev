@@ -30,9 +30,14 @@ body {
     background-color: #343536; 
     width: 100px;
     padding: 10px; 
-    margin: 2px;  
+    margin: 2px;
+    border-radius: 7px;  
 }
 
-.links a:hover,a:active,a:visited,a:link {
+.links a:active,a:visited,a:link {
     color: white; 
+}
+
+.links li:hover {
+    background-color:#4B554D; 
 }
