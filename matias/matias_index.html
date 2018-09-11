@@ -8,17 +8,12 @@
 			main{
 				text-align: center;
 			}
-			ol{
-				float: left;
-				margin-left: 660px;
-				color: yellow;
-			}
-			.stjerne{
+			/*.stjerne{
 				position: absolute;
 				background-color: yellow;
 				border-radius: 50%;
 				transition: 1s;
-        	}
+        	}*/
 		</style>
 	</head>
 	<body>
@@ -37,12 +32,45 @@
 			<p>Epost: matias.amundsen@outlook.com</p>
 
 			<a href="pages/minby.html"><img src="bilder/bergen.jpg"></a><br><br>
-			
-			<h2>Mine interesser</h2>
-			<ol>
-				<li>Spille</li>
-				<li>Spille</li>
-			</ol>
+			<br><br>
+			<div class="grid">
+				<div class="grid_vare">
+					<a href=""><img src="bilder/kyllingwrap.jpg"></a>
+					<p class="navn">Wrap</p>
+					<p class="info">med kyllingfilet og basilikumpesto<br> Varm eller kald, valget er ditt</p>
+					<p class="info">86 kr</p>
+				</div>
+				<div class="grid_vare">
+					<a href="pasta.no"><img src="bilder/pastacarba.jpg"></a>
+					<p class="navn">Pasta Carbonara</p>
+					<p class="info">Lages med ekte hjemmelaget fløtesaus og bacon</p>
+					<p class="info">149 kr</p>
+				</div>				
+				<div class="grid_vare">
+					<a href=""><img src="bilder/hamburger.jpg"></a>
+					<p class="navn">Hamburger</p>
+					<p class="info">150 g burger på frisk salat, tomater, rødløk og ristet champignon. Serveres med<br> båtpoteter og chipotlemajones-dipp</p>
+					<p class="info">159 kr</p>
+				</div>				
+				<div class="grid_vare">
+					<a href=""><img src="bilder/fish.jpg"></a>
+					<p class="navn">Fish & Chips</p>
+					<p class="info">Serveres med grønne erter, hjemmelaget remulade og pommes frites</p>
+					<p class="info">148 kr</p>
+				</div>			
+				<div class="grid_vare">
+					<a href=""><img src="bilder/kylling.jpg"></a>
+					<p class="navn">Kylling & baconsalat</p>
+					<p class="info">Sprø salat med stekt kyllingfilet og bacon,<br> cherrytomater, krutonger og cæsardressing</p>
+					<p class="info">158 kr</p>
+				</div>				
+				<div class="grid_vare">
+					<a href=""><img src="bilder/club.jpg"></a>
+					<p class="navn">Club Sandwich</p>
+					<p class="info">med kylling, bacon, parmesan, aioli og båtpoteter</p>
+					<p class="info">144 kr</p>
+				</div>
+			</div>
 			<script>
 					for(var i=0; i<600; i++){
 					  var stjerne = document.createElement("div");

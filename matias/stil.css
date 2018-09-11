@@ -1,6 +1,6 @@
 body{
     height: 350px;
-    background-color: black;
+    background-color: lightgray;
 }
 h1, h2, h3{
     font-family: verdana;
@@ -55,8 +55,96 @@ nav a {
 .link{
     margin-left: 150px;
 }
-p{
+.grid{
+	display: grid;
+	margin-right: 3%;
+	margin-left: 3%;
+	grid-template-columns: 30% 30% 30%;
+	grid-column-gap: 5%;
+	/*Mellomrommet mellom rettene*/
+	grid-row-gap: 2vh;
+}
+
+/*Diven som inneholder vare informasjonen*/
+.grid_vare{
+	margin-top: 6%;
+	margin-bottom: 6%;
 	text-align: center;
+	align-self: center;
+}
+
+/*lager en skygge når du holder over vare diven*/
+.grid_vare:hover{
+	box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.2);
+}
+
+/*Navnet til varen*/
+.grid_vare .navn{
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/*Info om varen*/
+.grid_vare .info{
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 15px;
+}
+
+/*Bildet av varen*/
+.grid_vare img{
+	margin-top: 7%;
+	height: auto; 
+	width: 70%;
+}
+
+
+
+.meny{
+	display: grid;
+	margin-right: 3%;
+	margin-left: 3%;
+	grid-template-columns: 30%;
+	grid-column-gap: 5%;
+	/*Mellomrommet mellom rettene*/
+	grid-row-gap: 1vh;
+}
+
+/*Diven som inneholder vare informasjonen*/
+.meny_vare{
+	margin-top: 6%;
+	margin-bottom: 6%;
+	text-align: center;
+	align-self: center;
+}
+
+/*lager en skygge når du holder over vare diven*/
+.meny_vare:hover{
+	box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.2);
+}
+
+/*Navnet til varen*/
+.meny_vare .navn{
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/*Info om varen*/
+.meny_vare .info{
+	font-family: Tahoma,Verdana,Arial,sans-serif;
+	font-size: 15px;
+}
+
+/*Bildet av varen*/
+.meny_vare img{
+	margin-top: 7%;
+	height: auto; 
+	width: 70%;
+}
+p{
+    text-align: center;
+    color: yellowgreen;
 }
 
  
