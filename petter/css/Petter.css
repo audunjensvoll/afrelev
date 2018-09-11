@@ -1,0 +1,33 @@
+:root {
+    --bg1: #14151F;
+    --bg2: #1a1b26;
+    --bg3: #1d1e2a;
+    --text1: #ddd;
+    --text2: #eee;
+    --text3: #aaa;
+  }
+
+  body {    
+    width: 100%;
+    height: 100%;
+    font-family: "Open Sans", "Segoe UI", sans-serif;
+    font-size: 14px;
+    background-color: var(--bg1);
+    margin: 0 auto;
+    padding: none;
+    
+}
+
+p {
+    text-decoration: underline;
+    display: inline;
+    border-bottom: 4px solid var(--text2);
+}
+
+#title {
+    letter-spacing: 10px;
+  }
+
+.informasjon{
+    background-color: aqua
+}

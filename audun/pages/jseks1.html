@@ -12,6 +12,15 @@
         }
     </style>
     <script>
+        /* Lager en funksjon: */
+        function hei() {            
+            window.close();
+        }
+
+        function visvindu(tekst) {
+            window.alert(tekst); 
+        }
+
         function onRedClick() {
             document.getElementById('box').style.background = 'rgb(184, 62, 62)';
         }
@@ -34,7 +43,7 @@
     <div id="box">
         Her er boksen
     </div>
-    
+    <button onclick="visvindu('Hallo dust')">Ikke klikk her</button> 
     <button onclick="onColorTextClick('rgb(184, 62, 62)','Nå er jeg rød')">Rød</button>
 
     <button onclick="onColorTextClick('rgb(57, 57, 168)','Nå er jeg blå')">Blå</button>    
