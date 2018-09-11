@@ -1,8 +1,7 @@
 body{
-    font-family: verdana;
-    min-width: 1400px;
+    height: 350px;
+    background-color: black;
 }
-
 h1, h2, h3{
     font-family: verdana;
     text-align: center;
@@ -41,36 +40,20 @@ nav, main {
     margin: auto;
 }
 
-nav ul {
-    display: flex;
-    /*Midtstiller*/
-    margin: auto;
-    text-align: center; 
-}
-
-nav li {
-	/*Posisjon til elementen i navbaren*/
-    flex: 1 1 auto;
-    /*Midtstiller*/
-    margin: auto;
-}
-
 nav a {
 	/*Størrelsen på elementene*/
-    padding: 1rem 3rem;
+    padding: 0.5rem 2rem;
     background-color: lightgreen;
-    color: green;
+    color: purple;
     /*Tar vekk understrek*/
     text-decoration: none;
     font-size: 2em;
+    border-radius: 9px;
     /*Gjør elementene mer gjennomsiktige*/
     opacity: 0.6;
 }
-
-main {
-    margin-top: 30px;
-    /*Skjuler elementer utenfor main*/
-    overflow: hidden;
+.link{
+    margin-left: 150px;
 }
 p{
 	text-align: center;
