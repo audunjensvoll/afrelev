@@ -2,12 +2,12 @@
     --bg1: #14151F;
     --bg2: #1a1b26;
     --bg3: #1d1e2a;
-    --text1: #ddd;
-    --text2: #eee;
+    --text1: #00E676;
+    --text2: #50FA7B;
     --text3: #aaa;
-  }
+}
 
-  body {    
+body {    
     width: 100%;
     height: 100%;
     font-family: "Open Sans", "Segoe UI", sans-serif;
@@ -15,19 +15,58 @@
     background-color: var(--bg1);
     margin: 0 auto;
     padding: none;
-    
+    background: url("../img/DKqBQv4.jpg") fixed center no-repeat;
+    align-content: center;
 }
 
 p {
     text-decoration: underline;
     display: inline;
-    border-bottom: 4px solid var(--text2);
+    border-bottom: 4px solid var(--text2)
+}
+
+
+
+#title {  
+    margin: 0 auto;
+    text-align: center;
+    font-size: 80px;  
+    color: var(--text1);
+    pointer-events: none;  
+    margin-top: 210px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);  
+    padding: 20px 0px 20px 0px;
+  }
+
+#cover {
+    
+    
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: none;
+    transition: ease-in-out .3s;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
 }
 
 #title {
     letter-spacing: 10px;
   }
 
-.informasjon{
-    background-color: aqua
+.info{
+	padding: 10px 0px 10px 0px;
+	color: var(--text1);
+	text-align: center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+	background-color: var(--bg3);
 }
