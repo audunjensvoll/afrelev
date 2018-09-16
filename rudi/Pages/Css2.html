@@ -9,6 +9,47 @@ body {
     color: white;
     text-align: center;
 } 
+.gallery{
+    margin: 10px 50px;
+}
+.gallery img{
+    width: 230px;
+    padding: 25px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+.gallery img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.45);
+
+
+}
+.main:hover{
+    color:white;
+}
+.home:hover{
+    color:white;
+}
+.main{
+    color:black;
+    font-family:"proxima nova";
+    font-weight: 100;
+    font-size: 25px;
+    text-align: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 5px 40px;
+}
+.home{
+    color:black;
+        font-family:"proxima nova";
+        font-weight: 100;
+        font-size: 25px;
+        text-align:center;
+        Border: solid 2px black;
+        border-radius: 50px;
+        padding: 5px 40px;
+}
 </style>
 </head>
 <body>
@@ -16,7 +57,28 @@ body {
 <h1 class="hed">This is just a header!</h1>
 <p class="hed">Just doing my thing.</p>
 <br><br>
-<p> Some beautiful picuters</p>
+<p> Here are some beautiful pictures from my home town!</p>
+<br><br>
 
+<div class="gallery">
+<a href="../Img/pic1-big.jpg"><img src="../Img/pic1-small.jpg"></a>
+<a href="../Img/pic2-big.jpg"><img src="../Img/pic2-small.jpg"></a>
+<a href="../Img/pic3-big.jpg"><img src="../Img/pic3-small.jpg"></a>
+<a href="../Img/pic4-big.jpg"><img src="../Img/pic4-small.jpg"></a>
+<a href="../Img/pic5-big.jpg"><img src="../Img/pic5-small.jpg"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+<a href="../Pages/CssOppg.html" class="home">Previous Page</a>
+  
+<a href="../Pages/CSSelement.html" class="main">Next Page</a>
 </body>
 </html>
