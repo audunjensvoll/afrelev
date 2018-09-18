@@ -4,17 +4,18 @@ body {
     margin:0;
     }
 
-.bilde
+.bildemtekst
 {
     background: url(modellpose_1.jpeg) no-repeat center;
     background-size: cover;
     margin:0;
     padding:300px;
     text-align:center;
-    font-size:2.8em;
+    font-size:3.4em;
     letter-spacing: 2.5px;
     word-spacing: 10px;
     color:white;
+    
 }
 
 
@@ -24,6 +25,15 @@ body {
     line-height: 1.8;
 }
 
+.meny {
+    text-align: center;
+}
+
+
+.meny li {
+    display: inline-block;
+    padding: 14px 30px;
+}
 
 ul {
     list-style-type: none;
@@ -33,18 +43,20 @@ ul {
     background-color: #333;
 }
 
+
+
 li {
-    display: inline-block;
+    
 }
 
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: #111;
+    background-color: rgba(83, 83, 83, 0.747)
 }
