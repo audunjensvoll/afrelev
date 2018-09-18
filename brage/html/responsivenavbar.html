@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>responsive menu</title>
+    <link rel = "stylesheet" type="text/css" href="../css/responsivenavbar.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+          rel="stylesheet">
+</head>
+<body>
+
+<nav>
+<div class="toggle">
+
+        <i class="fa fa-bars" aria-hidden="true"></i>
+
+</div>  
+<ul>
+
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Portofolios</a></li>
+    <li><a href="#">Contact</a></li>
+
+
+
+    </ul>
+</nav>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $('menu').click(function() {
+
+    $('ul').toggleClass('active');
+    })
+})
+
+</script>
+<body>
+</html>
