@@ -1,0 +1,43 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+.top {
+    
+   
+    color: #343536; 
+    margin: 10px; 
+    padding: 20px; 
+
+}
+
+.top p,li {
+    font-size: 0.8em; 
+}
+
+.links {
+   
+   color: white; 
+}
+
+.links ul {
+    list-style: none; 
+    text-decoration: none; 
+}
+
+.links li {
+    display: inline-block;
+    background-color: #343536; 
+    width: 100px;
+    padding: 10px; 
+    margin: 2px;
+    border-radius: 7px;  
+}
+
+.links a:active,a:visited,a:link {
+    color: white; 
+}
+
+.links li:hover {
+    background-color:#4B554D; 
+}
