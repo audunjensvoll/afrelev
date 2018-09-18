@@ -147,4 +147,12 @@ p{
     color: yellowgreen;
 }
 
- 
+footer div a{
+	padding: 60px;
+}
+main{
+	text-align: center;
+}
+footer{
+	text-align: center;
+}
