@@ -1,5 +1,4 @@
 body{
-    height: 350px;
     background-color: lightgray;
 }
 h1, h2, h3{
@@ -96,6 +95,7 @@ nav a {
 	margin-top: 7%;
 	height: auto; 
 	width: 70%;
+	border-radius: 10px;
 }
 
 
