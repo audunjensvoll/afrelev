@@ -1,27 +1,25 @@
 
 body {
     font-family:Arial, Helvetica, sans-serif;
-    background: url(modellpose_1.jpeg) no-repeat center;
-    background-size: cover;
-    position: fixed; 
-    width: 100%;
-    right: 0px; 
-    top: 0px;
-    height:1000px;
     margin:0;
     }
 
+.bilde
+{
+    background: url(modellpose_1.jpeg) no-repeat center;
+    background-size: cover;
+    margin:0;
+    padding:300px;
+    text-align:center;
+    font-size:1.6em;
+}
+
+
+
 .text {
-    position:fixed;
-    top:800px;
-    margin: 0;
-    right: 1px;
+    font-size:1.2em;
 }
 
-.active {
-position:absolute;
-
-}
 
 ul {
     list-style-type: none;
@@ -32,7 +30,7 @@ ul {
 }
 
 li {
-    float: left;
+    display: inline-block;
 }
 
 li a {
