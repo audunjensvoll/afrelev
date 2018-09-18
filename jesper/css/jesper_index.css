@@ -6,4 +6,17 @@ h1 {
 body{
    background-color:pink;
 }
+
+#bilder {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;    
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+  
 p {text-align: center;}
