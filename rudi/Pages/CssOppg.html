@@ -2,11 +2,12 @@
 <html>
 <head>
 <style>
-#bilde{
-    padding-left: 37%
-}
+
+    
 body {
-	background-color:Powderblue;
+    margin: 0;
+    padding: 0;
+	background-image:url(https://images.wallpaperscraft.com/image/mountains_snow_lake_124940_1440x900.jpg) ; background-size: 100% 100%;    
     }
 .btn{
     color:black;
@@ -25,13 +26,20 @@ body {
     color: white;
     opacity: 1;
 }
+div.rndm{
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  text-align:center;
+}
+div.rndm{
+    margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
 
-.hed {
-    color: white;
-    text-align: center;
-    font-size: 100px;
-    font-family:serif;
-} 
 .tst{
     color:black;
     text-align: right;
@@ -55,25 +63,118 @@ form{
 .fcts{
     float: left;
 }
+.hed {
+    color: white;
+    position: relative;
+    top:40%;
+    margin:0 auto;
+    font-size: 80px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
 
+} 
+.hed ::before, .hed::after{
+    content: 'Rudi Jakobsen';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    overflow: hidden;
+    background-color: 4e3273;
+    color:white;
 
-
-
-
+}
+.hed::before{
+    left:8px;
+    text-shadow: 2px 0 black;
+    animation: effect 3s infinite linear;
+}
+.hed::after{
+    left:4px;
+    text-shadow: -2px 0 powderblue;
+    animation: effect 2s infinite linear;
+}
+@-webkit-keyframes effect{
+    0%{
+        clip:rect(55px,9999px,56px,0);
+    }
+    5%{
+        clip:rect(47px,9999px,30px,0);
+    }
+    10%{
+        clip:rect(33px,9999px,36px,0);
+    }
+    15%{
+        clip:rect(35px,9999px,9px,0);
+    }
+    20%{
+        clip:rect(63px,9999px,59px,0);
+    }
+    25%{
+        clip:rect(96px,9999px,98px,0);
+    }
+    30%{
+        clip:rect(48px,9999px,77px,0);
+    }
+    35%{
+        clip:rect(50px,9999px,34px,0);
+    }
+    40%{
+        clip:rect(60px,9999px,72px,0);
+    }
+    45%{
+        clip:rect(10px,9999px,81px,0);
+    }
+    50%{
+        clip:rect(2px,9999px,60px,0);
+    }
+    55%{
+        clip:rect(23px,9999px,89px,0);
+    }
+    60%{
+        clip:rect(76px,9999px,91px,0);
+    }
+    65%{
+        clip:rect(62px,9999px,30px,0);
+    }
+    70%{
+        clip:rect(60px,9999px,73px,0);
+    }
+    75%{
+        clip:rect(60px,9999px,87px,0);
+    }
+    80%{
+        clip:rect(2px,9999px,14px,0);
+    }
+    85%{
+        clip:rect(28px,9999px,87px,0);
+    }
+    90%{
+        clip:rect(73px,9999px,50px,0);
+    }
+    95%{
+        clip:rect(79px,9999px,70px,0);
+    }
+    100%{
+        clip:rect(17px,9999px,79px,0);
+    }
+}
 </style>
 </head>
 <body>
-
-<h1 class="hed">Rudi Jakobsen</h1>
-<p id="undr">This is my page, not a lot of interesting things, I&apos;m simply not creative enough </p>
+        <h1 class="hed">Rudi Jakobsen</h1>
+    <p id="undr">This is my page, not a lot of interesting things, dunno what to do with it </p>
 <br>
-<img id="bilde" src="../Img/Rudijwbkqwer.jpg" alt="" width="400" class="center">
 <br><br>
 <div class="fcts">
 <h3>What you can do on my page:</h3>
 <li>Click on next page for a photo gallary of pictures from Svalbard </li>
 <li>Thereafter, on the next page, you can enjoy a quick explanation of a Css-element of my choosing</li>
 </div>
+<br>
+<br>
 <div class="tst">
         <p>I&apos;m simply writing this to check if the next page button</p>
         <p>is actually going to move, which i do not believe it will.</p>
@@ -83,10 +184,16 @@ form{
 <br>
 <br>
 <div class="rndm">
-<center><h2>This is a page i made as sort of a project</h2></center>
-<center><p>It&apos;s nothing special and really simplistic, so don&apos;t judge</p></center>
-
+<h2>This is a page i made, dunno wtf I&apos;m doing</h2>
+<p>It&apos;s just a bunch of bullshit that&apos;s smudged together</p>
+<p>hajfshqpjhdåqjwfhåqjwdnåjqwndgjqnwdgjnqwdjkøg</p>
+<p>weørlkgnwkngkndgæklnqdkælmæslkdmgælksmdfæklma/p>
+<p>weørlkgnwkngkndgæklnqdkælmæslkdmgælksmdfæklma/p>
+<p>sølkfndgkwjefgkonweiofgjnwkæefngkæljwefgklæwefk>
+<h1>Some stupid subhead</h1>
+<p>This is a sentence</p>
 </div>
+<br>
 <a href="../Pages/Css2.html" class="btn">Next Page</a>
 <br><br>
 
