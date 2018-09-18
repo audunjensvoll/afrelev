@@ -9,44 +9,39 @@ body {
     background: url(modellpose_1.jpeg) no-repeat center;
     background-size: cover;
     margin:0;
-    padding:300px;
+    padding:325px;
     text-align:center;
     font-size:3.4em;
     letter-spacing: 2.5px;
     word-spacing: 10px;
     color:white;
-    
 }
-
-
 
 .text {
     font-size:1.2em;
-    line-height: 1.8;
+    line-height: 1.6;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 20px;
 }
 
 .meny {
     text-align: center;
 }
 
-
 .meny li {
     display: inline-block;
     padding: 14px 30px;
 }
-
+.active {
+    background-color: rgba(134, 134, 134, 0.74);
+}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-}
-
-
-
-li {
-    
 }
 
 li a {
