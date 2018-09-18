@@ -73,3 +73,8 @@ div.undr{
   font-weight: bold;
   color: #000000;
 }
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
