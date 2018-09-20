@@ -25,6 +25,7 @@ header {
 }
 
 .logo {
+
     line-height: 60px;
     position: fixed;
     float: left;
@@ -33,6 +34,14 @@ header {
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 2px;
+    transition: .5s;
+
+}
+
+.logo a:hover {
+
+background-color: lightblue;
+
 }
 
 nav {
@@ -55,7 +64,7 @@ nav ul {
 }
 
 nav.black ul {
-    background: #036d8d;
+    background: #1c343b;
 }
 
 nav ul li {
