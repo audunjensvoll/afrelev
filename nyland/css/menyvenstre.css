@@ -1,0 +1,41 @@
+
+
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: 10%;
+                background-color: hsl <!--fjern for farge--> (209, 89%, 65%);
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+            }
+            
+            .vm li a {
+                display: block;
+                color: #000;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+            
+            .vm li a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+            
+            .vm li a:hover:not(.active) {
+                background-color: #555;
+                color: white;
+            }
+        
+        
+
+      
+    
+
+                body {
+                       
+                   margin-right: 550px;
+               }
+            
