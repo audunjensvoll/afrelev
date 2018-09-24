@@ -1,0 +1,44 @@
+body{
+    background-image: url(../image/treehus.webp);
+    background-size: cover;
+}
+.nav {
+    background-color: transparent; 
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.kropp{
+    text-align: center;
+    font-size: 50px;
+}
+.indextekst{
+    font-size: 20px;
+}
+
+.nav li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    border: 2px;
+
+}
+    
+.hoved{
+    width: 100%;
+
+}
+.hovedtekst{
+    font-size: 24px;
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+}
