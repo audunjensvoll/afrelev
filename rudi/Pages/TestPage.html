@@ -20,12 +20,16 @@
             alert(msgtomydudes + ' ' + mydudes1);
         }
 
-
-
-
-
         function changeColor(color1) {
             document.getElementById("thisehm").style.backgroundColor= color1;
+        }
+
+
+        function Vis() {
+            document.getElementById("thisehm").style.visibility="visible";
+        }
+        function Hide() {
+            document.getElementById("thisehm").style.visibility="hidden";
         }
 
     
@@ -64,8 +68,8 @@
     <br><br>
     <br>
 
-
-
+<button onclick="Vis()">Vis boks</button>
+<button onclick="Hide()">Skjul boks</button>
     </head>
 </body>
 
