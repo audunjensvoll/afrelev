@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+
+    <style>
+        .ehm {
+            height: 100px;
+            width: 100px;
+            border: solid 1px;
+            Background-color: powderblue;
+        }
+    </style>
+
+
+    <script>
+
+        function visBoks(msgtomydudes, mydudes1) {
+            alert(msgtomydudes + ' ' + mydudes1);
+        }
+
+
+
+
+
+        function changeColor(color1) {
+            document.getElementById("thisehm").style.backgroundColor= color1;
+        }
+
+    
+    </script>
+
+
+<body>
+    <h1>Min første javascript experience</h1>
+
+    <div id="thisehm" class="ehm">
+        Her er en div
+
+    </div>
+    <button onclick="changeColor('blue')">Click Here</button>
+
+
+
+    <button onclick="changeColor('red')">Click Here Too</button>
+
+    <button onclick="changeColor('green')">Click Here As Well</button>
+
+    <button onclick="changeColor('Powderblue')">Click To Reset</button>
+
+    <br>
+    <br><br>
+    <br>
+
+
+    <button onclick="visBoks('Hey mydude,','Bjørnie')">Trykk Her</button>
+    <button onclick="visBoks('Hey mydude,','Brage')">Eller Her</button>
+    <button onclick="visBoks('Hey mydude,','Vetle')">Eeller Her</button>
+    <button onclick="visBoks('Hey mydude,','Daniel')">Ee eller Her</button>
+
+
+    <br>
+    <br><br>
+    <br>
+
+
+
+    </head>
+</body>
+
+</html>
