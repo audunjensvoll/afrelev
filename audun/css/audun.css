@@ -1,0 +1,44 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.area {
+    padding: 20px;
+    margin: 10px;
+    
+    border-radius: 20px;
+}
+
+.area img {
+    border-radius: 10px;
+}
+
+.links ul {
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.links a {
+    padding: 10px;
+    color: rgb(41, 35, 230);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.links a:hover {
+    background-color: yellow;
+}
+
+.top {
+    background-color: rgb(55, 63, 55);
+    color: white;
+}
+
+.main {
+    background-color: rgb(108, 121, 108);
+    color: white;
+}

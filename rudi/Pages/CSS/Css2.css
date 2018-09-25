@@ -11,6 +11,7 @@ h3{
 .hed {
     color: white;
     text-align: center;
+    font-family: Helvetica;
 } 
 .gallery{
     margin: 10px 50px;
@@ -25,6 +26,23 @@ h3{
     filter: grayscale(0%);
     transform: scale(1.45);
 }
+.gallery2{
+    margin: 10px 50px;
+}
+.gallery2 img{
+    width: 230px;
+    padding: 25px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+.gallery2 img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.45);
+}
+
+
+
+
 .main:hover{
     color:white;
     opacity: 1;
