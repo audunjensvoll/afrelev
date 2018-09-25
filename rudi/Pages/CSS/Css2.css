@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image:url(https://images.wallpaperscraft.com/image/mountains_snow_lake_124940_1440x900.jpg) ; background-size: 100% 100%;  
+    }
+
+h3{
+    text-align: center;
+    color:white;
+}
+.hed {
+    color: white;
+    text-align: center;
+    font-family: Helvetica;
+} 
+.gallery{
+    margin: 10px 50px;
+}
+.gallery img{
+    width: 230px;
+    padding: 25px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+.gallery img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.45);
+}
+.gallery2{
+    margin: 10px 50px;
+}
+.gallery2 img{
+    width: 230px;
+    padding: 25px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+.gallery2 img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.45);
+}
+
+
+
+
+.main:hover{
+    color:white;
+    opacity: 1;
+}
+.home:hover{
+    color:white;
+    opacity: 1;
+}
+.main{
+    color:black;
+    font-family:"proxima nova";
+    font-weight: 100;
+    font-size: 25px;
+    text-align: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 5px 40px;
+    position: sticky;
+    bottom:20px;
+    opacity:0.2;
+}
+.home{
+    color:black;
+        font-family:"proxima nova";
+        font-weight: 100;
+        font-size: 25px;
+        text-align:center;
+        Border: solid 2px black;
+        border-radius: 50px;
+        padding: 5px 40px;
+        position: sticky;
+        bottom:20px;
+        opacity:0.2;
+}
+
+div.undr{
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  text-align:center;
+}
+div.undr{
+    margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
