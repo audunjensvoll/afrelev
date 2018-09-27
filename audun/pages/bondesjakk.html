@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bondesjakk</title>
+    <style>
+        .rute {
+            height: 100px;
+            width: 100px;
+            border: solid;
+            display: inline-block;
+        }
+    </style>
+
+
+    <script>
+        var farge1 = "red";
+        var farge2 = "blue";
+
+        var farge = farge2;
+
+        function skiftFarge(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) {
+                farge = farge2;
+            }
+            else {
+                farge = farge1;
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <div id="rute1" class="rute" onclick="skiftFarge('rute1')"></div>
+    <div id="rute2" class="rute" onclick="skiftFarge('rute2')"></div>
+    <div id="rute3" class="rute" onclick="skiftFarge('rute3')"></div>
+    <br>
+    <div id="rute4" class="rute" onclick="skiftFarge('rute4')"></div>
+    <div id="rute5" class="rute" onclick="skiftFarge('rute5')"></div>
+    <div id="rute6" class="rute" onclick="skiftFarge('rute6')"></div>
+    <br>
+    <div id="rute7" class="rute" onclick="skiftFarge('rute7')"></div>
+    <div id="rute8" class="rute" onclick="skiftFarge('rute8')"></div>
+    <div id="rute9" class="rute" onclick="skiftFarge('rute9')"></div>
+    <br>
+
+</body>
+
+</html>
