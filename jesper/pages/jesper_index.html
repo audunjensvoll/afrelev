@@ -11,7 +11,19 @@
 <!DOCTYPE html>
     <html>
     <head>
+ <title>Test javascript</title>
+ <script>
+  var tallet = 0;
+ function tell(x)
+
+  {
+      tallet = tallet + x;
+
+      document.getElementById("minDiv").innerHTML = tallet;
+
+  }
  
+ </script>
        <meta charset="UTF-8">
     <title>Page Title</title>
     </head>
@@ -19,11 +31,11 @@
     <h1> Jesper Berge Hansen </h1>
     <p> tlf: 46635470
     <p> Email: jesper2009@live.com</p>
-
+    <div id="minDiv">1</div>
     <p><a href="https://www.facebook.com/jesper.bergehansen"id = "bilder"><b>Facebook</b></a></p>
      <h1>Mine interesser</h1>
-    
-    
+    <button onclick="tell(1)">tell opp</button>
+    <button onclick="tell(-1)">tell ned</button>
     
     <p ><a href="Ny Side.html" id = "bilder">Bilder</a></p>
     <p> Gaming<p>
