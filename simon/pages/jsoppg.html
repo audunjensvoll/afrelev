@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript test</title>
+    <script>
+        var hjemmetall = 0;
+        var bortetall = 0;
+
+        function tellhjemme(x) {
+            hjemmetall = hjemmetall + x;
+            document.getElementById("hjemmelag").innerHTML = hjemmetall;
+
+        }
+        function tellborte(x) {
+            bortetall = bortetall + x;
+            document.getElementById("bortelag").innerHTML = bortetall;
+
+        }
+        function reset() {
+            hjemmetall = 0;
+            bortetall = 0;
+            document.getElementById("bortelag").innerHTML = 0;
+            document.getElementById("hjemmelag").innerHTML = 0;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="reset"></div>
+    <button onclick="reset()">Reset</button>
+    <p>Hjemmelag</p>
+    <div id="hjemmelag">1</div>
+    <button onclick="tellhjemme(1)">+</button>
+    <button onclick="tellhjemme(-1)">-</button>
+    <p>Bortelag</p>
+    <div id="bortelag">1</div>
+    <button onclick="tellborte(1)">+</button>
+    <button onclick="tellborte(-1)">-</button>
+</body>
+
+</html>
