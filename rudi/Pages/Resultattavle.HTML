@@ -5,56 +5,113 @@
     <title>Page Title</title>
 
     <style>
-     
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        .tekst{
+            font-size: 100px;
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+        .tekst2{
+            font-size:100px;
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+     .home{
+         display: inline;
+         float: left;
+         margin-left: 250px;
+         text-align: center;
+     }
 
+.mid{
+padding-left: 50px;
+padding-right: 50px;
+padding-top:60px;
+text-align:center;
+font-size: 50px;
+}
 
+.away{
+    display: inline;
+    float: right;
+    margin-right: 250px;
+    text-align: center;
+}
+.knapp{
+    padding-left:25px;
+    padding-right:25px;
+    border:1px solid blue;
+}
     </style>
     <script>
 
+var tallet=0;
+
+var tallet2=0;
+
+function tell(x)
+{
+    tallet=tallet+x;
+
+    document.getElementById("thisehm").innerHTML= tallet;
+
+}
+
+function tell2(y)
+{
+    tallet2=tallet2+y;
+    document.getElementById("keep").innerHTML= tallet2;
+}
+
+function reset()
+{
+    document.getElementById("thisehm").innerHTML=0;
+    document.getElementById("keep").innerHTML=0;
+    tallet=0;
+    tallet2=0;
+
+}
 
     
     </script>
 
-
+</head>
 <body>
 
     <div class="home">
             <h3>Hjemmelag</h3>
-<br>
-<br><br>
-<br>
-<div id="thisehm">0</div>
-<br>
-<br><br>
-<br>
-<button onclick="tell(-1)">-</button>
-<button onclick="tell(1)">+</button>
+
+<div class="tekst" id="thisehm">0</div>
+
+<button class="knapp" onclick="tell(-1)">-</button>
+<button class="knapp" onclick="tell(1)">+</button>
 
 
 
 
     </div>
 
-    <div class="mid">
-<h1>-</h1>
-    </div>
+    
 
     <div class="away">
         <h3>Bortelag</h3>
-        <br>
-        <br><br>
-        <br>
-        <div id="thisehm">0</div>
-        <br>
-        <br><br>
-        <br>
-        <button onclick="tell2(-1)">-</button>
-        <button onclick="tell2(1)">+</button>
+        
+        <div class="tekst2" id="keep">0</div>
+
+        <button class="knapp" onclick="tell2(-1)">-</button>
+        <button class="knapp" onclick="tell2(1)">+</button>
     </div>
 
+    <div class="mid">
+            <h1>-</h1>
+            <button onclick="reset()">Reset</button>
+        </div>
 
     
-    </head>
+    
 </body>
 
 </html>
