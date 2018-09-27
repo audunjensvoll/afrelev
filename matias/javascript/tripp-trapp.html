@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+            <title></title>
+            <style>
+                .rute1{
+                    width: 40px;
+                    height: 40px;
+                    border: solid 1.5px black; 
+                    float: left;
+                }
+                .rute2{
+                    width: 40px;
+                    height: 40px;
+                    border: solid 1.5px black;
+                    float: left; 
+                }
+                .rute3{
+                    width: 40px;
+                    height: 40px;
+                    border: solid 1.5px black;
+                    float: left; 
+                }
+            </style>
+		</head>
+		<body>
+            <div class="rute1" id="firkant1" onclick="endreFarge('firkant1')"></div>
+            <div class="rute1" id="firkant2" onclick="endreFarge('firkant2')"></div>
+            <div class="rute1" id="firkant3" onclick="endreFarge('firkant3')"></div>
+            <br><br><br>
+            <div class="rute2" id="firkant4" onclick="endreFarge('firkant4')"></div>
+            <div class="rute2" id="firkant5" onclick="endreFarge('firkant5')"></div>
+            <div class="rute2" id="firkant6" onclick="endreFarge('firkant6')"></div>
+            <br><br><br>
+            <div class="rute3" id="firkant7" onclick="endreFarge('firkant7')"></div>
+            <div class="rute3" id="firkant8" onclick="endreFarge('firkant8')"></div>
+            <div class="rute3" id="firkant9" onclick="endreFarge('firkant9')"></div>
+
+         <script type="text/javascript">
+            var blå = "blue";
+            var rød = "red";
+
+            var farge = blå;
+
+            function endreFarge(id) {
+                
+                document.getElementById(id).style.backgroundColor = farge;
+                if(farge == blå){
+                    farge = rød; 
+                } else {
+                    farge == blå;
+                }                  
+            }
+
+ 		</script>
+
+		</body>
+	</html>​

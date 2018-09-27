@@ -4,7 +4,6 @@ body {
 
 .top {
     
-   
     color: #343536; 
     margin: 10px; 
     padding: 20px; 
@@ -18,6 +17,10 @@ body {
 .links {
    
    color: white; 
+}
+
+.links h1 {
+    color: #343536; 
 }
 
 .links ul {
