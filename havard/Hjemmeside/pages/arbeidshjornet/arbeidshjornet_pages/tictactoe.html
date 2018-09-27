@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="../arbeidshjornet_css/bondesjakk.css">
+
+    <script>
+
+        var farge1 = "goldenrod";
+        var farge2 = "blue";
+
+        var farge = farge1;
+
+
+        function skiftFarge(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) { farge = farge2; }
+
+            else { farge = farge1 }
+        }
+
+        function resetPoeng() {
+            hpoeng = 0;
+            bpoeng = 0;
+            document.getElementById("hjemmeLag").innerHTML = hpoeng;
+            document.getElementById("borteLag").innerHTML = bpoeng;
+        }
+
+
+    </script>
+
+<body>
+
+    <div class="meny">
+
+        <ul>
+            <li><a href="../../arbeidshjornet.html">Hjem</a></li>
+            <li><a class="active" href="./tictactoe.html">Bondesjakk</a></li>
+        </ul>
+
+
+    </div>
+
+
+    <div class="bondesjakkbildemtekst">
+        <b>BONDESJAKK</b>
+
+
+
+    </div>
+
+
+    <div id="rute1" class="rute" onclick="skiftFarge('rute1')"></div>
+    <div id="rute2" class="rute" onclick="skiftFarge('rute2')"></div>
+    <div id="rute3" class="rute" onclick="skiftFarge('rute3')"></div>
+    <br>
+    <div id="rute4" class="rute" onclick="skiftFarge('rute4')"></div>
+    <div id="rute5" class="rute" onclick="skiftFarge('rute5')"></div>
+    <div id="rute6" class="rute" onclick="skiftFarge('rute6')"></div>
+    <br>
+    <div id="rute7" class="rute" onclick="skiftFarge('rute7')"></div>
+    <div id="rute8" class="rute" onclick="skiftFarge('rute8')"></div>
+    <div id="rute9" class="rute" onclick="skiftFarge('rute9')"></div>
+    <br>
+
+
+    </div>
+
+    <div class="resetknapp">
+        <button onclick="resetPoeng()">Reset</button>
+    </div>
+
+
+
+    <div class="text">
+
+        <p>En javascripttest med knapper</p>
+    </div>
+
+</body>
+</head>
+
+</html>
