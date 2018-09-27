@@ -16,22 +16,17 @@
 
     <script>
 
-        function visBoks(msgtomydudes, mydudes1) {
-            alert(msgtomydudes + ' ' + mydudes1);
-        }
 
-        function changeColor(color1) {
-            document.getElementById("thisehm").style.backgroundColor= color1;
-        }
+        var tallet=0;
 
 
-        function Vis() {
-            document.getElementById("thisehm").style.visibility="visible";
-        }
-        function Hide() {
-            document.getElementById("thisehm").style.visibility="hidden";
-        }
+        function tell(x)
+        {
+            tallet=tallet+x;
 
+            document.getElementById("thisehm").innerHTML= tallet;
+
+        }
     
     </script>
 
@@ -39,37 +34,22 @@
 <body>
     <h1>Min første javascript experience</h1>
 
-    <div id="thisehm" class="ehm">
-        Her er en div
-
-    </div>
-    <button onclick="changeColor('blue')">Click Here</button>
-
-
-
-    <button onclick="changeColor('red')">Click Here Too</button>
-
-    <button onclick="changeColor('green')">Click Here As Well</button>
-
-    <button onclick="changeColor('Powderblue')">Click To Reset</button>
-
-    <br>
-    <br><br>
-    <br>
-
-
-    <button onclick="visBoks('Hey mydude,','Bjørnie')">Trykk Her</button>
-    <button onclick="visBoks('Hey mydude,','Brage')">Eller Her</button>
-    <button onclick="visBoks('Hey mydude,','Vetle')">Eeller Her</button>
-    <button onclick="visBoks('Hey mydude,','Daniel')">Ee eller Her</button>
+    <div id="thisehm" class="ehm"> 1</div>
 
 
     <br>
     <br><br>
     <br>
+    <br>
+    <br><br>
+    <br>
+    <button onclick="tell(1)">Pluss 1</button>
+    <button onclick="tell(-1)">Minus 1</button>
+    <button onclick="tell(10)">Pluss 10</button>
+    <button onclick="tell(-10)">Minus 10</button>
 
-<button onclick="Vis()">Vis boks</button>
-<button onclick="Hide()">Skjul boks</button>
+
+
     </head>
 </body>
 

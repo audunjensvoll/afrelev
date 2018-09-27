@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript oppg</title>
+    <style>
+        .firkant {
+            height: 100px;
+            width: 100px;
+            border: solid;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        var farge1 = "red";
+        var farge2 = "goldenrod";
+
+        var farge = farge2;
+
+        function skiftfarge(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) farge = farge2;
+            else farge = farge1;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="firkant" id="rute1" onclick="skiftfarge('rute1')">
+    </div>
+    <div class="firkant" id="rute2" onclick="skiftfarge('rute2')">
+    </div>
+    <div class="firkant" id="rute3" onclick="skiftfarge('rute3')">
+    </div>
+    <br>
+    <div class="firkant" id="rute4" onclick="skiftfarge('rute4')">
+    </div>
+    <div class="firkant" id="rute5" onclick="skiftfarge('rute5')">
+    </div>
+    <div class="firkant" id="rute6" onclick="skiftfarge('rute6')">
+    </div>
+    <br>
+    <div class="firkant" id="rute7" onclick="skiftfarge('rute7')">
+    </div>
+    <div class="firkant" id="rute8" onclick="skiftfarge('rute8')">
+    </div>
+    <div class="firkant" id="rute9" onclick="skiftfarge('rute9')">
+    </div>
+</body>
+
+</html>

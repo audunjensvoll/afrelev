@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript test</title>
+    <script>
+        function skiftFarge(farge) {
+            document.getElementById("fisk").style.backgroundColor = farge;
+            document.getElementById("fisk").innerHTML= farge;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="fisk">Her er litt tekst</div>
+    <button onclick="skiftFarge('goldenrod')">Goldenrod</button>
+    <button onclick="skiftFarge('red')">Rød</button>
+</body>
+
+</html>
