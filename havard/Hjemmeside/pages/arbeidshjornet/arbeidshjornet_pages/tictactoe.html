@@ -8,7 +8,8 @@
     <script>
 
         var farge1 = "rgb(120, 120, 120)";
-        var farge2 = "dodgerblue";
+        var farge2 = "rgb(220, 220, 220";
+        var farge3 = "white";
 
         var farge = farge1;
 
@@ -21,10 +22,17 @@
         }
 
         function resetFarge() {
-            hpoeng = 0;
-            bpoeng = 0;
-            document.getElementById("hjemmeLag").innerHTML = hpoeng;
-            document.getElementById("borteLag").innerHTML = bpoeng;
+            farge = farge3
+            document.getElementById("rute1").style.backgroundColor = farge;
+            document.getElementById("rute2").style.backgroundColor = farge;
+            document.getElementById("rute3").style.backgroundColor = farge;
+            document.getElementById("rute4").style.backgroundColor = farge;
+            document.getElementById("rute5").style.backgroundColor = farge;
+            document.getElementById("rute6").style.backgroundColor = farge;
+            document.getElementById("rute7").style.backgroundColor = farge;
+            document.getElementById("rute8").style.backgroundColor = farge;
+            document.getElementById("rute9").style.backgroundColor = farge;
+            farge = farge1
         }
 
 
@@ -35,7 +43,7 @@
     <div class="meny">
 
         <ul>
-            <li><a href="../../arbeidshjornet.html">Hjem</a></li>
+            <li><a href="../../arbeidshjornet.html">Arbeidshjørnet</a></li>
             <li><a class="active" href="./tictactoe.html">Bondesjakk</a></li>
         </ul>
 
@@ -51,19 +59,19 @@
     </div>
     <div class="bondesjakkbrett">
 
-    <div id="rute1" class="rute" onclick="skiftFarge('rute1')"></div>
-    <div id="rute2" class="rute" onclick="skiftFarge('rute2')"></div>
-    <div id="rute3" class="rute" onclick="skiftFarge('rute3')"></div>
-    <br>
-    <div id="rute4" class="rute" onclick="skiftFarge('rute4')"></div>
-    <div id="rute5" class="rute" onclick="skiftFarge('rute5')"></div>
-    <div id="rute6" class="rute" onclick="skiftFarge('rute6')"></div>
-    <br>
-    <div id="rute7" class="rute" onclick="skiftFarge('rute7')"></div>
-    <div id="rute8" class="rute" onclick="skiftFarge('rute8')"></div>
-    <div id="rute9" class="rute" onclick="skiftFarge('rute9')"></div>
-    <br>
-</div>
+        <div id="rute1" class="rute" onclick="skiftFarge('rute1')"></div>
+        <div id="rute2" class="rute" onclick="skiftFarge('rute2')"></div>
+        <div id="rute3" class="rute" onclick="skiftFarge('rute3')"></div>
+        <br>
+        <div id="rute4" class="rute" onclick="skiftFarge('rute4')"></div>
+        <div id="rute5" class="rute" onclick="skiftFarge('rute5')"></div>
+        <div id="rute6" class="rute" onclick="skiftFarge('rute6')"></div>
+        <br>
+        <div id="rute7" class="rute" onclick="skiftFarge('rute7')"></div>
+        <div id="rute8" class="rute" onclick="skiftFarge('rute8')"></div>
+        <div id="rute9" class="rute" onclick="skiftFarge('rute9')"></div>
+        <br>
+    </div>
 
     </div>
 
@@ -75,7 +83,7 @@
 
     <div class="text">
 
-        <p>En javascripttest med knapper</p>
+        <p></p>
     </div>
 
 </body>
