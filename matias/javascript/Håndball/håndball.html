@@ -8,7 +8,7 @@
 		<body>
             <div id="hjemme">
                 <p class="tekst">Hjemmelag</p>
-                <br><br><br>
+                <br><br>
                 <div id="hjemmeLag">0</div>
                 <br>
                 <button class="knapp" onclick="hjemmelag(1)">+</button>
@@ -17,7 +17,7 @@
         
             <div id="borte">
                 <p id="tekst" class="tekst">Bortelag</p>
-                <br><br><br>
+                <br><br>
                 <div id="borteLag">0</div>
                 <br>
                 <button class="knapp" onclick="bortelag(1)">+</button>
@@ -46,7 +46,11 @@
             }
 
             function restart(){
-                location.reload();
+                hlag = 0;
+                blag = 0;
+
+                document.getElementById("hjemmeLag").innerHTML = hlag;
+                document.getElementById("borteLag").innerHTML = blag;
             }
  		</script>
 

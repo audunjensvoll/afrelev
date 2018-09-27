@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<style>
-
-</style>
-
 <head>
-    <link rel="stylesheet" href="../css/csstestbilde.css">
+
+    <link rel="stylesheet" href="../css/handballkamp.css">
 
     <script>
 
@@ -37,46 +34,57 @@
     </script>
 
 <body>
-   
-        <div class="meny">
 
-                <ul>
-                    <li><a href="../havard_index.html">Hjem</a></li>
-                     <li><a class="active" href="jstest_handballkamp.html">Hanballkamp</a></li>
-                    <li><a href="./arbeidshjornet.html">Arbeidshjørnet</a></li>
-                </ul>
-        
-        
-            </div>
-   
-   
-            <div class="handballbildemtekst">
-                    <b>HÅNDBALLKAMP</b>
-            
-            
-            
-                </div>
-            
-   
+    <div class="meny">
+
+        <ul>
+            <li><a href="../havard_index.html">Hjem</a></li>
+            <li><a class="active" href="jstest_handballkamp.html">Håndballkamp</a></li>
+            <li><a href="./arbeidshjornet.html">Arbeidshjørnet</a></li>
+        </ul>
+
+
+    </div>
+
+
+    <div class="handballbildemtekst">
+        <b>HÅNDBALLKAMP</b>
+
+
+
+    </div>
+
+
+    <div class="hjemmelagdiv"> 
+    <p>Hjemmelag</p>
     <div id="hjemmeLag"> 0 </div>
+    <button onclick="hjemmelagPoeng(+1)">+</button>
+    <button onclick="hjemmelagPoeng(-1)">-</button>
+
+    </div>
+
+
+    <div class="bortelagdiv">
+    <p>Bortelag</p>
     <div id="borteLag"> 0 </div>
 
+    <button onclick="bortelagPoeng(+1)">+</button>
+    <button onclick="bortelagPoeng(-1)">-</button>
 
-    <button onclick="hjemmelagPoeng(+1)">h+</button>
-    <button onclick="hjemmelagPoeng(-1)">h-</button>
 
-    <button onclick="bortelagPoeng(+1)">b+</button>
-    <button onclick="bortelagPoeng(-1)">b-</button>
+</div>
 
-    <br>
+    <div class="resetknapp">
     <button onclick="resetPoeng()">Reset</button>
+    </div>
+   
 
-    
-        <div class="text">
-    
-            <p>En javascripttest</p>
-        </div>
-    
+
+    <div class="text">
+
+        <p>En javascripttest med telling</p>
+    </div>
+
 </body>
 </head>
 
