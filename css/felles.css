@@ -19,6 +19,10 @@ body {
    color: white; 
 }
 
+.links h1 {
+    color: #343536; 
+}
+
 .links ul {
     list-style: none; 
     text-decoration: none; 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script>
+       
+       var tallet = 0;
+
+       function tellTall(x) 
+       {
+           tallet = (tallet + x);
+           
+            document.getElementById("minDiv").innerHTML = tallet;
+        }
+
+    </script>
+
+
+<body>
+    <div id="minDiv"> 1 </div>
+
+    <button onclick="tellTall(+1)">Tell Opp</button>
+    <button onclick="tellTall(-1)">Tell Ned</button>
+
+</body>
+</head>
+
+</html>
