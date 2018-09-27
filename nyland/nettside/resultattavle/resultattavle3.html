@@ -4,8 +4,8 @@
 <head>
 
     <title>Enkel resultattavle</title>
-
-    <stylex>
+<!--
+    <style>
 
         #hjemme {
             float: left; 
@@ -23,29 +23,29 @@
         }
     
     </style>
-
+-->
     <script>
         // Variable for å holde resultat 
-        var hjemmeresultat = 0;
+        var hr = 0;
         var borteresultat = 0;
 
         // Oppdaterer hjemmelagsresultat (variabel og nettside)
         function tellhjemme(endring) {
-            hjemmeresultat = hjemmeresultat + endring;
-            document.getElementById("hjemmelag").innerHTML = hjemmeresultat;
+            hr = hr + endring;
+            document.getElementById("hjemmelag").innerHTML = hr;
         }
-
+/*
         // Oppdaterer borteresultat (variabel og nettside)
         function tellborte(endring) {
             borteresultat = borteresultat + endring;
             document.getElementById("bortelag").innerHTML = borteresultat;
         }
-
+*/
         // Setter borteresultat og hjemmeresultat til 0 (variabel og nettside)
         function reset() {
-            hjemmeresultat = 0; 
+            hr = 0; 
             borteresultat = 0; 
-            document.getElementById("hjemmelag").innerHTML = hjemmeresultat; 
+            document.getElementById("hjemmelag").innerHTML = hr; 
             document.getElementById("bortelag").innerHTML = borteresultat; 
         }
 
@@ -62,14 +62,14 @@
         <button onclick="tellhjemme(1)">+</button>
         <button onclick="tellhjemme(-1)">-</button>
     </div>
-
+<!--
     <div id="borte">
         <p>Bortelag</p>
         <div id="bortelag">0</div>
         <button onclick="tellborte(1)">+</button>
         <button onclick="tellborte(-1)">-</button>
     </div>
-
+-->
     <div>
             <button onclick="reset()">Reset</button>
     </div>

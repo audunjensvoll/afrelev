@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<script>
+var hr=0;
+var br=0;
+
+        function tellhjemme(endring) {
+            hr = hr + endring;
+            document.getElementById("hjemmelag").innerHTML = hr;
+        }
+
+        function tellborte(endring) {
+            hr = hr + endring;
+            document.getElementById("bortelag").innerHTML = br;
+        }
+
+        function reset() {
+            hr = 0; 
+            br = 0; 
+            document.getElementById("hjemmelag").innerHTML = hr; 
+            document.getElementById("bortelag").innerHTML = br; 
+        }   
+
+</script>
+
+<div id="hjemme">
+    <p>hjemme</p>
+    <div id="hjemmelag">0</div>
+    <button onclick="tellhjemme(1)">+</button>
+    <button onclick="tellhjemme(-1)">-</button>
+
+</div>
+
+<div id="borte">
+        <p>borte</p>
+        <div id="bortelag">0</div>
+        <button onclick="tellborte(1)">+</button>
+        <button onclick="tellborte(-1)">-</button>
+    
+    </div>
+
+
+
+
+</body>
+</html>
