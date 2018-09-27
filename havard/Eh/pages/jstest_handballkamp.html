@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+</style>
+
+<head>
+    <link rel="stylesheet" href="../css/csstestbilde.css">
+
+    <script>
+
+        var hpoeng = 0;
+
+        function hjemmelagPoeng(x) {
+            hpoeng = (hpoeng + x);
+
+            document.getElementById("hjemmeLag").innerHTML = hpoeng;
+        }
+
+        var bpoeng = 0;
+
+        function bortelagPoeng(x) {
+            bpoeng = (bpoeng + x);
+
+            document.getElementById("borteLag").innerHTML = bpoeng;
+        }
+
+        function resetPoeng() {
+            hpoeng = 0;
+            bpoeng = 0;
+            document.getElementById("hjemmeLag").innerHTML = hpoeng;
+            document.getElementById("borteLag").innerHTML = bpoeng;
+        }
+
+
+    </script>
+
+<body>
+   
+        <div class="meny">
+
+                <ul>
+                    <li><a href="../havard_index.html">Hjem</a></li>
+                     <li><a class="active" href="jstest_handballkamp.html">Hanballkamp</a></li>
+                    <li><a href="./arbeidshjornet.html">Arbeidshjørnet</a></li>
+                </ul>
+        
+        
+            </div>
+   
+   
+            <div class="handballbildemtekst">
+                    <b>HÅNDBALLKAMP</b>
+            
+            
+            
+                </div>
+            
+   
+    <div id="hjemmeLag"> 0 </div>
+    <div id="borteLag"> 0 </div>
+
+
+    <button onclick="hjemmelagPoeng(+1)">h+</button>
+    <button onclick="hjemmelagPoeng(-1)">h-</button>
+
+    <button onclick="bortelagPoeng(+1)">b+</button>
+    <button onclick="bortelagPoeng(-1)">b-</button>
+
+    <br>
+    <button onclick="resetPoeng()">Reset</button>
+
+    
+        <div class="text">
+    
+            <p>En javascripttest</p>
+        </div>
+    
+</body>
+</head>
+
+</html>
