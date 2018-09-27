@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<body>
+
+            <div id="minDiv">0</div>
+
+            <button onclick="tell(1)">Tell opp</button>
+            <button onclick="tell(- 1)">Tell ned</button>
+            
+         <script type="text/javascript">
+            var tall = 0;
+             
+            function tell(x) {
+
+                tall = tall + x;
+                
+                document.getElementById("minDiv").innerHTML = tall;
+            }
+ 		</script>
+
+		</body>
+	</html>​

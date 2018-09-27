@@ -54,18 +54,32 @@ body {
     color:white;
 }
 
-.elementbildemtekst
+.arbeidshjornetbildemtekst
 {
     background: url(modellpose_1.jpeg) no-repeat center;
     background-size: cover;
     margin:0;
-    padding:325px;
+    padding:100px;
     text-align:center;
     font-size:3.4em;
     letter-spacing: 2px;
     word-spacing: 10px;
     color:white;
 }
+
+.handballbildemtekst
+{
+    background: url(modellpose_1.jpeg) no-repeat center;
+    background-size: cover;
+    margin:0;
+    padding:100px;
+    text-align:center;
+    font-size:3.4em;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+    color:white;
+}
+
 
 .text {
     font-size:1.2em;
