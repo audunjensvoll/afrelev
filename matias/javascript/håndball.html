@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+            <title></title>
+            <link rel="stylesheet" type="text/css" href="håndball.css">
+		</head>
+		<body>
+            <div id="hjemme">
+                <p class="tekst">Hjemmelag</p>
+                <br><br><br>
+                <div id="hjemmeLag">0</div>
+                <br>
+                <button class="knapp" onclick="hjemmelag(1)">+</button>
+                <button class="knapp" onclick="hjemmelag(- 1)">-</button>
+            </div>
+        
+            <div id="borte">
+                <p id="tekst" class="tekst">Bortelag</p>
+                <br><br><br>
+                <div id="borteLag">0</div>
+                <br>
+                <button class="knapp" onclick="bortelag(1)">+</button>
+                <button class="knapp" onclick="bortelag(- 1)">-</button>
+            </div>
+            <br>
+            <p id="lag">-</p>
+            <br>
+            <button id="reset" class="knapp" onclick="restart()">Restart</button>
+         <script type="text/javascript">
+            var hlag = 0;
+            var blag = 0;
+             
+            function hjemmelag(x) {
+
+                hlag = hlag + x;
+                
+                document.getElementById("hjemmeLag").innerHTML = hlag;
+            }
+
+            function bortelag(f) {
+
+                blag = blag + f;
+
+                document.getElementById("borteLag").innerHTML = blag;
+            }
+
+            function restart(){
+                location.reload();
+            }
+ 		</script>
+
+		</body>
+	</html>​
