@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+.Hjemmelag {
+    float: left;
+    margin: 20%;
+    font-size: 20px;
+    text-align: center
+}    
+#Hjemmelag {
+    font-size: 80px;
+}
+
+.Bortelag {
+    float: right;
+    margin: 20%;
+    font-size: 20px;
+    text-align: center
+}
+#Bortelag {
+    font-size: 80px;
+}
+
+.Reset {
+    float: center;
+}
+
+Button {
+    background-color: white;
+    Border: none;
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 40px;
+}
+
+</style>
+
+<script>
+var poeng = 0
+function Hjemmebutton(x) {
+    poeng = poeng + x;
+    document.getElementById("Hjemmelag").innerHTML = poeng;
+}
+
+function Bortebutton(x) {
+    poeng = poeng + x;
+    document.getElementById("Bortelag").innerHTML = poeng;
+}
+
+function Reset() {
+    document.getElementById("Hjemmelag").innerHTML = 0;
+    document.getElementById("Bortelag").innerHTML = 0;
+}
+
+</script>
+
+</head>
+<body>
+
+<div class="Hjemmelag">    
+<p>Hjemmelag</p>    
+<Div id="Hjemmelag">0</Div>    
+<button onclick="Hjemmebutton(1)">+</button>
+<button onclick="Hjemmebutton(-1)">-</button>
+</Div>
+
+<Div class="Bortelag">
+<p>Bortelag</p>
+<Div id="Bortelag">0</Div>
+<button onclick="Bortebutton(1)">+</button>
+<button onclick="Bortebutton(-1)">-</button>
+</Div>
+
+<br><br>
+
+<div class="Reset">
+<button onclick="Reset()">Reset</button>
+</div>
+
+</body>
+</html>

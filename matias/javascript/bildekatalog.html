@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+			<style>
+				#ost {
+					text-decoration: none;
+				}
+			</style>
+		</head>
+		<body>
+			<ul id="ost">
+				<li onclick="visBilde(0)">
+					<img id="katt" src="bilder/katt.jpg" width="200px" height="100px">
+				</li>
+				<li onclick="visBilde(1)">
+					<img id="noe" src="bilder/noe.jpg" width="200px" height="100px">
+				</li>
+				<li onclick="visBilde(2)">
+					<img id="edderkopp" src="bilder/edderkopp.jpg" width="200px" height="100px">
+				</li>
+			</ul>
+
+ 		<script type="text/javascript">
+ 			var bildeinfo = [document.getElementById("katt"), document.getElementById("noe"), document.getElementById("edderkopp")];
+
+ 			function visBilde(size){
+ 				if(bildeinfo[size].style.width === "400px"){
+ 					bildeinfo[size].style.width = "200px";
+	 				bildeinfo[size].style.height = "100px";
+ 				} else {
+	 				bildeinfo[size].style.width = "400px";
+	 				bildeinfo[size].style.height = "300px";
+	 			}
+
+ 			}
+ 			
+ 		</script>
+
+		</body>
+	</html>​
