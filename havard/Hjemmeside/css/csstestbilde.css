@@ -72,6 +72,7 @@ body {
     padding-right: 60px;
     padding-left: 60px;
     padding-top: 20px;
+    text-align: center;
 }
 
 .meny {
@@ -80,10 +81,10 @@ body {
 
 .meny li {
     display: inline-block;
-    padding: 14px 30px;
+
 }
 .active {
-    background-color: rgba(134, 134, 134, 0.74);
+    background-color: rgba(100, 100, 100, 0.75);
 }
 
 
@@ -99,9 +100,10 @@ body {
     display: block;
     color: white;
     text-align: center;
+    padding:14px 16px;
     text-decoration: none;
 }
 
 .meny li a:hover {
-    background-color: rgba(83, 83, 83, 0.747)
+    background-color: rgba(140, 140, 140, 0.75)
 }

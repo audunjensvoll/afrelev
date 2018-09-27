@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="../arbeidshjornet_css/bondesjakk.css">
+
+    <script>
+
+        var farge1 = "rgb(120, 120, 120)";
+        var farge2 = "rgb(220, 220, 220";
+        var farge3 = "white";
+
+        var farge = farge1;
+
+
+        function skiftFarge(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) { farge = farge2; }
+
+            else { farge = farge1 }
+        }
+
+        function resetFarge() {
+            farge = farge3
+            document.getElementById("rute1").style.backgroundColor = farge;
+            document.getElementById("rute2").style.backgroundColor = farge;
+            document.getElementById("rute3").style.backgroundColor = farge;
+            document.getElementById("rute4").style.backgroundColor = farge;
+            document.getElementById("rute5").style.backgroundColor = farge;
+            document.getElementById("rute6").style.backgroundColor = farge;
+            document.getElementById("rute7").style.backgroundColor = farge;
+            document.getElementById("rute8").style.backgroundColor = farge;
+            document.getElementById("rute9").style.backgroundColor = farge;
+            farge = farge1
+        }
+
+
+    </script>
+
+<body>
+
+    <div class="meny">
+
+        <ul>
+            <li><a href="../../arbeidshjornet.html">Arbeidshjørnet</a></li>
+            <li><a class="active" href="./tictactoe.html">Bondesjakk</a></li>
+        </ul>
+
+
+    </div>
+
+
+    <div class="bondesjakkbildemtekst">
+        <b>BONDESJAKK</b>
+
+
+
+    </div>
+    <div class="bondesjakkbrett">
+
+        <div id="rute1" class="rute" onclick="skiftFarge('rute1')"></div>
+        <div id="rute2" class="rute" onclick="skiftFarge('rute2')"></div>
+        <div id="rute3" class="rute" onclick="skiftFarge('rute3')"></div>
+        <br>
+        <div id="rute4" class="rute" onclick="skiftFarge('rute4')"></div>
+        <div id="rute5" class="rute" onclick="skiftFarge('rute5')"></div>
+        <div id="rute6" class="rute" onclick="skiftFarge('rute6')"></div>
+        <br>
+        <div id="rute7" class="rute" onclick="skiftFarge('rute7')"></div>
+        <div id="rute8" class="rute" onclick="skiftFarge('rute8')"></div>
+        <div id="rute9" class="rute" onclick="skiftFarge('rute9')"></div>
+        <br>
+    </div>
+
+    </div>
+
+    <div class="resetknapp">
+        <button onclick="resetFarge()">Reset</button>
+    </div>
+
+
+
+    <div class="text">
+
+        <p></p>
+    </div>
+
+</body>
+</head>
+
+</html>
