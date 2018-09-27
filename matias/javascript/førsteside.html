@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+			<title></title>
+		</head>
+		<body>
+
+			<button id="btn" onclick="visTekst()">Trykk her</button>
+			<button onclick="endreFarge('Blue')">Blå</button>
+			<button onclick="endreFarge('Lightgreen')">Grønn</button>
+			<button onclick="endrePosisjon()">Endre Posisjon</button>
+
+			<p id="mld"></p>
+
+			<button onclick="visBoks('Heisann', 'Bernie')">Trykk</button>
+
+			<ul>
+				<li onclick="visNR1()">N1
+					<ul id="mld1">
+						<li>1</li>
+						<li>2</li>
+					</ul>
+				</li>
+				<li onclick="visNR2()">N2
+					<ul id=mld2>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+				</li>
+				<li onclick="visNR3()">N3
+					<ul id=mld3>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+				</li>
+			</ul>
+
+ 		<script type="text/javascript">
+ 			var mld = document.getElementById("mld");
+
+ 			//Array med informasjon
+
+ 			var info = ["Hei på deg.", "Hvordan går det?"]
+
+ 			//Funksjon
+ 			function visTekst(){
+ 				if(mld.style.display === "none") {
+ 					mld.style.display = "block";
+ 				} else {
+ 					mld.style.display = "none";
+ 					mld.innerHTML = info[0] + "<br>" + info[1];
+ 				}
+
+ 				
+ 			}
+
+ 			function endreFarge(farge){
+ 				document.getElementById("btn").style.backgroundColor = farge;
+				document.getElementById("btn").innerHTML = farge;
+ 			}
+
+ 			function endrePosisjon(){
+ 				document.getElementById("btn").style.float = "right";
+ 				document.getElementById("btn").style.margin = "45px";
+ 			}
+
+ 			function visBoks(tekst1, tekst2){
+ 				alert(tekst1 + " " + tekst2);
+ 			}
+
+ 			function visNR1(){
+ 				if(document.getElementById("mld1").style.display === "none") {
+ 					document.getElementById("mld1").style.display = "block";
+ 				} else {
+ 					document.getElementById("mld1").style.display = "none";
+ 				}
+ 			}
+ 			function visNR2(){
+ 				if(document.getElementById("mld2").style.display === "none") {
+ 					document.getElementById("mld2").style.display = "block";
+ 				} else {
+ 					document.getElementById("mld2").style.display = "none";
+ 				}
+ 			}
+ 			function visNR3(){
+ 				if(document.getElementById("mld3").style.display === "none") {
+ 					document.getElementById("mld3").style.display = "block";
+ 				} else {
+ 					document.getElementById("mld3").style.display = "none";
+ 				}
+ 			}
+ 		</script>
+
+		</body>
+	</html>​
