@@ -1,0 +1,9 @@
+.bilde {
+    text-align: center; 
+    padding: 10px;
+    background-color: black; 
+}
+
+.bilde img {
+    width: 80%; 
+}

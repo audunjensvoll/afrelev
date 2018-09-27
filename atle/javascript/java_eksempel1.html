@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript 1</title>
+
+<style>
+.firkant{
+    height: 100px;
+    width: 100px;
+    border: 2px black solid;
+    background-color: rgb(106, 126, 37);
+}
+
+
+</style>
+
+<script>
+
+    function skiftFarge(farge1)
+    {
+       document.getElementById("denneFirkanten").style.backgroundColor=farge1;
+    }
+    
+    function vis(visskjul) {
+        document.getElementById("denneFirkanten").style.visibility=visskjul;
+    }
+
+    
+
+</script>
+
+</head>
+<body>
+    
+<h1>Mitt første javaeksempel</h1>
+
+<div class="firkant" id="denneFirkanten">
+    her er en div
+</div>
+
+<button onclick="skiftFarge('goldenrod')"> Klikk her for å skifte farge</button>
+<button onclick="skiftFarge('red')">Klikk her for å skifte tilbake</button>
+<button onclick="skiftFarge('blue')"> Klikk her for å skifte farge</button>
+<button onclick="skiftFarge('lime')">Klikk her for å skifte tilbake</button>
+
+<br>
+<button onclick="vis('visible')">vis boks</button>
+<button onclick="vis('hidden')">skjul boks</button>
+
+
+
+
+</body>
+</html>

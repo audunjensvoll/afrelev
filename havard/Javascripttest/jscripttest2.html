@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        .firkant {
+
+            text-align: center;
+            height: 150px;
+            width: 150px;
+            background-color: aqua;
+        }
+    </style>
+
+
+    <script>
+        function skiftFarge(farge) 
+        {
+            document.getElementById("bestemtfirkant").style.backgroundColor = farge;
+            document.getElementById("minDiv").innerHTML = farge;
+        }
+
+        function byttSynlighet(synlighet)
+        {
+            document.getElementById("bestemtfirkant").style.visibility = synlighet;
+        }
+
+    </script>
+
+
+<body>
+    <div id = "minDiv">Javascripttest 2</h1>
+    <div id="bestemtfirkant" class="firkant">
+
+
+    </div>
+
+
+    <button onclick="skiftFarge('aqua')">Blå</button>
+    <button onclick="skiftFarge('seagreen')">Grønn</button>
+    <button onclick="skiftFarge('goldenrod')">Ughh</button>
+    <br>
+    
+    <button onclick="byttSynlighet('visible')">Synlig</button>
+    <button onclick="byttSynlighet('hidden')">Usynlig</button>
+
+</body>
+</head>
+
+</html>
