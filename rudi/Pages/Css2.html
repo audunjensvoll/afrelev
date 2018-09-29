@@ -1,46 +1,95 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" href="CSS/Css2.css">
+
+        <style>
+        #image{
+                display:none;
+        }
+        #image{
+                width: 80%;
+                margin:auto;    
+
+        }
+        
+        
+        
+        
+        
+        </style>
+        <script>
+                function visBilde(link) {
+                        document.getElementById("image").src = link;
+                        document.getElementById("thumbnails").style.display = 'none';
+                        document.getElementById("image").style.display = 'block';
+                }
+
+                function visThumbnails() {
+                        document.getElementById("thumbnails").style.display = 'block';
+                        document.getElementById("image").style.display = 'none';
+                }
+
+
+        </script>
+
+
+
+
+        <link rel="stylesheet" href="CSS/Css2.css">
 </head>
+
+
+
+
 <body>
         <br>
-<h1 class="hed">A small gallery of pictures from Svalbard</h1>
-<br><br>
-<br><br>
+        <h1 class="hed">A small gallery of pictures from Svalbard</h1>
+        <br><br>
+        <br><br>
+        <div id="thumbnails">
+                <div class="gallery">
+                        <a onclick="visBilde('../Img/pic7-big.jpg')"><img src="../Img/pic7-small.jpg"></a>
+                        <a onclick="visBilde('../Img/pic2-big.jpg')"><img src="../Img/pic2-small.jpg"></a>
+                        <a onclick="visBilde('../Img/pic3-big.jpg')"><img src="../Img/pic3-small.jpg"></a>
+                        <a onclick="visBilde('../Img/pic4-big.jpg')"><img src="../Img/pic4-small.jpg"></a>
+                        <a onclick="visBilde('../Img/pic5-big.jpg')"><img src="../Img/pic5-small.jpg"></a>
+                </div>
+                <br>
+                <div class="gallery2">
+                        <a href="../Img/pic8-big.jpg"><img src="../Img/pic8-small.jpg"></a>
+                        <a href="../Img/pic10-big.jpg"><img src="../Img/pic10-small.jpg"></a>
+                        <a href="../Img/pic12-big.jpg"><img src="../Img/pic12-small.jpg"></a>
+                        <a href="../Img/pic9-big.jpg"><img src="../Img/pic9-small.jpg"></a>
+                        <a href="../Img/pic11-big.jpg"><img src="../Img/pic11-small.jpg"></a>
+                </div>
 
-<div class="gallery">
-<a href="../Img/pic7-big.jpg"><img src="../Img/pic7-small.jpg"></a>
-<a href="../Img/pic2-big.jpg"><img src="../Img/pic2-small.jpg"></a>
-<a href="../Img/pic3-big.jpg"><img src="../Img/pic3-small.jpg"></a>
-<a href="../Img/pic4-big.jpg"><img src="../Img/pic4-small.jpg"></a>
-<a href="../Img/pic5-big.jpg"><img src="../Img/pic5-small.jpg"></a>
-</div>
-<br>
-<div class="gallery2">
-<a href="../Img/pic8-big.jpg"><img src="../Img/pic8-small.jpg"></a>
-<a href="../Img/pic10-big.jpg"><img src="../Img/pic10-small.jpg"></a>
-<a href="../Img/pic12-big.jpg"><img src="../Img/pic12-small.jpg"></a>
-<a href="../Img/pic9-big.jpg"><img src="../Img/pic9-small.jpg"></a>
-<a href="../Img/pic11-big.jpg"><img src="../Img/pic11-small.jpg"></a>
-</div>
-<br>
-<br><br>
-<div class="undr">
-<h2>What you&apos;re looking at</h2>
-<p>The pictures above was taken on different locations in Svalbard. </p>
-<p>There are some pictures of the beautiful Aurora Borealis, more commonly known as the northern lights.</p>
-<p>Other pictures simply show off the breathtaking landscape and diverse animal life on Svalbard.</p>
-</div>
+        </div>
+
+        <div id="bigpicture">
+                <img id="image" onclick="visThumbnails()" src="../Img/pic1-big.jpg">
 
 
+        </div>
+        <br>
+        <br><br>
+        <div class="undr">
+                <h2>What you&apos;re looking at</h2>
+                <p>The pictures above was taken on different locations in Svalbard. </p>
+                <p>There are some pictures of the beautiful Aurora Borealis, more commonly known as the northern
+                        lights.</p>
+                <p>Other pictures simply show off the breathtaking landscape and diverse animal life on Svalbard.</p>
+        </div>
 
 
 
 
-<a href="../rudi_index.html" class="home">Previous Page</a>
-  
-<a href="../Pages/CSSelement.html" class="main">Next Page</a>
-<br>
+
+
+        <a href="../rudi_index.html" class="home">Previous Page</a>
+
+        <a href="../Pages/CSSelement.html" class="main">Next Page</a>
+        <br>
 </body>
+
 </html>
