@@ -1,50 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-</head>
-<body>
-<script>
-var hr=0;
-var br=0;
+        <style>
 
-        function tellhjemme(endring) {
-            hr = hr + endring;
-            document.getElementById("hjemmelag").innerHTML = hr;
+                #hjemme {
+                    float: left; 
+                    margin-left: 18%;
+                    margin-top: 10%;
+                }
+        
+                #borte {
+                    float: right; 
+                    margin-right: 18%;
+                    margin-top: 10%; 
+                }
+                #reset {
+                    text-align: center;
+                    margin-right: 1%;
+                    
+                }
+                #hjemmelag,#bortelag {
+                    float: bottom; 
+                    font-size: 6em;
+                }
+            
+            </style>
+    <script>
+        // Variable for å holde resultat
+
+        var hjemmer = 0;
+        var borter = 0;
+
+        // Oppdaterer hjemmelagsresultat (variabel og nettside)
+        function Hjemmebutton(x) {
+            hjemmer = hjemmer + x;
+            document.getElementById("hjemmelag").innerHTML = hjemmer;         
         }
 
-        function tellborte(endring) {
-            hr = hr + endring;
-            document.getElementById("bortelag").innerHTML = br;
+        // Oppdaterer borteresultat (variabel og nettside)
+        function tellborte(x) {
+            borter = borter + x;
+            document.getElementById("bortelag").innerHTML = borter;
         }
 
+        // Setter borteresultat og hjemmeresultat til 0 (variabel og nettside)
         function reset() {
-            hr = 0; 
-            br = 0; 
-            document.getElementById("hjemmelag").innerHTML = hr; 
-            document.getElementById("bortelag").innerHTML = br; 
-        }   
+            hjemmer=0
+            borter=0
+            document.getElementById("hjemmelag").innerHTML = hjemmer;
+            document.getElementById("bortelag").innerHTML = borter;
+        }
 
-</script>
 
-<div id="hjemme">
-    <p>hjemme</p>
-    <div id="hjemmelag">0</div>
-    <button onclick="tellhjemme(1)">+</button>
-    <button onclick="tellhjemme(-1)">-</button>
+    </script>
+</head>
 
-</div>
+<body>
+    <div id="hjemme">
+        <p>Hjemme</p>
+        <Div id="hjemmelag">0</Div>
+        <button onclick="Hjemmebutton(1)">+</button>
+        <button onclick="Hjemmebutton(-1)">-</button>
+    </Div>
 
-<div id="borte">
-        <p>borte</p>
+    <div id="borte">
+        <p>Borte</p>
         <div id="bortelag">0</div>
         <button onclick="tellborte(1)">+</button>
         <button onclick="tellborte(-1)">-</button>
-    
+
     </div>
 
-
+<div id="reset">
+<button onclick="reset()">reset</button>
+</div>
 
 
 </body>
+
 </html>
