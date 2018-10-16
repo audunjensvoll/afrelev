@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Resultattavle</title>
+    <style>
+       
+
+        #resultattavle {
+            background-color: black; 
+            color: white;            
+        }
+
+        #resultattavle button {
+            background-color: rgba(41, 37, 37, 0.055); 
+            color: rgb(128, 120, 120); 
+            border-color: rgb(77, 72, 72); 
+        }
+
+        #resultattavle button:hover {
+            background-color:white; 
+            color: black; 
+        }
+
+        #resultat {
+            display: inline-block;            
+            width: 100%;          
+        }
+
+        #hjemme,
+        #borte {         
+            width: 40%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #hjemme {
+            float: left;                        
+        }
+
+        #borte {
+            float: right;             
+        }
+
+        #hjemmeresultat,
+        #borteresultat {
+            padding: 30px;
+            font-size: 4em;                 
+            text-align: center;
+            border-radius: 10px; 
+        }
+
+        #tid {                        
+            width: 100%;            
+            text-align: center;
+        }
+
+        #klokke {
+            display: inline-block;
+            font-size: 3em;
+            padding: 30px;
+        }
+        
+    </style>
+    <script>
+        // Funksjoner for resultat
+        var hjemme = 0, borte = 0;
+
+
+        function oppdaterResultat(lag, endring) {
+
+            if (lag == 'hjemmeresultat') {
+                hjemme = hjemme + endring;
+                oppdaterResultatDiv(lag, hjemme);
+            }
+            else if (lag == 'borteresultat') {
+                borte = borte + endring;
+                oppdaterResultatDiv(lag, borte);
+            }
+            log(" hjemme " + hjemme + ":  borte " + borte);
+        }
+
+        function log(melding) {
+            console.log(formaterTid(klokke) + " " + melding);
+        }
+
+        function oppdaterResultatDiv(id, verdi) {
+            document.getElementById(id).innerHTML = verdi;
+            document.getElementById(id).style.backgroundColor = "red"; 
+            setTimeout(resetMerking,2000); 
+        }
+
+        function resetResultat() {
+            console.log("Reset resultat");
+            hjemme = 0;
+            borte = 0;
+            oppdaterResultatDiv('hjemmeresultat', hjemme);
+            oppdaterResultatDiv('borteresultat', borte);
+        }
+
+        // Funksjoner for klokke
+
+        var klokke = 0.0;
+        var status = "stopped";
+        function startstopKlokke() {
+            console.log("Start/stop klokke");
+            if (status == "stopped") {
+                status = "running";
+                log("Klokken startet");
+                setTimeout(ventOgOppdater, 1000);
+            }
+            else if (status == "running") {
+                log("Klokken stoppet");
+                status = "stopped";
+            }
+        }
+
+        function resetMerking()
+        {
+            document.getElementById("hjemmeresultat").style.backgroundColor = "black"; 
+            document.getElementById("borteresultat").style.backgroundColor = "black"; 
+        }
+
+        function ventOgOppdater() {
+            if (status == "running") {
+                klokke = klokke + 1;
+                oppdaterKlokke();
+                resetMerking();
+                setTimeout(ventOgOppdater, 1000);
+            }
+        }
+
+        function oppdaterKlokke() {
+            document.getElementById('klokke').innerHTML = formaterTid(klokke);
+        }
+
+        function formaterTid(tid) {
+            var minutes = Math.floor(tid / 60);
+            var secs = tid - minutes * 60;
+            return ("0" + minutes).slice(-2) + ":" + ("0" + secs).slice(-2);
+        }
+
+        function resetKlokke() {
+            console.log("Reset klokke");
+            klokke = 0;
+            oppdaterKlokke();
+        }
+    </script>
+</head>
+
+<body>
+    
+    <div id="resultattavle">
+        <div id="resultat">
+            <div id="hjemme" class="resultat">
+                <h2>Hjemmelag</h2>
+                <div id="hjemmeresultat">0</div>
+                <button onclick="oppdaterResultat('hjemmeresultat', 1)">+</button>
+                <button onclick="oppdaterResultat('hjemmeresultat',-1)">-</button>
+            </div>
+            <div id="borte" class="resultat">
+                <h2>Bortelag</h2>
+                <div id="borteresultat">0</div>
+                <button onclick="oppdaterResultat('borteresultat', 1)">+</button>
+                <button onclick="oppdaterResultat('borteresultat',-1)">-</button>
+            </div>
+            <div><button onclick="resetResultat()">reset resultat</button></div>
+        </div>
+        <div id="tid">
+            <div id="klokke">00:00</div>
+            <div>
+                <button onclick="startstopKlokke()">startstop</button>
+                <button onclick="resetKlokke()">reset klokke</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

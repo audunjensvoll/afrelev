@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+
+    <style>
+    
+    .tabel{
+        height: 100px;
+        width: 100px;
+        background-color: lightgray;
+        border: 1px solid;
+        display: inline-block;
+    
+    }
+
+    .top{
+        text-align:center;
+    }
+
+    
+    .tekst{
+            font-size: 100px;
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+        .tekst2{
+            font-size:100px;
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+     .home{
+         display: inline;
+         float: left;
+         margin-left: 250px;
+         text-align: center;
+         color:blue;
+     }
+
+.mid{
+padding-left: 50px;
+padding-right: 50px;
+padding-top:180px;
+text-align:center;
+font-size: 50px;
+}
+
+.away{
+    display: inline;
+    float: right;
+    margin-right: 250px;
+    text-align: center;
+    color:red;
+}
+.knapp{
+    padding-left:25px;
+    padding-right:25px;
+    border:1px solid blue;
+    height: 30px;
+    width: 40px;
+}
+
+
+    
+    </style>
+
+    <script>
+    
+    var color1 = "red";
+    var color2 = "blue";
+
+    var color=color2; 
+
+
+function changeColor(id)
+{
+document.getElementById(id).style.backgroundColor=color;
+if (color==color1) {
+
+    color=color2;
+    }
+else{
+   color=color1; 
+}
+}
+
+function reset()
+{
+    document.getElementById("square1").style.backgroundColor='lightgray';
+    document.getElementById("square2").style.backgroundColor='lightgray';
+    document.getElementById("square3").style.backgroundColor='lightgray';
+    document.getElementById("square4").style.backgroundColor='lightgray';
+    document.getElementById("square5").style.backgroundColor='lightgray';
+    document.getElementById("square6").style.backgroundColor='lightgray';
+    document.getElementById("square7").style.backgroundColor='lightgray';
+    document.getElementById("square8").style.backgroundColor='lightgray';
+    document.getElementById("square9").style.backgroundColor='lightgray';
+}
+
+
+var tallet=0;
+
+var tallet2=0;
+
+function tell(x)
+{
+    tallet=tallet+x;
+
+    document.getElementById("thisehm").innerHTML= tallet;
+
+}
+
+function tell2(y)
+{
+    tallet2=tallet2+y;
+    document.getElementById("keep").innerHTML= tallet2;
+}
+
+function reset2()
+{
+    document.getElementById("thisehm").innerHTML=0;
+    document.getElementById("keep").innerHTML=0;
+    tallet=0;
+    tallet2=0;
+
+}
+    </script>
+
+
+</head>
+<body>
+
+    <div class="top">
+    <h1>This is a minigame</h1>
+   <br>
+   <br><br>
+   <br>
+<div id="square1" class="tabel" onclick="changeColor('square1')"></div>
+<div id="square2" class="tabel" onclick="changeColor('square2')"></div>
+<div id="square3" class="tabel" onclick="changeColor('square3')"></div>
+<br>
+<div id="square4" class="tabel" onclick="changeColor('square4')"></div>
+<div id="square5" class="tabel" onclick="changeColor('square5')"></div>
+<div id="square6" class="tabel" onclick="changeColor('square6')"></div>
+<br>
+<div id="square7" class="tabel" onclick="changeColor('square7')"></div>
+<div id="square8" class="tabel" onclick="changeColor('square8')"></div>
+<div id="square9" class="tabel" onclick="changeColor('square9')"></div>
+
+<br>
+<br><br>
+<br>
+<button class="delete" onclick="reset()">reset</button>
+</div>
+
+<div class="mid">
+
+
+        <div class="home">
+                <h3>Blå</h3>
+    
+    <div class="tekst" id="thisehm">0</div>
+    
+    <button class="knapp" onclick="tell(-1)">-</button>
+    <button class="knapp" onclick="tell(1)">+</button>
+    
+    
+        </div>
+    
+    
+        <div class="away">
+            <h3>Rød</h3>
+            
+            <div class="tekst2" id="keep">0</div>
+    
+            <button class="knapp" onclick="tell2(-1)">-</button>
+            <button class="knapp" onclick="tell2(1)">+</button>
+        </div>
+    
+        <div class="mid">
+                <h1>-</h1>
+                <button onclick="reset2()">Reset</button>
+            </div>
+
+</div>
+</body>
+
+</html>

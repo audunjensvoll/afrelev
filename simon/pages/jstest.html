@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript test</title>
+    <script>
+        var tallet = 0;
+
+        function tell(x) {
+            tallet = tallet + x;
+            document.getElementById("fisk").innerHTML = tallet;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="fisk">1</div>
+    <button onclick="tell(1)">Tell opp</button>
+    <button onclick="tell(-1)">Tell ned</button>
+</body>
+
+</html>
