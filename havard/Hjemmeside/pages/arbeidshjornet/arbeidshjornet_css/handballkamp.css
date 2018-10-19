@@ -59,26 +59,42 @@ body {
     }
     
     .hjemmelagdiv {
-        font-size:4em;
         float: left;
-        padding-left: 180px;
     }
     
+    .hjemmelagdivinnhold {
+        text-align: center;
+        font-size:4em;
+    }
 
     .bortelagdiv {
-        font-size:4em;
         float: right;
-        padding-right: 180px;
+        right: 5%;
     }
-    
 
-    .resetknapp
+    .bortelagdivinnhold {
+        text-align: center;
+        font-size:4em;
+    }
+
+    .resetknapppoeng
     {
         text-align: center;
-        padding-top: 400px;
+        padding-top: 200px;
     }
 
+    .tellinginnhold
+    {
+        text-align: center;
+        font-size:3.4em;
+    }
 
+    .telling
+    {
+        margin: auto;
+        left: 50%;
+
+    }
 
 
 
