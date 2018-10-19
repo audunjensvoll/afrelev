@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+
+
+
+    <script>
+
+        var farge1 = "red";
+        var farge2 = "blue";
+        var farge = farge1;
+
+        function endre(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) {
+                farge = farge2;
+            }
+            else {
+                farge = farge1;
+            }
+
+        }
+
+    </script>
+
+    <style>
+        body {
+            align-content: center;
+        }
+
+        .rutenett {
+            width: 200px;
+            text-align: center;
+        }
+
+
+        button {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="rutenett">
+
+        <button id="rute1" onclick="endre('rute1')"></button>
+        <button id="rute2" onclick="endre('rute2')"></button>
+        <button id="rute3" onclick="endre('rute3')"></button>
+        <button id="rute4" onclick="endre('rute4')"></button>
+        <button id="rute5" onclick="endre('rute5')"></button>
+        <button id="rute6" onclick="endre('rute6')"></button>
+        <button id="rute7" onclick="endre('rute7')"></button>
+        <button id="rute8" onclick="endre('rute8')"></button>
+        <button id="rute9" onclick="endre('rute9')"></button>
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

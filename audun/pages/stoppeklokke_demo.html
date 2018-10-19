@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Knapp som bytter farge</title>
+    <script>
+        var tallet = 0;
+        var fortsett = true;
+
+        function tell() {
+            if (fortsett) {
+                tallet = tallet + 1;
+                skrivtid(tallet);
+                setTimeout(tell, 1000);
+            }
+        }
+
+        function start() {
+            fortsett = true; 
+            setTimeout(tell, 1000);
+        }
+
+        function stopp() {
+            fortsett = false;
+        }
+
+        function tallTilTekst(tall)
+        {
+            if (tall<10) {
+                return "0"+tall;
+            }
+            else {
+                return "" + tall;
+            }
+        }
+
+        function skrivtid(tid)
+        {
+            var minutter = 0; 
+            var sekunder = 0; 
+            // regn ut minutter og sekunder
+            minutter = Math.floor(tid/60); 
+            sekunder = tid - 60*minutter; 
+            document.getElementById("resultat").innerHTML = tallTilTekst(minutter) + ":" + tallTilTekst(sekunder);
+        }
+
+        function reset() {
+            tallet = 0; 
+            fortsett = false; 
+            skrivtid(tallet);
+        }
+    </script>
+</head>
+
+<body>
+    
+    
+    <button onclick="start()">Start</button>
+    <button onclick="stopp()">Stopp</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        reset();
+    </script>
+</body>
+
+</html>

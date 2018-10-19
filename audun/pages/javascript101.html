@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript 101</title>
+    <script>
+        function test1() {
+            document.getElementById("resultat").innerHTML = "Her er resultatet";
+        }
+
+        function test2(hilsen) {
+            document.getElementById("resultat").innerHTML = hilsen;
+        }
+
+        // Funksjon for å vise 2 parametre
+        /*
+            Kommentar på flere 
+            linjer
+        */
+        function test3(hilsen1, hilsen2) {
+            var resultat = "";
+            resultat = hilsen1 + hilsen2;
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        // test array1
+        function test4(tall1, tall2) {
+            var kommode = [];
+            kommode[0] = tall1;
+            kommode[1] = tall2;
+            var resultat = "";
+            resultat = kommode[0] + kommode[1];
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        // Mer om array
+        function test5() {
+            var kommode = [];
+            kommode[0] = 'Per';
+            kommode[1] = 'Anna';
+            kommode[2] = 'Jens';
+            kommode[3] = 6;
+            var resultat = kommode.sort().join(' :: ');
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        // For-løkke
+        function test6() {
+            var biler = ["Audi", "Ford", "Opel", "BMW"];
+            document.getElementById("resultat").innerHTML = array2ul(biler);
+        }
+
+        function test7() {
+            var navn = ["Per", "Tove", "Hans", "Anna"];
+            document.getElementById("resultat").innerHTML = array2ul(navn.sort());
+        }
+
+        // Lager ul-liste av en array
+        function array2ul(arr) {
+            var resultat = "<ul>";
+
+            for (var i = 0; i < arr.length; i = i + 1) {
+                resultat = resultat + "<li>" + arr[i] + "</li>";
+            }
+            resultat = resultat + "</ul>";
+            return resultat;
+        }
+
+        // Test av objekter
+        function test8() {
+            // tidligere
+            var merke = "volvo";
+            var regnr = "hs12345";
+            var farge = "yellow";
+
+            // lager i stedet et objekt
+            var bilenmin = {
+                merke: "Honda",
+                regnr: "ab12345",
+                farge: "black",
+                skrivut: function() {
+                    var resultat = "";
+                    resultat = resultat + "<p> Merke: " + this.merke + "</p>";
+                    resultat = resultat + "<p> Regnr: " + this.regnr + "</p>";
+                    resultat = resultat + "<p> Farge: " + this.farge + "</p>";
+                    return resultat;
+                }
+            }
+            document.getElementById("resultat").innerHTML = bilenmin.skrivut();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <button onclick="test8()">Objekter</button>
+        <button onclick="test7()">Sorterte navn</button>
+        <button onclick="test6()">For-løkke</button>
+        <button onclick="test5()">Mer om array</button>
+        <button onclick="test4(3,4)">Array test</button>
+        <button onclick="test3(3,4)">Kall funksjon med 2 parametre</button>
+        <button onclick="test2('Heisann')">Kall funksjon med parameter</button>
+        <button onclick="test1()">Kall funksjon</button>
+    </div>
+    <div>
+        <h1>Resultat</h1>
+        <div id="resultat"></div>
+    </div>
+</body>
+
+</html>
