@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+            <title></title>
+            <style>
+                .rute{
+                    height: 100px;
+                    width: 100px;
+                    border: solid 4px;
+                    background-color: blue;
+                    display: inline-block;
+                }
+                body{
+                    background: url(bilder/sintKatt.jpg) 0% 50% no-repeat hidden;
+                    background: url(bilder/finKatt.jpg) 0% 50% no-repeat;
+                }
+            </style>
+		</head>
+		<body>
+            <div class="rute" id="rute1" onclick="taVekk('rute1')"></div>
+            <div class="rute" id="rute2" onclick="taVekk('rute2')"></div>
+            <div class="rute" id="rute3" onclick="taVekk('rute3')"></div>
+            <br>
+            <div class="rute" id="rute4" onclick="taVekk('rute4')"></div>
+            <div class="rute" id="rute5" onclick="taVekk('rute5')"></div>
+            <div class="rute" id="rute6" onclick="taVekk('rute6')"></div>
+            <br>
+            <div class="rute" id="rute7" onclick="taVekk('rute7')"></div>
+            <div class="rute" id="rute8" onclick="taVekk('rute8')"></div>
+            <div class="rute" id="rute9" onclick="taVekk('rute9')"></div>
+
+            <br><br><br>
+            <button onclick="restart()">Restart</button>
+         <script type="text/javascript">
+            function taVekk(id) {
+                
+                document.getElementById(id).style.visibility = "hidden";        
+            }
+            
+            function restart(){
+                location.reload();
+            }
+ 		</script>
+
+		</body>
+	</html>​
