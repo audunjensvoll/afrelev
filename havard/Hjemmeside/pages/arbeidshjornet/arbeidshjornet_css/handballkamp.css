@@ -60,6 +60,7 @@ body {
     
     .hjemmelagdiv {
         float: left;
+        padding-left: 8%
     }
     
     .hjemmelagdivinnhold {
@@ -69,7 +70,7 @@ body {
 
     .bortelagdiv {
         float: right;
-        right: 5%;
+        padding-right: 8%;
     }
 
     .bortelagdivinnhold {
@@ -80,7 +81,7 @@ body {
     .resetknapppoeng
     {
         text-align: center;
-        padding-top: 200px;
+        padding-top: 100px;
     }
 
     .tellinginnhold
@@ -92,8 +93,7 @@ body {
     .telling
     {
         margin: auto;
-        left: 50%;
-
+        text-align: center;
     }
 
 
