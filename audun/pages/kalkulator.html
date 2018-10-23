@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulator</title>
+
+    <script>
+        var resultat = "0";
+
+        function oppdater(tegn) {
+            if (resultat == "0") resultat = tegn;
+            else resultat += tegn;
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function set(verdi) {
+            resultat = verdi;
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function set2(verdi, visning) {
+            resultat = verdi;
+            document.getElementById("resultat").innerHTML = visning;
+        }
+
+        function klikk(tegn) {
+            oppdater(tegn);
+        }
+
+
+        var tall1 = 3;
+        var tall2 = 2;
+
+        function kommando(tegn) {
+            if (tegn == 'C') {
+                set("0");
+            }
+            else if (tegn == '.') {
+                if (resultat.includes(".")) 
+                { }
+                else if (resultat == "0") {
+                    resultat = "0."
+                }
+                else {
+                    oppdater(tegn);
+                }
+            }
+            else if (tegn == "+") {
+                tall1 = Number(resultat);
+                set2("0", resultat + "+");
+            }
+            else if (tegn == '=') {
+                tall2 = Number(resultat);                
+                set(tall1 + tall2);
+            }
+        }
+
+        function keypress(event) {
+            console.log("tast trykket: " + event.key + " " + event.keyCode);
+            var key = event.key;
+            if (key >= '0' && key <= "9") {
+                klikk(key);
+            }
+            else {
+                kommando(key.toUpperCase());
+            }
+        }
+    </script>
+</head>
+
+<body onkeypress="keypress(event)">
+    <div id="resultat"></div>
+    <div>
+        <button onclick="klikk('7')">7</button>
+        <button onclick="klikk('8')">8</button>
+        <button onclick="klikk('9')">9</button>
+    </div>
+    <div>
+        <button onclick="klikk('4')">4</button>
+        <button onclick="klikk('5')">5</button>
+        <button onclick="klikk('6')">6</button>
+    </div>
+    <div>
+        <button onclick="klikk('1')">1</button>
+        <button onclick="klikk('2')">2</button>
+        <button onclick="klikk('3')">3</button>
+    </div>
+    <div>
+        <button onclick="klikk('0')">0</button>
+        <button onclick="kommando('.')">.</button>
+        <button onclick="kommando('C')">C</button>
+    </div>
+    <div>
+        <button onclick="kommando('+')">+</button>
+        <button onclick="kommando('=')">=</button>
+    </div>
+
+    <script>
+        set(0);
+    </script>
+</body>
+
+</html>
