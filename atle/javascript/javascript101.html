@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript 101</title>
+<script>
+
+    function test1() {
+        document.getElementById("resultat").innerHTML="Her er resultatet";
+    }
+    function test2(hilsen) {
+        document.getElementById("resultat").innerHTML=hilsen;
+    }
+    //funksjon for å vise to parameter
+    function test3(hilsen1, hilsen2) {
+        var resultat;
+        resultat = hilsen1 + hilsen2;
+        document.getElementById("resultat").innerHTML=resultat;
+    }
+    function test4(tall1, tall2) {
+        var kommode = [];
+        kommode[0]=tall1;
+        kommode[1]=tall2;
+        var resultat;
+        resultat = kommode[0] + kommode[1];
+        document.getElementById("resultat").innerHTML=resultat;
+    }
+
+    function test5() {
+        var kommode = [];
+        kommode[0]='Per';
+        kommode[1]='Anna';
+        kommode[2]='Jens';
+        kommode[3]=6;
+
+        var resultat = kommode.sort().join(' ::::::::: ');
+        document.getElementById("resultat").innerHTML=resultat;
+    }
+    function test6() {
+        var biler = ["Audi","Ford","Opel","BMW"]
+        
+
+        document.getElementById("resultat").innerHTML=array2ul(biler);
+    }
+
+
+    function array2ul (arr){
+        var resultat="<ul>";
+
+        for(var i=0; i<arr.length; i=i+1){
+            resultat = resultat + "<li>" + arr[i] + "</li>";
+        }
+        resultat = resultat + "</ul>";
+        return resultat; 
+    }
+    function test7() {
+        var navn = ["Per","Espen","Johannes","Sigurd"]
+        
+
+        document.getElementById("resultat").innerHTML=array2ol(navn.sort());
+    }
+
+
+    function array2ol (arr2){
+        var resultat="<ol>";
+
+        for(var i=0; i<arr2.length; i=i+1){
+            resultat = resultat + "<li>" + arr2[i] + "</li>";
+        }
+        resultat = resultat + "</ol>";
+        return resultat; 
+    }
+
+    /*
+    Funksjoner på flere
+    l
+    i
+    n
+    j    
+    e
+    r
+     */
+
+
+</script>
+</head>
+<body>
+    <div>
+        <button onclick="test3(60 , 9)"> Kall funksjon med 2 parametere</button>
+        <button onclick="test2('Halla')">Kall funksjon med parameter</button>
+        <button onclick="test1()">Kall funksjon</button>
+        <button onclick="test4(66,600)">Array</button>
+        <button onclick="test5()">Mer om array</button>
+        <button onclick="test6()">Løkke</button>
+        <button onclick="test7()">Løkke med navn</button>
+    </div>
+
+    <div>
+        <h1>Resultat</h1>
+        <div id="resultat"></div>
+    </div>
+</body>
+</html>

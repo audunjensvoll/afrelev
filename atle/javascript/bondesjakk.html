@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+
+        }
+    .rute{
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        background-color: black
+        
+
+
+
+    }
+    .bakgrunn{
+            text-align: center;
+            position: relative;
+            background:url(https://www.airpano.com/files/china_wall_01_big.jpg) no-repeat;
+            width: 315px;
+            height: 315px;
+
+            
+    }
+    
+    </style>
+    <script>
+        var farge1 = "transparent";
+        var farge2= "transparent";
+
+        var farge = farge1; 
+
+
+    function skiftFarge(id){
+            document.getElementById(id).style.backgroundColor=farge;
+            
+            if (farge==farge1){
+                farge = farge2;
+            }
+            else {
+                farge = farge1;
+            }
+    }
+    function reset(){
+
+        document.getElementById("rute").style.backgroundColor="black";
+    }
+    
+    </script>
+</head>
+<body>
+    <div class="bakgrunn">
+    
+
+<div class="rute" id="rute1" onclick="skiftFarge('rute1')"></div>
+<div class="rute" id="rute2" onclick="skiftFarge('rute2')"></div>
+<div class="rute" id="rute3" onclick="skiftFarge('rute3')"></div>
+<br>
+<div class="rute" id="rute4" onclick="skiftFarge('rute4')"></div>
+<div class="rute" id="rute5" onclick="skiftFarge('rute5')"></div>
+<div class="rute" id="rute6" onclick="skiftFarge('rute6')"></div>
+<br>
+<div class="rute" id="rute7" onclick="skiftFarge('rute7')"></div>
+<div class="rute" id="rute8" onclick="skiftFarge('rute8')"></div>
+<div class="rute" id="rute9" onclick="skiftFarge('rute9')"></div>
+</div>
+<button id="reset" onclick="reset()"> Reset</button>
+</body>
+</html>
