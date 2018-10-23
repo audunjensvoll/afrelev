@@ -31,6 +31,60 @@
         }
 
 
+        var tallet = 0;
+        var fortsett = true;
+
+        function tallverdi() {
+            if (fortsett) {
+                tallet = tallet + 1;
+                skrivtid(tallet);
+                setTimeout(tallverdi, 1000);
+            }
+        }
+
+
+        function klikk() {
+            fortsett = true;
+            setTimeout(tallverdi, 1000);
+        }
+
+
+        function stopp() {
+            fortsett = false;
+        }
+
+        function resettelling() {
+            tallet = 0;
+            fortsett = false
+            skrivtid(tallet);
+        }
+
+        function tallTilTekst(tall) {
+
+            if (tall < 10) {
+                return "0" + tall;
+            }
+            else {
+                return "" + tall;
+            }
+        }
+
+        function skrivtid(tid) {
+            var minutter = 0;
+            var sekunder = 0;
+            minutter = Math.floor(tid / 60);
+            sekunder = tid - 60 * minutter;
+            var sekunderSomTekst = "00";
+            if (sekunder < 10) {
+                sekunderSomTekst = "0" + sekunder;
+            }
+            else {
+                sekunderSomTekst = sekunder;
+            }
+            document.getElementById("tall").innerHTML = tallTilTekst(minutter) + ":" + tallTilTekst(sekunder);
+        }
+
+
     </script>
 
 <body>
@@ -54,35 +108,49 @@
     </div>
 
 
-    <div class="hjemmelagdiv"> 
-    <p>Hjemmelag</p>
-    <div id="hjemmeLag"> 0 </div>
-    <button onclick="hjemmelagPoeng(+1)">+</button>
-    <button onclick="hjemmelagPoeng(-1)">-</button>
-
+    <div class="hjemmelagdiv">
+        <div class = hjemmelagdivinnhold><p>Hjemmelag</p>
+        <div id="hjemmeLag"> 0 </div>
+        <button onclick="hjemmelagPoeng(+1)">+</button>
+        <button onclick="hjemmelagPoeng(-1)">-</button>
+    </div>
     </div>
 
 
     <div class="bortelagdiv">
-    <p>Bortelag</p>
-    <div id="borteLag"> 0 </div>
+        <div class= "bortelagdivinnhold"><p>Bortelag</p>
+        <div id="borteLag"> 0 </div>
 
-    <button onclick="bortelagPoeng(+1)">+</button>
-    <button onclick="bortelagPoeng(-1)">-</button>
+        <button onclick="bortelagPoeng(+1)">+</button>
+        <button onclick="bortelagPoeng(-1)">-</button>
 
-
-</div>
-
-    <div class="resetknapp">
-    <button onclick="resetPoeng()">Reset</button>
+        </div>
     </div>
-   
+
+
+    <div class="telling">
+        <div class = "tellinginnhold"><p>Tid</p>
+        <div id="tall"> 0 </div>
+        <button id="startknapp" onclick="klikk()">Start</button>
+        <button id="stoppknapp" onclick="stopp()">Stopp</button>
+        <button id="resetknapptelling" onclick="resettelling()">Reset</button>
+    </div>
+    </div>
+
+    <div class="resetknapppoeng">
+        <button onclick="resetPoeng()">Reset</button>
+    </div>
+
 
 
     <div class="text">
 
-        <p>En javascripttest med telling</p>
+        <p>En javascripttest med telling og tid</p>
     </div>
+
+<script>
+    resettelling();
+</script>
 
 </body>
 </head>

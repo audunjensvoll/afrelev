@@ -1,24 +1,30 @@
+body{
+    
+}
+#knapp{
+    position: absolute;
+    top: 10%;
+    left: 42.7%;
+    font-size: 48px;
+}
+.container{
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+	width: 750px;
+	min-height: 50px;
+	height: auto;
+}
+
 #hjemme{
     float: left;
-    margin-top: 180px;
-    margin-left: 340px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #borte{
     float: right;
-    margin-top: 180px;
-    margin-right: 390px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-#lag{
-    position: absolute;
-    margin-top: 220px;
-    margin-left: 46%;
-    color: blue;
-    font-size: 180px;
 }
 
 .tekst{
@@ -54,8 +60,8 @@
 
 #reset{
     position: absolute;
-    margin-top: 550px;
+    top: 65%;
+    left: 42.2%;
     text-align: center;
-    margin-left: 500px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

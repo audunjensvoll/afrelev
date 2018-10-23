@@ -5,16 +5,27 @@
 
     <title>Enkel resultattavle</title>
 
-    <stylex>
+    <style>
 
         #hjemme {
-            float: left; 
-            margin-left: 10%;
+            position: fixed;
+            top: 10px;
+            left: 10%;
+           
         }
 
         #borte {
-            float: right; 
-            margin-right: 10%; 
+            position: fixed;
+            top: 10px;
+            right: 10%;
+            
+        }
+
+        #reset {
+           position: fixed; 
+           bottom: 10px; 
+           left: 50%;
+            
         }
 
         #hjemmelag,#bortelag {
@@ -70,7 +81,7 @@
         <button onclick="tellborte(-1)">-</button>
     </div>
 
-    <div>
+    <div id="reset">
             <button onclick="reset()">Reset</button>
     </div>
     

@@ -3,7 +3,7 @@
 		<head>
 			<meta charset="UTF-8">
             <title></title>
-            <link rel="stylesheet" type="text/css" href="håndball.css">
+            <link rel="stylesheet" type="text/css" href="håndball2.css">
 
             <script>
 
@@ -95,31 +95,29 @@
             <div>
                 <div id="knapp" class="text">00 : 00</div>
             </div>
+            <div class="container">
+                <div id="hjemme">
+                    <p class="tekst">Hjemmelag</p>
+                    <div id="hjemmeLag">0</div>
+                    <button class="knapp" onclick="hjemmelag(1)">+</button>
+                    <button class="knapp" onclick="hjemmelag(- 1)">-</button>
+                </div>
+            
+                <div id="borte">
+                    <p id="tekst" class="tekst">Bortelag</p>
+                    <div id="borteLag">0</div>
+                    <button class="knapp" onclick="bortelag(1)">+</button>
+                    <button class="knapp" onclick="bortelag(- 1)">-</button>
+                </div>
+            </div>
+            <br><br>
+            <!--<p id="lag"></p>-->
 
-            <div id="hjemme">
-                <p class="tekst">Hjemmelag</p>
-                <br><br>
-                <div id="hjemmeLag">0</div>
-                <br>
-                <button class="knapp" onclick="hjemmelag(1)">+</button>
-                <button class="knapp" onclick="hjemmelag(- 1)">-</button>
-            </div>
-        
-            <div id="borte">
-                <p id="tekst" class="tekst">Bortelag</p>
-                <br><br>
-                <div id="borteLag">0</div>
-                <br>
-                <button class="knapp" onclick="bortelag(1)">+</button>
-                <button class="knapp" onclick="bortelag(- 1)">-</button>
-            </div>
-            <br>
-            <p id="lag">-</p>
-            <br>
             <div id="reset">
                 <button class="knapp" onclick="start()">Start</button>
                 <button class="knapp" onclick="stopp()">Stopp</button>
                 <br><br>
                 <button class="knapp" onclick="restart()">Restart</button>
             </div>
+        </body>
 	</html>​

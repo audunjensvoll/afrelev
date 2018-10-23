@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stoppeklokke</title>
+    <script>
+        var tid = 0; 
+        var ferdig = false;
+
+        function start() {
+            ferdig = false;
+            setTimeout(etterEttSekund,1000);
+        }
+
+        function etterEttSekund() {
+            if (!ferdig) {
+                tid=tid+1;
+                skrivtid(tid); 
+                setTimeout(etterEttSekund,1000);
+            }
+        }
+
+        function stop() {
+            ferdig = true; 
+        }
+
+        function reset() {
+            tid = 0;
+            skrivtid(tid);
+            ferdig=true;
+        }
+
+        function skrivtid(t) 
+        {
+            var minutter = Math.floor(t/60);
+            var sekunder =  t - minutter*60;
+            var tiden = pad(minutter,2)+ ":" +pad(sekunder,2);
+            document.getElementById("klokke").innerHTML = tiden;
+        }
+
+        function pad(tall,antallsifre ) {
+            var tallsomtekst =  "000000000000000" + tall
+            return tallsomtekst.substr(tallsomtekst.length-antallsifre,antallsifre);
+            
+        }
+    </script>
+</head>
+<body>
+
+    <div id="klokke"></div>
+
+    <div>
+        <button onclick="start()">Start</button>      
+        <button onclick="stop()">Stop</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        skrivtid(tid)
+    </script>
+    
+</body>
+</html>
