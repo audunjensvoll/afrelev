@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <link type="text/css" rel="stylesheet" href="../css/klokeogrestavle.css">
+
+    <style>
+
+    </style>
+
+    <script>
+        var hjemme = 0;
+        var borte = 0;
+        function Hjemmebutton(x) {
+            hjemme = hjemme + x;
+            document.getElementById("Hjemmelag").innerHTML = hjemme;
+        }
+
+        function Bortebutton(x) {
+            borte = borte + x;
+            document.getElementById("Bortelag").innerHTML = borte;
+        }
+
+        function r() {
+            hjemme = 0;
+            borte = 0;
+            document.getElementById("Hjemmelag").innerHTML = 0;
+            document.getElementById("Bortelag").innerHTML = 0;
+        }
+        /*start midt*/
+        function klikk() {
+            setTimeout(tell, 1000);
+        }
+
+        var tallet = 0
+        var fortsett = true
+
+
+        function tell() {
+            if (fortsett) {
+                tallet = tallet + 1
+                document.getElementById("res").innerHTML = tallet;
+                skrivtid(tallet)
+                setTimeout(tell, 1000);
+            }
+        }
+        function start() {
+            fortsett = true
+
+            setTimeout(tell, 1000);
+        }
+
+        function stopp() {
+            fortsett = false
+        }
+        function tallTilTekst(tall) {
+            if (tall < 10) {
+                return "0" + tall;
+            }
+            else {
+                return "" + tall;
+            }
+
+        }
+
+        function skrivtid(tid) {
+            var minutter = 0
+            var sekunder = 0
+            minutter = Math.floor(tid / 60);
+            sekunder = tid - 60 * minutter
+
+            document.getElementById("res").innerHTML = tallTilTekst(minutter) + ":" + tallTilTekst(sekunder)
+
+        }
+
+        function reset() {
+            tallet = 0
+            fortsett = false
+            skrivtid(tallet)
+        }
+        /*slut midt*/
+    </script>
+</head>
+
+<body>
+    <div class="Hjemmelag">
+        <p>Hjemmelag</p>
+        <Div id="Hjemmelag">0</Div>
+        <button onclick="Hjemmebutton(1)">+</button>
+        <button onclick="Hjemmebutton(-1)">-</button>
+    </div>
+    <!--start midt-->
+    <div class="kl">
+        <div id="res">0</div>
+
+        <div id="knap">
+            <button onclick="start()">start</button>
+            <button onclick="stopp()">stopp</button>
+            <button onclick="reset()">reset</button>
+            <div class="r">
+                <button onclick="r()">Reset resultat</button>
+            </div>
+            <script>
+                reset();
+            </script>
+        </div>
+    </div>
+    <!--slut midt-->
+
+    <div class="Bortelag">
+        <p>Bortelag</p>
+        <Div id="Bortelag">0</Div>
+        <button onclick="Bortebutton(1)">+</button>
+        <button onclick="Bortebutton(-1)">-</button>
+    </div>
+
+
+</body>
+
+
+
+</html>
