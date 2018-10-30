@@ -33,14 +33,14 @@
 
         var tall1 = 3;
         var tall2 = 2;
+        var operator = '';
 
         function kommando(tegn) {
             if (tegn == 'C') {
                 set("0");
             }
             else if (tegn == '.') {
-                if (resultat.includes(".")) 
-                { }
+                if (resultat.includes(".")) { }
                 else if (resultat == "0") {
                     resultat = "0."
                 }
@@ -49,14 +49,53 @@
                 }
             }
             else if (tegn == "+") {
+                operator = '+';
                 tall1 = Number(resultat);
                 set2("0", resultat + "+");
             }
+            else if (tegn == "-") {
+                operator = '-';
+                tall1 = Number(resultat);
+                set2("0", resultat + "-");
+            }
+            else if (tegn == "*") {
+                operator = '*';
+                tall1 = Number(resultat);
+                set2("0", resultat + "*");
+            }
+            else if (tegn == "/") {
+                operator = '/';
+                tall1 = Number(resultat);
+                set2("0", resultat + "/");
+            }
+            else if (tegn == "%") {
+                operator = '%';
+                tall1 = Number(resultat);
+                set2("0", resultat + "%");
+            }
+            else if (tegn == "^") {
+                operator = '^';
+                tall1 = Number(resultat);
+                set2("0", resultat + "^");
+            }
             else if (tegn == '=') {
-                tall2 = Number(resultat);                
-                set(tall1 + tall2);
+                tall2 = Number(resultat);
+                if (operator == '+')
+                    set(tall1 + tall2);
+                else if (operator == '-')
+                    set(tall1 - tall2);
+                else if (operator == '*')
+                    set(tall1 * tall2);
+                else if (operator == '/')
+                    set(tall1 / tall2);
+                else if (operator == '%')
+                    set(tall2 * tall1 / 100);
+                else if (operator == '^')
+                    set(Math.pow(tall1, tall2));
             }
         }
+
+
 
         function keypress(event) {
             console.log("tast trykket: " + event.key + " " + event.keyCode);
@@ -95,7 +134,17 @@
     </div>
     <div>
         <button onclick="kommando('+')">+</button>
+        <button onclick="kommando('-')">-</button>
         <button onclick="kommando('=')">=</button>
+    </div>
+    <div>
+        <button onclick="kommando('*')">*</button>
+        <button onclick="kommando('/')">/</button>
+        <button onclick="kommando('%')">%</button>
+    </div>
+    <div>
+        <button onclick="kommando('^')">^</button>
+        
     </div>
 
     <script>
