@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>tall oppg</title>
+
+    <script>
+
+        var tallet = 0;
+        var fortsett = true;
+
+        function tall1() {
+            if (fortsett == true) {
+                tallet = tallet + 1;
+                skrivtid(tallet);
+                setTimeout(tall1, 1000);
+            }
+        }
+
+        function start() {
+            fortsett = true;
+            setTimeout(tall1, 1000);
+        }
+
+        function stopp() {
+            fortsett = false;
+        }
+
+        function tallTilTekst(tall) {
+            if (tall < 10) {
+                return "0" + tall;
+            }
+            else {
+                reutrn tall;
+            }
+            return "" + tall;
+        }
+
+        function skrivtid(tid) {
+            var minutter = 0;
+            var sekunder = 0;
+            // regn ut minutter og sekunder
+            minutter = Math.floor(tid / 60);
+            sekunder = tid - 60 * minutter;
+            var sekundSomTekst = "00";
+            if (sekunder < 10) {
+                sekundSomTekst = "0" + sekunder;
+            }
+            else {
+                sekundSomTekst = " " + sekunder;
+            }
+            document.getElementById("tall").innerHTML = tallTilTekst(minutter) + ":" + tallTilTekst(sekunder);
+        }
+
+        function nullstill() {
+            tallet = 0;
+            fortsett = false;
+            skrivtid(tallet);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="tall">0</div>
+    <button onclick="start()">Start</button>
+    <button onclick="stopp()">Stopp</button>
+    <button onclick="nullstill()">Nullstill</button>
+    <script>
+        nullstill();
+    </script>
+
+
+</body>
+
+</html>

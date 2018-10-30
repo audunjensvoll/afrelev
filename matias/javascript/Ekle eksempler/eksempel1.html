@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+            <title></title>
+            <style>
+                
+            </style>
+            <script>
+                //Kall av funskjon
+                function test1(){
+                    document.getElementById("resultat").innerHTML = "Her er resultatet"
+                }
+                //Funskjon for å vise en parameter 
+                function test2(hilsen){
+                    document.getElementById("resultat").innerHTML = hilsen;
+                }
+                //Funskjon for å vise to parameter
+                function test3(hilsen1, hilsen2){
+                    var resultat;
+                    resultat = hilsen1 + " " + hilsen2;
+                    document.getElementById("resultat").innerHTML = resultat;
+                }
+
+                function test4(tall1, tall2){
+                    var kommode = [];
+                    kommode[0] = tall1;
+                    kommode[1] = tall2;
+                    
+                    var resultat = "";
+                    resultat = kommode[0] + kommode[1];
+                    document.getElementById("resultat").innerHTML = resultat;
+                }
+                function test5(){
+                    kommode = [];
+                    kommode[0] = "Per";
+                    kommode[1] = "Anna";
+                    kommode[2] = "Jens";
+                    kommode[3] = "Ole" + " " + 6;
+                    kommode[4] = "Ole" + " " + 7;
+                    kommode[5] = "Ola";
+                    
+                    //Bruk av sort og join til å sortere og sette sammen arrayet
+                    var resultat = kommode.sort().join(" - "); 
+
+                    document.getElementById("resultat").innerHTML = resultat;
+                }
+ 
+                //Array liste ved bruk av for-løkke
+                function test6(){
+                    var biler = ["Audi", "Ford", "Opel", "BMW", "Honda"];
+                    
+                    document.getElementById("resultat").innerHTML = array2ulforlengs(biler) + "<br>" + array2ulbaklengs(biler);
+                }
+
+                function test7(){
+                    var navn = ["Per", "Tove", "Hans", "Anna"];
+
+                    document.getElementById("resultat").innerHTML = array2ulforlengs(navn.sort());
+                }
+
+                //Test av objekter
+                function test8(){
+                    var bil =   {
+                        merke: "Volvo",
+                        regnr: "ab12345",
+                        farge: "Svart",
+                        skrivut: function skriveBil(bil){
+                            var resultat = "";
+                            resultat = resultat + "<p> Merke: " + this.merke + "</p>";
+                            resultat = resultat + "<p> Regnr: " + this.regnr + "</p>";
+                            resultat = resultat + "<p> Farge: " + this.farge + "</p>";
+                            return resultat;
+                        } 
+                    }
+                    
+                    var hus = [];
+                    hus[0] = {
+                        husnr: "68",
+                        farge: "Hvit"
+                    }
+                    hus[1] = {
+                        husnr: "37",
+                        farge: "Rød"
+                    }
+
+                    document.getElementById("resultat").innerHTML = skriveBil.skrivut();
+                }
+                
+                //Lager en ul-liste av en array
+                function array2ulforlengs(arr){
+                    var resultat = "<ul>";
+                    //For-løkke forlengs
+                    for(var i = 0; i<arr.length; i++){
+                        resultat = resultat +  "<li>" + arr[i] + "</li>";
+                    }
+                    resultat = resultat + "</ul>"
+
+                    return resultat;
+                }
+
+                function array2ulbaklengs(arr){
+                    var resultat = "<ul>";
+                    //For-løkke forlengs
+                    for(var i = arr.length-1; i>-1; i--){
+                        resultat = resultat +  "<li>" + arr[i] + "</li>";
+                    }
+                    resultat = resultat + "</ul>"
+
+                    return resultat;
+                }
+            </script>
+		</head>
+		<body>
+            <div>
+                <button onclick="test8()">Objekt</button>
+                <button onclick="test7()">Sorterte navn</button>
+                <button onclick="test6()">For-løkke liste</button>
+                <button onclick="test5()">Mer om array</button>
+                <button onclick="test4(3,4)">Array</button>
+                <button onclick="test3('heisann', 'hoppsann')">Funksjon med to parameter</button>
+                <button onclick="test2('Heisann')">Kall funskjon med parameter</button>
+                <button onclick="test1()">Kall funksjon</button>
+            </div>
+
+            <div>
+                <h1>Resultat</h1>
+                <div id="resultat"></div>
+            </div>
+		</body>
+	</html>​

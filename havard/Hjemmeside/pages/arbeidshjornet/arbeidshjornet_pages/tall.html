@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+
+
+
+    <script>
+
+        var tallet = 0;
+        var fortsett = true;
+
+        function tallverdi() {
+            if (fortsett) {
+                tallet = tallet + 1;
+                document.getElementById("tall").innerHTML = tallet;
+                setTimeout(tallverdi, 1000);
+            }
+        }
+
+
+        function klikk() {
+            fortsett = true;
+            setTimeout(tallverdi, 1000);
+        }
+
+
+        function stopp() {
+            fortsett = false;
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="tall"> 0 </div>
+
+
+
+    <button id="startknapp" onclick="klikk()">Start</button>
+    <button id="stoppknapp" onclick="stopp()">Stopp</button>
+
+
+
+</body>
+
+</html>
