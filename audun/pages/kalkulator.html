@@ -33,6 +33,7 @@
 
         var tall1 = 3;
         var tall2 = 2;
+        var operasjon ='';
 
         function kommando(tegn) {
             if (tegn == 'C') {
@@ -49,12 +50,21 @@
                 }
             }
             else if (tegn == "+") {
+                operasjon = '+'; 
                 tall1 = Number(resultat);
                 set2("0", resultat + "+");
             }
+            else if (tegn == "-") {
+                operasjon = '-'; 
+                tall1 = Number(resultat);
+                set2("0", resultat + "-");
+            }
             else if (tegn == '=') {
-                tall2 = Number(resultat);                
-                set(tall1 + tall2);
+                tall2 = Number(resultat);   
+                if (operasjon == '+')             
+                    set(tall1 + tall2);
+                else if (operasjon == '-')
+                    set(tall1 - tall2); 
             }
         }
 
@@ -64,6 +74,8 @@
             if (key >= '0' && key <= "9") {
                 klikk(key);
             }
+            else if (event.keyCode == 13)
+                kommando("=")
             else {
                 kommando(key.toUpperCase());
             }
@@ -95,6 +107,7 @@
     </div>
     <div>
         <button onclick="kommando('+')">+</button>
+        <button onclick="kommando('-')">-</button>
         <button onclick="kommando('=')">=</button>
     </div>
 
