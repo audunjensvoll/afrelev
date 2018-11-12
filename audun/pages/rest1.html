@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest test 1</title>
+
+    <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            </style>
+
+    <script>
+
+        // Mockup get funksjon
+        function Get(request)
+        {
+            // veldig dum funksjon , returnerer det samme uansett
+            var response = {
+                header: {
+                    status: 200 // alt ok
+                },
+                body : {
+                    id: 1, 
+                    navn: 'Peder', 
+                    epost: 'peder@test.no'
+                }
+            }; 
+            return response;
+        }
+
+
+
+        function hentBruker()
+        {
+            var bruker = {
+                id: 1, 
+                navn: 'Peder',
+                epost: 'peder@test.no'
+            }
+
+        document.getElementById("brukervisning").innerHTML =  brukerHTML(bruker);             
+        }
+
+        function brukerHTML(bruker)
+        {
+            return html("table",
+                html("tr,",
+                    html("td",bruker.id) +
+                    html("td",bruker.navn) + 
+                    html("td",bruker.epost)
+                )
+            ); 
+
+        }
+
+        function hentAlleBrukere()
+        {
+            var brukerliste = [
+            {
+                id: 1, 
+                navn: 'Peder',
+                epost: 'peder@test.no'
+            },
+            {
+                id: 2, 
+                navn: 'Anne',
+                epost: 'anne@test.no'
+            },
+            {
+                id: 3, 
+                navn: 'Gunn',
+                epost: 'gunn@test.no'
+            }
+            ]
+
+
+            var resultat = "";             
+           
+            for (var i in brukerliste)
+            {
+                resultat += brukerHTML(brukerliste[i]); 
+            }            
+            document.getElementById("liste").innerHTML += resultat; 
+
+        }
+
+
+        // Lager et mini bibliotek for å bygge html-kode
+        function html(el,innhold) {
+            return "<"+el+">" + innhold + "</"+el+">"; 
+        }
+
+
+    
+    </script>
+</head>
+<body>
+
+    <button onclick="hentBruker()"> Hent en bruker fra server</button>
+    <button onclick="hentAlleBrukere()"> Hent alle brukere fra server</button>
+
+    <div id="brukervisning">
+        
+    </div>
+
+    <div id="liste">
+        
+    </div>
+
+
+    
+</body>
+</html>
