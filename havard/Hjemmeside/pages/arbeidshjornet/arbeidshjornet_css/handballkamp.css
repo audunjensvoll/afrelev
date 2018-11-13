@@ -5,7 +5,7 @@ body {
 
     .handballbildemtekst
     {
-        background: url(../bilder/arbeid.jpg) no-repeat center;
+        background: url(../../../bilder/arbeid.jpg) no-repeat center;
         background-size: cover;
         margin:0;
         padding:100px;
@@ -23,6 +23,7 @@ body {
         padding-right: 60px;
         padding-left: 60px;
         padding-top: 20px;
+        text-align: center;
     }
     
     .meny {
@@ -31,10 +32,9 @@ body {
     
     .meny li {
         display: inline-block;
-        padding: 14px 30px;
     }
     .active {
-        background-color: rgba(134, 134, 134, 0.74);
+        background-color: rgba(100, 100, 100, 0.75);
     }
     
     
@@ -50,34 +50,51 @@ body {
         display: block;
         color: white;
         text-align: center;
+        padding:14px 16px;
         text-decoration: none;
     }
     
     .meny li a:hover {
-        background-color: rgba(83, 83, 83, 0.747)
+        background-color: rgba(140, 140, 140, 0.75)
     }
     
     .hjemmelagdiv {
-        font-size:4em;
         float: left;
-        padding-left: 180px;
+        padding-left: 8%
     }
     
+    .hjemmelagdivinnhold {
+        text-align: center;
+        font-size:4em;
+    }
 
     .bortelagdiv {
-        font-size:4em;
         float: right;
-        padding-right: 180px;
+        padding-right: 8%;
     }
-    
 
-    .resetknapp
+    .bortelagdivinnhold {
+        text-align: center;
+        font-size:4em;
+    }
+
+    .resetknapppoeng
     {
         text-align: center;
-        padding-top: 400px;
+        padding-top: 100px;
     }
 
+    .tellinginnhold
+    {
+        text-align: center;
+        font-size:3.4em;
+    }
 
+    .telling
+    {
+        margin: auto;
+        text-align: center;
+    }
 
 
 

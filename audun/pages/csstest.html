@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+        #id {
+            margin: 100px;
+            background-color: rgb(255, 0, 21); 
+        }
+        
+        #id li {
+            background-color: yellow;
+            display: float;             
+            width: 50%; 
+        }
+
+        .first {
+            display: inline-block;
+            width: 240px;
+        }
+
+        .col1 {
+            color: red;
+        }
+
+        .col2 {
+            position: absolute; 
+            width: 30%;
+            color: blue;
+            right: 30px;
+            text-align: right; 
+        }
+    </style>
+</head>
+
+<body>
+    <div id="id">
+        <ul>
+            <li class="first">Første tekst</li><span class="col2">Andre tekst</span>
+            <li class="first">andre tekst er elngre tekst</li><span class="col2">Andre tekst</span>
+
+            <li>Item som er lengre </li><span class="col2">Andre tekst</span>
+            <ul>
+                <li class="first">Item 3</li><span class="col2">Andre tekst</span>
+                <li>Item 4</li><span class="col2">Andre tekst</span>
+            </ul>
+        </ul>
+        <div><span class="col1">Første tekst</span><span class="col2">Andre tekst</span></div>
+        <div><span class="col1">Neste linje. Første tekst</span><span class="col2">Andre tekst</span></div>
+    </div>
+
+</body>
+
+</html>

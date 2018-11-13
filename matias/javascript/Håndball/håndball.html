@@ -4,8 +4,98 @@
 			<meta charset="UTF-8">
             <title></title>
             <link rel="stylesheet" type="text/css" href="håndball.css">
+
+            <script>
+
+                var sek = 0;
+
+                var fortsett = true;
+
+                function tell(){
+                    if(fortsett){
+                        sek = sek + 1;
+                        skrivtid(sek);
+                        setTimeout(tell, 1000);
+                    } 
+                }
+
+                function start(){
+                    fortsett = true;
+                    setTimeout(tell, 1000);
+                }
+                
+                function stopp(){
+                    fortsett = false;
+                }
+                
+                function tallTilTekst(tall){
+                    //Sekunder og minutter som tekst
+                    if(tall < 10){
+                        return "0" + tall;
+                    } else {
+                        return tall;
+                    }
+
+                    return "" + tall;
+                }
+                
+                function skrivtid(tid){
+                    var minutter = 0;
+                    var sekunder = 0;
+
+                    //regn ut minutter og sekunder
+                    minutter = Math.floor(tid/60);
+                    sekunder = tid - 60*minutter;
+                    
+                    document.getElementById("knapp").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
+                }
+
+
+                var hlag = 0;
+                var blag = 0;
+                
+                function hjemmelag(x) {
+
+                    hlag = hlag + x;
+                    
+                    if(hlag > -1){
+                        document.getElementById("hjemmeLag").innerHTML = hlag;
+                    } else {
+                        hlag = 0;
+                        document.getElementById("hjemmelag").innerHTML = hlag;
+                    }
+                }
+
+                function bortelag(f) {
+
+                    blag = blag + f;
+
+                    if(blag > -1){
+                        document.getElementById("borteLag").innerHTML = blag;
+                    } else {
+                        blag = 0;
+                        document.getElementById("bortelag").innerHTML = blag;
+                    }
+                }
+
+                function restart(){
+                    hlag = 0;
+                    blag = 0;
+                    sek = 0;
+                    fortsett = false;
+
+                    skrivtid(sek);
+                    document.getElementById("hjemmeLag").innerHTML = hlag;
+                    document.getElementById("borteLag").innerHTML = blag;
+                    
+                }
+            </script>
 		</head>
 		<body>
+            <div>
+                <div id="knapp" class="text">00 : 00</div>
+            </div>
+
             <div id="hjemme">
                 <p class="tekst">Hjemmelag</p>
                 <br><br>
@@ -26,33 +116,10 @@
             <br>
             <p id="lag">-</p>
             <br>
-            <button id="reset" class="knapp" onclick="restart()">Restart</button>
-         <script type="text/javascript">
-            var hlag = 0;
-            var blag = 0;
-             
-            function hjemmelag(x) {
-
-                hlag = hlag + x;
-                
-                document.getElementById("hjemmeLag").innerHTML = hlag;
-            }
-
-            function bortelag(f) {
-
-                blag = blag + f;
-
-                document.getElementById("borteLag").innerHTML = blag;
-            }
-
-            function restart(){
-                hlag = 0;
-                blag = 0;
-
-                document.getElementById("hjemmeLag").innerHTML = hlag;
-                document.getElementById("borteLag").innerHTML = blag;
-            }
- 		</script>
-
-		</body>
+            <div id="reset">
+                <button class="knapp" onclick="start()">Start</button>
+                <button class="knapp" onclick="stopp()">Stopp</button>
+                <br><br>
+                <button class="knapp" onclick="restart()">Restart</button>
+            </div>
 	</html>​

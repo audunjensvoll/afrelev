@@ -1,0 +1,32 @@
+
+
+.hvisdettefunker{
+padding-left: 45%;
+padding-top: 10%;
+
+
+
+}
+
+.helkalk{
+    max-width: 150px;
+    padding-top: 10px;
+
+    text-align: center;
+    background-color:rgb(179, 179, 179);
+    border-style: solid;
+}
+
+#res{
+    text-align: right;
+    padding-right: 25%;
+
+}
+
+#kalkknap{
+    padding: 2mm;
+}
+/*
+.topptal{
+padding-right: 50%
+}

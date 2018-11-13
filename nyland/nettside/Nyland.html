@@ -5,31 +5,36 @@
         <meta charset="UTF-8">
         <title>M Nyland</title>
 
-        <div id=bf></div>
+
 
         <style>
-                ul {
+                .df {
                         background-color: hsl(209, 89%, 65%);
                 }
         </style>
-        </div>
+
+
 
         <script>
-
-                function visBoks(test) {
-
-                        alert(test)
+                function sf(f) {
+                        document
+                                .getElementById("bf")
+                                .style
+                                .backgroundColor = f
                 }
 
-        </script>
-        <script>
                 function sjul() {
-                        document.getElementById("bf").style.visibility = 'hidden';
+                        document.getElementById("df").style.visibility = 'hidden';
                 }
 
                 function vis() {
-                        document.getElementById("bf").style.visibility = 'visible';
+                        document.getElementById("df").style.visibility = 'visible';
                 }
+
+
+
+
+
         </script>
         <link rel="stylesheet" href="../css/menyvenstre.css">
 
@@ -37,52 +42,66 @@
 
 </head>
 
-<ul class="vm">
-        <li><a class="active" href="../Nyland.html">Home</a></li>
-        <li><a href="../bider.html">Flere bilder</a></li>
-        <li><a href="../intereser.html">intereser</a></li>
-        <li><a href="../forkalring.html">Forklaringer</a></li>
-        <li><a href="../nettside/javascript.html">javascript</a></li>
-        <li><a href="../forkalring.html">Forklaringer</a></li>
-        <li><a href="../nettside/trepårad/trepårad.html">Forklaringer</a></li>
+<body>
+        <ul class="vm" id=df>
+                <li><a class="active" href="../nettside/Nyland.html">Home</a></li>
+                <li><a href="../nettside/bider.html">Flere bilder</a></li>
+                <li><a href="../nettside/intereser.html">intereser</a></li>
+                <li><a href="../nettside/forkalring.html">Forklaringer</a></li>
+                <li><a href="../nettside/javascript.html">javascript</a></li>
+                <li><a href="../nettside/forkalring.html">Forklaringer</a></li>
+                <li><a href="../nettside/spill/trepårad.html">Tre på rad</a></li>
+                <li><a href="../nettside/spill/bildespill.html">bilde spill</a></li>
+                <li><a href="../nettside/klokeogrestavle.html">res tavle</a></li>
 
+                <li><a href="C:\work\afr\afrelev\nyland\nettside\spill\bildespill.html">Test område</a></li>
 
-        <li><a href="C:\work\afr\afrelev\nyland\nettside\test.html">Test område</a></li>
-</ul>
-</div>
-
-
-
-<div style="margin-left:16%;padding:1px 16px;height:1000px;">
-
+                <div>
+                        <button onclick="vis()">vis</button>
+                        <button onclick="sjul()">sjul</button>
+                </div>
+        </ul>
         <button onclick="vis()">vis</button>
         <button onclick="sjul()">sjul</button>
 
-        <style>
-                body {
-                        background-image: url("http://horecanytt.no/sites/all/files/styles/fullwidth/public/Arkiv/horecanytt/2014/Norsk-flagg-natur-Senja-Nord-Norge-turisme-24.jpg?itok=-7Ax2BHy");
-                        background-size: cover;
-                }
-        </style>
 
-        <body>
+        <div style="margin-left:16%;padding:1px 16px;height:1000px;">
+
+
+
+
+
+
+
+
+
+
+                <style>
+                        body {
+                                background-image: url("http://horecanytt.no/sites/all/files/styles/fullwidth/public/Arkiv/horecanytt/2014/Norsk-flagg-natur-Senja-Nord-Norge-turisme-24.jpg?itok=-7Ax2BHy");
+                                background-size: cover;
+                        }
+                </style>
+
+
 
                 <h1>Nyland</h1>
 
                 <img src="https://scontent.fosl2-1.fna.fbcdn.net/v/t1.0-1/c0.0.240.240/p240x240/29250007_1850391851639259_1832989777430668268_n.jpg?_nc_cat=0&oh=328d7fc998cf13180fea582bfb06a310&oe=5C311472">
                 <br><br>
                 <h2>Hjemsted</h2>
-                <p style="background-color:rgb(255, 255, 255);"><strong>Jeg er oppvogst i Kristiansund. Kristiansund er
+                <p id="bf"><strong>Jeg er oppvokst i Kristiansund. Kristiansund er
                                 en by på 25k inbygere. Den er helt nord i Møre og Romsdal.</strong></p>
-                <br>
-
-                <!--styg knap-->
-
-
-                <button onclick="visBoks('heisan')">trykk her</button>
-
+                <button onclick="sf('blue')">blue</button>
+                <button onclick="sf('lightblue')">beter blue</button>
+                <button onclick="sf('red')">red</button>
+                <button onclick="sf('white')">white</button>
+                <button onclick="sf('transparent')">non</button>
 
 
-        </body>
+
+
+
+</body>
 
 </html>

@@ -6,53 +6,101 @@
             <link rel="stylesheet" type="text/css" href="håndball.css">
 		</head>
 		<body>
-            <div id="hjemme">
-                <p class="tekst">Hjemmelag</p>
+            <form id="skjema">
+                <h2>Håndballkamp<br>
+                (du kan bare velge ett)</h2>
+                <div id="info"></div>
                 <br><br>
-                <div id="hjemmeLag">0</div>
+                Pris voksen: 140 kr
                 <br>
-                <button class="knapp" onclick="hjemmelag(1)">+</button>
-                <button class="knapp" onclick="hjemmelag(- 1)">-</button>
-            </div>
-        
-            <div id="borte">
-                <p id="tekst" class="tekst">Bortelag</p>
+                Pris barn: 60 kr
                 <br><br>
-                <div id="borteLag">0</div>
+                <label>Antall voksne:</label>
+                <input type="text" id="inpVoksen" required>
+                <br><br>
+                <label>Antall barn:</label>
+                <input type="text" id="inpBarn" required>
+                <br><br>
+                <button type="submit">Kvittering</button>
                 <br>
-                <button class="knapp" onclick="bortelag(1)">+</button>
-                <button class="knapp" onclick="bortelag(- 1)">-</button>
-            </div>
-            <br>
-            <p id="lag">-</p>
-            <br>
-            <button id="reset" class="knapp" onclick="restart()">Restart</button>
-         <script type="text/javascript">
-            var hlag = 0;
-            var blag = 0;
-             
-            function hjemmelag(x) {
+                <div id="melding"></div>
+            </form>
+		<script>
+			var skjema = document.getElementById("skjema");
+            var inpVoksen = document.getElementById("inpVoksen");
+            var inpBarn = document.getElementById("inpBarn");
+            var info = document.getElementById("info");
+            var melding = document.getElementById("melding");
 
-                hlag = hlag + x;
-                
-                document.getElementById("hjemmeLag").innerHTML = hlag;
+			var kamp = [];
+
+				kamp[0] = {navn: "Kamp 1",
+                dato: "1.juni",
+                tidspunkt: "11:00"
+                }; 
+                kamp[1] = {navn: "Kamp 2",
+                dato: "4.juni",
+                tidspunkt: "14:30"
+                }; 
+                kamp[2] = {navn: "Kamp 3",
+                dato: "6.juni",
+                tidspunkt: "13:00"
+                }; 
+
+			var sum;
+			var navn;
+			var antall;
+			var verdi;
+
+			function skrivUt(){
+                melding.innerHTML = "";
+                info.innerHTML =  "<br><br>";
+                for (var i=0;i<4;i++){
+                    info.innerHTML +=  '<input type="radio" name="kampopplevelse" value=' + i + '> <b>Dato:</b> ' + i + '. <b>Tidspunkt:</b> ' + kamp[i].tidspunkt + '. <b>Arragement:</b> ' + kamp[i].navn + '  <br>';   
+                }
             }
 
-            function bortelag(f) {
 
-                blag = blag + f;
+			skjema.onsubmit = function(evt) {
+				evt.preventDefault();
+				melding.innerHTML = "";
+				sum = 0;
+				antall = 0;
+				verdi = 0
+				navn;
 
-                document.getElementById("borteLag").innerHTML = blag;
-            }
+				//Sjekker hvilken radioknapp som er valgt
+				var valgt = info.querySelectorAll("input:checked");
+				valgt = Array.from(valgt);
 
-            function restart(){
-                hlag = 0;
-                blag = 0;
+				verdi += parseInt(valgt[0].value);
+				console.log(valgt[0].value);
+				navn = kamp[verdi].navn;
+				//Regner ut pris
+				sum = 100 * Number(inpVoksen.value) + 50 * Number(inpBarn.value);
+				antall = Number(inpBarn.value) + Number(inpVoksen.value);
 
-                document.getElementById("hjemmeLag").innerHTML = hlag;
-                document.getElementById("borteLag").innerHTML = blag;
-            }
+				if(antall > 5){
+					sum = sum * 0.8;
+				}
+
+				//Skrive ut en tilbakemeldninger til brukeren
+				if (antall > 4 && Number(inpBarn.value) > 0 && Number(inpVoksen.value)){
+					melding.innerHTML = "Du har bestilt " + antall + " til " + navn + ", " + inpVoksen.value + " voksne og " + inpBarn.value + " barn. Totalprisen er kr " + sum + ", inklusiv grupperabatt på 20 prosent";
+				} else if (antall > 4 && Number(inpVoksen.value) === 0){
+					melding.innerHTML = "Du har bestilt " + antall + " til " + navn + ", " + inpBarn.value + " barn. Totalprisen er kr " + sum + ", inklusiv grupperabatt på 20 prosent";
+				} else if (antall > 4 && Number(inpBarn.value) === 0){
+					melding.innerHTML = "Du har bestilt " + antall + " til " + navn + ", " + inpVoksen.value + " voksne. Totalprisen er kr " + sum + ", inklusiv grupperabatt på 20 prosent";
+				} else if (antall < 5 && Number(inpBarn.value) === 0){
+					melding.innerHTML = "Du har bestilt " + antall + " til " + navn + ", " + inpVoksen.value + " voksne. Totalprisen er kr " + sum + "";
+				} else if (antall < 5 && Number(inpVoksen.value) === 0){
+					melding.innerHTML = "Du har bestilt " + antall + " til " + navn + ", " + inpBarn.value + " barn. Totalprisen er kr " + sum + "";
+				} else {
+					melding.innerHTML = "Du har bestilt " + antall + " til " + navn + ", " + inpVoksen.value + " voksne og " + inpBarn.value + " barn. Totalprisen er kr " + sum + "";
+				}
+			}
+			skrivUt();
  		</script>
 
-		</body>
-	</html>​
+        </body>
+        </html>​

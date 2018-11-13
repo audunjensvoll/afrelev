@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<title>Mitt egenprosjekt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 4</a>
+</nav>
+
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h4>This is my home page</h4>
+  <h1 class="w3-xxxlarge w3-animate-bottom">Learn about me and what I do</h1>
+    <div class="w3-padding-32">
+      <button onclick="bilde()">My picture</button>
+    </div>
+  </div>
+</header>
+
+
+    </div>
+</div>
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Responsive</h3><br>
+  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>Built-in responsiveness</p>
+  <p>I make simple pages</p>
+  <p>Fits any screen sizes</p>
+  <p>Can be viewed across all platforms</p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Made using standard CSS</h3><br>
+  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>Simple codes</p>
+  <p>Easy to learn</p>
+  <p>No jQuery used</p>
+  <p>No need for a JavaScript library</p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Design</h3><br>
+  <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>Paper like design</p>
+  <p>Bold colors and shadows</p>
+  <p>Equal across platforms</p>
+  <p>Pretty simple becuase my imagination is non existent</p>
+  </div>
+</div>
+</div>
+
+<div class="w3-container">
+<hr>
+<div class="w3-center">
+  <h2>Color Classes</h2>
+</div>
+
+<div class="w3-row">
+  <div class="w3-col w3-container m2 w3-red"><p></p></div>
+  <div class="w3-col w3-container m2 w3-blue"><p></p></div>
+  <div class="w3-col w3-container m2 w3-blue-grey"><p></p></div>
+  <div class="w3-col w3-container m2 w3-teal"><p></p></div>
+  <div class="w3-col w3-container m2 w3-yellow"><p></p></div>
+  <div class="w3-col w3-container m2 w3-orange"><p></p></div>
+</div>
+
+<hr>
+
+
+</div>
+
+<hr>
+<h2 class="w3-center">Facts about Svalbard</h2>
+<div class="w3-border">
+<div class="w3-bar w3-theme">
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'London')">Svalbard</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Paris')">Longyearbyen</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Tokyo')">Barentsburg</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Pyramiden')">Pyramiden</button>
+</div>
+
+<div id="London" class="w3-container city w3-animate-opacity">
+  <h2>Svalbard</h2>
+  <p>Svalbard is a beautiful archipelago in the middle of the sea</p>
+  <p>is a Norwegian archipelago in the Arctic Ocean. Situated north of mainland Europe, it is about midway between continental Norway and the North Pole. The islands of the group range from 74° to 81° northlatitude, and from 10° to 35° east longitude. The largest island is Spitsbergen, followed by Nordaustlandet and Edgeøya. Administratively, the archipelago is not part of any Norwegian county, but forms an unincorporated area administered by a governor appointed by the Norwegian government.</p>
+</div>
+
+<div id="Paris" class="w3-container city w3-animate-opacity">
+  <h2>Longyearbyen</h2>
+  <p>Longyearbyen is the main Norwegian settlement on Svalbard.</p> 
+  <p>Longyearbyen is the largest settlement and the administrative centre of Svalbard, Norway. As of December 2015, the town had a population of 2,144. Longyearbyen is located in the Longyear Valley and on the shore of Adventfjorden, a bay of Isfjorden located on the west coast of Spitsbergen. Since 2002, Longyearbyen Community Council has had many of the same responsibilities of a municipality, including utilities, education, cultural facilities, fire brigade, roads and ports. The town is the seat of the Governor of Svalbard. It is the world's northernmost settlement of any kind with more than 1,000 permanent residents.</p>
+</div>
+
+<div id="Tokyo" class="w3-container city w3-animate-opacity">
+  <h2>Barentsburg</h2>
+  <p>Barentsburg is a mining community</p>
+  <p>It is located about 40 kilometers southwest of Longyearbyen and is the second largest settlement on Svalbard. The Russian state-owned mining company Trust Artikugol owns and operates the coal mine and the community, and the annual coal production is about 160,000 tonnes.</p>
+  <p>The mine is located in the middle of Barentsburg, about 500 meters below the ground. The settlement had at most about 1,500 inhabitants, but by the 1990s, the population declined. Fewer than 500 people including children now live in Barentsburg (March 2007). Just over half of the population comes from Ukraine, while the rest are from Russia.
+    Barentsburg has its own coal power plants, hospitals, hotels, schools, kindergartens and culture and sports. The community receives supplies by boat from Murmansk few times a year. Russian consulate on Svalbard is in Barentsburg, and the Russian Academy of Sciences has a research center there. Trust Artikugol purchased the mining facilities of the Dutch company Nederlandsche Spitzbergen Companie in 1932.
+    </p>
+</div>
+</div>
+
+</div>
+<br>
+<div class="w3-center">
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-theme">Some links <i class="fa fa-caret-down"></i></button>
+    <div class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="../rudi_index.html" class="w3-bar-item w3-button">Home Page</a>
+      <a href="../Pages/Css2.html" class="w3-bar-item w3-button">Photo Gallery</a>
+      <a href="#" class="w3-bar-item w3-button">Not Specified</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<hr>
+<div class="w3-center">
+  <h2>Page navigation</h2>
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-theme">«</a>
+      <a href="#" class="w3-bar-item w3-button w3-theme w3-hover-theme">1</a>
+      <a href="../Pages/CSS/Kalkulator.html" class="w3-bar-item w3-button w3-hover-theme">2</a>
+      <a href="../Pages/Resultattavle.HTML" class="w3-bar-item w3-button w3-hover-theme">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-theme">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-theme">5</a>
+      <a href="../Pages/CSS/Kalkulator.html" class="w3-bar-item w3-button w3-hover-theme">»</a>
+    </div>
+  </div>
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <h3>If you want to contact me!</h3>
+  <p>Email: Rudi.jakobsen@hotmail.com</p>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+  <p>TLF: 0047 90 992 806</p>
+</footer>
+
+
+<script>
+// Side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "100%";
+    x.style.fontSize = "40px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+      activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+showDivs(1);
+
+
+</script>
+
+</body>
+</html>
