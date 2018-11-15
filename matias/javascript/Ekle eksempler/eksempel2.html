@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+            <title></title>
+            <style>
+                
+            </style>
+            <script>
+
+                var sek = 0;
+
+                var fortsett = true;
+
+                function tell(){
+                    if(fortsett){
+                        sek = sek + 1;
+                        skrivtid(sek);
+                        setTimeout(tell, 1000);
+                    } 
+                }
+
+                function start(){
+                    fortsett = true;
+                    setTimeout(tell, 1000);
+                }
+                
+                function stopp(){
+                    fortsett = false;
+                }
+                
+                function tallTilTekst(tall){
+                    //Sekunder og minutter som tekst
+                    if(tall < 10){
+                        return "0" + tall;
+                    } else {
+                        return tall;
+                    }
+
+                    return "" + tall;
+                }
+                
+                function skrivtid(tid){
+                    var minutter = 0;
+                    var sekunder = 0;
+
+                    //regn ut minutter og sekunder
+                    minutter = Math.floor(tid/60);
+                    sekunder = tid - 60*minutter;
+                    
+                    document.getElementById("knapp").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
+                }
+
+                function reset(){
+                    sek = 0;
+                    fortsett = false; 
+                    skrivtid(sek);
+                }
+            
+            </script>
+		</head>
+		<body>
+            <div>
+                <button onclick="start()">Endre tall</button>
+                <button onclick="stopp()">Stopp</button>
+                <button onclick="reset()">Restart</button>
+            </div>
+
+            <div>
+                <div id="knapp">00 : 00</div>
+            </div>
+		</body>
+	</html>​

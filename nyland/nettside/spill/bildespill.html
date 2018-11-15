@@ -1,13 +1,53 @@
-
-<style>
+<head>
+    <style>
         body {
-                background-image: url("http://horecanytt.no/sites/all/files/styles/fullwidth/public/Arkiv/horecanytt/2014/Norsk-flagg-natur-Senja-Nord-Norge-turisme-24.jpg?itok=-7Ax2BHy");
-                background-repeat: no-repeat
-                
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            background-image: url("http://horecanytt.no/sites/all/files/styles/fullwidth/public/Arkiv/horecanytt/2014/Norsk-flagg-natur-Senja-Nord-Norge-turisme-24.jpg?itok=-7Ax2BHy");
+            background-repeat: no-repeat
         }
-</style>
 
+.c{
+    font-size: 0%;
+}
 
-<div class=bakrun>
+        .rute {
+            height: 190;
+            width: 330;
+            background-color: Tomato;
+            
+            display:inline-block;            
+        }
 
+    </style>
+
+    <script>
+        var farge1 = "transparent";
+        var farge = farge1;
+
+        function sjul(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) 
+            
+            {}
+        }
+    </script>
+
+</head>
+<body>
+<div class="c">
+    <div id="rute1" class="rute" onclick="sjul('rute1')"></div>
+    <div id="rute2" class="rute" onclick="sjul('rute2')"></div>
+    <div id="rute3" class="rute" onclick="sjul('rute3')"></div>
+    <br>
+    <div id="rute4" class="rute" onclick="sjul('rute4')"></div>
+    <div id="rute5" class="rute" onclick="sjul('rute5')"></div>
+    <div id="rute6" class="rute" onclick="sjul('rute6')"></div>
+    <br>
+    <div id="rute7" class="rute" onclick="sjul('rute7')"></div>
+    <div id="rute8" class="rute" onclick="sjul('rute8')"></div>
+    <div id="rute9" class="rute" onclick="sjul('rute9')"></div>
+    <br>
 </div>
+

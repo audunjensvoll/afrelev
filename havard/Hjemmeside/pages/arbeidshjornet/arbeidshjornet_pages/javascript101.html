@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Jvascript101</title>
+
+
+    <script>
+        function test1() {
+            document.getElementById("resultat").innerHTML = "Her er Resultatet";
+        }
+
+        function test2(hilsen) {
+            document.getElementById("resultat").innerHTML = hilsen;
+        }
+
+        function test3(hilsen1, hilsen2) {
+            var resultat;
+            resultat = hilsen1 + " " + hilsen2;
+            document.getElementById("resultat").innerHTML = resultat
+        }
+
+        function test4(tall1, tall2) {
+            var kommode = [];
+            kommode[0] = tall1;
+            kommode[1] = tall2;
+            resultat = kommode[0] + kommode[1];
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function test5() {
+            var kommode = [];
+            kommode[0] = 'Per';
+            kommode[1] = 'Anna';
+            kommode[2] = 'Jens';
+            kommode[3] = 6;
+            var resultat = kommode.sort().join(' || ');
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function test6() {
+            var biler = ["Audi", "Ford", "Opel", "Mujaffa sin BMW"];
+            document.getElementById("resultat").innerHTML = array2ul(biler);
+        }
+
+        function array2ul(arr) {
+            var resultat = "<ul>";
+            for (var i = 0; i < arr.length; i = i + 1) {
+                resultat = resultat + "<li>" + arr[i] + "</li>"
+            }
+            resultat = resultat + "</ul>";
+            return resultat;
+
+
+
+            document.getElementById("resultat").innerHTML = resultat;
+
+        }
+
+        function test7() {
+            var navn = ["Marius", "Øystein", "Aleksander", "John Chaser"]
+            document.getElementById("resultat").innerHTML = array2ul2(navn);
+        }
+
+        function array2ul2(arr2) {
+            var resultat = "<ul>";
+
+            for (var i = 0; i < arr2.length; i = i + 1) {
+
+                resultat = resultat + "<li>" + navn[i] + "</li>";
+            }
+            resultat = resultat + "</ul>";
+            return resultat;
+
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function test8()
+        {
+            var hus = 
+            {
+                type = "rekkehus",
+                husnr = "S26",
+                farge = "hot pink"
+            }
+
+        }
+
+        function 
+
+
+    </script>
+
+
+</head>
+
+
+<body>
+
+    <div>
+        <button onclick="test1()">Kall funksjon</button>
+    </div>
+
+    <div>
+        <button onclick="test2('ayylmao')">Heente funksjoonen</button>
+    </div>
+
+    <div>
+        <button onclick="test3('nice abs', 'bro')">Yo bro</button>
+    </div>
+
+    <div>
+        <button onclick="test4(3, 7)">Array test</button>
+    </div>
+    <div>
+        <button onclick="test5()">Mer om array</button>
+    </div>
+
+    <div>
+        <button onclick="test6()">For løkke</button>
+    </div>
+    <div>
+        <button onclick="test7()">Navnedag</button>
+    </div>
+
+    <div>
+        <h1>Resultat</h1>
+        <div id="resultat"></div>
+    </div>
+
+</body>
+
+
+</html>

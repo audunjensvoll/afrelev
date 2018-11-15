@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript 102</title>
+    <script>
+        function lagObjekter() {
+            // Ofte skal vi lage mange objekter av samme "type".  Vi lager da en funksjon for dette.
+            // Dette kalles en Factory-funksjon.  Den er laget for å lage objekter av en gitt type
+            // Noen språk har klasser, men det har ikke Javascript.  Derfor bruker vi Factory-funksjoner 
+            // for å lage objekter.
+            // Factory-funksjoner pleier vi å gi stor forbokstav
+            function Person(navn, alder, adresse) {
+                var person = {}; 
+                person.navn = navn; 
+                person.alder = alder; 
+                person.adresse = adresse;                 
+                return person; 
+            }
+
+            // Etterpå blir det lett å lage flere objekter (her personer i en array)
+            var personer = [
+                new Person("Mons",37,"Oslo"),
+                new Person("Peder",40,"Hønefoss"),
+                new Person("Gunnar",86,"Røros")
+            ]; 
+            
+
+            var resultat = ""; 
+            // for-løkke for å løpe gjennom personene
+            for (var i=0; i<personer.length; i++) {
+                var person = personer[i]; 
+                resultat+= "<h2>" + person.navn + "</h2>"; 
+                // variant av forløkke for å finne alle egenskapene i et objekt
+                for (var egenskap in person){                
+                    resultat+= "<p>" + egenskap + ": " + person[egenskap] + "</p>"; 
+                }
+            }
+
+            document.getElementById("resultat").innerHTML = resultat; 
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript 102 - om objekter</h1>
+    <div>
+        <button onclick="lagObjekter()">Lage objekter</button>
+    </div>
+
+    <div id="resultat"></div>
+
+
+    
+</body>
+</html>

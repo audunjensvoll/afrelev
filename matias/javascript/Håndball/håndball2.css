@@ -1,0 +1,67 @@
+body{
+    
+}
+#knapp{
+    position: absolute;
+    top: 10%;
+    left: 42.7%;
+    font-size: 48px;
+}
+.container{
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+	width: 750px;
+	min-height: 50px;
+	height: auto;
+}
+
+#hjemme{
+    float: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#borte{
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tekst{
+    font-size: 18px;
+    margin-left: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#tekst{
+    margin-left: 31px;
+}
+
+.text{
+    font-size: 34px;
+    font-family: Verdana;
+}
+
+#hjemmeLag{
+    font-size: 150px;
+    margin-left: 25px;
+}
+
+#borteLag{
+    font-size: 150px;
+    margin-left: 25px;
+}
+
+.knapp{
+    font-size: 16px;
+    padding: 2px 30px;
+    border: solid 2px blue;
+    background-color: white;
+}
+
+#reset{
+    position: absolute;
+    top: 65%;
+    left: 42.2%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

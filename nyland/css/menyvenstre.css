@@ -6,7 +6,7 @@
                 margin: 0;
                 padding: 0;
                 width: 10%;
-                background-color: hsl <!--fjern for farge--> (209, 89%, 65%);
+                background-color: hsl<!--fjern for farge-->(209, 89%, 65%);
                 position: fixed;
                 height: 100%;
                 overflow: auto;

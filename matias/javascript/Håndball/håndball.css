@@ -30,6 +30,11 @@
     margin-left: 31px;
 }
 
+.text{
+    font-size: 34px;
+    font-family: Verdana;
+}
+
 #hjemmeLag{
     font-size: 150px;
     margin-left: 25px;
@@ -49,7 +54,8 @@
 
 #reset{
     position: absolute;
-    margin-top: 600px;
-    margin-left: 194px;
+    margin-top: 550px;
+    text-align: center;
+    margin-left: 500px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

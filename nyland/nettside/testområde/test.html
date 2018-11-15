@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>javacript</title>
+    <script>
+        function test1() {
+            document.getElementById("resultat").innerHTML = "her er test"
+        }
+
+        function test2(koko) {
+            document.getElementById("resultat").innerHTML = koko
+        }
+        //fungsjon
+        function test3(koko, kaka) {
+            var resultat = "";
+            resultat = koko + kaka
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function test4(tall1, tall2) {
+            var kommode = [];
+            kommode[0] = tall1;
+            kommode[1] = tall2;
+
+            var resultat = "";
+            resultat = kommode[0] + kommode[1];
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+        function test5() {
+            var kommode = [];
+            kommode[0] = 'per';
+            kommode[1] = 'anna';
+            kommode[2] = 'jon';
+            kommode[3] = 6;
+
+            var resultat = kommode.sort().join(' - ');
+
+            document.getElementById("resultat").innerHTML = resultat;
+        }
+
+        function test6() {
+
+            var biler = ["audi", "ford", "opel", "bmw"]
+
+            document.getElementById("resultat").innerHTML = array2ul(biler)
+        }
+
+        function test7() {
+            var navn = ["per", "tove", "hans", "anne"]
+            document.getElementById("resultat").innerHTML = array2ul(navn.sort())
+
+        }
+        function array2ul(arr) {
+            var resultat = "<ul>"
+
+            //byt i nr2 med 1
+            for (var i = 0; i < biler.length; i++) {
+                resultat = resultat + "<li>" + arr[i] + "</li>"
+            }
+            resultat = resultat + "</ul>"
+            return resultat
+        }
+
+function test8(){
+
+var fyr= {
+høyde="1.84m",
+kg=75,
+trener=trenerikke
+}
+
+
+
+}
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <div>
+        <button onclick="test7()">mer arry test</button>
+        <button onclick="test6()">for-løkker</button>
+        <button onclick="test5()">mer arry test</button>
+        <button onclick="test4(3 , 4)">arry test</button>
+        <button onclick="test3('lala' , ' lolo')">kall fungsjon med parameter</button>
+        <button onclick="test2('lala')">kall fungsjon med parameter</button>
+        <button onclick="test1()">kall fungsjon</button>
+    </div>
+    <div>
+        <h1>resultat</h1>
+        <div id="resultat"></div>
+    </div>
+
+</body>
