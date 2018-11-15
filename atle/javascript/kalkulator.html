@@ -76,9 +76,9 @@
                 operasjon = '/';
                 reset();
             }
-            else if (verdi == '%'){
+            else if (verdi == 'sin'){
                 tall1 = Number(resultattekst);
-                operasjon = '%';
+                operasjon = 'sin';
                 reset();
             }
             
@@ -104,9 +104,19 @@
         resultattekst = "0"; 
         skriv();
     }
+    function keypress(event){   
+        console.log("tast trykket: " + event.key + " " + event.keyCode);
+        var key = event.key;
+        if (key >= '0' && key <= "9") {
+            klikk(key);
+        }
+        else {
+            kommando(key.toUpperCase());
+        }
+    }
     </script>
 </head>
-<body>
+<body onkeypress="keypress(event)">
  
     <div id="resultat">
         0
