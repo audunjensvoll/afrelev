@@ -1,75 +1,44 @@
 <head>
     <style>
         body {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
             background-image: url("http://horecanytt.no/sites/all/files/styles/fullwidth/public/Arkiv/horecanytt/2014/Norsk-flagg-natur-Senja-Nord-Norge-turisme-24.jpg?itok=-7Ax2BHy");
             background-repeat: no-repeat
         }
 
-
-
-        .c {
-            ;
-        }
-
+.c{
+    font-size: 0%;
+}
 
         .rute {
-            height: 180;
-            width: 310;
+            height: 190;
+            width: 330;
             background-color: Tomato;
-            border: solid;
-            display: inline-block;
+            
+            display:inline-block;            
         }
-
-
-
 
     </style>
 
-
     <script>
-        
-                var farge1 =.hide;
-        
-
+        var farge1 = "transparent";
         var farge = farge1;
 
         function sjul(id) {
             document.getElementById(id).style.backgroundColor = farge;
-            if (farge == farge1) {
-
-}
-
+            if (farge == farge1) 
+            
+            {}
         }
-/*
-                function sjul() {
-                        document.getElementById("df").style.visibility = 'hidden';
-
-                }
-
-                                function sjul() {
-
-                        document.getElementById("df1").style.visibility = 'hidden';
-
-
-                }
-*/
-
-
     </script>
 
-
-
-
-
-
-
-
 </head>
-<!-
 <body>
 <div class="c">
-    <div id="eee" class="rute" onclick="sjul('rute1')"></div>
-    <div id="eee" class="rute" onclick="sjul('rute2')"></div>
+    <div id="rute1" class="rute" onclick="sjul('rute1')"></div>
+    <div id="rute2" class="rute" onclick="sjul('rute2')"></div>
     <div id="rute3" class="rute" onclick="sjul('rute3')"></div>
     <br>
     <div id="rute4" class="rute" onclick="sjul('rute4')"></div>
@@ -81,24 +50,4 @@
     <div id="rute9" class="rute" onclick="sjul('rute9')"></div>
     <br>
 </div>
--->
-<!--
-<div id="rute1" class="rute" onclick="sjul('rute1')"></div>
-<div id="rute2" class="rute" onclick="sjul('rute2')"></div>
 
-
-<button id="df1" class="rute" onclick="sjul('df1')">sjul</button>
-<button id="df1" class="rute" onclick="sjul()">sjul</button>
-
-<button class="rute" id="df" onclick="sjul('df1')">sjul</button>
-
-<button class="rute" id="df3" onclick="sjul()">sjul</button>
-<br>
-<button class="rute" id="df" id="rute4" onclick="sjul('rute4')">sjul</button>
-<button class="rute" id="df" id="rute5" onclick="sjul('rute5')">sjul</button>
-<button class="rute" id="df" id="rute6" onclick="sjul('rute6')">sjul</button>
-<br>
-<button class="rute" id="df" id="rute7" onclick="sjul('rute7')">sjul</button>
-<button class="rute" id="df" id="rute8" onclick="sjul('rute8')">sjul</button>
-<button class="rute" id="df" id="rute9" onclick="sjul('rute9')">sjul</button>
-</body>

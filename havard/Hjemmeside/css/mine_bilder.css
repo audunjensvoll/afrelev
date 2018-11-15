@@ -3,49 +3,12 @@ body {
     margin:0;
     }
 
-.bildemtekst
+.minebilderbildemtekst
 {
     background: url(modellpose_1.jpeg) no-repeat center;
     background-size: cover;
     margin:0;
     padding:325px;
-    text-align:center;
-    font-size:3.4em;
-    letter-spacing: 2px;
-    word-spacing: 10px;
-    color:white;
-}
-
-.fordebildemtekst{
-    background: url(../bilder/forde.JPG) no-repeat center;
-    background-size: cover;
-    margin:0;
-    padding:325px;
-    text-align:center;
-    font-size:3.4em;
-    letter-spacing: 2px;
-    word-spacing: 10px;
-    color:white;
-}
-
-.ommegbildemtekst{
-    background: url(../bilder/Le\ Mans\ 2016\ 1.jpg) no-repeat center;
-    background-size: cover;
-    margin:0;
-    padding:325px;
-    text-align:center;
-    font-size:3.4em;
-    letter-spacing: 2px;
-    word-spacing: 10px;
-    color:white;
-}
-
-.arbeidshjornetbildemtekst
-{
-    background: url(../bilder/arbeid.jpg) no-repeat center;
-    background-size: cover;
-    margin:0;
-    padding:100px;
     text-align:center;
     font-size:3.4em;
     letter-spacing: 2px;
@@ -93,4 +56,12 @@ body {
 
 .meny li a:hover {
     background-color: rgba(140, 140, 140, 0.75)
+}
+
+.bilder {
+    text-align: center;
+}
+
+.bilde1 {
+    
 }
