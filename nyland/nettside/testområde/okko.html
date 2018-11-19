@@ -53,7 +53,7 @@
                 rad =
                     html("td", brukerliste[i].navn)
                     + html("td", brukerliste[i].id)
-                    + html("td", brukerliste[i].epost);
+                    + html("td", brukerliste[i].epost)
 
                 rad = html("tr", rad);
                 tekst = tekst + rad;
@@ -80,7 +80,8 @@
                 rad =
                     html("td", liste[i].name)
                     + html("td", liste[i].id)
-                    + html("td", liste[i].email);
+                    + html("td", liste[i].email)
+                    + html("td", liste[i].address.city);
 
                 rad = html("tr", rad);
                 tekst = tekst + rad;
@@ -90,7 +91,8 @@
         }
 
         function skrivBruker(bruker) {
-            var brukertekst = html("li", bruker.navn)
+            var brukertekst =
+                html("li", bruker.navn)
                 + html("li", bruker.id)
                 + html("li", bruker.epost)
 
