@@ -102,6 +102,24 @@
                 }
 
 
+                Function keypress(event) {
+                        cosole.log("taste trykket:" + event.key + "" + event.keyCode);
+                        var key = event.key;
+                        if (key>= "0" && key <= "9") {
+                                klikk(key);
+                        }
+                        else {
+                                kommando(key.toUpperCase());
+                        }
+                }
+
+
+
+
+
+
+
+
 
         </script>
 

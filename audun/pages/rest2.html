@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av webtjenester</title>
+
+    <script src="afrlib.js"> 
+    </script>
+    <script>
+
+        function hentBilde(nr) {
+            var urltilrest = "https://jsonplaceholder.typicode.com/photos/" + nr;
+            get(urltilrest, skrivBilde);
+
+        }
+
+        function skrivBilde(respons) {
+            var bildetekst = "<img src=" + respons.url + ">";
+            skriv("resultat", bildetekst);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Test av webtjenester, henter fra https://jsonplaceholder.typicode.com/photos/5</h1>
+
+
+    <button onclick="hentBilde(1)">Bilde1</button>
+    <button onclick="hentBilde(2)">Bilde2</button>
+    <button onclick="hentBilde(3)">Bilde3</button>
+    <button onclick="hentBilde(4)">Bilde4</button>
+    <button onclick="hentBilde(5)">Bilde5</button>
+    <div id="resultat"></div>
+
+</body>
+
+</html>
