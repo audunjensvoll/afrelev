@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+            <title></title>
+            
+            <style>
+                .knapp{
+                    font-size: 16px;
+                    padding: 12px;
+                    border: solid 1.5px black;
+                    background-color: white;
+                } 
+                #resultat{
+                    position: relative;
+                    font-size: 25px;
+                    border: solid 1px black;
+                    padding: 10px;
+                    width: 134px;
+                    text-align: right;
+                } 
+            </style>
+
+
+            <script>
+                var resultatTekst = " ";
+                var tall1 = 0;
+                var tall2 = 0;
+                var operasjon = '';
+
+                function skriv(){
+                    document.getElementById("resultat").innerHTML = resultatTekst; 
+                }
+
+                function klikk(verdi){
+                    if(resultatTekst == '0'){
+                        resultatTekst = verdi;
+                    } else {
+                        resultatTekst += verdi
+                    }
+                    skriv();
+                }
+
+                function kommando(verdi){
+                    if (verdi == "C"){
+                        reset();
+                    } else if (verdi == '.' ){
+
+                        //Bare ett desimalkomma
+                        if(resultatTekst.includes('.')){
+                        }  else if (resultatTekst == "0"){
+                            resultatTekst = "0.";
+                            skriv();
+                        } else {
+                            klikk('.');
+                        }
+                    } else if (verdi == '0'){
+                        if(resultatTekst == "0"){
+
+                        } else {
+                            klikk('0');
+                        }
+                    } else if(verdi == '+'){
+                        tall1 = Number(resultatTekst);
+                        operasjon = '+';
+                        reset();
+
+                    } else if(verdi == '-'){
+                        tall1 = Number(resultatTekst);
+                        operasjon = '-';
+                        reset();
+
+                    } else if(verdi == '*'){
+                        tall1 = Number(resultatTekst);
+                        operasjon = '*';
+                        reset();
+
+                    } else if(verdi == '/'){
+                        tall1 = Number(resultatTekst);
+                        operasjon = '/';
+                        reset();
+
+                    } else if(verdi == '%'){
+                        tall1 = Number(resultatTekst);
+                        operasjon = '%';
+                        reset();
+
+
+                    } else if (verdi == '='){
+                        tall2 = Number(resultatTekst);
+                        if(operasjon == '+'){
+                            resultatTekst = tall1 + tall2;
+                        } else if(operasjon == '-'){
+                            resultatTekst = tall1 - tall2;
+                        } else if(operasjon == '*'){
+                            resultatTekst = tall1 * tall2;
+                        } else if(operasjon == '/'){
+                            resultatTekst = tall1 / tall2;
+                        }  else if(operasjon == '%'){
+                            resultatTekst = tall1 / 100 * tall2;
+                        }
+                        skriv();
+                    }
+                }
+
+                function reset(){
+                    resultatTekst = "0";
+                    skriv();
+                }
+            </script>
+		</head>
+		<body>
+            <div id="resultat">0</div>
+            <div>
+                <button class="knapp" onclick="kommando('%')">%</button>
+                <button class="knapp" onclick="kommando('/')">/</button>
+                <br>
+                <button class="knapp" onclick="klikk('7')">7</button>
+                <button class="knapp" onclick="klikk('8')">8</button>
+                <button class="knapp" onclick="klikk('9')">9</button>
+                <button class="knapp" onclick="kommando('*')">x</button>
+                <br>
+                <button class="knapp" onclick="klikk('4')">4</button>
+                <button class="knapp" onclick="klikk('5')">5</button>
+                <button class="knapp" onclick="klikk('6')">6</button>
+                <button class="knapp" onclick="kommando('-')">-</button>
+                <br>
+                <button class="knapp" onclick="klikk('1')">1</button>
+                <button class="knapp" onclick="klikk('2')">2</button>
+                <button class="knapp" onclick="klikk('3')">3</button>
+                <button class="knapp" onclick="kommando('+')">+</button>
+                <br>
+                <button class="knapp" onclick="kommando('0')">0</button>
+                <button class="knapp" onclick="kommando('.')">.</button>
+                <button class="knapp" onclick="kommando('C')">C</button>
+                <button class="knapp" onclick="kommando('=')">=</button>
+            </div>
+        </body>
+	</html>​
