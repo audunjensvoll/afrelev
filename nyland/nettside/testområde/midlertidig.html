@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av webtjenester</title>
+    <!--
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    -->
+    <script>
+        function skriv(id, innhold) {
+            document.getElementById(id).innerHTML = innhold;
+        }
+
+        function html(element, innhold) {
+            return "<" + element + ">" + innhold + "</" + element + ">";
+        }
+
+        function get(url, onOk) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    onOk(JSON.parse(this.responseText));
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }        
+    </script>
+    <script>
+
+        var enbruker = {
+            id: 123,
+            navn: "Anders",
+            epost: "anders@test.no"
+        }
+
+        var brukerliste = [
+            { id: 123, navn: "Anders", epost: "anders@test.no" },
+            { id: 111, navn: "Emma", epost: "emma@test.no" },
+            { id: 123, navn: "Peder", epost: "peder@test.no" }
+        ];
+
+        function skrivListe() {
+            var tekst = "";
+            var rad = ""; 
+            for (var i in brukerliste) {
+                rad = 
+                html("td", brukerliste[i].navn)
+                + html("td", brukerliste[i].id)
+                + html("td", brukerliste[i].epost); 
+
+                rad = html("tr",rad);
+                tekst = tekst + rad;
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+
+        function hentFraServer()
+        {
+            get("https://jsonplaceholder.typicode.com/users",behandle)
+        }
+
+        function behandle(liste)
+        {
+            var tekst = "";
+            var rad = ""; 
+            for (var i in liste) {
+                rad = 
+                html("td", liste[i].name)
+                + html("td", liste[i].id)
+                + html("td", liste[i].email); 
+
+                rad = html("tr",rad);
+                tekst = tekst + rad;
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+
+
+        function skrivBruker(bruker) {
+            var brukertekst = html("li", bruker.navn)
+                + html("li", bruker.id)
+                + html("li", bruker.epost);
+
+            skriv("resultat", html("ul", brukertekst));
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Test av webtjenester</h1>
+
+    <button onclick="skrivBruker(enbruker)">Skriv en bruker</button>
+    <button onclick="skrivListe()">Skriv alle brukere</button>
+    <button onclick="hentFraServer()">Hent fra server</button>
+
+    <div id="resultat"></div>
+
+
+    
+
+</body>
+
+</html>

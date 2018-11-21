@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript 101</title>
+    <script> 
+    function test1()
+    {
+        document.getElementById("resultat").innerHTML="Her er resultatet";
+    }
+    function test2(Hilsen)
+    {
+        document.getElementById("resultat").innerHTML=Hilsen;
+    }
+    //Funksjon for å vise 2 paramtre
+    /*
+    Comment on multiple lines my dude
+    */
+    function test3(hilsen1, hilsen2)
+    {
+    var resultat; 
+    resultat = hilsen1 + ' ' + hilsen2;
+    document.getElementById("resultat").innerHTML=resultat;
+    }
+    function test4(tall1, tall2)
+    {
+        var kommode = [];
+        kommode[0] = tall1;
+        kommode[1] = tall2;
+        var resultat ="";
+        resultat = kommode[0] + kommode[1];
+        document.getElementById("resultat").innerHTML=resultat;
+    }
+    function test5() {
+        var kommode = [];
+        kommode[0] ='Per';
+        kommode[1] ='Anna';
+        kommode[2] ='Jens';
+        kommode[3] =6;
+        var resultat = kommode.sort().join(' :: ');
+        document.getElementById("resultat").innerHTML=resultat;
+    }
+    </script>
+</head>
+<body>
+ <div>
+     <button onclick=""
+     <button onclick="test4(69696969,49929349)">test med array</button>
+     <button onclick="test3('Heisann' ,'Hoppsan')">Kall funksjon med 2 parametre</button>
+     <button onclick="test2('Heisann')">Kall funksjon med parameter</button>
+     <button onclick="test1()"> Kall funksjon</button>
+ </div>
+ <div>
+     <h1>Resultatet</h1>
+     <div id="resultat"></div>
+ </div>   
+</body>
+</html>
