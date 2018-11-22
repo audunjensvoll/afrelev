@@ -88,7 +88,19 @@
                 rad = 
                 html("td", liste[i].name)
                 + html("td", liste[i].id)
-                + html("td", liste[i].email); 
+                + html("td", liste[i].username);
+                + html("td", liste[i].email);
+                + html("td", liste[i].address.street);
+                + html("td", liste[i].address.suite);
+                + html("td", liste[i].address.city);
+                + html("td", liste[i].address.zipcode);
+                + html("td", liste[i].address.geo.lat);
+                + html("td", liste[i].address.geo.lng);
+                + html("td", liste[i].phone);
+                + html("td", liste[i].website);
+                + html("td", liste[i].company.name);
+                + html("td", liste[i].company.catchPhrase);
+                + html("td", liste[i].company.bs); 
 
                 rad = html("tr",rad);
                 tekst = tekst + rad;
