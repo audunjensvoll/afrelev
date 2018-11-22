@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Input Demo</title>
+
+    <style>
+        table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+    
+            td,
+            th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+    
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+
+    <script src="../arbeidshjornet_js/afrlib.js"></script>
+    <script>
+
+        var aboliste = [];
+
+        function lagre() {
+            var abonnent = {
+                navn: document.getElementById("input_navn").value,
+                brukernavn: document.getElementById("input_brukernavn").value,
+                passord: document.getElementById("input_passord").value,
+                fodselsdato: document.getElementById("input_fodselsdato").value,
+                tlf: document.getElementById("input_tlf").value,
+                epost: document.getElementById("input_epost").value
+            }
+            //var navn = document.getElementById("input_navn").value;
+            //var tlf = document.getElementById("input_tlf").value;
+            //skriv("resultat", abonnent.navn + "," + abonnent.tlf);
+            aboliste.push(abonnent);
+            skrivAbo();
+        }
+
+        function skrivAbo() {
+            var res = "";
+            for (var i in aboliste) {
+                var abo = aboliste[i];
+                res = res + html("td", abo.navn)
+                    + html("td", abo.brukernavn)
+                    + html("td", abo.passord)
+                    + html("td", abo.fodselsdato)
+                    + html("td", abo.tlf)
+                    + html("td", abo.epost);
+            }
+            res = html("table", res);
+            skriv("resultat", res);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Ny Bruker</h1>
+    Navn: <input type="text" id="input_navn"> <br>
+    Brukernavn: <input type="text" id="input_brukernavn"> <br>
+    Passord: <input type="password" id="input_passord"> <br>
+    Fødselsdato: <input type="date" id="input_fodselsdato"> <br>
+    Tlf: <input type="tel" id="input_tlf"> <br>
+    Epost: <input type="email" id="input_epost"> <br>
+
+
+
+    <button onclick="lagre()">Lagre</button>
+
+    <hr>
+    <div id="resultat"></div>
+
+</body>
+
+</html>
