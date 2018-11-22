@@ -10,7 +10,7 @@ body {
         text-align: center;
         padding-left: 200px;
         padding-right: 150px;
-        padding-top: 70px;
+        padding-top: 80px;
     }
 
     .toppfelt
@@ -20,8 +20,8 @@ body {
         padding: 14px;        
         width: 100%;
         position: fixed;
-        border-bottom: 5px;
-        border-bottom-color: rgb(83, 83, 83);
+        border: 5px;
+        border-color: rgb(252, 0, 0);
     }
 
     .meny {
