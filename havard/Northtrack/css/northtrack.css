@@ -15,16 +15,13 @@ body {
 
     .toppfelt
     {
-        background-color: #585858;
-        padding: 14px;
-        margin: 0px;
+        text-align: center;
+        background-color: #c4c4c493;
+        padding: 14px;        
         width: 100%;
         position: fixed;
-    }
-
-    .northtracklogo
-    {
-        text-align: center;
+        border-bottom: 5px;
+        border-bottom-color: rgb(83, 83, 83);
     }
 
     .meny {
