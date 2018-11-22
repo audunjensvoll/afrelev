@@ -6,15 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Input demo</title>
 
-    <script src="afrlib.js"></script>
+    <script src="../../js/afrlib.js">
+    </script>
     <script>
+            
+            // fake webtjeneste for post av data
+            function post(url, data, onOk)
+            {
+                // Dette skjer egentlig på serversiden i en virkelig løsning: 
+                if (url == "http://testserver/api/bruker")
+                {
+                    var bruker = data;
+                    data.id = 123;
+                    onOk(bruker); 
+                }
+            }
 
+
+
+            var aboliste = [];
+
+            function lagre()
+            {
+                var abonnent = {
+                    navn: document.getElementById("input_navn").value,
+                    tlf: document.getElementById("input_tlf").value
+                }
+
+                post("http://testserver/api/bruker", abonnent, nyAbo); 
+
+            }
+
+            function nyAbo(abo)
+            {
+                aboliste.push(abo);
+                skrivAbo(); 
+            }
+
+            function skrivAbo()
+            {
+                var res = "";
+                for(var i in aboliste)
+                {
+                    var abo = aboliste[i]; 
+                    res = res + html("li",abo.navn + ", " + abo.tlf);
+                }
+                res = html("ul",res);
+                skriv("resultat", res);
+            }
 
     </script>
 
 </head>
 <body>
-    Navn:   <input
+    <h2>Ny abonnent</h2>
+    Navn:   <input type="text" id="input_navn"> <br>
+    Telefon:   <input type="tel" id="input_tlf"> <br>
+    <button onclick="lagre()">Lagre</button>
+
+    <hr>
+
+    <div id="resultat"></div>
     
 </body>
 </html>

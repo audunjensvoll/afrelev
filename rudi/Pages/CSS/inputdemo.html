@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Imput demo</title>
+
+<script src="../../../js/afrlib.js">
+</script>
+
+
+
+<script>
+
+
+var aboliste = [];
+
+
+    function lagre()
+{
+    var abonnent = {
+        navn: document.getElementById("input_navn").value,
+        Bnavn: document.getElementById("input_Bnavn").value,
+        PW: document.getElementById("input_PW").value,
+        dato: document.getElementById("input_dato").value,
+        tlf: document.getElementById("input_tlf").value,
+        mail: document.getElementById("input_mail").value,
+    }
+
+    aboliste.push(abonnent);
+    skrivListe();
+    }
+    function skrivAbo()
+    {
+        var res="";
+        for(var i in aboliste)
+        {
+            var abo = aboliste[i];
+
+            res=res + html("li", abo.navn + "," + abo.Bnavn + "," + abo.PW + "," + abo.dato + "," + abo.tlf + "," + abo.mail);
+        }
+        res= html("ul", res);
+        skriv("resultat", res);
+    }
+
+
+
+function skrivListe()
+{
+    var tekst="";
+    var rad = "";
+    for(var i in aboliste)
+    {
+        var abo = aboliste[i];
+        rad=
+        html("td", abo.navn)
+        + html("td", abo.Bnavn)
+        + html("td", abo.PW)
+        + html("td", abo.dato)
+        + html("td", abo.tlf)
+        + html("td", abo.mail)
+
+        rad = html("tr", rad);
+        tekst = tekst + rad;
+    }
+    tekst = html("table", tekst);
+    skriv("resultat",tekst);
+    }
+
+</script>
+
+
+</head>
+
+<body>
+    <h2>Ny abonnent</h2>
+
+Navn: <input type="navn" id="input_navn"> <br>
+Brukernavn: <input type="navn" id="input_Bnavn"> <br>
+Passord: <input type="password" id="input_PW"> <br>
+Fødselsdato: <input type="date" id="input_dato"> <br>
+Telefon: <input type="tel" id="input_tlf"> <br>
+Epost: <input type="email" id="input_mail"> <br>
+<button onclick="lagre()">Lagre</button>
+<hr>
+<div id="resultat"></div>
+
+    
+</body>
+</html>
