@@ -72,6 +72,31 @@
         resultat = resultat + "</ol>";
         return resultat; 
     }
+    function test8() {
+        var merke = "volvo";
+        var regnr = "hs12345";
+        var farge = "yellow";
+
+        var bil ={
+            merke="Honda",
+            regnr="ab12345",
+            farge= "black"
+        }
+        var resultat = bil.farge;
+        var hus ={
+            type="Langhus",
+            postnr="1234",
+            farge= "red"
+        }
+        var resultat = hus.farge;
+        var hotell ={
+            navn="Radisson",
+            sted="Oslo",
+            rom= "900"
+        }
+        var resultat = hotell.navn;
+    }
+
 
     /*
     Funksjoner på flere
@@ -95,6 +120,7 @@
         <button onclick="test5()">Mer om array</button>
         <button onclick="test6()">Løkke</button>
         <button onclick="test7()">Løkke med navn</button>
+        <button onclick="test8()"></button>
     </div>
 
     <div>
