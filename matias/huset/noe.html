@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="no">
+	<head>
+		<link rel="stylesheet" type="text/css" href="kafe.css">
+		<title>Kontakt</title>
+		<style>
+			main{
+				height: 1000px;
+			}
+			
+	       	/*Google maps*/
+	       	#map {
+	       		/*Setter størrelse*/
+		        height: 400px;
+		        width: 900px;
+	       	}
+	       	
+
+		</style>
+	</head>
+    <body>
+    	<header>
+			<!--navigasjon-->
+			<nav>
+				<center>
+				<a class="link" href="index.html">Hjem</a>
+				<a class="link" href="meny.html">Meny</a>
+				<a class="link" href="tider.html">Åpningstider</a>
+				<a class="link" href="kontaktinfo.html" style="opacity: 1;">Kontakt</a>
+				</center>
+			</nav>
+		</header>
+		<main>
+			<div id="plass">
+				<h2>Plassering</h2>
+				<p>Vi holder til midt i Bergen sentrum. 50 m fra Torgameningen</p>
+				<!--Legger inn Google maps-->
+				<figur>
+					<div id="map"></div>
+				</figur>
+			</div>
+
+		</main>
+
+	    <script type="text/javascript">
+	    	
+			//Legger til en marker, posisjonen til markeren og hva kartet skal vise
+
+		    function initMap() {
+		        var location = {lat: 60.931710, lng: 10.703540};
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 15,
+		          center: location
+		        });
+		        var marker = new google.maps.Marker({
+		          position: location,
+		          map: map
+		        });
+		    }
+	    </script>
+
+	    <script async defer 
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlSHmUKs8TOHoMAf_o7ZVkMVODT2EDmjo&callback=initMap">
+    	</script>
+    </body>
+</html>
