@@ -11,10 +11,25 @@
             display: none
         }
     </style>
+    <script src="../../js/afrlib.js"></script>
     <script>
         function login() {
+
+            var bruker = {
+                brukernavn: document.getElementById("brukernavn").value,
+                passord: document.getelementById("passord").value
+            }
+
+
+            get("http://192.168.1.196:5000/login",bruker,onLogin);
+
             document.getElementById("chat").style.display = "block";
             document.getElementById("login").style.display = "none";
+        }
+
+        function onLogin(resultat)
+        {
+            // tolke svaret
         }
 
         function logout() {
