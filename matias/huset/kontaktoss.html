@@ -81,6 +81,23 @@
 
 
       </script>
+      <script>
+            function initMap() {
+                var location = {lat: 60.391147, lng: 5.321852};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: location
+                });
+                var marker = new google.maps.Marker({
+                position: location,
+                map: map
+                });
+            }
+        </script>
+
+    <script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlSHmUKs8TOHoMAf_o7ZVkMVODT2EDmjo&callback=initMap">
+    </script>
 
 </body>
 </html>
