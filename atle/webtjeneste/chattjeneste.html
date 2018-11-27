@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/afrlib.js"></script>
+
+    <script>
+        var url = "http://192.168.1.196:5000";
+
+       var chatlist = [];
+
+       function nyChat(){
+           var element = {
+               user: document.getElementById("navn").value,
+               message: document.getElementById("melding").value 
+           }
+           post(url + "/chat", JSON.stringify(element), oppdatertChat);
+        }
+
+       function oppdatertChat(data){
+           chatlist = data;
+           skrivChat();
+       }
+
+       function skrivChat() {
+        var res = "";
+            for(var i in chatlist)
+        {
+            var chat = chatlist[i];
+            res = res + html("li", chat.user + "," + chat.message) ;
+        }
+        res = html("ul",res);
+        skriv("chat", res);
+    }
+
+      
+      </script>
+</head>
+<body>
+
+    <div>
+        <h2>Chat</h2>
+        Brukernavn: <input id="navn" type="text"> Melding: <input id="melding" type="text">
+        <button onclick="nyChat()">Send</button>
+        <h3>Chat</h3>
+        <div id="chat"></div>
+    </div>
+    <script>
+    skrivChat();
+    </script>
+
+</body>
+</html>
