@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+
+    <script>
+
+function html(element, innhold) {
+    return "<" + element + ">" + innhold + "</" + element + ">";
+}
+        function test() {
+            var A ={
+                txt: "A"
+            };
+            var B = {
+                txt: "B"
+            }
+            var C = {
+                txt:  "C"
+            }; 
+
+            var liste = [];
+            liste.push(C);
+            liste.push(A);
+            liste.push(B);
+
+            var R ="";
+            var res ="Resultat: ";
+            // "Resultat: "
+            //R = "<ul>";
+            for (var i in liste)
+            {
+               R = R + html("li", liste[i].txt);
+            }
+            
+            //R = "<ul>"+ R + "</ul>";
+            R = res + html("ul",R);
+            console.log(R);
+        }
+    
+        test()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
