@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+
+        <script>
+                  
+
+            function login(){
+                var brukernavn = document.getElementById("brukernavn").value;
+                var passord = document.getElementById("passord").value;
+
+                document.getElementById("login").style.display = "none";
+                document.getElementById("chat").style.display = "block"; 
+            }
+
+            function logout(){
+                document.getElementById("login").style.display = "block";
+                document.getElementById("chat").style.display = "none";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="login">
+            Brukernavn: <input id="brukernavn" type="text"><br>
+            Passord: <input id="passord" type="password"><br>
+            <button onclick="login()">Logg inn</button>
+        </div>    
+            
+        <div id="chat" style="display:none;">
+            Hei <div id="melding"></div><br>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+
+    </body>
+</html>
