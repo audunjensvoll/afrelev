@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av rest</title>
+    <script src="afrli.js"></script>
+
+    <script>
+        var bruker = "matias"; 
+        var meldinger = []; 
+        var url = "http://192.168.1.196:5000"; 
+
+        function send(){
+            var melding = {
+                user: bruker,
+                message: document.getElementById("melding").value
+            }
+            console.log("Melding: ", JSON.stringify(melding)); 
+            post(url + "/chat", JSON.stringify(melding),oppdaterMeldinger); 
+        }
+
+        function hentMeldinger(){
+            get(url + "/chat", oppdaterMeldinger); 
+        }
+
+        function oppdaterMeldinger(data){
+            meldinger = data; 
+            skrivMeldinger(); 
+        }
+
+        function skrivMeldinger() {
+            var resultat = ""; 
+            for(var i in meldinger)
+            {
+                var mld = meldinger[i]; 
+                resultat += mld.user + ": " + mld.message + "<br>"; 
+            }
+            skriv("resultat", resultat); 
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Enkel meldingsweb</h1>
+        <input id="melding" type="text">
+        <button onclick="send()">Send</button>
+        
+        <hr>
+        <div id="resultat"></div>
+    </div>
+
+    <script>
+        hentMeldinger();
+    </script>
+
+
+</body>
+</html>
