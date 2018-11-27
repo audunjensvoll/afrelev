@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #chat {
+            display: none
+        }
+    </style>
+    <script>
+        function login() {
+            document.getElementById("chat").style.display = "block";
+            document.getElementById("login").style.display = "none";
+        }
+
+        function logout() {
+            document.getElementById("chat").style.display = "none";
+            document.getElementById("login").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>AFR Chat</h1>
+
+    <div id="login">
+        <h2>Login</h2>
+        Brukernavn: <input type="text" id="brukernavn">
+        Passord: <input type="password" id="passord">
+        <button onclick="login()">login</button>
+    </div>
+
+    <div id="chat">
+        <h2>Chat</h2>
+        Hei Jens
+        <button onclick="logout()">logout</button>
+        <br>
+        <input type="text">
+        <button>Send</button>
+        <br>
+        <div id="meldinger">
+            Her kommer alle meldinger.....
+        </div>
+    </div>
+</body>
+
+</html>
