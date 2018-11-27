@@ -27,7 +27,7 @@ function get(url, data, onOk) {
     };    
     xmlhttp.open("GET", url, true);
     xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.send(data);
+    xmlhttp.send(JSON.stringify(data));
 }        
 
 function post(url, data, onOk) {
@@ -40,5 +40,5 @@ function post(url, data, onOk) {
     };    
     xmlhttp.open("POST", url, true);
     xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.send(data);
+    xmlhttp.send(JSON.stringify(data));
 }        
