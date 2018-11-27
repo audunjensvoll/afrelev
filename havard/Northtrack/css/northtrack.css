@@ -8,20 +8,20 @@ body {
         font-size: 1.2em;
         line-height: 1.6;
         text-align: center;
-        padding-left: 200px;
-        padding-right: 150px;
+        margin-left: 200px;
+        margin-right: 150px;
         padding-top: 80px;
     }
 
     .toppfelt
     {
         text-align: center;
-        background-color: #c4c4c493;
+        background-color: #ffffff;
         padding: 14px;        
         width: 100%;
         position: fixed;
-        border: 5px;
-        border-color: rgb(252, 0, 0);
+        border-bottom: 1px solid;
+        border-bottom-color: rgb(235, 235, 235);
     }
 
     .meny {
@@ -32,12 +32,14 @@ body {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        top: 75px;
+        top: 76px;
         width: 180px;
-        background-color: #f5f5f5;
+        background-color: #ffffff;
         position: fixed;
         height: 100%;
         overflow: auto;
+        border-right: 1px solid;
+        border-right-color: rgb(235, 235, 235);
     }
 
     .meny li a {
