@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inlogging</title>
+
+<style>
+
+#chat{
+    display:none;
+}
+
+</style>
+
+
+<script src="../../js/afrlib.js"></script>
+
+<script>
+
+
+    function login() {
+
+var bruker= {
+brukernavn: document.getElementById("bruker_navn").value, 
+passord: document.getElementById("bruker_password").value
+}
+
+get("http://192.168.1.196:5000/login", onLogin);
+
+
+document.getElementById("chat").style.display = "block";
+document.getElementById("login").style.display = "none";
+    }
+
+    function onLogin (resultat) 
+    {
+        //tolke svaret
+    }
+
+function logout() {
+    document.getElementById("chat").style.display = "none";
+document.getElementById("login").style.display = "block";
+
+}
+
+
+
+function send()
+{
+
+}
+
+</script>
+    
+</head>
+
+
+
+<body>
+    
+<h1>Dildo</h1>
+
+<div id="login">
+<h2>Login </h2>
+<button onclick="login()">Login</button> <br>
+Brukernavn: <input type="text" id="bruker_navn"> <br>
+Passord: <input type="password" id="bruker_password">
+
+</div>
+
+<div id="chat">
+
+    
+<h2>Chat</h2>
+Hei Rudi
+<button onclick="logout()">Logout</button>
+<br>
+<input type="text"> 
+<button onclick="send">Send</button>
+<br>
+<div id="meldinger">
+Her kommer alle meldinger....
+</div>
+</div>
+
+</body>
+
+
+
+</html>
