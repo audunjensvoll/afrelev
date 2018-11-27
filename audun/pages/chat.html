@@ -59,7 +59,9 @@
 
         function onMessage(response)
         {
+            // Har nå hele meldingsarray i response
             console.log(response);
+            document.getElementById("meldinger").innerHTML = JSON.stringify(response);
         }
     </script>
 </head>
