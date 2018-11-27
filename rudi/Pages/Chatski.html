@@ -30,8 +30,7 @@
 
         function onLogin(resultat)
         {
-            // tolke svaret
-            // {kode: "aosdhf", melding: "Login Ok"}
+            
             if (resultat.kode)
             {
                 tilgangskode = resultat.kode;
@@ -59,6 +58,7 @@
 
         function onMessage(response)
         {
+           
             console.log(response);
             document.getElementById("meldinger").innerHTML = JSON.stringify(response);
         }
@@ -77,7 +77,7 @@
 
     <div id="chat">
         <h2>Chat</h2>
-        Hei Rudi
+        Hei Jens
         <button onclick="logout()">logout</button>
         <br>
         <input type="text" id="nymelding">

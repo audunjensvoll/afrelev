@@ -71,6 +71,7 @@ function sendMelding()
 function onMessage(response)
 {
     console.log("response");
+    document.getElementById("meldinger").innerHTML = JSON.stringify(response);
 }
 </script>
     
