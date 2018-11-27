@@ -25,15 +25,15 @@
         }
     </style>
     <script>
-        function skriv(id, innhold) {
+        function skriv (id, innhold) {
             document.getElementById(id).innerHTML = innhold;
         }
 
-        function html(element, innhold) {
+        function html (element, innhold) {
             return "<" + element + ">" + innhold + "</" + element + ">";
         }
 
-        function get(url, onOk) {
+        function get (url, onOk) {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -42,7 +42,7 @@
             };
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
-        }        
+        }
     </script>
     <script>
 
@@ -60,44 +60,20 @@
 
         function skrivListe() {
             var tekst = "";
-            var rad = ""; 
+            var rad = "";
             for (var i in brukerliste) {
-                rad = 
-                html("td", brukerliste[i].navn)
-                + html("td", brukerliste[i].id)
-                + html("td", brukerliste[i].epost); 
+                rad =
+                    html("td", brukerliste[i].navn)
+                    + html("td", brukerliste[i].id)
+                    + html("td", brukerliste[i].epost);
 
-                rad = html("tr",rad);
+
+                rad = html("tr", rad);
                 tekst = tekst + rad;
             }
             tekst = html("table", tekst);
             skriv("resultat", tekst);
         }
-
-
-        function hentFraServer()
-        {
-            get("https://jsonplaceholder.typicode.com/users",behandle)
-        }
-
-        function behandle(liste)
-        {
-            var tekst = "";
-            var rad = ""; 
-            for (var i in liste) {
-                rad = 
-                html("td", liste[i].name)
-                + html("td", liste[i].id)
-                + html("td", liste[i].email); 
-
-                rad = html("tr",rad);
-                tekst = tekst + rad;
-            }
-            tekst = html("table", tekst);
-            skriv("resultat", tekst);
-        }
-
-
 
         function skrivBruker(bruker) {
             var brukertekst = html("li", bruker.navn)
@@ -105,6 +81,78 @@
                 + html("li", bruker.epost);
 
             skriv("resultat", html("ul", brukertekst));
+        }
+
+
+        function hentFraServer() {
+            get("https://jsonplaceholder.typicode.com/users", behandle)
+        }
+
+        function behandle(liste) {
+            var tekst = "";
+            var rad = "";
+
+            for (var i in liste) {
+                rad =
+                    html("td", liste[i].id)
+                    + html("td", liste[i].name)
+                    + html("td", liste[i].username)
+                    + html("td", liste[i].email)
+                    + html("td", liste[i].address.street)
+                    + html("td", liste[i].address.suite)
+                    + html("td", liste[i].address.city)
+                    + html("td", liste[i].address.zipcode)
+                    + html("td", liste[i].address.geo.lat)
+                    + html("td", liste[i].address.geo.lng)
+                    + html("td", liste[i].phone)
+                    + html("td", liste[i].website)
+                    + html("td", liste[i].company.name)
+                    + html("td", liste[i].company.catchPhrase)
+                    + html("td", liste[i].company.bs);
+
+                rad = html("tr", rad);
+                tekst = tekst + rad;
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+
+        function hentBildeFraServer() {
+            get("https://jsonplaceholder.typicode.com/photos", behandlebilder)
+        }
+
+        function behandlebilder(bildeliste) {
+            var tekst = "";
+            var rad = "";
+
+            for (var E in bildeliste) {
+                    var bil = bildeliste[E];
+                rad =
+                    html("td", bil.albumId)
+                    + html("td", bil.id)
+                    + html("td", bil.title)
+                    + html("td", '<img src=' + bil.url + '>')
+                    + html("td", bil.thumbnailUrl);
+
+                rad = html("tr", rad);
+                tekst = tekst + rad;
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+        function blaBilder(bildenr)
+        {
+            var bildeurl = '<img src="https://jsonplaceholder.typicode.com/photos/' + bildenr + '"' + '>';
+            {
+                get(bildeurl, skrivBilde);
+            }
+        }
+
+        function skrivBilde(respons)
+        {
+            skriv("resultat", respons.url);
         }
 
     </script>
@@ -117,11 +165,16 @@
     <button onclick="skrivBruker(enbruker)">Skriv en bruker</button>
     <button onclick="skrivListe()">Skriv alle brukere</button>
     <button onclick="hentFraServer()">Hent fra server</button>
+    <button onclick="hentBildeFraServer()">Hent bilde fra server</button>
+    <button onclick="blaBilder(1)">Bilde 1</button>
+    <button onclick="blaBilder(2)">Bilde 2</button>
+    <button onclick="blaBilder(3)">Bilde 3</button>
+    <button onclick="blaBilder(4)">Bilde 4</button>
 
     <div id="resultat"></div>
 
 
-    
+
 
 </body>
 
