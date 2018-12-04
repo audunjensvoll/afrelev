@@ -1,0 +1,102 @@
+body {
+    margin:0;
+}
+    
+    @font-face{
+        font-family: 'christmas';
+        src: url('../arbeidshjornet_fonts/merrychristmasflake.ttf');
+        font-style: normal;
+    }
+
+    @font-face{
+        font-family: 'santas sleigh';
+        src: url('../arbeidshjornet_fonts/SantasSleighFull\ Deluxe.ttf');
+        font-style: normal;
+    }
+    
+
+    .adventbildemtekst
+    {
+        background: url(../arbeidshjornet_images/Pictures-of-christmas-living-room-HD9G18.jpg) no-repeat center;
+        background-size: cover;
+        border-bottom: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(179, 0, 0);
+        margin:0;
+        padding:100px;
+        text-align:center;
+        font-family: christmas; 
+        font-size: 4em;
+        letter-spacing: 10px;
+        word-spacing: 10px;
+        color:white;
+    }
+    
+    .text {
+        font-size:1.2em;
+        line-height: 1.6;
+        padding-right: 60px;
+        padding-left: 60px;
+        padding-top: 20px;
+        text-align: center;
+        font-family: santas sleigh;
+    }
+    
+    .meny {
+        text-align: center;
+    }
+    
+    .meny li {
+        display: inline-block;
+    }
+    .active {
+        background-color: rgba(253, 0, 0, 0.753);
+    }
+    
+    .meny ul {
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        background-color: rgb(26, 82, 118);
+    }
+    
+    .meny li a {
+        display: block;
+        color: white;
+        font-family: santas sleigh;
+        font-size: 1.6em;
+        text-align: center;
+        padding:14px 16px;
+        text-decoration: none;
+    }
+    
+    .meny li a:hover {
+        background-color: rgba(255, 255, 255, 0.295)
+    }
+    
+    .rute {
+        height: 140px;
+        width: 160px;
+        margin: 15px;
+        border: solid;
+        border-color: rgb(179, 0, 0);
+        background-image: url("../arbeidshjornet_images/snowflakes.jpg");
+        background-size: cover;
+        display: inline-block;
+    }
+
+    .kalender 
+    {
+        position: absolute;
+        text-align:center;
+        top: 350px;
+        left: 400px;
+        right: 400px;
+    }
+    .kalendertall
+    {
+        text-align:center;
+        top: 50%;
+        font-size: 3.4em;
+        font-family: santas sleigh;
+    }

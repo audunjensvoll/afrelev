@@ -31,9 +31,9 @@ body {
 
     .bilder img
     {
+        position: absolute;
         margin-top: 76px;
         margin-left: 180px;
-        right: 40px;
     }
 
     .bildetekst
