@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av rest</title>
+    <script src="../../js/afrlib.js"></script>
+
+    <script>
+        // ------   chat app  -------
+
+        var bruker = "audun";
+        var meldinger = [];
+
+        function send() {
+            var melding = {
+                user: bruker,
+                message: document.getElementById("melding").value
+            }
+            console.log("Melding: ", JSON.stringify(melding));
+            post(url + "/chat", JSON.stringify(melding), oppdaterMeldinger);
+        }
+
+        function hentMeldinger() {
+            get(url + "/chat", oppdaterMeldinger);
+        }
+
+        function oppdaterMeldinger(data) {
+            meldinger = data;
+            skrivMeldinger();
+        }
+
+        function skrivMeldinger() {
+            var resultat = "";
+            for (var i in meldinger) {
+                var mld = meldinger[i];
+                resultat += mld.user + ": " + mld.message + "<br>";
+            }
+            skriv("resultat", resultat);
+        }
+
+        // ------- END chatapp ------   
+    </script>
+
+    <script>
+        var url = "http://localhost:5000";
+
+        var tlfliste = [];
+
+        function nytlf() {
+            var element = {
+                navn: document.getElementById("navn").value,
+                tlf: document.getElementById("tlf").value
+            }
+            post(url + "/tlf", JSON.stringify(element), oppdatertTlf);
+        }
+
+        function oppdatertTlf(data) {
+            tlfliste = data;
+            skrivTlf();
+        }
+
+        function skrivTlf() {
+            var resultat ="<ul>";
+            for(var i in tlfliste)
+            {
+                var element = tlfliste[i];
+                var linje = "<li>" + element.navn + "," + element.tlf + "</li>";
+                resultat = resultat +linje;
+            }
+            resultat = resultat + "</ul>";
+
+            skriv("tliste",resultat)
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <h2>Telefonliste</h2>
+        <h3>Ny</h3>
+        Navn: <input id="navn" type="text"> Nr: <input id="tlf" type="text"> 
+        <button onclick="nytlf()">Lagre</button>
+        <h3>Liste</h3>
+        <div id="tliste"></div>
+    </div>
+
+
+    <script>
+        // hentMeldinger();
+        skrivTlf();
+    </script>
+
+
+</body>
+
+</html>

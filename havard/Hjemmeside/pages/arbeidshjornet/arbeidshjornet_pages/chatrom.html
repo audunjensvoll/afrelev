@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av rest</title>
+
+    <script src="../../../../../js/afrlib.js"></script>
+
+    <script>
+
+        var url = "http://192.168.1.196:5000"
+        var meldingshistorikk = [];
+
+        function nymelding() {
+            var element =
+            {
+                navn: document.getElementById("navn").value,
+                tlf: document.getElementById("tlf").value
+            }
+            post(url + "/tlf", JSON.stringify(element), oppdatertTlf);
+        }
+
+        function oppdatertTlf(data) {
+            meldingshistorikk = data;
+            skrivMelding(meldingshistorikk);
+        }
+
+        function skrivMelding(meldingshistorikk) {
+            var resultat = "";
+
+            for (var E in meldingshistorikk) {
+                var mh = meldingshistorikk[E];
+
+               var element = html("li", html("strong", mh.navn) + "," + mh.tlf);
+               resultat = resultat + element;
+            }
+            skriv("tliste", resultat);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+        <h2>Chatrom</h2>
+        <h3>Send Melding</h3>
+        Navn: <input id="brukernavn" type="text">
+        Melding: <input id="melding" type="text">
+        <button onclick="nymelding()">Lagre</button>
+        <h3>Historikk: </h3>
+        <div id="meldingshistorikk"></div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

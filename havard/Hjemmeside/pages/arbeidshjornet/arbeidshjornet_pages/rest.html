@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av webtjenester</title>
+    <script>
+
+
+        function get(url, onOk)
+        {
+            var xmlhttp = XMLHttpRequest();
+            xmlhttp.onreadystatechange = function ()
+            {
+                
+            }
+        }
+
+        //Tungvint måte:
+        //var navn = "Anders";
+        //var id = 123;
+        //var epost = "anders@test.no"
+
+
+        //Bedre måte:
+        var bruker = {
+            id: 123,
+            navn: "Anders",
+            epost: "anders@test.no"
+        }
+
+        var brukerliste = [
+            { id: 123, navn: "Anders", epost: "anders@test.no" },
+            { id: 275, navn: "Per", epost: "per@test.no" },
+            { id: 124, navn: "Heddulf", epost: "heddulf@test.no" }
+        ];
+
+        function skrivListe() {
+            var tekst = "";
+            var rad = "";
+
+            for (var i in brukerliste) {
+                rad = 
+                html("td", brukerliste[i].navn)
+                + html("td", brukerliste[i].id)
+                + html("td", brukerliste[i].epost);
+                
+                rad = html("tr", rad);
+                tekst = tekst + rad;
+                
+                //brukerliste[i]
+                //skrivBruker(brukerliste[i]);
+                //tekst = tekst + html("h3", brukerliste[i].navn)
+                    //+ html("p", brukerliste[i].id)
+                   // + html("p", brukerliste[i].epost);
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+        function skriv(id, innhold) {
+            document.getElementById(id).innerHTML = innhold;
+        }
+
+        function html(element, innhold) {
+            return "<" + element + ">" + innhold + "</" + element + ">";
+        }
+
+        function skrivBruker() {
+            var brukertekst =
+                html("li", bruker.navn)
+                + html("li", bruker.id)
+                + html("li", bruker.epost);
+
+            //Funksjonen skriv forkorter arbeidet
+            //document.getElementById("resultat").innerHTML = bruker.navn;
+            //skriv("resultat", "<h1>" + bruker.navn + "</h1>");
+            //skriv("resultat", html("h3", bruker.navn));
+            skriv("resultat", html("ul", brukertekst));
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Test av webtjenester</h1>
+    <button onclick="skrivBruker(enbruker)">Skriv en Bruker</button>
+    <button onclick="skrivListe()">Skriv Alle Brukere</button>
+
+    <div id="resultat"></div>
+
+<table>
+    <td>
+
+
+
+
+
+    </td>
+
+
+
+
+
+
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av webtjenester</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;                
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <script src="afrli.js"></script>
+
+    <script>
+        var aboliste = [];
+        var tekst = "";
+        var res = "";
+
+        function lagre() {
+            var abonnent = {
+                navn: document.getElementById("input_navn").value,
+                brukernavn: document.getElementById("input_Bnavn").value,
+                passord: document.getElementById("input_passord").value,
+                fødseldato: document.getElementById("input_fødato").value,
+                tlf: document.getElementById("input_tlf").value,
+                epost: document.getElementById("input_epost").value
+            }
+
+            aboliste.push(abonnent);
+            
+            skrivAbo();
+        }
+        
+        /*function infoAbo(){
+            var infoAbo = "";
+
+            infoAbo = html("td", "Navn")
+                + html("td", "Brukernavn")
+                + html("td", "Passord")
+                + html("td", "Fødseldato")
+                + html("td", "Telefon")
+                + html("td", "Epost");
+                
+            infoAbo = html("tr", infoAbo);
+            res = res + infoAbo;
+        }*/
+        function skrivAbo() {
+            
+            
+
+            for (var i in aboliste) {
+                var abo = aboliste[i];
+            
+                res = res
+                    + html("td", aboliste[i].navn)
+                    + html("td", aboliste[i].brukernavn)
+                    + html("td", aboliste[i].passord)
+                    + html("td", aboliste[i].fødseldato)
+                    + html("td", aboliste[i].tlf)
+                    + html("td", aboliste[i].epost);
+
+                res = html("tr", res);
+            }
+            res = html("table", res);
+            skriv("resultat", res);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Ny abonnent</h1>
+
+    Navn: <input id="input_navn" type="text"><br>
+    Brukernavn: <input id="input_Bnavn" type="text"><br>
+    Passord: <input id="input_passord" type="password"><br>
+    Fødseldato: <input id="input_fødato" type="date"><br>
+    Telefon: <input id="input_tlf" type="tel"><br>
+    Epost: <input id="input_epost" type="epost"><br>
+
+    <button onclick="lagre()">Lagre</button>
+
+    <hr>
+
+    <div id="resultat"></div>
+
+
+
+
+</body>
+
+</html>

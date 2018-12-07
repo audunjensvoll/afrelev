@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+
+    <style>
+        .firkant {
+            border: solid;
+            margin: 5px;
+            padding: 40px 40px;
+            display: inline-block;
+            background-color: grey;
+        }
+    </style>
+
+    <script>
+
+        var farge1 = "white";
+        var farge2 = "black";
+
+        var farge = farge1
+
+        function noe(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) { farge = farge2; }
+            else { farge = farge1 }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="boks1" class="firkant" onclick="noe('boks1')"></div>
+    <div id="boks2" class="firkant" onclick="noe('boks2')"></div>
+    <div id="boks3" class="firkant" onclick="noe('boks3')"></div>
+    <br>
+    <div id="boks4" class="firkant" onclick="noe('boks4')"></div>
+    <div id="boks5" class="firkant" onclick="noe('boks5')"></div>
+    <div id="boks6" class="firkant" onclick="noe('boks6')"></div>
+    <br>
+    <div id="boks7" class="firkant" onclick="noe('boks7')"></div>
+    <div id="boks8" class="firkant" onclick="noe('boks8')"></div>
+    <div id="boks9" class="firkant" onclick="noe('boks9')"></div>
+
+</body>
