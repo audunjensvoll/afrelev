@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript 101</title>
+    <script>
+        function Test1() {
+            document.getElementById("Resultat").innerHTML = "Her er resultatet";
+        }
+
+        function Test2(hilsen) {
+            document.getElementById("Resultat").innerHTML = hilsen;
+        }
+        // Denne funksjonen viser 2 parametere
+        function Test3(hilsen1, hilsen2) {
+            var Resultat;
+            Resultat = hilsen1 + ' ' + hilsen2;
+            document.getElementById("Resultat").innerHTML = Resultat;
+        }
+
+        function Tall(Tall9, Tall7) {
+            var Smaatall;
+            Smaatall = Tall9 + Tall7;
+            document.getElementById("Resultat").innerHTML = Smaatall;
+        }
+
+        function Test4(Tall1, Tall2) {
+            var kommode = [];
+            kommode[0] = Tall1;
+            kommode[1] = Tall2;
+            document.getElementById("Resultat").innerHTML = kommode[0] + kommode[1];
+        }
+        function Test5() {
+            var Arrey = [];
+            Arrey[0] = 11
+            Arrey[1] = 1111
+            Arrey[2] = 11111111
+            Arrey[3] = 1111111111111111
+            Arrey[4] = 11111111111111111111111111111111
+            Arrey[5] = 1111111111111111111111111111111111111111111111111111111111111111
+            var Resultat;
+            Resultat = Arrey[0] + Arrey[1] + Arrey[2] + Arrey[3] + Arrey[4] + Arrey[5];
+            document.getElementById("Resultat").innerHTML = Resultat;
+        }
+
+        function Test6() {
+            var Tall = ["1", "2", "3", "4"];
+            document.getElementById("Resultat").innerHTML = enkeltnavn(Tall);
+        }
+
+        function Test7() {
+            var Land = ["Italia", "Spania", "Frankrike", "USA"];
+            document.getElementById("Resultat").innerHTML = enkeltnavn(Land.sort());
+        }
+
+        //Lager en ul-liste av en array-
+        function enkeltnavn(arr) {
+            var Resultat = "<ul>";
+            for (var i = 0; i < arr.length; i = i + 1) {
+                Resultat = Resultat + "<li>" + arr[i] + "</li>";
+            }
+            Resultat = Resultat + "</ul>";
+            return Resultat;
+        }
+
+        function test8() {
+            var person = {
+                Hudfarge = "White",
+                Hårfarge = "Red",
+                Øyenfarge = "Green"
+            }
+            var hus = {
+                Type = "Rekkehus",
+                Farge = "Red",
+                Adresse = "Ringsaker 1234"
+            }
+            var bil = {
+                Type = "Toyota",
+                Farge = "Brown",
+                regnr = "rv9382"
+            }
+            document.getElementById("Resultat").innerHTML =SkrivPerson(person)
+        }
+        function skrivPerson(person) {
+            var resultat = "";
+            resultat = resultat + "<p> Hudfarge:" + person.Hudfarge + "</p>";
+            resultat = resultat + "<p> Hårfarge:" + person.Hårfarge + "</p>";
+            resultat = resultat + "<p> Øyenfarge:" + person.Øyenfarge + "</p>";
+            return resultat;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+            <button onclick="skrivPerson()">Person</button>
+        <button onclick="Test7()">Land</button>
+        <button onclick="Test6()">tall</button>
+        <button onclick="Test5()">Arrey uten parameter</button>
+        <button onclick="Test4(9,7)">Hva er 9 + 7, men fancy</button>
+        <button onclick="Tall(9,7)">Hva er 9 + 7?</button>
+        <button onclick="Test3('Hallo','der general Kenobi')">Min samling</button>
+        <button onclick="Test2('Hallo')">kall funksjon med parameter</button>
+        <button onclick="Test1()">Kall funksjon</button>
+    </div>
+    <div>
+        <h1>Resultat</h1>
+        <div id="Resultat"></div>
+    </div>
+</body>
+
+</html>
