@@ -14,6 +14,11 @@ body {
         font-style: normal;
     }
     
+    @font-face{
+        font-family: 'christmas eve';
+        src: url('../arbeidshjornet_fonts/christmaseve.ttf');
+        font-style: normal;
+    }
 
     .adventbildemtekst
     {
@@ -63,7 +68,7 @@ body {
     .meny li a {
         display: block;
         color: white;
-        font-family: santas sleigh;
+        font-family: christmas eve;
         font-size: 1.6em;
         text-align: center;
         padding:14px 16px;
@@ -88,14 +93,14 @@ body {
     .kalender 
     {
         position: absolute;
-        text-align:center;
+        text-align: center;
         top: 350px;
         left: 400px;
         right: 400px;
     }
     .kalendertall
     {
-        text-align:center;
+        text-align: center;
         top: 50%;
         font-size: 3.4em;
         font-family: santas sleigh;
