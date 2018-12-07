@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<p>Hjemmelaget</p>
-<script>
-var tallet = 0;
-function tell(x)
-{
-tallet = tallet + x;
+    <p>Hjemmelaget</p>
+    <script>
+        var hjemmetall = 0;
+        function tell(x) {
+            hjemmetall = hjemmetall + x;
 
-document.getElementById("minDiv").innerHTML = tallet;
+            document.getElementById("minDiv").innerHTML = hjemmetall;
 
-}
-</script>
-
+        }
+    </script>
 
 
 
-<p>Bortelaget</p>
+
+    <p>Bortelaget</p>
 
 
 
-<script>
+    <script>
 
-var tallet = 0;
-function teller (x)
-
-{
-tallet = tallet + x;
+        var bortetall = 0;
+        function teller(x) {
+            bortetall = bortetall + x;
 
 
 
-document.getElementById("dinDiv").innerHTML = tallet;
+            document.getElementById("dinDiv").innerHTML = bortetall;
 
-}
+        }
 
-</script>
-<script>
-function reset ()
+    </script>
+    <script>
+        function reset() {
+            bortetall =  0;
+            hjemmetall = 0;
+            document.getElementById("dinDiv").innerHTML = 0;
+            document.getElementById("minDiv").innerHTML = 0;
 
-{
-document.getElementById("dinDiv").innerHTML = 0;
-document.getElementById("minDiv").innerHTML = 0;
+        }
 
-}
-
-</script>
+    </script>
 
 
 </head>
+
 <body>
-    
-    <div id="minDiv">1</div>
-    <div id="dinDiv">1</div>
+
+    <div id="minDiv">0</div>
+    <div id="dinDiv">0</div>
     <button onclick="tell(1)">+</button>
     <button onclick="tell(-1)">-</button>
     <button onclick="teller(1)">+</button>
@@ -61,4 +60,5 @@ document.getElementById("minDiv").innerHTML = 0;
 
 
 </body>
+
 </html>

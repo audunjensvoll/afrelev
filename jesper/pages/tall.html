@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script>
+
+        function knappred() {
+            document.getElementById("knapp").style.backgroundColor = "red";
+        }
+
+        var tallet = 0;
+        var fortsett = 1;
+
+        function tell() {
+
+            if (fortsett) {
+                tallet = tallet + 1;
+                skrivtid(tallet);
+                setTimeout(tell, 1000);
+
+
+
+            }
+        }
+        function start() {
+            fortsett = true;
+
+            setTimeout(tell, 1000);
+
+        }
+        function stopp() {
+            fortsett = false;
+            }
+        
+        function TallTilTekst(tall)
+        {
+if (tall<10){
+return "0" + tall;
+
+
+}
+else {
+return "" + tall
+
+}
+
+            
+        }
+
+
+        
+        
+        function skrivtid(tid) {
+            var minutter = 0;
+            var sekunder = 0;
+            minutter = Math.floor(tid / 60);
+            sekunder = tid - 60 * minutter;
+            var sekunderSomTekst = "00";
+            if (sekunder<10) {
+                var sekunderSomTekst = "0" + sekunder;
+            }
+            else {
+                sekunderSomTekst = " " + sekunder;
+            }
+            
+            document.getElementById("resultat").innerHTML = TallTilTekst(minutter) + ":" + TallTilTekst(sekunder);
+
+
+
+        }
+
+
+        function reset() {
+            tallet = 0;
+            fortsett = false;
+            skrivtid(tallet);
+
+
+        }
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div id="resultat">0</div>
+
+    <button id="knapp" onclick="start()">Start</button>
+    <button id="knapp" onclick="stopp()">Stopp</button>
+    <button id="knapp" onclick="reset()">Reset</button>
+
+</body>
+
+</html>
