@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hent fra server</title>
+
+    <script src="../../js/afrlib.js"></script>
+
+    <script>
+        var url = "http://192.168.1.196:5000";
+
+        var tlfliste = []
+
+        function nytlf() {
+            var element = {
+                navn: document.getElementById("navn").value,
+                tlf: document.getElementById("tlf").value
+            }
+            post(url + "/tlf", JSON.stringify(element), oppdatertTlf);
+        }
+
+        function oppdatertTlf(data) {
+            tlfliste = data
+            skrivTlf();
+        }
+
+        function skrivTlf2() {
+            skriv("tliste", JSON.stringify(tlfliste));
+        }
+
+        function skrivTlf() {
+            var C = ""
+            for (var i in tlfliste) {
+                var A = tlfliste[i]
+                
+                var B = html("li" , html("strong" , "Bruker:" + A.navn) + "," + A.tlf)
+                C = C + B 
+            }
+            skriv("tliste", C)
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <div>
+        <h2>Telefonliste</h2>
+        <h3>Ny</h3>
+        Brukernavn: <input id="navn" type="text"> Melding: <input id="tlf" type="text">
+        <button onclick="nytlf()">Send</button>
+        <h3>Chat</h3>
+        <div id="tliste"></div>
+    </div>
+
+
+</body>
+
+</html>

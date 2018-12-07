@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<p>Hjemmelaget</p>
+<script>
+var tallet = 0;
+function tell(x)
+{
+tallet = tallet + x;
+
+document.getElementById("minDiv").innerHTML = tallet;
+
+}
+</script>
+
+
+
+
+<p>Bortelaget</p>
+
+
+
+<script>
+
+var tallet = 0;
+function teller (x)
+
+{
+tallet = tallet + x;
+
+
+
+document.getElementById("dinDiv").innerHTML = tallet;
+
+}
+
+</script>
+<script>
+function reset ()
+
+{
+document.getElementById("dinDiv").innerHTML = 0;
+document.getElementById("minDiv").innerHTML = 0;
+
+}
+
+</script>
+
+
+</head>
+<body>
+    
+    <div id="minDiv">1</div>
+    <div id="dinDiv">1</div>
+    <button onclick="tell(1)">+</button>
+    <button onclick="tell(-1)">-</button>
+    <button onclick="teller(1)">+</button>
+    <button onclick="teller(-1)">-</button>
+    <button onclick="reset()">reset</button>
+
+
+
+</body>
+</html>

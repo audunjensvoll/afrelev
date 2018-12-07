@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+
+    <script>
+    
+        function test()
+        {
+            var A = "Heisann";
+            var B = "Hoppsann";
+            var C = "<li>" + A + B + "</li>";
+
+            var liste = [];
+            liste.push("Hei");
+            liste.push(A);
+            liste.push(B);
+
+
+            var R = "Resultat: ";
+
+            R = "Test: ";
+
+            for (var i in liste)
+            {
+                console.log(i + " " + liste[i]);
+                R = R + liste[i];
+            }
+            console.log(R);
+        }
+    
+        test();
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

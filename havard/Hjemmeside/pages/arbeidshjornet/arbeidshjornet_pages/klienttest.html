@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av rest</title>
+
+    <style>
+        table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+    
+            td,
+            th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+    
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+    </style>
+    <script src="../../../../../js/afrlib.js"></script>
+
+    <script>
+
+        var url = "http://192.168.1.196:5000"
+        var tlfliste = [];
+
+        function nytlf() {
+            var element =
+            {
+                navn: document.getElementById("navn").value,
+                tlf: document.getElementById("tlf").value
+            }
+            post(url + "/tlf", JSON.stringify(element), oppdatertTlf);
+        }
+
+        function oppdatertTlf(data) {
+            tlfliste = data;
+            skrivTlf(tlfliste);
+        }
+
+        function skrivTlf(tlfliste) {
+            var resultat = "";
+
+            for (var E in tlfliste) {
+                var tlf = tlfliste[E];
+
+               var element = html("li", html("strong", tlf.navn) + "," + tlf.tlf);
+               resultat = resultat + element;
+            }
+            skriv("tliste", resultat);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+        <h2>Telefonliste</h2>
+        <h3>Ny</h3>
+        Navn: <input id="navn" type="text">
+        Nr: <input id="tlf" type="text">
+        <button onclick="nytlf()">Lagre</button>
+        <h3>Liste</h3>
+        <div id="tliste"></div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
