@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Spill lyd</title>
+    <script>
+        function spill()
+        {
+            var sang = document.getElementById("julesang"); 
+            sang.play();
+        }
+    </script>
+</head>
+<body>
+    <audio id="julesang">
+        <source src="../media/LetItSnow.mp3" type="audio/mp3"/>
+    </audio>
+    
+    <button onclick="spill()">spill sang</button>
+</body>
+</html>
