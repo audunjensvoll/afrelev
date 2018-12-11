@@ -13,6 +13,8 @@
     </style>
     <script src="../../js/afrlib.js"></script>
     <script>
+        var url = "http://192.168.1.123:5000"; 
+
         function login() {
 
             var bruker = {
@@ -20,48 +22,72 @@
                 passord: document.getElementById("passord").value
             }
 
-            brukernavn = bruker.brukernavn; 
+            brukernavn = bruker.brukernavn;
 
-            get("http://192.168.1.196:5000/login",bruker,onLogin);
+            post(url + "/login", bruker, onLogin);
+            
 
         }
-        var brukernavn="";
-        var tilgangskode ="";
+        var brukernavn = "";        
 
-        function onLogin(resultat)
-        {
+        function onLogin(resultat) {
             // tolke svaret
+            console.log(resultat);
             // {kode: "aosdhf", melding: "Login Ok"}
-            if (resultat.kode)
-            {
-                tilgangskode = resultat.kode;
+            if (resultat.kode) {
+                setToken(resultat.kode); 
+                brukernavn = resultat.bruker;
+                skriv("brukernavn2",brukernavn); 
+                document.getElementById("brukernavn").value = ""; 
+                document.getElementById("passord").value = ""; 
                 document.getElementById("chat").style.display = "block";
                 document.getElementById("login").style.display = "none";
             }
         }
 
         function logout() {
-            tilgangskode = "";
+            
+            get(url+"/logout",(res)=>{});
+            setToken(null); 
             document.getElementById("chat").style.display = "none";
             document.getElementById("login").style.display = "block";
         }
 
-        function sendMelding()
-        {
-            var meldingstekst = document.getElementById("nymelding").value; 
+        function sendMelding() {
+            var meldingstekst = document.getElementById("nymelding").value;
             var request = {
                 user: brukernavn,
-                message: meldingstekst,
-                kode: tilgangskode
+                message: meldingstekst,                
             }
-            post("http://192.168.1.196:5000/chat",request,onMessage)
+            post(url + "/chat", request, onMessage); 
+            document.getElementById("nymelding").value = ""; 
         }
 
-        function onMessage(response)
+        function autoOppdatering() 
         {
+            get(url + "/chat", onMessage);
+            setTimeout(autoOppdatering,5000); 
+        }
+
+        function oppdaterMeldinger() {            
+            get(url + "/chat", onMessage)
+        }
+
+        function onMessage(response) {
             // Har nå hele meldingsarray i response
             console.log(response);
             document.getElementById("meldinger").innerHTML = JSON.stringify(response);
+        }
+
+        function getActiveUsers()
+        {
+            get(url+"/active",onActive); 
+        }
+
+        function onActive(response)
+        {            
+            
+            skriv("activelist",JSON.stringify(response));
         }
     </script>
 </head>
@@ -78,16 +104,27 @@
 
     <div id="chat">
         <h2>Chat</h2>
-        Hei Jens
+        Velkommen <strong><span id="brukernavn2" ></span></strong>
         <button onclick="logout()">logout</button>
         <br>
         <input type="text" id="nymelding">
         <button onclick="sendMelding()">Send</button>
+        <button onclick="autoOppdatering()">Oppdater automatisk</button>
         <br>
         <div id="meldinger">
             Her kommer alle meldinger.....
         </div>
+        
+        <div id="active">
+                <h2>Active users</h2>
+                <button onclick="getActiveUsers()">Hent aktive brukere</button>                
+                <div id="activelist"></div>    
+        </div>
     </div>
+
+
+   
+
 </body>
 
 </html>

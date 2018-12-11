@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test av webtjenesten</title>
+
+    <script src="C:\work\afr\afrelev\audun\pages\afrlib.js"></script>
+
+    <script>
+        aboliste = [];
+
+        function lagre() {
+            var abonnent = {
+                navn: document.getElementById("input_navn").value,
+                brukernavn: document.getElementById("input_brukernavn").value,
+                tlf: document.getElementById("input_tlf").value,
+                passord: document.getElementById("input_passord").value
+
+            }
+            aboliste.push(abonnent);
+skrivAbo();
+        }
+        function skrivAbo() {
+            var res = "";
+            for (var i in aboliste) {
+                var abo = aboliste[i]
+                res = res + html("li",abo.navn+","+abo.brukernavn+","+abo.tlf+","+abo.passord);
+            }
+            res=html("ul",res)
+            skriv("resultat", res);
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h2>ny abonnent</h2>
+    Navn: <input type="navn" id="input_navn"> <br>
+    Bruker Navn: <input type="navn" id="input_brukernavn"> <br>
+    TLF: <input type="tel" id="input_tlf"> <br>
+    Passord: <input type="password" id="input_passord"> <br>
+
+    <button onclick="lagre()">lagre</button>
+    <hr>
+    <div id="resultat"></div>
+    <div id="resultat"></div>
+
+
+</body>
