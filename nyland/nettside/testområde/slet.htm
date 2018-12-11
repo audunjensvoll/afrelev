@@ -5,14 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test av webtjenesten</title>
+    <title>Test av webtjenester</title>
+    <!--
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    -->
     <script>
         function skriv(id, innhold) {
-            document.getElementById(id).innerHTML = innhold
+            document.getElementById(id).innerHTML = innhold;
         }
 
         function html(element, innhold) {
-            return "<" + element + ">" + innhold + "</" + element + ">"
+            return "<" + element + ">" + innhold + "</" + element + ">";
         }
 
         function get(url, onOk) {
@@ -24,27 +44,21 @@
             };
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
-        }
+        }        
     </script>
     <script>
-        // gamel versjon
-        var id = 123
-        var navn = "anders"
-        var epost = "anders@test.no"
 
-        //bra versjon
         var enbruker = {
             id: 123,
-            navn: "anders",
-            epost: "anders@test.no",
+            navn: "Anders",
+            epost: "anders@test.no"
         }
 
         var brukerliste = [
-            { id: 123, navn: "anders", epost: "anders@test.no" },
-            { id: 123, navn: "emma", epost: "emma@test.no" },
-            { id: 123, navn: "peder", epost: "peder@test.no" },
+            { id: 123, navn: "Anders", epost: "anders@test.no" },
+            { id: 111, navn: "Emma", epost: "emma@test.no" },
+            { id: 123, navn: "Peder", epost: "peder@test.no" }
         ];
-
 
         function skrivListe() {
             var tekst = "";
@@ -57,17 +71,11 @@
 
                 rad = html("tr", rad);
                 tekst = tekst + rad;
-
-
-
-                /*tekst = tekst
-                    + html("h3", brukerliste[i].navn)
-                    + html("p", brukerliste[i].id)
-                    + html("p", brukerliste[i].epost);*/
             }
-            tekst = html("table", tekst)
+            tekst = html("table", tekst);
             skriv("resultat", tekst);
         }
+
 
         function hentFraServer() {
             get("https://jsonplaceholder.typicode.com/users", behandle)
@@ -89,13 +97,14 @@
             skriv("resultat", tekst);
         }
 
+
+
         function skrivBruker(bruker) {
             var brukertekst = html("li", bruker.navn)
                 + html("li", bruker.id)
-                + html("li", bruker.epost)
+                + html("li", bruker.epost);
 
             skriv("resultat", html("ul", brukertekst));
-
         }
 
     </script>
@@ -103,12 +112,17 @@
 </head>
 
 <body>
-    <h1>test av webtjenesten</h1>
+    <h1>Test av webtjenester</h1>
 
-    <button onclick="skrivBruker(enbruker)">skriv en bruker</button>
-    <button onclick="skrivListe()">skriv alle bruker</button>
+    <button onclick="skrivBruker(enbruker)">Skriv en bruker</button>
+    <button onclick="skrivListe()">Skriv alle brukere</button>
     <button onclick="hentFraServer()">Hent fra server</button>
+
     <div id="resultat"></div>
+
+
+
+
 </body>
 
 </html>
