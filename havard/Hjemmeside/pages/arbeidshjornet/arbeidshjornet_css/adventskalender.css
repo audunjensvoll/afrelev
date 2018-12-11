@@ -35,7 +35,6 @@ body {
     
     .container {
         top: 340px;
-        color: white;
     }
     
     .meny {
@@ -62,7 +61,7 @@ body {
         font-family: christmas eve;
         font-size: 1.6em;
         text-align: center;
-        padding:14px 16px;
+        padding:15px 16px;
         text-decoration: none;
     }
     
@@ -85,11 +84,28 @@ body {
     {
         position: absolute;
         text-align: center;
-        top: 350px;
-        left: 400px;
-        right: 400px;
+        top: 421px;
+        left: 545px;
+        right: 545px;
+        background-color: white;
+        border: solid;
+        border-color: rgb(179, 0, 0);
     }
-    
+
+    .spacer {
+        background-color: rgb(26, 82, 118);
+        top: 340px;
+        padding: 20px;
+        font-family: christmas;
+        font-size: 2em;
+        text-align: center;
+        word-spacing: 60px;
+        color: white;
+        border-bottom: solid;
+        border-bottom-color: rgb(179, 0, 0);
+        
+    }
+
     .kalendertall
     {
         text-align: center;
