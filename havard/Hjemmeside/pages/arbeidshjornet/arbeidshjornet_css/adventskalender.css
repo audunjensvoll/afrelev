@@ -16,6 +16,43 @@ body {
         src: url('../arbeidshjornet_fonts/christmaseve.ttf');
         font-style: normal}
 
+
+    .meny {
+            text-align: center;
+        }
+        
+    .meny li {
+        display: inline-block;
+    }
+    .active {
+        background-color: rgba(253, 0, 0, 0.753);
+    }
+        
+    .meny ul {
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        background-color: rgb(26, 82, 118);
+    }
+        
+    .meny li a {
+        display: block;
+        color: white;
+        font-family: christmas eve;
+        font-size: 1.6em;
+        text-align: center;
+        padding:15px 16px;
+        text-decoration: none;
+    }
+        
+    .meny li a:hover {
+        background-color: rgba(255, 255, 255, 0.295)
+       }
+        
+
+
+
+
     .adventbildemtekst
     {
         background: url(../arbeidshjornet_images/Pictures-of-christmas-living-room-HD9G18.jpg) no-repeat center;
@@ -37,61 +74,6 @@ body {
         top: 340px;
     }
     
-    .meny {
-        text-align: center;
-    }
-    
-    .meny li {
-        display: inline-block;
-    }
-    .active {
-        background-color: rgba(253, 0, 0, 0.753);
-    }
-    
-    .meny ul {
-        list-style-type: none;
-        margin: 0;
-        overflow: hidden;
-        background-color: rgb(26, 82, 118);
-    }
-    
-    .meny li a {
-        display: block;
-        color: white;
-        font-family: christmas eve;
-        font-size: 1.6em;
-        text-align: center;
-        padding:15px 16px;
-        text-decoration: none;
-    }
-    
-    .meny li a:hover {
-        background-color: rgba(255, 255, 255, 0.295)
-    }
-    
-    .rute {
-        height: 140px;
-        width: 160px;
-        margin: 15px;
-        border: solid;
-        border-color: rgb(179, 0, 0);
-        background-image: url("../arbeidshjornet_images/snowflakes.jpg");
-        background-size: cover;
-        display: inline-block;
-    }
-
-    .kalender 
-    {
-        position: absolute;
-        text-align: center;
-        top: 421px;
-        left: 545px;
-        right: 545px;
-        background-color: white;
-        border: solid;
-        border-color: rgb(179, 0, 0);
-    }
-
     .spacer {
         background-color: rgb(26, 82, 118);
         top: 340px;
@@ -106,9 +88,86 @@ body {
         
     }
 
+    .sidebilde1 {
+        position: absolute;
+        background-image: url("../arbeidshjornet_images/snowman.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 75%;
+        filter: brightness(70%);
+        border-right-style: solid;
+        border-right-color: rgb(179, 0, 0);
+        margin: 0;
+        padding-right: 545px;
+        padding-bottom: 1056px;
+        top: 422px;
+        float: left;
+    }
+
+    .sidebilde2 {
+        position: absolute;
+        background-image: url("../arbeidshjornet_images/christmastree.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 75%;
+        filter: brightness(70%);
+        border-left-style: solid;
+        border-left-color: rgb(179, 0, 0);
+        margin: 0;
+        padding-left: 545px;
+        padding-bottom: 1056px;
+        top: 422px;
+        right: 0px;
+    }
+
+
+    .rute {
+        height: 140px;
+        width: 160px;
+        margin: 15px;
+        border: solid;
+        border-color: rgb(179, 0, 0);
+        background-image: url("../arbeidshjornet_images/snowflakes.jpg");
+        background-size: cover;
+        image-rendering: optimizeSpeed;
+        display: inline-block;
+    }
+
+    .kalender 
+    {
+        position: absolute;
+        text-align: center;
+        top: 419px;
+        left: 545px;
+        right: 545px;
+        background-color: white;
+        border: solid;
+        border-bottom: none;
+        border-color: rgb(179, 0, 0);
+    }
+
+
     .kalendertall
     {
         text-align: center;
         font-size: 3.4em;
         font-family: santas sleigh;
+    }
+
+    .footer {
+        position: absolute;
+        background-color: rgb(26, 82, 118);
+        top: 1478px;
+        padding: 20px;
+        font-family: christmas;
+        font-size: 2em;
+        text-align: center;
+        word-spacing: 60px;
+        right: 0px;
+        left: 0px;
+        color: white;
+        border-bottom: solid;
+        border-bottom-color: rgb(179, 0, 0);
+        border-top: solid;
+        border-top-color: rgb(179, 0, 0);
     }
