@@ -1,11 +1,13 @@
 
 #body {
         background-size: cover;
+
       }
 
 #julekalender{
     padding-top: 10%;
     padding-left: 40%;
+    visibility: hidden;
 }
 table{
     border: 1px solid black;
@@ -38,4 +40,11 @@ button{
     text-align: center;
 }
 
+.bildecss {
+    visibility: hidden;
+
+    height: 460px;
+    width: 500px;
+    float: right;
+}
 

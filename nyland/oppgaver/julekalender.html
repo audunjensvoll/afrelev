@@ -9,13 +9,68 @@
     <link rel="stylesheet" href="./julekalenderCSS.css">
 
     <script>
+        // luke 21
         function en() {
+            var end = new Date('2018-12-21');
+            var now = new Date();
+            if (end < now) {
             document.getElementById("body").style.backgroundImage = 'url("https://cdn.unifiedcommerce.com/content/product/large/871241004788.jpg")'
+    
+    }
+}
+        //luke 22
+        function spill() {
+            var end = new Date('2017-12-22');
+            var now = new Date();
+            if (end < now) {
+                var sang = document.getElementById("julesang");
+                sang.play();
+            }
         }
 
-//bakrun til lukene
+//luke 19
+                function nospill() {
+            var end = new Date('2017-12-19');
+            var now = new Date();
+            if (end < now) {
+                var sang = document.getElementById("julesang");
+                sang.pause();
+            }
+        }
+
+        //luke 23
+        function vis() {
+            var end = new Date('2018-12-23');
+            var now = new Date();
+            if (end < now) {
+            document.getElementById("z").style.visibility = 'visible';
+        }
+}
+
+
+//luke 20
+//sjuler kalender
+        function visa() {
+            var end = new Date('2017-12-20');
+            var now = new Date();
+            if (end < now) {
+            document.getElementById("julekalender").style.visibility = 'visible';
+            document.getElementById("sjul").style.visibility = 'hidden';
+            skiftfarge('rute20');
+        }
+}
+
+//luke 24
+function google(){
+    var end = new Date('2018-12-24');
+            var now = new Date();
+            if (end < now) {
+    window.location.href = 'https://www.google.no/maps/@63.1205465,7.7408183,3a,60y,159.77h,77.8t/data=!3m6!1e1!3m4!1sQ411pmSHuGR3zjA7KXYl7w!2e0!7i13312!8i6656?hl=no';
+}
+}
+        //bakrun til lukene
         var farge1 = "red";
-        var farge2 = "blue";
+        var farge2 = "purple";
         var farge = farge1;
 
         function skiftfarge(id) {
@@ -28,11 +83,23 @@
             }
         }
 
+
     </script>
 
 </head>
 
 <body id="body">
+    <!--luke 22-->
+    <audio id="julesang">
+
+        <source src="../lyd/Bjelleklang - julesang Tinyschool Norsk.mp3" type="audio/mp3" />
+
+    </audio>
+
+    <!--kalender-->
+
+    <button id="sjul" onclick="visa()">20</button>
+
     <div id="julekalender">
         <table>
             <thead>
@@ -43,7 +110,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td id="rute1" class="rute" onclick="skiftfarge('rute1')"><button onclick="en()">1</button></td>
+                    <td id="rute1" class="rute" onclick="skiftfarge('rute1')"><button>1</button></td>
                     <td id="rute2" class="rute" onclick="skiftfarge('rute2')"><button>2</button></td>
                     <td id="rute3" class="rute" onclick="skiftfarge('rute3')"><button>3</button></td>
                     <td id="rute4" class="rute" onclick="skiftfarge('rute4')"><button>4</button></td>
@@ -67,12 +134,12 @@
                     <td id="rute18" class="rute" onclick="skiftfarge('rute18')"><button>18</button></td>
                 </tr>
                 <tr>
-                    <td id="rute19" class="rute" onclick="skiftfarge('rute19')"><button>19</button></td>
+                    <td id="rute19" class="rute" onclick="skiftfarge('rute19')"><button onclick="nospill()">19</button></td>
                     <td id="rute20" class="rute" onclick="skiftfarge('rute20')"><button>20</button></td>
-                    <td id="rute21" class="rute" onclick="skiftfarge('rute21')"><button>21</button></td>
-                    <td id="rute22" class="rute" onclick="skiftfarge('rute22')"><button>22</button></td>
-                    <td id="rute23" class="rute" onclick="skiftfarge('rute23')"><button>23</button></td>
-                    <td id="rute24" class="rute" onclick="skiftfarge('rute24')"><a href="../nettside/spill/trepårad.html">24</a></td>
+                    <td id="rute21" class="rute" onclick="skiftfarge('rute21')"><button onclick="en()">21</button></td>
+                    <td id="rute22" class="rute" onclick="skiftfarge('rute22')"><button onclick="spill()">22</button></td>
+                    <td id="rute23" class="rute" onclick="skiftfarge('rute23')"><button onclick="vis()">23</button></td>
+                    <td id="rute24" class="rute" onclick="skiftfarge('rute24')"><button onclick="google()">24</a></td>
                 </tr>
 
                 </tr>
@@ -80,4 +147,9 @@
         </table>
 
     </div>
+
+
+
+    <img class="bildecss" id="z" src="https://scontent.fosl2-1.fna.fbcdn.net/v/t1.0-9/40673397_10210953639991602_7373952582256951296_n.jpg?_nc_cat=100&_nc_ht=scontent.fosl2-1.fna&oh=cfd3436671febeef53266b59418a8c5e&oe=5C9DBE8E">
+
 </body>
