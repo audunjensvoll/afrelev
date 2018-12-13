@@ -53,6 +53,17 @@
             window.open(href [a], '_blank');
         }
 
+
+
+        function spill(){
+            var musikk = document.getElementById("musikk").play();
+        }
+
+
+
+
+
+
     </script>
 
 
@@ -81,7 +92,7 @@
 
     <div class="spacer">6 3 5 0 4 2 6 3 0 1 4 5 3 1 6 0 4 2 5 3 1</div>
 
-        <div class="sidebilde1"></div>
+        <div class="sidebilde1" onclick="spill()"></div>
         <div class="sidebilde2"></div>
 
         <div class="kalender">
@@ -169,8 +180,15 @@
 
 </div>
 
+   
+
 <audio id= "musikk">
-   <source src="../arbeidshjornet_audio/gamenoah.mp3" autoplay=true loop=infinite type="audio/mpeg"></audio>
+   <source src="../arbeidshjornet_audio/gamenoah.mp3" autoplay=true loop=infinite type="audio/mpeg"></source> </audio>
+
+
 
 </body>
+<script>
+        spill();
+    </script>
 </html>
