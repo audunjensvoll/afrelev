@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adventskalender</title>
+
+    <style>
+        .rad {
+            display: block;
+            padding: 10px;
+            margin: auto; 
+        }
+        .luke {
+            color: white; 
+            background-color: black;
+            width: 100px; 
+            height: 100px; 
+            display: inline-block;
+            padding: 10px; 
+            margin: auto; 
+            
+        }
+
+        .lukeinnhold {
+            display: inline-block;
+            color: yellow; 
+            margin: 0; 
+            text-align: center; 
+        }
+
+        .kalender {
+            background-color: rgba(197, 58, 58, 0.746); 
+        }
+
+        #innhold {
+            position: fixed;
+            top:     10%;  
+            left:    20%;
+            height:  60%; 
+            width:   60%; 
+            background-color: rgb(137, 216, 216); 
+            z-index: 3; 
+            display: none; 
+        }
+    </style>
+    <script>
+
+        var images = [
+        '../img/bilde1.jpg',
+        '../img/bilde2.jpg',
+        '../img/bilde3.jpg',
+        '../img/bilde4.jpg',
+        '../img/bilde5.jpg',
+        '../img/bilde6.jpg',
+        '../img/bilde7.jpg',
+        '../img/bilde8.jpg',
+        '../img/bilde9.jpg',
+        '../img/bilde10.jpg',
+        '../img/bilde11.jpg',
+        '../img/bilde12.jpg',
+        '../img/bilde13.jpg',
+        '../img/bilde14.jpg',
+        '../img/bilde15.jpg',
+        '../img/bilde16.jpg',
+        '../img/bilde17.jpg',
+        '../img/bilde18.jpg',
+        '../img/bilde19.jpg',
+        '../img/bilde20.jpg',
+        '../img/bilde21.jpg',
+        '../img/bilde22.jpg',
+        '../img/bilde23.jpg',
+        '../img/bilde24.jpg'
+        ]
+
+        function f(id)
+        {
+            document.getElementById("luke"+id).style.backgroundImage= "url('"+ images[id-1]+"')"; 
+        }
+    </script>
+</head>
+<body>
+    <div class ="kalender">
+
+    <div class="rad">
+        <div class="luke" onclick="f(1)"><div id="luke1" class="lukeinnhold">1</div></div>
+        <div class="luke" onclick="f(2)"><div id="luke2" class="lukeinnhold">2</div></div>
+        <div class="luke" onclick="f(3)"><div id="luke3" class="lukeinnhold">3</div></div>
+        <div class="luke" onclick="f(4)"><div id="luke4" class="lukeinnhold">4</div></div>
+    </div>
+    <div class="rad">
+        <div class="luke" onclick="f(5)"><div id="luke5" class="lukeinnhold">5</div></div>
+        <div class="luke" onclick="f(6)"><div id="luke6" class="lukeinnhold">6</div></div>
+        <div class="luke" onclick="f(7)"><div id="luke7" class="lukeinnhold">7</div></div>
+        <div class="luke" onclick="f(8)"><div id="luke8" class="lukeinnhold">8</div></div>
+    </div>
+    <div class="rad">
+        <div class="luke" onclick="f(9)"><div id="luke9" class="lukeinnhold">9</div></div>
+        <div class="luke" onclick="f(10)"><div id="luke10" class="lukeinnhold">10</div></div>
+        <div class="luke" onclick="f(11)"><div id="luke11" class="lukeinnhold">11</div></div>
+        <div class="luke" onclick="f(12)"><div id="luke12" class="lukeinnhold">12</div></div>
+    </div>
+    <div class="rad">
+        <div class="luke" onclick="f(13)"><div id="luke13" class="lukeinnhold">13</div></div>
+        <div class="luke" onclick="f(14)"><div id="luke14" class="lukeinnhold">14</div></div>
+        <div class="luke" onclick="f(15)"><div id="luke15" class="lukeinnhold">15</div></div>
+        <div class="luke" onclick="f(16)"><div id="luke16" class="lukeinnhold">16</div></div>
+    </div>
+    <div class="rad">
+        <div class="luke" onclick="f(17)"><div id="luke17" class="lukeinnhold">17</div></div>
+        <div class="luke" onclick="f(18)"><div id="luke18" class="lukeinnhold">18</div></div>
+        <div class="luke" onclick="f(19)"><div id="luke19" class="lukeinnhold">19</div></div>
+        <div class="luke" onclick="f(20)"><div id="luke20" class="lukeinnhold">20</div></div>
+    </div>
+    <div class="rad">
+        <div class="luke" onclick="f(21)"><div id="luke21" class="lukeinnhold">21</div></div>
+        <div class="luke" onclick="f(22)"><div id="luke22" class="lukeinnhold">22</div></div>
+        <div class="luke" onclick="f(23)"><div id="luke23" class="lukeinnhold">23</div></div>
+        <div class="luke" onclick="f(24)"><div id="luke24" class="lukeinnhold">24</div></div>
+    </div>
+    
+
+</div>
+    <div id="innhold">
+        <h1>Hei</h1>
+    </div>
+    
+</body>
+</html>
