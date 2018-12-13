@@ -133,6 +133,10 @@ body {
         display: inline-block;
     }
 
+    .rute:hover {
+        filter: brightness(70%);
+    }
+
     .kalender 
     {
         position: absolute;
