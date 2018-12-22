@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
+<script>
 
+function spill() {
 
+var sang = document.getElementById("julesang");
+sang.play();
 
-
-    <script>
-
-        //luke 22
-        function spill() {
-
-            var sang = document.getElementById("julesang");
-            sang.play();
-
-        }
-    
+}
 
         //dette funker ikke hvorfor?
+        
         var start = sang.play();
         var stopp = sang.pause();
         var sang = start;
+
         function nospill() {
 
             var sang = document.getElementById("julesang");
+//Min endring: 
+            sang.pause(); 
 
-            sang.pause()
-           /* if (sang == start) {
+/*
+            if (sang == start) {
                 sang = stopp
             }
             else {
                 sang = start;
-            }*/
+            }
+            */
         }
-
-
-
-
-    </script>
-
+</script>
 </head>
-
 <body id="body">
     
     <audio id="julesang">
@@ -71,9 +67,6 @@
             </tbody>
         </table>
 
-    </div>
-
-
-
-
+    </div>  
 </body>
+</html>
