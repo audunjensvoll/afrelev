@@ -22,16 +22,20 @@
         var start = sang.play();
         var stopp = sang.pause();
         var sang = start;
+
         function nospill() {
 
             var sang = document.getElementById("julesang");
+            sang.pause(); 
 
+/*
             if (sang == start) {
                 sang = stopp
             }
             else {
                 sang = start;
             }
+            */
         }
 
 
