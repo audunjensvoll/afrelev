@@ -18,21 +18,51 @@
         }
     
 
-        //dette funker ikke hvorfor?
-        var start = sang.play();
-        var stopp = sang.pause();
-        var sang = start;
+        // Denne variabelen skal være true hvis den spiller, false ellers
+
+        var spiller = false; 
+        
+        
+
         function nospill() {
 
             var sang = document.getElementById("julesang");
 
+<<<<<<< HEAD
             sang.pause()
            /* if (sang == start) {
+=======
+            // sjekker her om sangen spiller eller ikke
+            // hvis den spiller stoppes den, hves den ikke spiller startes den
+            if (spiller)
+            {
+                // stopper sangen
+                sang.pause();
+                // oppdaterer spiller-variablen slik at den er riktig neste gang
+                spiller = false; 
+            }
+            else 
+            {
+                // starter sangen
+                sang.play(); 
+                // oppdaterer spiller-variabelen slik at den er riktig neste gang. 
+                spiller = true; 
+            }
+            
+
+/*
+            if (sang == start) {
+>>>>>>> 00aa732994977117c6035d340c074e3801219781
                 sang = stopp
             }
             else {
                 sang = start;
+<<<<<<< HEAD
             }*/
+=======
+            }
+            */
+>>>>>>> 00aa732994977117c6035d340c074e3801219781
         }
 
 
