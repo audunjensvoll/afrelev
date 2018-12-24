@@ -19,15 +19,26 @@
     }
 }
         //luke 22
+        var spiller = false; 
+
         function spill() {
             var end = new Date('2018-12-22');
             var now = new Date();
             if (end < now) {
-                var sang = document.getElementById("julesang");
-                sang.play();
+            var sang = document.getElementById("julesang");
+
+            if (spiller)
+            {
+                sang.pause();
+                spiller = false; 
+            }
+            else 
+            {
+                sang.play(); 
+                spiller = true; 
+            }
             }
         }
-
 //luke 19
                 function nospill() {
             var end = new Date('2018-12-19');

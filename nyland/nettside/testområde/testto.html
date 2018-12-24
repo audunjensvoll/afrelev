@@ -17,25 +17,22 @@ sang.play();
 
         //dette funker ikke hvorfor?
         
-        var start = sang.play();
-        var stopp = sang.pause();
-        var sang = start;
+        var spiller = false; 
 
         function nospill() {
-
             var sang = document.getElementById("julesang");
-//Min endring: 
-            sang.pause(); 
 
-/*
-            if (sang == start) {
-                sang = stopp
+            if (spiller)
+            {
+                sang.pause();
+                spiller = false; 
             }
-            else {
-                sang = start;
+            else 
+            {
+                sang.play(); 
+                spiller = true; 
             }
-            */
-        }
+            }
 </script>
 </head>
 <body id="body">
