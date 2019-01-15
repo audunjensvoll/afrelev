@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>julekalender</title>
+    <link rel="stylesheet" href="./julekalenderCSS.css">
+
+    <script>
+        // luke 21
+        function en() {
+            var end = new Date('2018-12-21');
+            var now = new Date();
+            if (end < now) {
+            document.getElementById("body").style.backgroundImage = 'url("https://cdn.unifiedcommerce.com/content/product/large/871241004788.jpg")'
+    
+    }
+}
+        //luke 22
+        var spiller = false; 
+
+        function spill() {
+            var end = new Date('2018-12-22');
+            var now = new Date();
+            if (end < now) {
+            var sang = document.getElementById("julesang");
+
+            if (spiller)
+            {
+                sang.pause();
+                spiller = false; 
+            }
+            else 
+            {
+                sang.play(); 
+                spiller = true; 
+            }
+            }
+        }
+//luke 19
+                function nospill() {
+            var end = new Date('2018-12-19');
+            var now = new Date();
+            if (end < now) {
+                var sang = document.getElementById("julesang");
+                sang.pause();
+            }
+        }
+
+        //luke 23
+        function vis() {
+            var end = new Date('2018-12-23');
+            var now = new Date();
+            if (end < now) {
+            document.getElementById("z").style.visibility = 'visible';
+        }
+}
+
+
+//luke 20
+//sjuler kalender
+        function visa() {
+            var end = new Date('2018-12-20');
+            var now = new Date();
+            if (end < now) {
+            document.getElementById("julekalender").style.visibility = 'visible';
+            document.getElementById("sjul").style.visibility = 'hidden';
+            skiftfarge('rute20');
+        }
+}
+
+//luke 24
+function google(){
+    var end = new Date('2018-12-24');
+            var now = new Date();
+            if (end < now) {
+    window.location.href = 'https://www.google.no/maps/@63.1205465,7.7408183,3a,60y,159.77h,77.8t/data=!3m6!1e1!3m4!1sQ411pmSHuGR3zjA7KXYl7w!2e0!7i13312!8i6656?hl=no';
+}
+}
+        //bakrun til lukene
+        var farge1 = "red";
+        var farge2 = "purple";
+        var farge = farge1;
+
+        function skiftfarge(id) {
+            document.getElementById(id).style.backgroundColor = farge;
+            if (farge == farge1) {
+                farge = farge2
+            }
+            else {
+                farge = farge1;
+            }
+        }
+
+
+    </script>
+
+</head>
+
+<body id="body">
+    <!--luke 22-->
+    <audio id="julesang">
+
+        <source src="../lyd/Bjelleklang - julesang Tinyschool Norsk.mp3" type="audio/mp3" />
+
+    </audio>
+
+    <!--kalender-->
+
+    <button id="sjul" onclick="visa()">20</button>
+
+    <div id="julekalender">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3" scope="col">julekalender</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="rute1" class="rute" onclick="skiftfarge('rute1')"><button>1</button></td>
+                    <td id="rute2" class="rute" onclick="skiftfarge('rute2')"><button>2</button></td>
+                    <td id="rute3" class="rute" onclick="skiftfarge('rute3')"><button>3</button></td>
+                    <td id="rute4" class="rute" onclick="skiftfarge('rute4')"><button>4</button></td>
+                    <td id="rute5" class="rute" onclick="skiftfarge('rute5')"><button>5</button></td>
+                    <td id="rute6" class="rute" onclick="skiftfarge('rute6')"><button>6</button></td>
+                </tr>
+                <tr>
+                    <td id="rute7" class="rute" onclick="skiftfarge('rute7')"><button>7</button></td>
+                    <td id="rute8" class="rute" onclick="skiftfarge('rute8')"><button>8</button></td>
+                    <td id="rute9" class="rute" onclick="skiftfarge('rute9')"><button>9</button></td>
+                    <td id="rute10" class="rute" onclick="skiftfarge('rute10')"><button>10</button></td>
+                    <td id="rute11" class="rute" onclick="skiftfarge('rute11')"><button>11</button></td>
+                    <td id="rute12" class="rute" onclick="skiftfarge('rute12')"><button>12</button></td>
+                </tr>
+                <tr>
+                    <td id="rute13" class="rute" onclick="skiftfarge('rute13')"><button>13</button></td>
+                    <td id="rute14" class="rute" onclick="skiftfarge('rute14')"><button>14</button></td>
+                    <td id="rute15" class="rute" onclick="skiftfarge('rute15')"><button>15</button></td>
+                    <td id="rute16" class="rute" onclick="skiftfarge('rute16')"><button>16</button></td>
+                    <td id="rute17" class="rute" onclick="skiftfarge('rute17')"><button>17</button></td>
+                    <td id="rute18" class="rute" onclick="skiftfarge('rute18')"><button>18</button></td>
+                </tr>
+                <tr>
+                    <td id="rute19" class="rute" onclick="skiftfarge('rute19')"><button onclick="nospill()">19</button></td>
+                    <td id="rute20" class="rute" onclick="skiftfarge('rute20')"><button>20</button></td>
+                    <td id="rute21" class="rute" onclick="skiftfarge('rute21')"><button onclick="en()">21</button></td>
+                    <td id="rute22" class="rute" onclick="skiftfarge('rute22')"><button onclick="spill()">22</button></td>
+                    <td id="rute23" class="rute" onclick="skiftfarge('rute23')"><button onclick="vis()">23</button></td>
+                    <td id="rute24" class="rute" onclick="skiftfarge('rute24')"><button onclick="google()">24</a></td>
+                </tr>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <img class="bildecss" id="z" src="https://scontent.fosl2-1.fna.fbcdn.net/v/t1.0-9/40673397_10210953639991602_7373952582256951296_n.jpg?_nc_cat=100&_nc_ht=scontent.fosl2-1.fna&oh=cfd3436671febeef53266b59418a8c5e&oe=5C9DBE8E">
+
+</body>

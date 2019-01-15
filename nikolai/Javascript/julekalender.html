@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>julekalender</title>
+
+    <link rel="stylesheet" href="../CSS/julekalenderCSS.css">
+
+    <script>
+        var href = [
+            "1T9CxXn_nwo", "PVWnQSrZono",
+            "ZB7ANO1DE5w", "B2q-SL5IgmY",
+            "nC3__QbqYjc", "ysqkPTP0xmI",
+            "IfW7dKD5qgQ", "gOvjWyJsmj8",
+            "bddAXk1xVxU", "EPS2C3SYLsY",
+            "Y1cdtuTXfFs", "NZIQTW4gnyk",
+            "83uigJ_ZI8I", "5ElIKt79tIg",
+            "w2rhkuaLs3c", "tzmfef7ZfoU",
+            "lz4w8CZMZD4", "1WsJDAop6XQ",
+            "GVcNPjgJ7SQ", "TZ3nc1ABE8M",
+            "cliK7I4bB7g", "3Dxu8rx11XM",
+            "zkzxWi4ALRI", "6V5mtUff6ik"
+        ]
+
+        function åpneluke(nummer) {
+
+            var a = nummer - 1;
+            video(href[a])
+        }
+
+        function dato() {
+            var dato = new Date().getDate();
+            for (var nummer = 1; nummer < 25; nummer = nummer + 1) {
+                if (dato == nummer) {
+                    document.getElementById("" + nummer).disabled = false;
+                }
+                else {
+                    document.getElementById("" + nummer).disabled = true;
+                    document.getElementById("" + nummer).style.background = "red";
+                    document.getElementById("" + nummer).style.color = "grey";
+                }
+            }
+        }
+
+        function video(videoid) {
+            var link = "https://www.youtube.com/embed/" + videoid;
+            document.getElementById("crap").style.display = "block"
+            document.getElementById("video").src = link;
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1> Julekalender 2018 </h1>
+
+    <div class="knapper">
+        <div class="rad">
+            <input type="button" id="1" value="1" onclick="åpneluke(1)">
+            <input type="button" id="2" value="2" onclick="åpneluke(2)">
+            <input type="button" id="3" value="3" onclick="åpneluke(3)">
+            <input type="button" id="4" value="4" onclick="åpneluke(4)">
+            <input type="button" id="5" value="5" onclick="åpneluke(5)">
+            <input type="button" id="6" value="6" onclick="åpneluke(6)">
+            <input type="button" id="7" value="7" onclick="åpneluke(7)">
+            <input type="button" id="8" value="8" onclick="åpneluke(8)">
+        </div>
+        <div class="rad">
+            <input type="button" id="9" value="9" onclick="åpneluke(9)">
+            <input type="button" id="10" value="10" onclick="åpneluke(10)">
+            <input type="button" id="11" value="11" onclick="åpneluke(11)">
+            <input type="button" id="12" value="12" onclick="åpneluke(12)">
+            <input type="button" id="13" value="13" onclick="åpneluke(13)">
+            <input type="button" id="14" value="14" onclick="åpneluke(14)">
+            <input type="button" id="15" value="15" onclick="åpneluke(15)">
+            <input type="button" id="16" value="16" onclick="åpneluke(16)">
+        </div>
+        <div class="rad">
+            <input type="button" id="17" value="17" onclick="åpneluke(17)">
+            <input type="button" id="18" value="18" onclick="åpneluke(18)">
+            <input type="button" id="19" value="19" onclick="åpneluke(19)">
+            <input type="button" id="20" value="20" onclick="åpneluke(20)">
+            <input type="button" id="21" value="21" onclick="åpneluke(21)">
+            <input type="button" id="22" value="22" onclick="åpneluke(22)">
+            <input type="button" id="23" value="23" onclick="åpneluke(23)">
+            <input type="button" id="24" value="24" onclick="åpneluke(24)">
+        </div>
+    </div>
+
+    <div id="crap">
+        <iframe id="video" width="420" height="315" src="https://www.youtube.com/embed/"></iframe>
+    </div>
+
+    <script>
+
+        dato()
+
+    </script>
+
+</body>
+
+</html>

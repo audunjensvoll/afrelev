@@ -62,14 +62,14 @@
 
         function skrivListe() {
             var tekst = "";
-            var rad = ""; 
+            var rad = "";
             for (var i in brukerliste) {
-                rad = 
-                html("td", brukerliste[i].navn)
-                + html("td", brukerliste[i].id)
-                + html("td", brukerliste[i].epost); 
+                rad =
+                    html("td", brukerliste[i].navn)
+                    + html("td", brukerliste[i].id)
+                    + html("td", brukerliste[i].epost);
 
-                rad = html("tr",rad);
+                rad = html("tr", rad);
                 tekst = tekst + rad;
             }
             tekst = html("table", tekst);
@@ -77,22 +77,20 @@
         }
 
 
-        function hentFraServer()
-        {
-            get("https://jsonplaceholder.typicode.com/users",behandle)
+        function hentFraServer() {
+            get("https://jsonplaceholder.typicode.com/users", behandle)
         }
 
-        function behandle(liste)
-        {
+        function behandle(liste) {
             var tekst = "";
-            var rad = ""; 
+            var rad = "";
             for (var i in liste) {
-                rad = 
-                html("td", liste[i].name)
-                + html("td", liste[i].id)
-                + html("td", liste[i].email); 
+                rad =
+                    html("td", liste[i].name)
+                    + html("td", liste[i].id)
+                    + html("td", liste[i].email);
 
-                rad = html("tr",rad);
+                rad = html("tr", rad);
                 tekst = tekst + rad;
             }
             tekst = html("table", tekst);
@@ -123,7 +121,7 @@
     <div id="resultat"></div>
 
 
-    
+
 
 </body>
 

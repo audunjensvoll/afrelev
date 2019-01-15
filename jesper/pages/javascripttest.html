@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+ <title>Test javascript</title>
+ <script>
+  var tallet = 0; 
+
+ function tell(x)
+
+  {
+      tallet = tallet + x;
+
+      document.getElementById("minDiv").innerHTML = tallet;
+
+  }
+ 
+function test4()
+{
+var kommode = [];
+kommode[0] = 'Per';
+kommode[1] = 'Anna';
+kommode[2] = 'Jens';
+kommode[3] =6;
+
+
+var resultat = kommode.sort().join('    ::    ');
+
+document.getElementById("resultat").innerHTML=resultat;
+
+
+}
+
+
+function array2ul(arr) {
+    var resultat="<ul>";
+    
+    for(var i=0; i<arr.lenght; i=i+1){
+resultat = resultat + "<li>"+ arr [i] + "</li>";
+
+    }
+resultat = resultat + "</ul>";
+return resultat;
+}
+
+function test8() {
+    var merke = "volvo"
+    var regnr = "hs12345";
+    var farge = "yellow";
+
+    var hus = {
+type: "enebolig",
+kvadratm: "323",
+farge: "Hvit og grått",
+}
+
+
+var resultat = hus.farge;
+
+
+
+}
+
+
+
+
+ </script>
+ </head>
+ <body>
+ <div>
+<button onclick="test8()">Hus</button>
+<button onclick="test7()">Sortere navn</button>
+ <button onclick="test6()">For-løkke</button>
+ <button onclick="test5()">Mer om array</button>
+ <button onclick="test4()">Array test</button>
+ <button onclick="test3()">Kall funksjon med 2 parametere</button>
+ <button onclick="test2()">Kall funksjon med parameter</button>
+ <button onclick="test1()">Kall funksjon</button>
+ 
+ 
+ 
+
+ 
+ 
+ </div>
+ <div id="resultat">
+ 
+ 
+ 
+ </div>
+ </body>
+ </html>
+ 

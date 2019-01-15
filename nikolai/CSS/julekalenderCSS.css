@@ -1,0 +1,47 @@
+    
+    body {
+        background-image: url("../Bilder/ZOuo9rb.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 1296px 972px;
+    }
+
+    input {
+        background-color: red;
+        border-color: red;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        margin: 0;
+    }
+    input:hover {
+        background-image: url("../Bilder/julenisse.jpg");
+        background-repeat: no-repeat;
+        background-size: 100px 100px;
+        color: rgba(0,0,0,0);
+    }
+
+    .knapper {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        
+    }
+
+    .rad {
+        margin-left: 11%;
+        margin-top: 10px;
+
+    }
+
+    iframe {
+        align-content: center;
+    }
+
+    #crap {
+        display: none;
+        margin: auto;
+    }

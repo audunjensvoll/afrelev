@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av rest</title>
+    <style>
+        #chat {
+    display:none
+}
+
+</style>
+    <script src="../../../js/afrlib.js"></script>
+    <script>
+
+        function loggin() {
+
+            var bruker = {
+                brukernavn: document.getElementById("brukernavn").value,
+                passord: document.getElementById("passord").value,
+
+            }
+
+            brukernavn = bruker.brukernavn
+            get("http://192.168.1.196:5000/login", bruker, onLogin);
+
+            document.getElementById("loggin").style.display = 'none';
+            document.getElementById("chat").style.display = 'block';
+
+        }
+        var tilgangskode = "";
+        var brukernavn = "";
+        function onLogin(resultat) {
+
+
+            //tolke svaret
+            if (resultat.kode)tilgangskode=resultat.kode;
+        }
+
+        function logut() {
+            document.getElementById("loggin").style.display = 'block';
+            document.getElementById("chat").style.display = 'none';
+
+        }
+
+        function sendMeling() {
+            var melingstekst = document.getElementById("nyMeling").value
+            var resultat = {
+                user: brukernavn,
+                message: melingstekst,
+                kode: tilgangskode
+
+            }
+            post("http://192.168.1.196:5000/chat", resultat, onMasige)
+        }
+
+        function onMasige(resultat) {
+            document.getElementById("melinger").innerHTML = JSON.stringify(resultat);
+
+        }
+    </script>
+
+
+
+</head>
+
+
+<body>
+    <div class="" id="loggin">
+        Bruker Navn: <input type="navn" id="brukernavn"> <br>
+        Passord: <input type="password" id="passord"> <br>
+        <button onclick="loggin()">logg inn</button>
+
+    </div>
+
+    <div id="chat">
+        hei jens
+        <button onclick="logut()">logg ut</button>
+        <br>
+        <input type="text" id="nyMeling">
+        <button onclick="sendMeling()">send</button>
+        <div id="melinger">
+        her kommer alle melinger.....
+    </div>
+    </div>
+</body>
+</html>
