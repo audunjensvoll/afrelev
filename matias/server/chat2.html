@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+    <title>AFR chat</title>
+
+    <script src="../../js/afrlib.js"></script>
+    <script>
+
+        function Logginn() {
+            var Bruker = {
+                brukernavn: document.getElementById("Brukernavn").value,
+                passord: document.getElementById("Passord").value
+            }
+
+            brukernavn = Bruker.brukernavn;
+
+            get("http://192.168.1.196:5000/login", Bruker, onLogin);
+
+        }
+
+        var brukernavn = "";
+        var tilgangskode = "";
+
+        function onLogin(Resultat) {
+            //tolker svaret
+            //{kode: "aosdhf", melding: "Login OK"}
+
+            if (Resultat.kode) {
+
+                tilgangskode = Resultat.kode;
+                document.getElementById("Login").style.display = "none";
+                document.getElementById("Chat").style.display = "block";
+            }
+        }
+
+        function Loggut() {
+            tilgangskode = "";
+            document.getElementById("Login").style.display = "block";
+            document.getElementById("Chat").style.display = "none";
+        }
+
+        function Send() {
+            var meldingstekst = document.getElementById("Nymelding").value;
+            var request = {
+                user: brukernavn,
+                message: meldingstekst,
+                kode: tilgangskode
+            }
+            post("http://192.168.1.196:5000/chat", request, onMessage)
+        }
+
+        function onMessage(response) {
+            console.log(response);
+            document.getElementById("Meldinger").innerHTML = JSON.stringify(response);
+        }
+        
+        function Refresh() {
+            var request = {
+                kode: tilgangskode
+            }
+            get("http://192.168.1.196:5000/chat", request, onMessage)
+        }
+
+    </script>
+
+    <style>
+        #Login {
+
+        }
+
+        #Chat {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> AFR Chat </h1>
+
+    <div id="Login">
+        <h3> Login </h3>
+
+        Brukernavn: <input type="text" id="Brukernavn">
+        Passord: <input type="password" id="Passord">
+
+        <button onclick="Logginn()">Logg inn</button>
+
+    </div>
+
+    <div id=Chat>
+        <h3> Chat </h3>
+        <p></p>
+
+        <button onclick="Loggut()">Logg ut</button>
+        <br>
+
+        Melding: <input type="text" id="Nymelding">
+        <button onclick="Send()">Send</button>
+        <button onclick="Refresh()">Refresh</button>
+        <br>
+        <div id="Meldinger">
+        
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
