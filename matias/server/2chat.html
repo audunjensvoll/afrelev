@@ -72,13 +72,18 @@
             for(var i in mldliste){
                 var element = mldliste[i];
                 var linje = "<li>" + element.navn + " : " + element.mld + "</li>";
-                kommentar = ' <button onclick="">Kommentar</button> '
+                kommentar = ' <button onclick="Kommentar()">Kommentar</button> '
                 if(element.godkjent){
                     mld = mld + linje + kommentar;
                 }
             }
             mld = mld + "</ul>";
             skriv("melding", mld);
+        }
+
+        
+        function Kommentar(){
+            info.innerHTML +=  '<input type="text" id="kommentar">;
         }
         
         console.log(mldliste);
