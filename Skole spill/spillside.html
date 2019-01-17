@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   
+
 
     <link rel="stylesheet" type="text/css" href="./css/spillside.css">
 
-<title>KJELLEREN PÅ AFR</title>
-<h1>:-)</h1>
-<p>:-)</p>
-<script scr="./js/spillside.js"></script>
+    <title>KJELLEREN PÅ AFR</title>
+
+    <script src="js/spillside.js"></script>
+
+
+    <script>
+        function enTest() {
+
+            document.getElementById("test").innerHTML = "Hei";
+        }
+
+        function vis(ting){
+
+document.getElementById("detalj").style.visibility="visible";
+document.getElementById("detalj").innerHTML=ting;
+
+
+        }
+       function skjul(){
+
+        document.getElementById("detalj").style.visibility="hidden"
 
 
 
+       }
+        
+
+
+
+
+
+
+    </script>
+ 
 
 </head>
+
 <body>
-    
+    <div id="topp">
+        <div id="navn">jesper</div>
+        <div id="klokke">55:20</div>
+        <div id="hint">hint</div>
+    </div>
+<div id="spill">
+    <img src="./provebilder/skolespill1.jpg" alt="" usemap="#Map">
+    <map name="Map" id="Map">
+            <area alt="" title="" href="#" shape="poly" coords="77,311,135,317,166,275,161,225,109,217,67,248" onclick="vis('boks')"/>
+            <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156" onclick="vis('kjoleskap')" /> 
+        </map>
+
+
+
+    <div id="detalj" onclick="skjul()">detalj</div>
+</div>
+
+   
+
+
 </body>
+
 </html>
