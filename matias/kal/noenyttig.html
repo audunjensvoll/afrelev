@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+	<html lang="no">
+		<head>
+			<meta charset="UTF-8">
+            <title></title>
+            <style>
+                .rute{
+                    height: 174px;
+                    width: 174px;
+                    border: solid 4px;
+                    background-color: red;
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 70px;
+                }
+                #demo{
+                    font-size: 30px;
+                }
+                body{
+                    background-color: green;
+                }
+                #kalender{
+                   text-align: center;
+                }
+            </style>
+            <script type="text/javascript">
+                var countDownDate = new Date("Dec 24, 2018 18:00:00").getTime();
+    
+                var x = setInterval(function() {
+                      var now = new Date().getTime();
+                    var distance = countDownDate - now;
+    
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                      + minutes + "m " + seconds + "s ";
+    
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "Det er jul";
+                    }
+                }, 1000);
+            </script>
+            <script type="text/javascript">
+                function taVekk(id) {
+                    
+                    document.getElementById(id).style.visibility = "hidden";
+                           
+                }
+                
+                
+            </script>
+		</head>
+		<body>
+            <div id="kalender">
+                <button class="rute" id="rute1" onclick="taVekk('rute1'); rute1();">1</button>
+                <button class="rute" id="rute2" onclick="taVekk('rute2'); rute2();">2</button>
+                <button class="rute" id="rute3" onclick="taVekk('rute3'); rute3();">3</button>
+                <button class="rute" id="rute4" onclick="taVekk('rute4'); rute4();">4</button>
+                <button class="rute" id="rute5" onclick="taVekk('rute5'); rute5();">5</button>
+                <button class="rute" id="rute6" onclick="taVekk('rute6'); rute6();">6</button>
+                <br>
+                <button class="rute" id="rute7" onclick="taVekk('rute7'); rute7();">7</button>
+                <button class="rute" id="rute8" onclick="taVekk('rute8'); rute8();">8</button>
+                <button class="rute" id="rute9" onclick="taVekk('rute9'); rute9();">9</button>
+                <button class="rute" id="rute10" onclick="taVekk('rute10'); rute10();">10</button>
+                <button class="rute" id="rute11" onclick="taVekk('rute11'); rute11();">11</button>
+                <button class="rute" id="rute12" onclick="taVekk('rute12'); rute12();">12</button>
+                <br>
+                <button class="rute" id="rute13" onclick="taVekk('rute13'); rute13();">13</button>
+                <button class="rute" id="rute14" onclick="taVekk('rute14'); rute14();">14</button>
+                <button class="rute" id="rute15" onclick="taVekk('rute15'); rute15();">15</button>
+                <button class="rute" id="rute16" onclick="taVekk('rute16'); rute16();">16</button>
+                <button class="rute" id="rute17" onclick="taVekk('rute17'); rute17();">17</button>
+                <button class="rute" id="rute18" onclick="taVekk('rute18'); rute18();">18</button>
+                <br>
+                <button class="rute" id="rute19" onclick="taVekk('rute19'); rute19();">19</button>
+                <button class="rute" id="rute20" onclick="taVekk('rute20'); rute20();">20</button>
+                <button class="rute" id="rute21" onclick="taVekk('rute21'); rute21();">21</button>
+                <button class="rute" id="rute22" onclick="taVekk('rute22'); rute22();">22</button>
+                <button class="rute" id="rute23" onclick="taVekk('rute23'); rute23();">23</button>
+                <button class="rute" id="rute24" onclick="taVekk('rute24'); rute24();">24</button>
+            </div>
+            <p id="demo"></p>
+            <!--<audio>
+                <source src="horse.mp4" type="audio/mp4" autoplay>   
+            </audio>-->
+
+		</body>
+	</html>​

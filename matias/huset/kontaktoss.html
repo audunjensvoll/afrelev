@@ -15,16 +15,19 @@
 			}
 			/*Tilbakemeldning*/
 	       	#motsatt{
-	       		position: absolute;
-	       		float: right;
-	       		margin-left: 735px;
+                position: absolute;
+                display: inline-block;
+                margin-left: 735px;
+
+                   
 	       	}
             /*Tilbakemeldning tekst + posisjon*/
 			#txtMeldinger {
 				position: absolute;
 				/*Setter posisjon*/
 				max-height: 400px;
-				width: 100%;
+                width: 500px;
+
 				padding-left: 10px;
 				border: solid #808080; 
 				overflow: auto;
@@ -70,13 +73,13 @@
 
             <div class="content">
                 <p>
-                        <h2>Kontaktinfo</h2>
-                        <h3>Adresse:</h3>
-                        <p>Parkvegen 16<br>2390 Moelv</p>
-                        <h3><i><b>Telefon:</b></i></h3>
-                        <p>tlf: 902 63 824</p>
-                        <h3><i><b>Epost:</b></i></h3>
-                        <p>husetmoeiv@gmail.com</p>
+                        <h3>Kontaktinfo</h3>
+                        <h4>Adresse:</h4>
+                        Parkvegen 16<br>2390 Moelv
+                        <h4><i><b>Telefon:</b></i></h4>
+                        tlf: 902 63 824
+                        <h4><i><b>Epost:</b></i></h4>
+                        husetmoeiv@gmail.com
                 </p>  
                 <p>
                     <p id="motsatt">
@@ -89,11 +92,12 @@
                                 <button type="submit" class="button">Send</button>
                                 <br><br>
                                 <!--Skriver ut informasjonen fra databasen-->
-                                <div id="txtMeldinger"></div>
+                                <p><div id="txtMeldinger"></div></p>
                             </form>
                         </p>
                     </p>
             </div>
+            <br><br><br><br><br><br>
       <script type="text/javascript">
 
       // Menu-toggle button

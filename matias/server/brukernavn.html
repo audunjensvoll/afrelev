@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Input Demo</title>
+
+    <script src="../../js/afrlib.js"></script>
+    <script>
+
+        var Aboliste = [];
+
+        function Lagre() {
+            var Abonnent = {
+                Navn: document.getElementById("Input_Navn").value,
+                Brukernavn: document.getElementById("Input_Bruker").value,
+                Passord: document.getElementById("Input_Passord").value,
+                Fødselsdato: document.getElementById("Input_Dato").value,
+                TLF: document.getElementById("Input_TLF").value,
+                Epost: document.getElementById("Input_Epost").value
+
+            }
+            Aboliste.push(Abonnent);
+            SkrivAbo();
+        }
+
+        function SkrivAbo() {
+            var Tekst = "";
+            var Res = "";
+            for(var i in Aboliste) {
+                var Abo = Aboliste[i];
+                Res = Res + html("td",Abo.Navn) 
+                + html("td",Abo.Brukernavn) 
+                + html("td",Abo.Passord) 
+                + html("td",Abo.Fødselsdato) 
+                + html("td",Abo.TLF) 
+                + html("td",Abo.Epost);
+            
+            Res = html("tr", Res)
+            Tekst = Res + Tekst
+            }
+            Tekst = html("table", Tekst)
+            skriv ("Resultat", Tekst);
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h2>Ny bruker</h2>
+    Navn: <input type="text" id="Input_Navn">
+    Brukernavn: <input type="text" id="Input_Bruker">
+    Passord: <input type="Password" id="Input_Passord">
+    Fødselsdato: <input type="date" id="Input_Dato">
+    Telefon: <input type="tel" id="Input_TLF">
+    Epost: <input type="email" id="Input_Epost">
+    <button onclick="Lagre()">Lagre</button>
+
+    <hr>
+
+    <div id="Resultat">
+
+    </div>
+
+</body>
+
+</html>

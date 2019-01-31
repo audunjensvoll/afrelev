@@ -1,0 +1,104 @@
+body {
+
+    background-color:white;
+height: 100%;
+
+
+}
+
+.objekt {
+
+
+height: 100px;
+width: 100px;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+
+
+
+}
+
+#topp{
+
+background-color: black;
+height: 100px;
+
+}
+
+#navn{
+
+
+background-color: blue;
+display: inline-block;
+height: 100px;
+width: 504px;
+text-align: center;
+font-size: 200%;
+}
+#klokke{
+    height: 100px;
+    width: 504px;
+    text-align: center;
+background-color: brown;
+display: inline-block;
+font-size: 200%;
+}
+#hint{
+    height: 100px;
+    width: 504px;
+    text-align: center;
+    font-size: 200%;
+background-color: chartreuse;
+display: inline-block;
+}
+#spill{
+
+background-color: crimson;
+height: 600px;
+
+
+}
+
+#detalj{
+    display: inline-block;
+height: 500px;
+width: 900px;
+visibility: hidden;
+position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    background-color: darkorange;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body,html{
+
+height: 20%;
+background-image: url
+background-size: 1% 1%
+
+
+
+}
+
+
+
+
