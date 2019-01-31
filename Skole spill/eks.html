@@ -76,105 +76,42 @@
 
     <script>
         // Her er alle rom definert
+        var romnr = 0;
         var rom = [
             {
-                img: "./skolespill1.jpg",
-                areas: [{
-                    coords: "80,310,133,314,164,271,159,220,106,211,64,244",
-                    kode: 1,
-                    type: 1,
-                    message: "Dette er esken"
-                },
-                {
-                    coords: "154,148,154,216,202,217,246,224,244,154,200,150",
-                    kode: 2,
-                    type: 1,
-                    message: "kjøleskapet"
-                },
-                {
-                    coords: "271,4,263,330,285,329,293,7",
-                    kode: 3,
-                    type: 1,
-                    message: "stoplen"
-                }
-                ]
-            },
-            {
-                img: "./skolespill2.jpg",
-                areas: [
+                view = [
                     {
-                        coords: "41,22,48,301,80,308,70,28",
-                        kode: 4,
-                        type: 1,
-                        message: "Her er stoplen igjen"
+                        img: "../provebilde/Left0.jpg",
+                        areas: [{
+                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
+                            kode: 1,
+                            type: 1,
+                            message: "Dette er esken"
+                        }]
                     },
                     {
-                        coords: "141,85,145,250,190,251,201,287,260,257,279,95",
-                        kode: 5,
-                        type: 1,
-                        message: "Det store skapet"
+                        img: "./skolespill1.jpg",
+                        areas: [{
+                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
+                            kode: 1,
+                            type: 1,
+                            message: "Dette er esken"
+                        }]
                     },
                     {
-                        coords: "402,70,398,105,472,109,476,71",
-                        kode: 6,
-                        type: 2,
-                        message: "Vinduet, her kan det være noe",
-                        detailimage: "./skolespill1.jpg"
+                        img: "./skolespill1.jpg",
+                        areas: [{
+                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
+                            kode: 1,
+                            type: 1,
+                            message: "Dette er esken"
+                        }]
                     }
-                ]
+                ],
+                startview = 1      
             }
         ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         // helper som lager area-html'en til mappen
         function getArea(inner, kode) {
             return "<area shape='poly' coords='" + inner + "' onclick=\"visinfo(" + kode + ")\">";
@@ -182,14 +119,8 @@
 
         function last_rom(nr) {
             var rommet = rom[nr];
-            document.getElementById("imagearea").innerHTML = "<img src='" + rommet.img + "' usemap='#rommap'>";
-            var resulttext = "";
-            var i = 0;
-            for (i = 0; i < rommet.areas.length; i++) {
-                resulttext += getArea(rommet.areas[i].coords, rommet.areas[i].kode);
-            }
-
-            document.getElementById("rommap").innerHTML = resulttext;
+            var view = rommet.view[rommet.startview];
+            document.getElementById("hovedbilde").src = view.img;
         }
 
         function finnArea(kode) {
@@ -286,6 +217,7 @@
                 modal.style.display = "none";
             }
         }
+        last_rom(0);
     </script>
 
 </body>

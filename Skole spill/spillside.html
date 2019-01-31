@@ -12,6 +12,54 @@
 
 
     <script>
+        // Her er alle rom definert
+        var romnr = 0;
+        var rom = [
+            {
+                view = [
+                    {
+                        img: "../provebilde/Left0.jpg",
+                        areas: [{
+                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
+                            kode: 1,
+                            type: 1,
+                            message: "Dette er esken"
+                        }]
+                    },
+                    {
+                        img: "./skolespill1.jpg",
+                        areas: [{
+                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
+                            kode: 1,
+                            type: 1,
+                            message: "Dette er esken"
+                        }]
+                    },
+                    {
+                        img: "./skolespill1.jpg",
+                        areas: [{
+                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
+                            kode: 1,
+                            type: 1,
+                            message: "Dette er esken"
+                        }]
+                    }
+                ],
+                startview = 1      
+            }
+        ];
+        
+        // helper som lager area-html'en til mappen
+        function getArea(inner, kode) {
+            return "<area shape='poly' coords='" + inner + "' onclick=\"visinfo(" + kode + ")\">";
+        }
+
+        function last_rom(nr) {
+            var rommet = rom[nr];
+            var view = rommet.view[rommet.startview];
+            document.getElementById("hovedbilde").src = view.img;
+        }
+        
         function enTest() {
 
             document.getElementById("test").innerHTML = "Hei";
@@ -71,6 +119,10 @@
             document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
         }
 
+        function hei(){
+            prompt("hei");
+        }
+        last_rom(0);
     </script>
 
 
@@ -84,16 +136,16 @@
     </div>
 
     <div id="hoved">
-        <div id="motvenstre"><span id="venstre">&#8249;</span></div>
+        <div id="motvenstre" onclick="hei()"><span id="venstre">&#8249;</span></div>
         <div id="spill">
-            <img src="./provebilder/skolespill1.jpg" alt="" usemap="#Map">
+            <img id="hovedbilde" src="#" alt="" usemap="#Map">
             <map name="Map" id="Map">
                 <area alt="" title="" href="#" shape="poly" coords="77,311,135,317,166,275,161,225,109,217,67,248"
                     onclick="vis('boks')" />
                 <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156" onclick="vis('kjoleskap')" />
             </map>
         </div>
-        <div id="mothoyre"><span id="hoyre">&#8250;</span></div>
+        <div id="mothoyre" onclick="hei()"><span id="hoyre">&#8250;</span></div>
     </div>
     <div id="detalj" onclick="skjul()">detalj</div>
 
