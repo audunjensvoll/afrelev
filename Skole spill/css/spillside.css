@@ -67,21 +67,23 @@ body {
 }
 
 #motvenstre {
-    color: white; 
+    color: black; 
     display: inline-block;
     position: absolute;
     left: 207.8px;
     height: 578px;
     width: 46.5px;
+    padding-top: 235px;
 }
 
 #mothoyre {
-    color: white; 
+    color: black; 
     display: inline-block;
     position: absolute;
     right: 207.8px;
     height: 578px;
     width: 46.5px;
+    padding-top: 235px;
 }
 
 #detalj{
@@ -101,7 +103,7 @@ body {
 
 }
 
-i {
+/*i {
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -122,4 +124,11 @@ i {
     margin-left: -8px;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+  }*/
+
+  #venstre {
+    font-size: 100px;
+  }
+  #hoyre {
+    font-size: 100px;
   }
