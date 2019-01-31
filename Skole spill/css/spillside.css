@@ -52,6 +52,7 @@ body {
     font-size: 200%;
     background-color: chartreuse;
     display: inline-block;
+    margin-left: 3.6px;
 }
 #spill{
     display: inline-block;
@@ -69,7 +70,10 @@ body {
     color: white; 
     background-color: blue;
     display: inline-block;
+    position: absolute;
+    left: 207.8px;
     height: 578px;
+    width: 46.5px;
 }
 
 #mothoyre {
@@ -77,7 +81,9 @@ body {
     background-color: blue;
     display: inline-block;
     position: absolute;
+    right: 207.8px;
     height: 578px;
+    width: 46.5px;
 }
 
 #detalj{
