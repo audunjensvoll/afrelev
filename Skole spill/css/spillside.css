@@ -9,11 +9,11 @@ body {
 .objekt {
 
 
-height: 100px;
-width: 100px;
-display: inline-block;
-border-style: solid;
-border-width: 1px;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
 
 
 
@@ -21,28 +21,28 @@ border-width: 1px;
 
 #topp{
 
-background-color: black;
-height: 100px;
+    background-color: black;
+    height: 100px;
 
 }
 
 #navn{
 
 
-background-color: blue;
-display: inline-block;
-height: 100px;
-width: 504px;
-text-align: center;
-font-size: 200%;
+    background-color: blue;
+    display: inline-block;
+    height: 100px;
+    width: 504px;
+    text-align: center;
+    font-size: 200%;
 }
 #klokke{
     height: 100px;
     width: 504px;
     text-align: center;
-background-color: brown;
-display: inline-block;
-font-size: 200%;
+    background-color: brown;
+    display: inline-block;
+    font-size: 200%;
 }
 #hint{
     height: 100px;
@@ -50,14 +50,14 @@ font-size: 200%;
     text-align: center;
     position: absolute;
     font-size: 200%;
-background-color: chartreuse;
-display: inline-block;
+    background-color: chartreuse;
+    display: inline-block;
 }
 #spill{
-display: inline-block;
-background-color: crimson;
-height: 578px;
-width: 1028px;
+    display: inline-block;
+    background-color: crimson;
+    height: 578px;
+    width: 1028px;
 }
 
 #hoved{
@@ -82,10 +82,10 @@ width: 1028px;
 
 #detalj{
     display: inline-block;
-height: 500px;
-width: 900px;
-visibility: hidden;
-position: absolute;
+    height: 500px;
+    width: 900px;
+    visibility: hidden;
+    position: absolute;
     top:0;
     bottom: 0;
     left: 0;
