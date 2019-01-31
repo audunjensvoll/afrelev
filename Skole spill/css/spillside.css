@@ -53,11 +53,24 @@ background-color: chartreuse;
 display: inline-block;
 }
 #spill{
-
+display: inline-block;
 background-color: crimson;
 height: 600px;
+width: 600px;
+}
 
+#motvenstre {
+    color: white; 
+    background-color: blue;
+    display: inline-block;
+    height: 600px;
+}
 
+#mothoyre {
+    color: white; 
+    background-color: blue;
+    display: inline-block;
+    height: 600px;
 }
 
 #detalj{
@@ -75,30 +88,4 @@ position: absolute;
 
     background-color: darkorange;
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-body,html{
-
-height: 20%;
-background-image: url
-background-size: 1% 1%
-
-
-
-}
-
-
-
-
