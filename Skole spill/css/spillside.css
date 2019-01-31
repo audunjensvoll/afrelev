@@ -1,7 +1,7 @@
 body {
 
     background-color:white;
-height: 100%;
+    height: 100%;
 
 
 }
@@ -59,18 +59,23 @@ height: 600px;
 width: 600px;
 }
 
+#hoved{
+    text-align: center;
+    margin-top: 50px;
+}
+
 #motvenstre {
     color: white; 
     background-color: blue;
     display: inline-block;
-    height: 600px;
+    height: 100px;
 }
 
 #mothoyre {
     color: white; 
     background-color: blue;
     display: inline-block;
-    height: 600px;
+    height: 100px;
 }
 
 #detalj{
