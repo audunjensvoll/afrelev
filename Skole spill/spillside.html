@@ -24,6 +24,7 @@
                             coords: "80,310,133,314,164,271,159,220,106,211,64,244",
                             kode: 1,
                             type: 1,
+                    
                             message: "Dette er esken"
                         }]
                     },
@@ -32,13 +33,13 @@
                         areas: [{
                             coords: "370,577,671,575,662,14,367,24",
                             kode: 1,
-                            type: 1,
+                            type: "dør",
                             message: "Dette er døren"
                         },
                         {
                             coords: "799,577,847,578,843,97,910,3,795,3",
                             kode: 1,
-                            type: 1,
+                            type: "bilde",
                             message: "Dette er røret"
                         }]
                     },
@@ -57,12 +58,17 @@
         ];
 
         // helper som lager area-html'en til mappen
-        function getArea(inner, kode) {
-            return "<area shape='poly' coords='" + inner + "' onclick=\"visinfo('" + kode + "')\">";
+        function getArea(inner, romnr, viewnr, areanr) {
+            return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
         }
 
-        function visinfo(info){
-            alert(info)
+        function sjekkType(romnr, viewnr, areanr){
+            var view = rom[romnr].view[viewnr].areas[areanr];
+            if (view.type == "dør"){
+                alert("dør");
+            } else if(view.type == "bilde"){
+                alert("bilde");
+            }
         }
 
         function last_rom(nr) {
@@ -81,7 +87,7 @@
             document.getElementById("hovedbilde").src = view.img;
             var resultat =""
             for(var i=0;i<view.areas.length;i++){
-                resultat=resultat+getArea(view.areas[i].coords,view.areas[i].message)
+                resultat=resultat+getArea(view.areas[i].coords,romnr,viewnr,i)
             }
             document.getElementById("Map").innerHTML=resultat
         }
