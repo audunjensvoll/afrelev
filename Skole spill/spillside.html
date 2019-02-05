@@ -58,6 +58,16 @@
         function last_rom(nr) {
             var rommet = rom[nr];
             var view = rommet.view[rommet.startview];
+            romnr = nr; 
+            viewnr = rommet.startview; 
+            document.getElementById("hovedbilde").src = view.img;
+        }
+
+        function nytt_view(view_nr)
+        {
+            var rommet = rom[romnr]; // samme rom som før
+            var view = rommet.view[view_nr]; 
+            viewnr = view_nr; 
             document.getElementById("hovedbilde").src = view.img;
         }
 
@@ -70,15 +80,9 @@
 
             document.getElementById("detalj").style.visibility = "visible";
             document.getElementById("detalj").innerHTML = ting;
-
-
         }
         function skjul() {
-
             document.getElementById("detalj").style.visibility = "hidden"
-
-
-
         }
 
         var sek = 3600;
@@ -105,7 +109,6 @@
             } else {
                 return tall;
             }
-
             return "" + tall;
         }
 
@@ -123,6 +126,21 @@
         function hei() {
             prompt("hei");
         }
+
+        function hoyre()
+        {
+            
+            var rommet = rom[romnr];
+            viewnr = viewnr + 1; 
+            alert("mot høyre: nytt viewnr = " + viewnr);
+            nytt_view(viewnr)
+           
+        }
+
+        function venstre()
+        {
+            alert("mot venstre");
+        }
        
     </script>
 
@@ -137,7 +155,7 @@
     </div>
 
     <div id="hoved">
-        <div id="motvenstre" onclick="hei()"><span id="venstre">&#8249;</span></div>
+        <div id="motvenstre" onclick="venstre()"><span id="venstre">&#8249;</span></div>
         <div id="spill">
             <img id="hovedbilde"  height="578" width="1028"usemap="#Map">
             <map name="Map" id="Map">
@@ -146,7 +164,7 @@
                 <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156" onclick="vis('kjoleskap')" />
             </map>
         </div>
-        <div id="mothoyre" onclick="hei()"><span id="hoyre">&#8250;</span></div>
+        <div id="mothoyre" onclick="hoyre()"><span id="hoyre">&#8250;</span></div>
     </div>
     <div id="detalj" onclick="skjul()">detalj</div>
 
