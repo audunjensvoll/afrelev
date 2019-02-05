@@ -19,7 +19,7 @@
             {
                 view : [
                     {
-                        img: "../provebilde/Left0.jpg",
+                        img: "./provebilder/Left0.JPG",
                         areas: [{
                             coords: "80,310,133,314,164,271,159,220,106,211,64,244",
                             kode: 1,
@@ -37,7 +37,7 @@
                         }]
                     },
                     {
-                        img: "./skolespill1.jpg",
+                        img: "./provebilder/Right0.JPG",
                         areas: [{
                             coords: "80,310,133,314,164,271,159,220,106,211,64,244",
                             kode: 1,
@@ -69,11 +69,6 @@
             var view = rommet.view[view_nr]; 
             viewnr = view_nr; 
             document.getElementById("hovedbilde").src = view.img;
-        }
-
-        function enTest() {
-
-            document.getElementById("test").innerHTML = "Hei";
         }
 
         function vis(ting) {
@@ -123,23 +118,33 @@
             document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
         }
 
-        function hei() {
-            prompt("hei");
-        }
-
         function hoyre()
         {
             
-            var rommet = rom[romnr];
-            viewnr = viewnr + 1; 
-            alert("mot høyre: nytt viewnr = " + viewnr);
+            viewnr = viewnr + 1;
+
+            if(viewnr == 2){
+                document.getElementById("mothoyre").style.display = "none";
+            } else {
+                document.getElementById("mothoyre").style.display = "inline-block";
+            }
+            document.getElementById("motvenstre").style.display = "inline-block";
             nytt_view(viewnr)
+            
            
         }
 
         function venstre()
         {
-            alert("mot venstre");
+            viewnr = viewnr - 1;
+
+            if(viewnr == 0){
+                document.getElementById("motvenstre").style.display = "none";
+            }else {
+                document.getElementById("motvenstre").style.display = "inline-block";
+            }
+            document.getElementById("mothoyre").style.display = "inline-block";
+            nytt_view(viewnr);
         }
        
     </script>
