@@ -14,7 +14,7 @@
     <script>
         // Her er alle rom definert
         var romnr = 0;  // utgangspunkt
-        var viewnr = -1;
+        var viewnr = 1;
         var rom = [
             {
                 view : [
@@ -30,10 +30,16 @@
                     {
                         img: "./provebilder/Door0.JPG",
                         areas: [{
-                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
+                            coords: "370,577,671,575,662,14,367,24",
                             kode: 1,
                             type: 1,
-                            message: "Dette er esken"
+                            message: "Dette er døren"
+                        },
+                        {
+                            coords: "799,577,847,578,843,97,910,3,795,3",
+                            kode: 1,
+                            type: 1,
+                            message: "Dette er røret"
                         }]
                     },
                     {
@@ -52,7 +58,11 @@
 
         // helper som lager area-html'en til mappen
         function getArea(inner, kode) {
-            return "<area shape='poly' coords='" + inner + "' onclick=\"visinfo(" + kode + ")\">";
+            return "<area shape='poly' coords='" + inner + "' onclick=\"visinfo('" + kode + "')\">";
+        }
+
+        function visinfo(info){
+            alert(info)
         }
 
         function last_rom(nr) {
@@ -60,7 +70,7 @@
             var view = rommet.view[rommet.startview];
             romnr = nr; 
             viewnr = rommet.startview; 
-            document.getElementById("hovedbilde").src = view.img;
+            nytt_view(viewnr)
         }
 
         function nytt_view(view_nr)
@@ -69,6 +79,11 @@
             var view = rommet.view[view_nr]; 
             viewnr = view_nr; 
             document.getElementById("hovedbilde").src = view.img;
+            var resultat =""
+            for(var i=0;i<view.areas.length;i++){
+                resultat=resultat+getArea(view.areas[i].coords,view.areas[i].message)
+            }
+            document.getElementById("Map").innerHTML=resultat
         }
 
         function vis(ting) {
