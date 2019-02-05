@@ -13,10 +13,11 @@
 
     <script>
         // Her er alle rom definert
-        var romnr = 0;
+        var romnr = 0;  // utgangspunkt
+        var viewnr = -1;
         var rom = [
             {
-                view = [
+                view : [
                     {
                         img: "../provebilde/Left0.jpg",
                         areas: [{
@@ -27,7 +28,7 @@
                         }]
                     },
                     {
-                        img: "./skolespill1.jpg",
+                        img: "./provebilder/Door0.JPG",
                         areas: [{
                             coords: "80,310,133,314,164,271,159,220,106,211,64,244",
                             kode: 1,
@@ -45,10 +46,10 @@
                         }]
                     }
                 ],
-                startview = 1      
+                startview: 1
             }
         ];
-        
+
         // helper som lager area-html'en til mappen
         function getArea(inner, kode) {
             return "<area shape='poly' coords='" + inner + "' onclick=\"visinfo(" + kode + ")\">";
@@ -59,7 +60,7 @@
             var view = rommet.view[rommet.startview];
             document.getElementById("hovedbilde").src = view.img;
         }
-        
+
         function enTest() {
 
             document.getElementById("test").innerHTML = "Hei";
@@ -119,10 +120,10 @@
             document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
         }
 
-        function hei(){
+        function hei() {
             prompt("hei");
         }
-        last_rom(0);
+       
     </script>
 
 
@@ -138,7 +139,7 @@
     <div id="hoved">
         <div id="motvenstre" onclick="hei()"><span id="venstre">&#8249;</span></div>
         <div id="spill">
-            <img id="hovedbilde" src="#" alt="" usemap="#Map">
+            <img id="hovedbilde"  height="578" width="1028"usemap="#Map">
             <map name="Map" id="Map">
                 <area alt="" title="" href="#" shape="poly" coords="77,311,135,317,166,275,161,225,109,217,67,248"
                     onclick="vis('boks')" />
@@ -150,6 +151,9 @@
     <div id="detalj" onclick="skjul()">detalj</div>
 
 
+    <script>
+        last_rom(0);
+    </script>
 </body>
 
 </html>
