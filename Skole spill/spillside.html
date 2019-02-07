@@ -98,6 +98,7 @@
                             coords: "370,577,671,575,662,14,367,24",
                             kode: 1,
                             type: "dør",
+                            laast: false,
                             nesterom: 1,
                             message: "Dette er døren"
                         },
@@ -139,7 +140,8 @@
                             coords: "370,577,671,575,662,14,367,24",
                             kode: 1,
                             type: "dør",
-                            nesterom: 1,
+                            laast: false,
+                            nesterom: 2,
                             message: "Dette er døren"
                         },
                         {
@@ -172,7 +174,11 @@
         function sjekkType(romnr, viewnr, areanr){
             var view = rom[romnr].view[viewnr].areas[areanr];
             if (view.type == "dør"){
-                alert("dør");
+                if(view.laast){
+                    alert("låst dør");
+                } else {
+                    last_rom(view.nesterom);
+                } 
             } else if(view.type == "bilde"){
                 document.getElementById('myModal').style.display = "block";
                 document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
