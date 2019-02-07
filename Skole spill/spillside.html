@@ -69,9 +69,37 @@
             text-decoration: none;
             cursor: pointer;
         }
-        img{
+
+        img {
             width: 1028px;
             height: 578px;
+        }
+
+        .knapp {
+
+            font-size: 20px;
+            border: solid 1px;
+            margin: auto;
+            width: auto;
+            padding: 10px;
+
+        }
+
+        body {
+
+            background-color: lightgrey;
+
+        }
+
+        .posisjon {
+
+            padding: 10px;
+
+        }
+
+        #kodesynlig {
+            display: none;
+            text-align: center;
         }
     </style>
 
@@ -81,14 +109,14 @@
         var viewnr = 1;
         var rom = [
             {
-                view : [
+                view: [
                     {
                         img: "./provebilder/Left0.JPG",
                         areas: [{
                             coords: "80,310,133,314,164,271,159,220,106,211,64,244",
                             kode: 1,
                             type: 1,
-                    
+
                             message: "Dette er esken"
                         }]
                     },
@@ -98,7 +126,7 @@
                             coords: "370,577,671,575,662,14,367,24",
                             kode: 1,
                             type: "dør",
-                            laast: false,
+                            laast: true,
                             nesterom: 1,
                             message: "Dette er døren"
                         },
@@ -123,14 +151,14 @@
                 startview: 1
             },
             {
-                view : [
+                view: [
                     {
                         img: "./provebilder/Left1.JPG",
                         areas: [{
                             coords: "80,310,133,314,164,271,159,220,106,211,64,244",
                             kode: 1,
                             type: 1,
-                    
+
                             message: "Dette er esken"
                         }]
                     },
@@ -171,15 +199,16 @@
             return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
         }
 
-        function sjekkType(romnr, viewnr, areanr){
+        function sjekkType(romnr, viewnr, areanr) {
             var view = rom[romnr].view[viewnr].areas[areanr];
-            if (view.type == "dør"){
-                if(view.laast){
-                    alert("låst dør");
+            if (view.type == "dør") {
+                if (view.laast) {
+                    document.getElementById('ModalSafe').style.display = "block";
+                    document.getElementById("kodesynlig").style.display = "block";
                 } else {
                     last_rom(view.nesterom);
-                } 
-            } else if(view.type == "bilde"){
+                }
+            } else if (view.type == "bilde") {
                 document.getElementById('myModal').style.display = "block";
                 document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
             }
@@ -188,22 +217,21 @@
         function last_rom(nr) {
             var rommet = rom[nr];
             var view = rommet.view[rommet.startview];
-            romnr = nr; 
-            viewnr = rommet.startview; 
+            romnr = nr;
+            viewnr = rommet.startview;
             nytt_view(viewnr)
         }
 
-        function nytt_view(view_nr)
-        {
+        function nytt_view(view_nr) {
             var rommet = rom[romnr]; // samme rom som før
-            var view = rommet.view[view_nr]; 
-            viewnr = view_nr; 
+            var view = rommet.view[view_nr];
+            viewnr = view_nr;
             document.getElementById("hovedbilde").src = view.img;
-            var resultat =""
-            for(var i=0;i<view.areas.length;i++){
-                resultat=resultat+getArea(view.areas[i].coords,romnr,viewnr,i)
+            var resultat = ""
+            for (var i = 0; i < view.areas.length; i++) {
+                resultat = resultat + getArea(view.areas[i].coords, romnr, viewnr, i)
             }
-            document.getElementById("Map").innerHTML=resultat
+            document.getElementById("Map").innerHTML = resultat
         }
 
         function vis(ting) {
@@ -253,35 +281,88 @@
             document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
         }
 
-        function hoyre()
-        {
-            
+        function hoyre() {
+
             viewnr = viewnr + 1;
 
-            if(viewnr == 2){
+            if (viewnr == 2) {
                 document.getElementById("mothoyre").style.display = "none";
             } else {
                 document.getElementById("mothoyre").style.display = "inline-block";
             }
             document.getElementById("motvenstre").style.display = "inline-block";
             nytt_view(viewnr);
-            
-           
+
+
         }
 
-        function venstre()
-        {
+        function venstre() {
             viewnr = viewnr - 1;
 
-            if(viewnr == 0){
+            if (viewnr == 0) {
                 document.getElementById("motvenstre").style.display = "none";
-            }else {
+            } else {
                 document.getElementById("motvenstre").style.display = "inline-block";
             }
             document.getElementById("mothoyre").style.display = "inline-block";
             nytt_view(viewnr);
         }
-       
+
+
+
+    </script>
+
+    <script>
+
+
+        var resultatTekst = "0";
+        var kode = "1234";
+
+        function skriv() {
+
+            document.getElementById("resultat").innerHTML = resultatTekst;
+
+        }
+
+        function klikk(verdi) {
+
+            if (resultatTekst == "0") {
+
+                resultatTekst = verdi;
+
+            }
+
+            else {
+
+                resultatTekst += verdi;
+            }
+            skriv();
+        }
+
+        function kommando(verdi) {
+
+            if (verdi == "C") {
+                reset();
+            }
+        }
+
+        function reset() {
+
+            resultatTekst = "0";
+            skriv();
+
+        }
+
+        function resultat() {
+
+            if (Number(resultatTekst) == Number(kode)) {
+
+                alert("RIKTIG");
+            }
+            else if (Number(resultatTekst) !== Number(kode)) {
+                alert("FEIL");
+            }
+        }
     </script>
 
 
@@ -297,7 +378,7 @@
     <div id="hoved">
         <div id="motvenstre" onclick="venstre()"><span id="venstre">&#8249;</span></div>
         <div id="spill">
-            <img id="hovedbilde"  height="578" width="1028" usemap="#Map">
+            <img id="hovedbilde" height="578" width="1028" usemap="#Map">
             <map name="Map" id="Map">
                 <area alt="" title="" href="#" shape="poly" coords="77,311,135,317,166,275,161,225,109,217,67,248"
                     onclick="vis('boks')" />
@@ -320,33 +401,69 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div id="detailedinfo"></div>
-            
         </div>
-    <script>
-        last_rom(0);
-    </script>
+    </div>
 
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-        
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+    <div id="ModalSafe" class="modal">
 
-        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="kodesynlig">
+                
+                    <div class="posisjon" maxlength="4" id="resultat">0</div><br><br>
+                    <button class="knapp" onclick="klikk('1')">1</button>
+                    <button class="knapp" onclick="klikk('2')">2</button>
+                    <button class="knapp" onclick="klikk('3')">3</button>
+                    <br>
+                    <button class="knapp" onclick="klikk('4')">4</button>
+                    <button class="knapp" onclick="klikk('5')">5</button>
+                    <button class="knapp" onclick="klikk('6')">6</button>
+                    <br>
+                    <button class="knapp" onclick="klikk('7')">7</button>
+                    <button class="knapp" onclick="klikk('8')">8</button>
+                    <button class="knapp" onclick="klikk('9')">9</button>
+                    <br>
+                    <button class="knapp" onclick="kommando('0')">0</button>
+                    <button class="knapp" onclick="kommando('C')">C</button>
+                    <br><br>
+                    <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
+    
+            </div>
+        </div>
+    </div>
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
+        <script>
+            last_rom(0);
+        </script>
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
+        <script>
+            // Get the modal
+            var modal = document.getElementById('myModal');
+            var modalSafe = document.getElementById('ModalSafe');
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            var spanSafe = document.getElementsByClassName("close")[1];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
                 modal.style.display = "none";
+                
             }
-        }
-    </script>
+            spanSafe.onclick = function () {
+                modalSafe.style.display = "none";   
+            }
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                } else if(event.target == modalSafe){
+                    modalSafe.style.display = "none";
+                }
+            }
+        </script>
 </body>
 
 </html>
