@@ -238,6 +238,9 @@
             romnr = nr;
             viewnr = rommet.startview;
             nytt_view(viewnr)
+            if(typeof view.sistrom === 'undefined'){
+                document.getElementById("tilbake").style.display = "none"; 
+            }
         }
 
         function nytt_view(view_nr) {
@@ -328,13 +331,12 @@
 
         function tilbake(){
             var view = rom[romnr].view[viewnr].areas[areanr];
-            if(view.nesterom == 1){
-                document.getElementById("tilbake").style.display = "block";
+            if(typeof view.sistrom === 'undefined'){
+                document.getElementById("tilbake").style.display = "none"; 
             } else {
                 last_rom(view.sistrom);
             }
         }
-
 
     </script>
 
