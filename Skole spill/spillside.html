@@ -107,6 +107,7 @@
         // Her er alle rom definert
         var romnr = 0;  // utgangspunkt
         var viewnr = 1;
+        var areanr = 0;
         var rom = [
             {
                 view: [
@@ -124,7 +125,7 @@
                         img: "./provebilder/Door0.JPG",
                         areas: [{
                             coords: "370,577,671,575,662,14,367,24",
-                            kode: 1,
+                            kode: 1234,
                             type: "dør",
                             laast: true,
                             nesterom: 1,
@@ -199,8 +200,11 @@
             return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
         }
 
-        function sjekkType(romnr, viewnr, areanr) {
-            var view = rom[romnr].view[viewnr].areas[areanr];
+        function sjekkType(Rnr, Vnr, Anr) {
+            romnr = Rnr;
+            viewnr = Vnr;
+            areanr = Anr;
+            var view = rom[Rnr].view[Vnr].areas[Anr];
             if (view.type == "dør") {
                 if (view.laast) {
                     document.getElementById('ModalSafe').style.display = "block";
@@ -315,8 +319,7 @@
     <script>
 
 
-        var resultatTekst = "0";
-        var kode = "1234";
+        var resultatTekst = "";
 
         function skriv() {
 
@@ -326,16 +329,7 @@
 
         function klikk(verdi) {
 
-            if (resultatTekst == "0") {
-
-                resultatTekst = verdi;
-
-            }
-
-            else {
-
-                resultatTekst += verdi;
-            }
+            resultatTekst += verdi;
             skriv();
         }
 
@@ -348,20 +342,23 @@
 
         function reset() {
 
-            resultatTekst = "0";
+            resultatTekst = "";
             skriv();
 
         }
 
         function resultat() {
+            var view = rom[romnr].view[viewnr].areas[areanr];
+            if (Number(resultatTekst) == Number(view.kode)) {
 
-            if (Number(resultatTekst) == Number(kode)) {
+                last_rom(view.nesterom);
+                document.getElementById('ModalSafe').style.display = "none";
 
-                alert("RIKTIG");
             }
-            else if (Number(resultatTekst) !== Number(kode)) {
+            else {
                 alert("FEIL");
             }
+            reset();
         }
     </script>
 
@@ -411,7 +408,7 @@
             <span class="close">&times;</span>
             <div id="kodesynlig">
                 
-                    <div class="posisjon" maxlength="4" id="resultat">0</div><br><br>
+                    <div class="posisjon" maxlength="4" id="resultat"></div><br><br>
                     <button class="knapp" onclick="klikk('1')">1</button>
                     <button class="knapp" onclick="klikk('2')">2</button>
                     <button class="knapp" onclick="klikk('3')">3</button>
@@ -424,7 +421,7 @@
                     <button class="knapp" onclick="klikk('8')">8</button>
                     <button class="knapp" onclick="klikk('9')">9</button>
                     <br>
-                    <button class="knapp" onclick="kommando('0')">0</button>
+                    <button class="knapp" onclick="klikk('0')">0</button>
                     <button class="knapp" onclick="kommando('C')">C</button>
                     <br><br>
                     <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
