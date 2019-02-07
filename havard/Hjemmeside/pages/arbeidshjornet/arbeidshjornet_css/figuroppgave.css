@@ -1,0 +1,85 @@
+body {
+    font-family: sans-serif;
+    margin:0;
+    }
+
+    .bondesjakkbildemtekst
+    {
+        background: url(../../../bilder/arbeid.jpg) no-repeat center;
+        background-size: cover;
+        margin:0;
+        padding:100px;
+        text-align:center;
+        font-size:3.4em;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+        color:white;
+    }
+    
+    
+    .text {
+        font-size:1.2em;
+        line-height: 1.6;
+        padding-right: 60px;
+        padding-left: 60px;
+        padding-top: 20px;
+        text-align: center;
+    }
+    
+    .meny {
+        text-align: center;
+    }
+    
+    .meny li {
+        display: inline-block;
+    }
+    .active {
+        background-color: rgba(100, 100, 100, 0.75);
+    }
+    
+    
+    .meny ul {
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    .meny li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding:14px 16px;
+        text-decoration: none;
+    }
+    
+    .meny li a:hover {
+        background-color: rgba(140, 140, 140, 0.75)
+    }
+    
+    .rute{
+        height: 100px;
+        width: 100px;
+        border: solid;
+        display: inline-block;
+    }
+    .rute1
+    {
+        background-image: 
+    }
+
+    .bondesjakkbrett{
+        text-align:center;
+        padding-top: 90px;
+    }
+
+    .resetknapp
+    {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+
+
+
+
