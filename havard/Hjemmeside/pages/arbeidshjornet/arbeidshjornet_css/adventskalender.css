@@ -167,8 +167,8 @@ body {
         font-size: 2em;
         text-align: center;
         word-spacing: 60px;
-        right: 0px;
-        left: 0px;
+        right: 0%;
+        left: 0%;
         color: white;
         border-bottom: solid;
         border-bottom-color: rgb(179, 0, 0);
