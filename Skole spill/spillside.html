@@ -54,6 +54,14 @@
             border: 1px solid rgb(97, 28, 28);
             width: 80%;
         }
+        /* Modal Content */
+        .modal-contentdoor{
+            background-color: #8f8e8e;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid rgb(97, 28, 28);
+            width: 25%;
+        }
 
         /* The Close Button */
         .close {
@@ -100,6 +108,9 @@
         #kodesynlig {
             display: none;
             text-align: center;
+        }
+        #tilbake{
+            display: none;
         }
     </style>
 
@@ -164,6 +175,7 @@
                             kode: 1,
                             type: "dør",
                             laast: true,
+                            sistrom: 0,
                             nesterom: 2,
                             message: "Dette er døren"
                         },
@@ -205,7 +217,9 @@
                     document.getElementById('ModalSafe').style.display = "block";
                     document.getElementById("kodesynlig").style.display = "block";
                 } else {
+                    document.getElementById("tilbake").style.display = "block";
                     last_rom(view.nesterom);
+                    
                 }
             } else if (view.type == "bilde") {
                 document.getElementById('myModal').style.display = "block";
@@ -219,6 +233,9 @@
             romnr = nr;
             viewnr = rommet.startview;
             nytt_view(viewnr)
+            if(typeof view.sistrom === 'undefined'){
+                document.getElementById("tilbake").style.display = "none"; 
+            }
         }
 
         function nytt_view(view_nr) {
@@ -307,7 +324,14 @@
             nytt_view(viewnr);
         }
 
-
+        function tilbake(){
+            var view = rom[romnr].view[viewnr].areas[areanr];
+            if(typeof view.sistrom === 'undefined'){
+                document.getElementById("tilbake").style.display = "none"; 
+            } else {
+                last_rom(view.sistrom);
+            }
+        }
 
     </script>
 
@@ -348,6 +372,7 @@
 
                 last_rom(view.nesterom);
                 document.getElementById('ModalSafe').style.display = "none";
+                document.getElementById("tilbake").style.display = "block";
 
             }
             else {
@@ -376,6 +401,7 @@
                     onclick="vis('boks')" />
                 <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156" onclick="vis('kjoleskap')" />
             </map>
+            <button id="tilbake" onclick="tilbake()">Tilbake</button>
         </div>
         <div id="mothoyre" onclick="hoyre()"><span id="hoyre">&#8250;</span></div>
     </div>
@@ -399,7 +425,7 @@
     <div id="ModalSafe" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-contentdoor">
             <span class="close">&times;</span>
             <div id="kodesynlig">
                 
