@@ -55,9 +55,10 @@ body {
         font-size: 1.2em;
         line-height: 1.6;
         text-align: center;
-        margin-left: 200px;
-        margin-right: 150px;
-        padding-top: 80px;
+        position: absolute;
+        left: 200px;
+        right: 150px;
+        top: 1200px;
     }
 
     .container {
@@ -74,8 +75,8 @@ body {
     .bilder img
     {
         position: absolute;
-        margin-top: 76px;
-        margin-left: 180px;
+        top: 86px;
+        left: 190px;
     }
 
     .bildetekst
