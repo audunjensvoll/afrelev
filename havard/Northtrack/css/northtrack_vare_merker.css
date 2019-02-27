@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-  }
-
 body {
     font-family: sans-serif;
     margin:0;
@@ -81,7 +77,7 @@ body {
         display: flex;
     }
 
-    .bildegeox
+    .bilde1
     {
         position: relative;
         margin-top: 0.9%;
@@ -90,7 +86,7 @@ body {
         margin-left: 0.8%;
     }
 
-    .bildegeox .geoxtekst
+    .bilde1 .bilde1tekst
     {
         position: absolute;
         text-align:center;
@@ -105,7 +101,7 @@ body {
         letter-spacing: 1.5px;
         font-size: 1.8em;
     }
-    .bildecanada
+    .bilde2
     {
         position: relative;
         margin-top: 0.9%;
@@ -114,7 +110,7 @@ body {
         margin-left: 0.6%;
     }
 
-    .bildecanada .canadatekst
+    .bilde2 .bilde2tekst
     {
         position: absolute;
         text-align:center;
@@ -130,7 +126,7 @@ body {
         font-size: 1.8em;
     }
 
-    .bildepomar
+    .bilde3
     {
         position: relative;
         margin-top: 0.9%;
@@ -138,7 +134,7 @@ body {
         margin-left: 0.6%;
     }
 
-    .bildepomar .pomartekst
+    .bilde3 .bilde3tekst
     {
         position: absolute;
         text-align:center;
@@ -162,13 +158,13 @@ body {
         display: flex;
     }
 
-    .bildelorang
+    .bilde4
     {
         position: relative;
         margin: 10px;
     }
 
-    .bildelorang .lorangtekst
+    .bilde4 .bilde4tekst
     {
         position: absolute;
         text-align:center;
@@ -184,19 +180,35 @@ body {
         font-size: 1.8em;
     }
 
-    .bildenorton
+    .bilde5
     {
         position: relative;
         margin: 10px;
     }
 
-    .bildenorton img
+    .bilde5 .bilde5tekst
     {
-        width: 550px;
-        height: 78%;
+        position: absolute;
+        text-align:center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        width: 80%;
+        padding: 2px;
+        background: rgb(0, 0, 0);
+        background: rgba(71, 71, 71, 0.7); 
+        color: #f1f1f1;
+        letter-spacing: 1.5px;
+        font-size: 1.8em;
     }
 
-    .bildenorton .nortontekst
+    .bilde6
+    {
+        position: relative;
+        margin: 10px;
+    }
+
+    .bilde6 .bilde6tekst
     {
         position: absolute;
         text-align:center;

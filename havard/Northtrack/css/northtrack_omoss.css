@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-  }
-
 body {
     font-family: sans-serif;
     margin:0;
@@ -64,10 +60,10 @@ body {
 
     .text 
     {
-        font-size: 1.2em;
-        line-height: 1.6;
         text-align: center;
         position: relative;
+        font-size: 1.2em;
+        line-height: 1.6;
     }
 
     .tekstboks
@@ -76,21 +72,106 @@ body {
         left: 17%;
         right: 10%;
         top: 76px;
+        border-bottom: 1px solid;
+        border-bottom-color: rgb(235, 235, 235);
+    }
+
+    .ansattedel
+    {
+        position: absolute;
+        top: 42%;
+        left: 12%;
+    }
+
+    .ansatteoverskrift
+    {
+        position: relative;
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    .ansatte
+    {
+        position: relative;
+        margin: 5px;
+        display: flex;
+        max-width: 100%;
+        min-height: 48%;
+        max-height: 50%;
+    }
+
+    .bildeansatte
+    {
+        text-align: center;
+    }
+
+    .bildeansatte img
+    {
+        border-radius: 2%;
+    }
+
+    .ansattnavn
+    {
+        text-align: center;
+        transform: translate( 0%, -66%);
+        font-size: 1.6em;
+        word-spacing: 0.1em;
+    }
+
+    .ansattbeskrivelse
+    {
+        font-size: 1.2em;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .ansatt0
     {
-        position: absolute;
-        left: 12%;
-        top: 55%;
-        background: rgba(71, 71, 71, 0.7);
-        padding-top: 50px;
-        padding-bottom: 100px;
-        border-radius: 10px;
-    }   
+        position: relative;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        bottom: 5%;
+        margin-right: 0.5%;
+        max-width: 20%;
+    }
 
-    .bildeespen
+    .ansatt1
     {
         position: relative;
-        text-align: center;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        bottom: 5%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        max-width: 20%;
+    }
+
+    .ansatt2
+    {
+        position: relative;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        bottom: 5%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        max-width: 20%;
+    }
+
+    .ansatt3
+    {
+        position: relative;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        margin-left: 0.5%;
+        max-width: 20%;
     }
