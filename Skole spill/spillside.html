@@ -175,7 +175,6 @@
                             kode: 1,
                             type: "dør",
                             laast: true,
-                            sistrom: 0,
                             nesterom: 2,
                             message: "Dette er døren"
                         },
@@ -185,7 +184,8 @@
                             type: "bilde",
                             img: "./provebilder/Left1.JPG",
                             message: "Dette er røret"
-                        }]
+                        }],
+                        sistrom: 0
                     },
                     
                     {
@@ -217,7 +217,6 @@
                     document.getElementById('ModalSafe').style.display = "block";
                     document.getElementById("kodesynlig").style.display = "block";
                 } else {
-                    document.getElementById("tilbake").style.display = "block";
                     last_rom(view.nesterom);
                     
                 }
@@ -233,9 +232,6 @@
             romnr = nr;
             viewnr = rommet.startview;
             nytt_view(viewnr)
-            if(typeof view.sistrom === 'undefined'){
-                document.getElementById("tilbake").style.display = "none"; 
-            }
         }
 
         function nytt_view(view_nr) {
@@ -248,6 +244,11 @@
                 resultat = resultat + getArea(view.areas[i].coords, romnr, viewnr, i)
             }
             document.getElementById("Map").innerHTML = resultat
+            if(typeof view.sistrom === 'undefined'){
+                document.getElementById("tilbake").style.display = "none"; 
+            } else {
+                document.getElementById("tilbake").style.display = "block"; 
+            }
         }
 
         function vis(ting) {
@@ -325,12 +326,8 @@
         }
 
         function tilbake(){
-            var view = rom[romnr].view[viewnr].areas[areanr];
-            if(typeof view.sistrom === 'undefined'){
-                document.getElementById("tilbake").style.display = "none"; 
-            } else {
-                last_rom(view.sistrom);
-            }
+            var view = rom[romnr].view[viewnr];
+            last_rom(view.sistrom);
         }
 
     </script>
@@ -367,12 +364,12 @@
         }
 
         function resultat() {
-            var view = rom[romnr].view[viewnr].areas[areanr];
-            if (Number(resultatTekst) == Number(view.kode)) {
-
-                last_rom(view.nesterom);
+            var area = rom[romnr].view[viewnr].areas[areanr];
+            if (Number(resultatTekst) == Number(area.kode)) {
+                
+                last_rom(area.nesterom);
+                area.laast = false;
                 document.getElementById('ModalSafe').style.display = "none";
-                document.getElementById("tilbake").style.display = "block";
 
             }
             else {
