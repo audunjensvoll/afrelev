@@ -201,6 +201,16 @@
                 startview: 1
             }
         ];
+        var hint = [{
+            tekst: "Hint 1",
+            tid: 1000
+        },{
+            tekst: "Hint 2",
+            tid: 5000
+        },{
+            tekst: "Hint 3",
+            tid: 10000
+        }];
 
         // helper som lager area-html'en til mappen
         function getArea(inner, romnr, viewnr, areanr) {
@@ -274,7 +284,13 @@
                 }
             }
         }
-        window.onload = setTimeout(tell, 1000);
+        window.onload = startup;
+
+        
+        function startup(){
+            setTimeout(tell, 1000);
+            setupHint();
+        }
 
 
         function tallTilTekst(tall) {
@@ -328,6 +344,15 @@
         function tilbake(){
             var view = rom[romnr].view[viewnr];
             last_rom(view.sistrom);
+        }
+
+        function setupHint(){
+            for (var i = 0; i < hint.length; i++) {
+                setTimeout(skrivHint, hint[i].tid, hint[i].tekst);
+            }
+        }
+        function skrivHint(tekst){
+            document.getElementById("hererHint").innerHTML = tekst;
         }
 
     </script>
@@ -386,7 +411,7 @@
     <div id="topp">
         <div id="navn">jesper</div>
         <div id="klokke">60 : 00</div>
-        <div id="hint">hint</div>
+        <div id="hererHint">hint</div>
     </div>
 
     <div id="hoved">
