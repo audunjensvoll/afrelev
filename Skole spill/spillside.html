@@ -18,13 +18,13 @@
         var viewnr = 1;
         var areanr = 0;
         var rom = [
-            {
+            {   
+                //Rom 1
                 view: [
                     {
                         img: "./provebilder/provebilder_ferdig/Left0_ferdig.jpg",
                         areas: [{
                             coords: "442,247,443,234,483,234,479,174,414,174,349,174,351,233,408,233,409,246",
-                            kode: 1,
                             type: "bilde",
                             img: "./provebilder/provebilder_ferdig/CloseupTaskLeft0_ferdig.jpg",
                             message: "Dette er sifferet"
@@ -34,7 +34,7 @@
                         img: "./provebilder/Door0.JPG",
                         areas: [{
                             coords: "370,577,671,575,662,14,367,24",
-                            kode: 1234,
+                            kode: 3574,
                             type: "dør",
                             laast: true,
                             nesterom: 1,
@@ -45,7 +45,6 @@
                         img: "./provebilder/provebilder_ferdig/Right0_ferdig.jpg",
                         areas: [{
                             coords: "380,389,381,401,404,403,404,389",
-                            kode: 1,
                             type: "bilde",
                             img: "./provebilder/provebilder_ferdig/Closeup0Tabell_ferdig.jpg",
                             message: "Dette er diagrammet"
@@ -54,13 +53,13 @@
                 ],
                 startview: 1
             },
-            {
+            {   
+                //Rom 2
                 view: [
                     {
                         img: "./provebilder/provebilder_ferdig/Left1_ferdig.JPG",
                         areas: [{
                             coords: "570,314,570,335,583,343,600,339,671,307,668,286,657,279",
-                            kode: 1,
                             type: "bilde",
                             img: "./provebilder/provebilder_ferdig/CloseupClueLeft1_ferdig.JPG",
                             message: "Dette er esken"
@@ -70,7 +69,7 @@
                         img: "./provebilder/provebilder_ferdig/Door1_ferdig.JPG",
                         areas: [{
                             coords: "475,117,602,119,601,376,475,374",
-                            kode: 12,
+                            kode: 2507,
                             type: "dør",
                             laast: true,
                             nesterom: 2,
@@ -79,7 +78,6 @@
                         },
                         {
                             coords: "799,577,847,578,843,97,910,3,795,3",
-                            kode: 1,
                             type: "bilde",
                             img: "./provebilder/Left1.JPG",
                             message: "Dette er røret"
@@ -91,7 +89,6 @@
                         img: "./provebilder/provebilder_ferdig/Right1_ferdig.JPG",
                         areas: [{
                             coords: "80,310,133,314,164,271,159,220,106,211,64,244",
-                            kode: 1,
                             type: 1,
                             message: "Dette er esken"
                         }]
@@ -99,7 +96,8 @@
                 ],
                 startview: 1
             },
-            {
+            {   
+                //Rom 3
                 view: [
                     {
                         img: "./provebilder/provebilder_ferdig/Left0_ferdig.JPG",
@@ -110,7 +108,7 @@
                         img: "./provebilder/provebilder_ferdig/Door0_ferdig.JPG",
                         areas: [{
                             coords: "475,117,602,119,601,376,475,374",
-                            kode: 1,
+                            kode: 5067,
                             type: "dør",
                             laast: true,
                             nesterom: 3,
@@ -130,6 +128,7 @@
                 startview: 1
             }
         ];
+        //Holder på informasjon om hint
         var hint = [{
             tekst: "Hint 1",
             tid: 5000
@@ -152,6 +151,7 @@
             return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
         }
 
+        //Sjekker type (om det er et bilde eller en dør)
         function sjekkType(Rnr, Vnr, Anr) {
             romnr = Rnr;
             viewnr = Vnr;
@@ -171,6 +171,7 @@
             }
         }
 
+        //Laster rom
         function last_rom(nr) {
             var rommet = rom[nr];
             var view = rommet.view[rommet.startview];
@@ -179,6 +180,7 @@
             nytt_view(viewnr)
         }
 
+        //Laster bildet der du befinner deg + legger til Maps på bildet + gjør tilbake knappen synlig/usynlig 
         function nytt_view(view_nr) {
             var rommet = rom[romnr]; // samme rom som før
             var view = rommet.view[view_nr];
@@ -196,6 +198,7 @@
             }
         }
 
+        //Viser detaljbilder etter du trykker på Mapet
         function vis(ting) {
 
             document.getElementById("detalj").style.visibility = "visible";
@@ -205,6 +208,7 @@
             document.getElementById("detalj").style.visibility = "hidden"
         }
 
+        //Klokke til linje 259
         var sek = 3600;
 
         var fortsett = true;
@@ -219,8 +223,9 @@
                 }
             }
         }
-        window.onload = startup;
 
+        //Startet setup-funksjonen hint og tell
+        window.onload = startup;
 
         function startup() {
             setTimeout(tell, 1000);
@@ -249,6 +254,7 @@
             document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
         }
 
+        //Beveger seg til bildet til høyre
         function hoyre() {
 
             viewnr = viewnr + 1;
@@ -264,6 +270,7 @@
 
         }
 
+        //Beveger seg til bildet til venstre
         function venstre() {
             viewnr = viewnr - 1;
 
@@ -276,20 +283,24 @@
             nytt_view(viewnr);
         }
 
+        //For å komme tilbake til sist rom
         function tilbake() {
             var view = rom[romnr].view[viewnr];
             last_rom(view.sistrom);
         }
 
+        //Setter sammen hint info + tid for når de skal viser på alle hintene
         function setupHint() {
             for (var i = 0; i < hint.length; i++) {
                 setTimeout(skrivHint, hint[i].tid, hint[i].tekst);
             }
         }
+        //Skriver ut hintene på siden
         function skrivHint(tekst) {
             document.getElementById("hint").innerHTML = tekst;
         }
 
+        //Navnet til brukeren
         function NyttNavn() {
             var element = {
                 navn: document.getElementById("navnet").value,
@@ -303,7 +314,7 @@
 
     <script>
 
-
+        //Kode til linje 359
         var resultatTekst = "";
 
         function skriv() {
@@ -352,6 +363,7 @@
 </head>
 
 <body>
+    <!--Navbar-->
     <div id="topp">
         <div id="navn"><input id="navnet" type="text"><button id="knapp" onclick="NyttNavn()">Send inn</button></div>
         <div id="klokke">60 : 00</div>
@@ -362,7 +374,7 @@
         <h1>KJELLERN PÅ AFR</h1>
     </div>
 
-
+    <!--Spillet-->
     <div id="hoved">
             <div id="motvenstre" onclick="venstre()"><span id="venstre">&#8249;</span></div>
 
@@ -383,8 +395,9 @@
 
 
     </div>
+    <!--Detaljebilder-->
     <div id="detalj" onclick="skjul()">detalj</div>
-
+    <!--Boks der info om deljebilder eller lås vises i-->
     <div id="container">
         <div id="imagearea">
         </div>
@@ -393,7 +406,7 @@
     </div>
     <div id="myModal" class="modal">
 
-        <!-- Modal content -->
+        <!-- Kode content -->
         <div class="modal-content">
             <span class="close">&times;</span>
             <div id="detailedinfo"></div>
@@ -402,7 +415,7 @@
 
     <div id="ModalSafe" class="modal">
 
-        <!-- Modal content -->
+        <!-- Kode content -->
         <div class="modal-contentdoor">
             <span class="close">&times;</span>
             <div id="kodesynlig">
@@ -434,6 +447,7 @@
     </script>
 
     <script>
+        //Kode ting
         // Get the modal
         var modal = document.getElementById('myModal');
         var modalSafe = document.getElementById('ModalSafe');
