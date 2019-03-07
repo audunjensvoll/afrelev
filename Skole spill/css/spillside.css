@@ -131,9 +131,8 @@ img {
     text-align: center;
     font-size: 200%;
     
-    
-
 }
+
 #klokke{
     height: 100px;
     width: 33%;
@@ -142,6 +141,10 @@ img {
     background-color:rgb(163, 93, 27);
     display: inline-block;
     font-size: 200%;
+
+}
+#overskrift {
+
 
 }
 
