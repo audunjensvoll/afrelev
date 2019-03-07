@@ -164,11 +164,17 @@ img {
     display: inline-block;
     margin-left: 3.6px;
 }
+
+#hovedbildeytter {
+
+    border: solid 1px black;
+}
 #spill{
     display: inline-block;
     border: 5px black;
     height: 578px;
     width: 1028px;
+    
 }
 
 #hoved{
@@ -178,22 +184,25 @@ img {
 
 #motvenstre {
     color: black; 
-    display: inline-block;
-    position: absolute;
+    position: static;
     left: 207.8px;
     height: 578px;
     width: 46.5px;
-    padding-top: 235px;
+    float: left;
+    padding-top: 235px;    
+    border: solid 1px black;
+
+
 }
 
 #mothoyre {
     color: black; 
-    display: inline-block;
-    position: absolute;
+    position: static;
+    float: right;
     right: 207.8px;
-    height: 578px;
     width: 46.5px;
     padding-top: 235px;
+    border: solid 1px black;
 }
 
 #detalj{
@@ -201,7 +210,7 @@ img {
     height: 500px;
     width: 900px;
     visibility: hidden;
-    position: absolute;
+    position: static;
     top:0;
     bottom: 0;
     left: 0;
@@ -234,7 +243,6 @@ img {
 
   #venstre {
     font-size: 100px;
-    border: black 1px;
   }
   #hoyre {
     font-size: 100px;
