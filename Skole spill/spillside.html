@@ -290,6 +290,15 @@
             document.getElementById("hint").innerHTML = tekst;
         }
 
+        function NyttNavn() {
+            var element = {
+                navn: document.getElementById("navnet").value,
+                tid: 0
+            }
+            var navn = document.getElementById("navn").innerHTML = "Ditt navn er " + element.navn + "";
+            console.log(element);
+            
+        }
     </script>
 
     <script>
@@ -344,7 +353,7 @@
 
 <body>
     <div id="topp">
-        <div id="navn">jesper</div>
+        <div id="navn"><input id="navnet" type="text"><button id="knapp" onclick="NyttNavn()">Send inn</button></div>
         <div id="klokke">60 : 00</div>
         <div id="hint">hint</div>
     </div>
