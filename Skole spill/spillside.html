@@ -10,7 +10,13 @@
     <title>KJELLEREN PÅ AFR</title>
 
     <style>
-    
+        .rotate{
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
     </style>
 
     <script src="js/spillside.js"></script>
@@ -147,7 +153,7 @@
             tid: 20000
         }, {
             tekst: "Hint 5",
-            tid: 25000
+            tid: 100000
         }];
 
         // helper som lager area-html'en til mappen
@@ -368,7 +374,7 @@
                 <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156"
                     onclick="vis('kjoleskap')" />
             </map>
-            <center><div id="tilbake" onclick="tilbake()"><span id="nedtilbake"></span></div></center>
+            <center><div id="tilbake" class="rotate" onclick="tilbake()"><span id="nedtilbake">&#8250;</span></div></center>
             <div id="mothoyre" onclick="hoyre()"><span id="hoyre">&#8250;</span></div>
 
         </div>
