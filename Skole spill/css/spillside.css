@@ -168,9 +168,11 @@ img {
 #hovedbildeytter {
 
     border: solid 1px black;
+    display: inline-block;
 }
 #spill{
     display: inline-block;
+    
     border: 5px black;
     height: 578px;
     width: 1028px;
@@ -180,29 +182,26 @@ img {
 #hoved{
     text-align: center;
     margin-top: 30px;
+    border: solid 1px black;
+    height: 578px;
+
 }
 
 #motvenstre {
     color: black; 
-    position: static;
-    left: 207.8px;
-    height: 578px;
-    width: 46.5px;
-    float: left;
-    padding-top: 235px;    
     border: solid 1px black;
-
+    display: inline-block;
+    position: relative;
+    top: -280px;
 
 }
 
 #mothoyre {
-    color: black; 
-    position: static;
-    float: right;
-    right: 207.8px;
-    width: 46.5px;
-    padding-top: 235px;
+    color: black;
     border: solid 1px black;
+    display: inline-block;  
+    position: relative;
+    top: -280px;  
 }
 
 #detalj{
@@ -254,6 +253,5 @@ img {
   }
   #hoyre {
     font-size: 100px;
-    position: relative;
-    top: -589px;
+    
   }
