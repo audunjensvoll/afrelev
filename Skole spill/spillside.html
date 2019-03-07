@@ -21,6 +21,7 @@
     </style>
 
     <script src="js/spillside.js"></script>
+    <script src="../js/afrlib.js"></script>
 
     <script>
         // Her er alle rom definert
@@ -300,6 +301,15 @@
             document.getElementById("hint").innerHTML = tekst;
         }
 
+        function NyttNavn() {
+            var element = {
+                navn: document.getElementById("navnet").value,
+                tid: 0
+            }
+            var navn = document.getElementById("navn");
+            var fraArray = element.navn;
+            skriv("navn", fraArray);
+        }
     </script>
 
     <script>
@@ -354,7 +364,7 @@
 
 <body>
     <div id="topp">
-        <div id="navn">jesper</div>
+        <div id="navn"><input oninput="NyttNavn()" id="navnet" type="text"></div>
         <div id="klokke">60 : 00</div>
         <div id="hint">hint</div>
     </div>
