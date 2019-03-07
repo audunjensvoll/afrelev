@@ -111,12 +111,13 @@ img {
 }
 #tilbake{
     display: none;
+    
 }
 
 #topp{
 
     background-color: transparent;
-    height: 250px;
+    height: 100px;
     margin: auto;
 
 }
@@ -131,9 +132,8 @@ img {
     text-align: center;
     font-size: 200%;
     
-    
-
 }
+
 #klokke{
     height: 100px;
     width: 33%;
@@ -142,6 +142,14 @@ img {
     background-color:rgb(163, 93, 27);
     display: inline-block;
     font-size: 200%;
+
+}
+#overskrift {
+
+    font-family: 'MedievalSharp';
+    font-size: 27px;
+    text-align: center;
+
 
 }
 
@@ -226,7 +234,10 @@ img {
 
   #venstre {
     font-size: 100px;
+    border: black 1px;
   }
   #hoyre {
     font-size: 100px;
+    position: relative;
+    top: -589px;
   }
