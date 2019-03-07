@@ -4,6 +4,7 @@
 <head>
 
 
+    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="./css/spillside.css">
 
     <title>KJELLEREN PÅ AFR</title>
@@ -73,7 +74,7 @@
                             laast: true,
                             nesterom: 2,
                             message: "Dette er døren"
-                            
+
                         },
                         {
                             coords: "799,577,847,578,843,97,910,3,795,3",
@@ -84,7 +85,7 @@
                         }],
                         sistrom: 0
                     },
-                    
+
                     {
                         img: "./provebilder/provebilder_ferdig/Right1_ferdig.JPG",
                         areas: [{
@@ -113,15 +114,15 @@
                             laast: true,
                             nesterom: 3,
                             message: "Dette er døren"
-                            
+
                         }],
                         sistrom: 1
                     },
-                    
+
                     {
                         img: "./provebilder/provebilder_ferdig/Right0_ferdig.JPG",
                         areas: [{
-                        
+
                         }]
                     }
                 ],
@@ -131,16 +132,16 @@
         var hint = [{
             tekst: "Hint 1",
             tid: 5000
-        },{
+        }, {
             tekst: "Hint 2",
             tid: 10000
-        },{
+        }, {
             tekst: "Hint 3",
             tid: 15000
-        },{
+        }, {
             tekst: "Hint 4",
             tid: 20000
-        },{
+        }, {
             tekst: "Hint 5",
             tid: 25000
         }];
@@ -161,7 +162,7 @@
                     document.getElementById("kodesynlig").style.display = "block";
                 } else {
                     last_rom(view.nesterom);
-                    
+
                 }
             } else if (view.type == "bilde") {
                 document.getElementById('myModal').style.display = "block";
@@ -187,10 +188,10 @@
                 resultat = resultat + getArea(view.areas[i].coords, romnr, viewnr, i)
             }
             document.getElementById("Map").innerHTML = resultat
-            if(typeof view.sistrom === 'undefined'){
-                document.getElementById("tilbake").style.display = "none"; 
+            if (typeof view.sistrom === 'undefined') {
+                document.getElementById("tilbake").style.display = "none";
             } else {
-                document.getElementById("tilbake").style.display = "block"; 
+                document.getElementById("tilbake").style.display = "block";
             }
         }
 
@@ -219,8 +220,8 @@
         }
         window.onload = startup;
 
-        
-        function startup(){
+
+        function startup() {
             setTimeout(tell, 1000);
             setupHint();
         }
@@ -274,17 +275,17 @@
             nytt_view(viewnr);
         }
 
-        function tilbake(){
+        function tilbake() {
             var view = rom[romnr].view[viewnr];
             last_rom(view.sistrom);
         }
 
-        function setupHint(){
+        function setupHint() {
             for (var i = 0; i < hint.length; i++) {
                 setTimeout(skrivHint, hint[i].tid, hint[i].tekst);
             }
         }
-        function skrivHint(tekst){
+        function skrivHint(tekst) {
             document.getElementById("hint").innerHTML = tekst;
         }
 
@@ -324,7 +325,7 @@
         function resultat() {
             var area = rom[romnr].view[viewnr].areas[areanr];
             if (Number(resultatTekst) == Number(area.kode)) {
-                
+
                 last_rom(area.nesterom);
                 area.laast = false;
                 document.getElementById('ModalSafe').style.display = "none";
@@ -344,25 +345,29 @@
     <div id="topp">
         <div id="navn">jesper</div>
         <div id="klokke">60 : 00</div>
-
         <div id="hint">hint</div>
-        
-    <div id="overskrift"><h1>KJELLERN PÅ AFR</h1></div>
-    
-    <br>
+    </div>
+
+    <div id="overskrift">
+        <h1>KJELLERN PÅ AFR</h1>
+    </div>
+
 
     <div id="hoved">
-        <div id="motvenstre" onclick="venstre()"><span id="venstre">&#8249;</span></div>
         <div id="spill">
+
+            <div id="motvenstre" onclick="venstre()"><span id="venstre">&#8249;</span></div>
             <img id="hovedbilde" height="578" width="1028" usemap="#Map">
             <map name="Map" id="Map">
                 <area alt="" title="" href="#" shape="poly" coords="77,311,135,317,166,275,161,225,109,217,67,248"
                     onclick="vis('boks')" />
-                <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156" onclick="vis('kjoleskap')" />
+                <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156"
+                    onclick="vis('kjoleskap')" />
             </map>
-            <button id="tilbake" onclick="tilbake()">Tilbake</button>
+            <center><button id="tilbake" onclick="tilbake()">Tilbake</button></center>
+            <div id="mothoyre" onclick="hoyre()"><span id="hoyre">&#8250;</span></div>
+
         </div>
-        <div id="mothoyre" onclick="hoyre()"><span id="hoyre">&#8250;</span></div>
     </div>
     <div id="detalj" onclick="skjul()">detalj</div>
 
@@ -387,60 +392,60 @@
         <div class="modal-contentdoor">
             <span class="close">&times;</span>
             <div id="kodesynlig">
-                
-                    <div class="posisjon" maxlength="4" id="resultat"></div><br><br>
-                    <button class="knapp" onclick="klikk('1')">1</button>
-                    <button class="knapp" onclick="klikk('2')">2</button>
-                    <button class="knapp" onclick="klikk('3')">3</button>
-                    <br>
-                    <button class="knapp" onclick="klikk('4')">4</button>
-                    <button class="knapp" onclick="klikk('5')">5</button>
-                    <button class="knapp" onclick="klikk('6')">6</button>
-                    <br>
-                    <button class="knapp" onclick="klikk('7')">7</button>
-                    <button class="knapp" onclick="klikk('8')">8</button>
-                    <button class="knapp" onclick="klikk('9')">9</button>
-                    <br>
-                    <button class="knapp" onclick="klikk('0')">0</button>
-                    <button class="knapp" onclick="kommando('C')">C</button>
-                    <br><br>
-                    <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
-    
+
+                <div class="posisjon" maxlength="4" id="resultat"></div><br><br>
+                <button class="knapp" onclick="klikk('1')">1</button>
+                <button class="knapp" onclick="klikk('2')">2</button>
+                <button class="knapp" onclick="klikk('3')">3</button>
+                <br>
+                <button class="knapp" onclick="klikk('4')">4</button>
+                <button class="knapp" onclick="klikk('5')">5</button>
+                <button class="knapp" onclick="klikk('6')">6</button>
+                <br>
+                <button class="knapp" onclick="klikk('7')">7</button>
+                <button class="knapp" onclick="klikk('8')">8</button>
+                <button class="knapp" onclick="klikk('9')">9</button>
+                <br>
+                <button class="knapp" onclick="klikk('0')">0</button>
+                <button class="knapp" onclick="kommando('C')">C</button>
+                <br><br>
+                <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
+
             </div>
         </div>
     </div>
 
-        <script>
-            last_rom(0);
-        </script>
+    <script>
+        last_rom(0);
+    </script>
 
-        <script>
-            // Get the modal
-            var modal = document.getElementById('myModal');
-            var modalSafe = document.getElementById('ModalSafe');
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        var modalSafe = document.getElementById('ModalSafe');
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
-            var spanSafe = document.getElementsByClassName("close")[1];
+        var spanSafe = document.getElementsByClassName("close")[1];
 
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+
+        }
+        spanSafe.onclick = function () {
+            modalSafe.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
-                
+            } else if (event.target == modalSafe) {
+                modalSafe.style.display = "none";
             }
-            spanSafe.onclick = function () {
-                modalSafe.style.display = "none";   
-            }
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                } else if(event.target == modalSafe){
-                    modalSafe.style.display = "none";
-                }
-            }
-        </script>
+        }
+    </script>
 </body>
 
 </html>

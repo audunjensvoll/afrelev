@@ -111,12 +111,13 @@ img {
 }
 #tilbake{
     display: none;
+    
 }
 
 #topp{
 
     background-color: transparent;
-    height: 250px;
+    height: 100px;
     margin: auto;
 
 }
@@ -144,6 +145,10 @@ img {
 
 }
 #overskrift {
+
+    font-family: 'MedievalSharp';
+    font-size: 27px;
+    text-align: center;
 
 
 }
@@ -229,7 +234,10 @@ img {
 
   #venstre {
     font-size: 100px;
+    border: black 1px;
   }
   #hoyre {
     font-size: 100px;
+    position: relative;
+    top: -589px;
   }
