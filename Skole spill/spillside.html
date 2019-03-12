@@ -8,8 +8,10 @@
     <link rel="stylesheet" type="text/css" href="./css/spillside.css">
 
     <title>KJELLEREN PÅ AFR</title>
+    <style>
+    </style>
 
-
+<script src="js/spillet.js"></script>
     <script src="js/spillside.js"></script>
 
     <script>
@@ -352,17 +354,19 @@
 </head>
 
 <body>
+    <!--Navbar-->
     <div id="topp">
         <div id="navn"><input id="navnet" type="text"><button id="knapp" onclick="NyttNavn()">Send inn</button></div>
         <div id="klokke">60 : 00</div>
-        <div id="hint">hint</div>
+        <div id="hint"><div id="hintTekst">hint</div>
+        <input onclick="fjernHint()" id="taVekk" type="checkbox"></input></div>
     </div>
 
     <div id="overskrift">
         <h1>KJELLERN PÅ AFR</h1>
     </div>
 
-
+    <!--Spillet-->
     <div id="hoved">
             <div id="motvenstre" onclick="venstre()"><span class="piler" id="venstre">&#8249;</span></div>
 
@@ -383,8 +387,9 @@
 
 
     </div>
+    <!--Detaljebilder-->
     <div id="detalj" onclick="skjul()">detalj</div>
-
+    <!--Boks der info om deljebilder eller lås vises i-->
     <div id="container">
         <div id="imagearea">
         </div>
@@ -393,7 +398,7 @@
     </div>
     <div id="myModal" class="modal">
 
-        <!-- Modal content -->
+        <!-- Kode content -->
         <div class="modal-content">
             <span class="close">&times;</span>
             <div id="detailedinfo"></div>
@@ -402,7 +407,7 @@
 
     <div id="ModalSafe" class="modal">
 
-        <!-- Modal content -->
+        <!-- Kode content -->
         <div class="modal-contentdoor">
             <span class="close">&times;</span>
             <div id="kodesynlig">
@@ -431,34 +436,6 @@
 
     <script>
         last_rom(0);
-    </script>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-        var modalSafe = document.getElementById('ModalSafe');
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        var spanSafe = document.getElementsByClassName("close")[1];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-
-        }
-        spanSafe.onclick = function () {
-            modalSafe.style.display = "none";
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            } else if (event.target == modalSafe) {
-                modalSafe.style.display = "none";
-            }
-        }
     </script>
 </body>
 
