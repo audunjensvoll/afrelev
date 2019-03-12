@@ -156,6 +156,7 @@ img {
 #hovedbildeytter {
 
     display: inline-block;
+    filter: brightness(15%);
 }
 #spill{
     display: inline-block;
