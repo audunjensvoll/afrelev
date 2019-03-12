@@ -20,6 +20,8 @@ function sjekkType(Rnr, Vnr, Anr) {
     } else if (view.type == "bilde") {
         document.getElementById('myModal').style.display = "block";
         document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
+    } else if (view.type == "lys") {
+        document.getElementById("hovedbildeytter").style.filter = "brightness(100%)";
     }
 }
 

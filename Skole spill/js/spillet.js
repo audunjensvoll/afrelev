@@ -24,6 +24,10 @@ var rom = [
                     laast: true,
                     nesterom: 1,
                     message: "Dette er døren"
+                },
+                {
+                    coords: "370,577,671,575,662,14,367,24,687,149,719,173",
+                    type: "lys"
                 }]
             },
             {
