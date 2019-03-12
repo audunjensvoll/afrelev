@@ -11,19 +11,37 @@
         h1{
             text-align: center;
         }
+        #navn{
+            text-align: center;
+        }
     </style>
-     
    
     <title>KJELLEREN PÅ AFR</title>
+    <script>
+        //Navnet til brukeren
+        function NyttNavn() {
+            var element = {
+                navn: document.getElementById("navnet").value,
+                tid: 0
+            }
+            var navn = document.getElementById("navn").innerHTML = "Brukernavn: " + element.navn + "";
+            console.log(element);
+            
+        }
+    </script>
 
 </head>
 <body>
-<h1> KJELLEREN PÅ AFR </h1>
-<p>Velkommen til vårt spill </p>
+    <div id="overskrift">
+        <h1>KJELLERN PÅ AFR</h1>
+    </div>
+    <p>Velkommen til vårt spill </p>
 
-<video id="" src="h.mp4" loop></video>
+    <div id="navn"><input id="navnet" type="text"><button id="knapp" onclick="NyttNavn()">Send inn</button></div>
 
-<p><a href="spillside.html" id = "">Play</a></p>
+    <video id="" src="h.mp4" loop></video>
+
+    <p><a href="spillside.html" id = "">Play</a></p>
 
     
 

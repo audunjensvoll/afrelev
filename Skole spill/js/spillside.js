@@ -157,17 +157,6 @@ function fjernHint(){
     document.getElementById("hintTekst").innerHTML = "&nbsp;";
 }
 
-//Navnet til brukeren
-function NyttNavn() {
-    var element = {
-        navn: document.getElementById("navnet").value,
-        tid: 0
-    }
-    var navn = document.getElementById("navn").innerHTML = "Brukernavn: " + element.navn + "";
-    console.log(element);
-    
-}
-
 //Kode til linje 359
 var resultatTekst = "";
 
