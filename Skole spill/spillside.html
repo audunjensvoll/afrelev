@@ -11,57 +11,8 @@
     <style>
     </style>
 
-<script src="js/spillet.js"></script>
+    <script src="js/spillet.js"></script>
     <script src="js/spillside.js"></script>
-
-
-    <script>
-
-
-        var resultatTekst = "";
-
-        function skriv() {
-
-            document.getElementById("resultat").innerHTML = resultatTekst;
-
-        }
-
-        function klikk(verdi) {
-
-            resultatTekst += verdi;
-            skriv();
-        }
-
-        function kommando(verdi) {
-
-            if (verdi == "C") {
-                reset();
-            }
-        }
-
-        function reset() {
-
-            resultatTekst = "";
-            skriv();
-
-        }
-
-        function resultat() {
-            var area = rom[romnr].view[viewnr].areas[areanr];
-            if (Number(resultatTekst) == Number(area.kode)) {
-
-                last_rom(area.nesterom);
-                area.laast = false;
-                document.getElementById('ModalSafe').style.display = "none";
-
-            }
-            else {
-                alert("FEIL");
-            }
-            reset();
-        }
-    </script>
-
 
 </head>
 
@@ -72,10 +23,6 @@
         <div id="klokke">60 : 00</div>
         <div id="hint"><div id="hintTekst">hint</div>
         <input onclick="fjernHint()" id="taVekk" type="checkbox"></input></div>
-    </div>
-
-    <div id="overskrift">
-        <h1>KJELLERN PÅ AFR</h1>
     </div>
 
     <!--Spillet-->
@@ -91,11 +38,11 @@
                     onclick="vis('kjoleskap')" />
             </map>
             <center>
-                <div id="tilbake" class="rotate" onclick="tilbake()"><span class="piler" id="nedtilbake">&#8250;</span></div>
+                <div id="tilbake" onclick="tilbake()"><span class="piler" id="nedtilbake">&#8250;</span></div>
             </center>
         
         </div>
-        <div id="mothoyre" onclick="hoyre()"><span class="piler" id="hoyre">&#8250;</span></div>
+        <div id="mothoyre" onclick="hoyre()"><span class="rotate" class="piler" id="hoyre">&#8250;</span></div>
 
 
     </div>
