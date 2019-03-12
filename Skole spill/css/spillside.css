@@ -109,10 +109,7 @@ img {
     display: none;
     text-align: center;
 }
-#tilbake{
-    display: none;
-    
-}
+
 
 #topp{
 
@@ -167,7 +164,6 @@ img {
 
 #hovedbildeytter {
 
-    border: solid 1px black;
     display: inline-block;
 }
 #spill{
@@ -182,26 +178,48 @@ img {
 #hoved{
     text-align: center;
     margin-top: 30px;
-    border: solid 1px black;
     height: 578px;
+
+}
+
+.piler {
+
+
+
+}
+
+#tilbake {
+
+    border: solid 1px black;
+    cursor: pointer;
+    display: inline-block;
+    
+}
+
+#nedtilbake {
+
+    cursor: pointer;
+    font-size: 100px;
+    position: relative;
+    display: inline-block;
 
 }
 
 #motvenstre {
     color: black; 
-    border: solid 1px black;
     display: inline-block;
     position: relative;
     top: -280px;
+    cursor: pointer;
 
 }
 
 #mothoyre {
     color: black;
-    border: solid 1px black;
     display: inline-block;  
     position: relative;
     top: -280px;  
+    cursor: pointer;
 }
 
 #detalj{
