@@ -298,6 +298,11 @@
         //Skriver ut hintene på siden
         function skrivHint(tekst) {
             document.getElementById("hint").innerHTML = tekst;
+            document.getElementById("taVekk").checked = false;
+        }
+
+        function fjernHint(){
+            document.getElementById("hint").innerHTML = "";
         }
 
         //Navnet til brukeren
@@ -367,7 +372,8 @@
     <div id="topp">
         <div id="navn"><input id="navnet" type="text"><button id="knapp" onclick="NyttNavn()">Send inn</button></div>
         <div id="klokke">60 : 00</div>
-        <div id="hint">hint</div>
+        <div id="hint">hint</div><br>
+        <input onclick="fjernHint()" id="taVekk" type="checkbox"></input>
     </div>
 
     <div id="overskrift">
