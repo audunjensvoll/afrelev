@@ -9,7 +9,7 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
     viewnr = Vnr;
     areanr = Anr;
     inareanr = inAnr
-    var view = rom[Rnr].view[Vnr].areas[Anr].areas[inAnr];
+    var view = rom[Rnr].view[Vnr].areas[Anr];
     if (view.type == "dør") {
         if (view.laast) {
             document.getElementById('ModalSafe').style.display = "block";
@@ -24,7 +24,7 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
         nytt_area(viewnr, areanr)
     } else if (view.type == "lys") {
         document.getElementById("hovedbildeytter").style.filter = "brightness(100%)";
-    }
+    } 
 }
 
 //Laster rom
