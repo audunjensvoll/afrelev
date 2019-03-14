@@ -64,9 +64,9 @@ var rom = [
             {
                 img: "./bilder/EFRoom1Venstre.jpg",
                 areas: [{
-                    coords: "570,314,570,335,583,343,600,339,671,307,668,286,657,279",
+                    coords: "707,416,686,421,686,463,703,474",
                     type: "bilde",
-                    img: "./provebilder/provebilder_ferdig/CloseupClueLeft1_ferdig.JPG",
+                    img: "./bilder/EFRoom1VenstreCloseup1.jpg",
                     message: "Dette er esken"
                 }]
             },
@@ -93,9 +93,25 @@ var rom = [
             {
                 img: "./bilder/EFRoom1Hoyre1.jpg",
                 areas: [{
-                    coords: "80,310,133,314,164,271,159,220,106,211,64,244",
-                    type: 1,
-                    message: "Dette er esken"
+                    coords: "931,222,927,249,950,259,1020,261,1020,227",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1HoyreNokkelboks.jpg",
+                    message: "Nøkkelboks"
+                },
+                {
+                    coords: "571,314,577,314,581,325,583,358,567,359,567,334,565,325",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1hoyreFlaske.jpg"
+                },
+                {
+                    coords: "198,209,187,254,204,254,207,260,263,260,271,254,271,225,267,212,255,203",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1HoyreBag.jpg"
+                },
+                {
+                    coords: "563,381,565,427,596,443,642,441,615,411,677,405,679,395,700,394,650,375",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1HoyreBoks.jpg"
                 }]
             }
         ],
@@ -113,7 +129,7 @@ var rom = [
                 img: "./bilder/EFRoom2DoorLast.jpg",
                 areas: [{
                     coords: "475,117,602,119,601,376,475,374",
-                    kode: 5067,
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 3,
@@ -144,7 +160,7 @@ var rom = [
                 img: "./bilder/EFRoomKorridor.jpg",
                 areas: [{
                     coords: "475,117,602,119,601,376,475,374",
-                    kode: 5067,
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 4,
@@ -152,13 +168,6 @@ var rom = [
 
                 }],
                 sistrom: 2
-            },
-
-            {
-                img: "./bilder/provebilder_ferdig/Right0_ferdig.JPG",
-                areas: [{
-
-                }]
             }
         ],
         startview: 1
