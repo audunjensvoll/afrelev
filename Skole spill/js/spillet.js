@@ -19,7 +19,7 @@ var rom = [
                 img: "./bilder/EFDoor0Last.jpg",
                 areas: [{
                     coords: "296,1,630,0,623,576,315,575",
-                    kode: 3574,
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 1,
@@ -64,17 +64,17 @@ var rom = [
             {
                 img: "./bilder/EFRoom1Venstre.jpg",
                 areas: [{
-                    coords: "570,314,570,335,583,343,600,339,671,307,668,286,657,279",
+                    coords: "707,416,686,421,686,463,703,474",
                     type: "bilde",
-                    img: "./provebilder/provebilder_ferdig/CloseupClueLeft1_ferdig.JPG",
+                    img: "./bilder/EFRoom1VenstreCloseup1.jpg",
                     message: "Dette er esken"
                 }]
             },
             {
                 img: "./bilder/EFRoom1.jpg",
                 areas: [{
-                    coords: "475,117,602,119,601,376,475,374",
-                    kode: 2507,
+                    coords: "391,81,538,85,541,369,399,371",
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 2,
@@ -82,9 +82,9 @@ var rom = [
 
                 },
                 {
-                    coords: "799,577,847,578,843,97,910,3,795,3",
+                    coords: "647,227,641,238,649,240,655,231",
                     type: "bilde",
-                    img: "./provebilder/Left1.JPG",
+                    img: "./bilder/EFRoom1Rom2.jpg",
                     message: "Dette er røret"
                 }],
                 sistrom: 0
@@ -93,9 +93,25 @@ var rom = [
             {
                 img: "./bilder/EFRoom1Hoyre1.jpg",
                 areas: [{
-                    coords: "80,310,133,314,164,271,159,220,106,211,64,244",
-                    type: 1,
-                    message: "Dette er esken"
+                    coords: "931,222,927,249,950,259,1020,261,1020,227",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1HoyreNokkelboks.jpg",
+                    message: "Nøkkelboks"
+                },
+                {
+                    coords: "571,314,577,314,581,325,583,358,567,359,567,334,565,325",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1hoyreFlaske.jpg"
+                },
+                {
+                    coords: "198,209,187,254,204,254,207,260,263,260,271,254,271,225,267,212,255,203",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1HoyreBag.jpg"
+                },
+                {
+                    coords: "563,381,565,427,596,443,642,441,615,411,677,405,679,395,700,394,650,375",
+                    type: "bilde",
+                    img: "./bilder/EFRoom1HoyreBoks.jpg"
                 }]
             }
         ],
@@ -151,29 +167,34 @@ var rom = [
         //Rom 4
         view: [
             {
-                img: "./bilder/EFRoom3.jpg",
+                img: "./bilder/EFRoom3Closeup1.jpg",
                 areas: [{
+                    coords: "2,125,23,136,35,156,43,193,43,221,75,213,82,218,37,229",
+                    type: "bilde",
+                    img: "./bilder/EFRoom3Figur1.jpg"
+                },
+                {
+                    coords: "184,421,207,426,231,368,209,342,227,221,222,214,195,333,187,326,181,332,191,348,186,404",
+                    type:"bilde",
+                    img:"./bilder/EFRoom3Figur2.jpg"
                 }]
             },
             {
                 img: "./bilder/EFRoomKorridor.jpg",
                 areas: [{
-                    coords: "475,117,602,119,601,376,475,374",
-                    kode: 5067,
+                    coords: "433,127,583,129,583,391,441,392",
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 4,
                     message: "Dette er døren"
 
+                },
+                {
+                    coords: "433,127,583,129,583,391,441,392",
+                    type: "rom"
                 }],
                 sistrom: 2
-            },
-
-            {
-                img: "./bilder/provebilder_ferdig/Right0_ferdig.JPG",
-                areas: [{
-
-                }]
             }
         ],
         startview: 1
