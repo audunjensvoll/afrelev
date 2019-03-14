@@ -19,7 +19,7 @@ var rom = [
                 img: "./bilder/EFDoor0Last.jpg",
                 areas: [{
                     coords: "296,1,630,0,623,576,315,575",
-                    kode: 3574,
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 1,
@@ -73,8 +73,8 @@ var rom = [
             {
                 img: "./bilder/EFRoom1.jpg",
                 areas: [{
-                    coords: "475,117,602,119,601,376,475,374",
-                    kode: 2507,
+                    coords: "391,81,538,85,541,369,399,371",
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 2,
@@ -82,9 +82,9 @@ var rom = [
 
                 },
                 {
-                    coords: "799,577,847,578,843,97,910,3,795,3",
+                    coords: "647,227,641,238,649,240,655,231",
                     type: "bilde",
-                    img: "./provebilder/Left1.JPG",
+                    img: "./bilder/EFRoom1Rom2.jpg",
                     message: "Dette er røret"
                 }],
                 sistrom: 0
