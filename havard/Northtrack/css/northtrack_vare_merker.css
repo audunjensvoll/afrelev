@@ -42,7 +42,7 @@ body {
     }
 
     .meny li a.active {
-        background-color: rgba(39, 151, 185, 0.363);
+        background-color: skyblue;
         color: white;
     }
     
@@ -61,6 +61,7 @@ body {
         left: 200px;
         right: 150px;
         top: 1200px;
+        cursor: default;
     }
 
     .container {
@@ -73,17 +74,15 @@ body {
     .bilderad1
     {
         position: absolute;
-        margin: 0.5%;
+        margin: 27px;
         display: flex;
     }
 
-    .bilde1
+    .bilde1, .bilde4
     {
         position: relative;
-        margin-top: 0.9%;
-        margin-bottom: 0.9%;
-        margin-right: 0.6%;
-        margin-left: 0.8%;
+        margin: 27px;
+        cursor: pointer;
     }
 
     .bilde1 .bilde1tekst
@@ -100,14 +99,13 @@ body {
         color: #f1f1f1;
         letter-spacing: 1.5px;
         font-size: 1.8em;
+        cursor: pointer;
     }
-    .bilde2
+    .bilde2, .bilde5
     {
         position: relative;
-        margin-top: 0.9%;
-        margin-bottom: 0.9%;
-        margin-right: 0.6%;
-        margin-left: 0.6%;
+        margin: 27px;
+        cursor: pointer;
     }
 
     .bilde2 .bilde2tekst
@@ -124,14 +122,14 @@ body {
         color: #f1f1f1;
         letter-spacing: 1.5px;
         font-size: 1.8em;
+        cursor: pointer;
     }
 
-    .bilde3
+    .bilde3, .bilde6
     {
         position: relative;
-        margin-top: 0.9%;
-        margin-bottom: 0.9%;
-        margin-left: 0.6%;
+        margin: 27px;
+        cursor: pointer;
     }
 
     .bilde3 .bilde3tekst
@@ -148,20 +146,15 @@ body {
         color: #f1f1f1;
         letter-spacing: 1.5px;
         font-size: 1.8em;
+        cursor: pointer;
     }
 
     .bilderad2
     {
         position: absolute;
-        top: 385px;
-        margin: 5px;
+        top: 554px;
+        margin: 27px;
         display: flex;
-    }
-
-    .bilde4
-    {
-        position: relative;
-        margin: 10px;
     }
 
     .bilde4 .bilde4tekst
@@ -170,7 +163,7 @@ body {
         text-align:center;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -80%);
+        transform: translate(-50%, -50%);
         width: 80%;
         padding: 2px;
         background: rgb(0, 0, 0);
@@ -178,12 +171,7 @@ body {
         color: #f1f1f1;
         letter-spacing: 1.5px;
         font-size: 1.8em;
-    }
-
-    .bilde5
-    {
-        position: relative;
-        margin: 10px;
+        cursor: pointer;
     }
 
     .bilde5 .bilde5tekst
@@ -192,7 +180,7 @@ body {
         text-align:center;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -80%);
+        transform: translate(-50%, -50%);
         width: 80%;
         padding: 2px;
         background: rgb(0, 0, 0);
@@ -200,12 +188,7 @@ body {
         color: #f1f1f1;
         letter-spacing: 1.5px;
         font-size: 1.8em;
-    }
-
-    .bilde6
-    {
-        position: relative;
-        margin: 10px;
+        cursor: pointer;
     }
 
     .bilde6 .bilde6tekst
@@ -214,7 +197,7 @@ body {
         text-align:center;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -80%);
+        transform: translate(-50%, -50%);
         width: 80%;
         padding: 2px;
         background: rgb(0, 0, 0);
@@ -222,4 +205,16 @@ body {
         color: #f1f1f1;
         letter-spacing: 1.5px;
         font-size: 1.8em;
+        cursor: pointer;
     }
+
+    .overlay
+    {
+        height: 99%;
+        width: 100%;
+        opacity: 1;
+        transition: .5s ease;
+        background-color: rgb(235, 235, 235);
+    }
+
+    .bilde1:hover .overlay, .bilde2:hover .overlay, .bilde3:hover .overlay, .bilde4:hover .overlay, .bilde5:hover .overlay, .bilde6:hover .overlay  { opacity: .6;}

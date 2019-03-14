@@ -97,7 +97,7 @@ body {
     height: 10px;
     text-indent: -9999px;
  
-    background-image: url(../images/placeholderbilde1.jpg);
+    background-image: url(../images/bildeespen.jpg);
 }
  
 .ui-datepicker-prev span { background-position: 0px 0px; }
@@ -138,6 +138,10 @@ body {
 .ui-datepicker-calendar .ui-state-active {
     color: skyblue;
     border: 1px solid skyblue;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
  
 .ui-datepicker-other-month .ui-state-default { color: #565656; }
+

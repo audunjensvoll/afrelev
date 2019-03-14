@@ -42,7 +42,7 @@ body {
     }
 
     .meny li a.active {
-        background-color: rgba(39, 151, 185, 0.363);
+        background-color: skyblue;
         color: white;
     }
     
@@ -64,6 +64,7 @@ body {
         position: relative;
         font-size: 1.2em;
         line-height: 1.6;
+        cursor: default;
     }
 
     .tekstboks
@@ -89,6 +90,7 @@ body {
         text-align: center;
         font-size: 1.2em;
         line-height: 1.6;
+        cursor: default;
     }
 
     .ansatte
@@ -117,6 +119,7 @@ body {
         transform: translate( 0%, -66%);
         font-size: 1.6em;
         word-spacing: 0.1em;
+        cursor: default;
     }
 
     .ansattbeskrivelse
@@ -125,6 +128,7 @@ body {
         margin-top: 10px;
         margin-left: 10px;
         margin-right: 10px;
+        cursor: default;
     }
 
     .ansatt0
