@@ -4,409 +4,50 @@
 <head>
 
 
+    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="./css/spillside.css">
 
     <title>KJELLEREN PÅ AFR</title>
-
-    <script src="js/spillside.js"></script>
     <style>
-        #container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #detailedinfo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 100px;
-            /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-            background-color: #8f8e8e;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid rgb(97, 28, 28);
-            width: 80%;
-        }
-        /* Modal Content */
-        .modal-contentdoor{
-            background-color: #8f8e8e;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid rgb(97, 28, 28);
-            width: 25%;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        img {
-            width: 1028px;
-            height: 578px;
-        }
-
-        .knapp {
-
-            font-size: 20px;
-            border: solid 1px;
-            margin: auto;
-            width: auto;
-            padding: 10px;
-
-        }
-
-        body {
-
-            background-color: lightgrey;
-
-        }
-
-        .posisjon {
-
-            padding: 10px;
-
-        }
-
-        #kodesynlig {
-            display: none;
-            text-align: center;
-        }
-        #tilbake{
-            display: none;
-        }
     </style>
 
-    <script>
-        // Her er alle rom definert
-        var romnr = 0;  // utgangspunkt
-        var viewnr = 1;
-        var areanr = 0;
-        var rom = [
-            {
-                view: [
-                    {
-                        img: "./provebilder/provebilder_ferdig/Left0_ferdig.jpg",
-                        areas: [{
-                            coords: "442,247,443,234,483,234,479,174,414,174,349,174,351,233,408,233,409,246",
-                            kode: 1,
-                            type: "bilde",
-                            img: "./provebilder/provebilder_ferdig/CloseupTaskLeft0_ferdig.jpg",
-                            message: "Dette er sifferet"
-                        }]
-                    },
-                    {
-                        img: "./provebilder/Door0.JPG",
-                        areas: [{
-                            coords: "370,577,671,575,662,14,367,24",
-                            kode: 1234,
-                            type: "dør",
-                            laast: true,
-                            nesterom: 1,
-                            message: "Dette er døren"
-                        }]
-                    },
-                    {
-                        img: "./provebilder/provebilder_ferdig/Right0_ferdig.jpg",
-                        areas: [{
-                            coords: "380,389,381,401,404,403,404,389",
-                            kode: 1,
-                            type: "bilde",
-                            img: "./provebilder/provebilder_ferdig/Closeup0Tabell_ferdig.jpg",
-                            message: "Dette er diagrammet"
-                        }]
-                    }
-                ],
-                startview: 1
-            },
-            {
-                view: [
-                    {
-                        img: "./provebilder/provebilder_ferdig/Left1_ferdig.JPG",
-                        areas: [{
-                            coords: "570,314,570,335,583,343,600,339,671,307,668,286,657,279",
-                            kode: 1,
-                            type: "bilde",
-                            img: "./provebilder/provebilder_ferdig/CloseupClueLeft1_ferdig.JPG",
-                            message: "Dette er esken"
-                        }]
-                    },
-                    {
-                        img: "./provebilder/provebilder_ferdig/Door1_ferdig.JPG",
-                        areas: [{
-                            coords: "475,117,602,119,601,376,475,374",
-                            kode: 1,
-                            type: "dør",
-                            laast: true,
-                            sistrom: 0,
-                            nesterom: 2,
-                            message: "Dette er døren"
-                        },
-                        {
-                            coords: "799,577,847,578,843,97,910,3,795,3",
-                            kode: 1,
-                            type: "bilde",
-                            img: "./provebilder/Left1.JPG",
-                            message: "Dette er røret"
-                        }]
-                    },
-                    
-                    {
-                        img: "./provebilder/provebilder_ferdig/Right1_ferdig.JPG",
-                        areas: [{
-                            coords: "80,310,133,314,164,271,159,220,106,211,64,244",
-                            kode: 1,
-                            type: 1,
-                            message: "Dette er esken"
-                        }]
-                    }
-                ],
-                startview: 1
-            }
-        ];
-
-        // helper som lager area-html'en til mappen
-        function getArea(inner, romnr, viewnr, areanr) {
-            return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
-        }
-
-        function sjekkType(Rnr, Vnr, Anr) {
-            romnr = Rnr;
-            viewnr = Vnr;
-            areanr = Anr;
-            var view = rom[Rnr].view[Vnr].areas[Anr];
-            if (view.type == "dør") {
-                if (view.laast) {
-                    document.getElementById('ModalSafe').style.display = "block";
-                    document.getElementById("kodesynlig").style.display = "block";
-                } else {
-                    document.getElementById("tilbake").style.display = "block";
-                    last_rom(view.nesterom);
-                    
-                }
-            } else if (view.type == "bilde") {
-                document.getElementById('myModal').style.display = "block";
-                document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
-            }
-        }
-
-        function last_rom(nr) {
-            var rommet = rom[nr];
-            var view = rommet.view[rommet.startview];
-            romnr = nr;
-            viewnr = rommet.startview;
-            nytt_view(viewnr)
-            if(typeof view.sistrom === 'undefined'){
-                document.getElementById("tilbake").style.display = "none"; 
-            }
-        }
-
-        function nytt_view(view_nr) {
-            var rommet = rom[romnr]; // samme rom som før
-            var view = rommet.view[view_nr];
-            viewnr = view_nr;
-            document.getElementById("hovedbilde").src = view.img;
-            var resultat = ""
-            for (var i = 0; i < view.areas.length; i++) {
-                resultat = resultat + getArea(view.areas[i].coords, romnr, viewnr, i)
-            }
-            document.getElementById("Map").innerHTML = resultat
-        }
-
-        function vis(ting) {
-
-            document.getElementById("detalj").style.visibility = "visible";
-            document.getElementById("detalj").innerHTML = ting;
-        }
-        function skjul() {
-            document.getElementById("detalj").style.visibility = "hidden"
-        }
-
-        var sek = 3600;
-
-        var fortsett = true;
-
-        function tell() {
-            if (fortsett) {
-                sek = sek - 1;
-                skrivtid(sek);
-                setTimeout(tell, 1000);
-                if (sek < 1) {
-                    fortsett = false;
-                }
-            }
-        }
-        window.onload = setTimeout(tell, 1000);
-
-
-        function tallTilTekst(tall) {
-            //Sekunder og minutter som tekst
-            if (tall < 10) {
-                return "0" + tall;
-            } else {
-                return tall;
-            }
-            return "" + tall;
-        }
-
-        function skrivtid(tid) {
-            var minutter = 0;
-            var sekunder = 0;
-
-            //regn ut minutter og sekunder
-            minutter = Math.floor(tid / 60);
-            sekunder = tid - 60 * minutter;
-
-            document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
-        }
-
-        function hoyre() {
-
-            viewnr = viewnr + 1;
-
-            if (viewnr == 2) {
-                document.getElementById("mothoyre").style.display = "none";
-            } else {
-                document.getElementById("mothoyre").style.display = "inline-block";
-            }
-            document.getElementById("motvenstre").style.display = "inline-block";
-            nytt_view(viewnr);
-
-
-        }
-
-        function venstre() {
-            viewnr = viewnr - 1;
-
-            if (viewnr == 0) {
-                document.getElementById("motvenstre").style.display = "none";
-            } else {
-                document.getElementById("motvenstre").style.display = "inline-block";
-            }
-            document.getElementById("mothoyre").style.display = "inline-block";
-            nytt_view(viewnr);
-        }
-
-        function tilbake(){
-            var view = rom[romnr].view[viewnr].areas[areanr];
-            if(typeof view.sistrom === 'undefined'){
-                document.getElementById("tilbake").style.display = "none"; 
-            } else {
-                last_rom(view.sistrom);
-            }
-        }
-
-    </script>
-
-    <script>
-
-
-        var resultatTekst = "";
-
-        function skriv() {
-
-            document.getElementById("resultat").innerHTML = resultatTekst;
-
-        }
-
-        function klikk(verdi) {
-
-            resultatTekst += verdi;
-            skriv();
-        }
-
-        function kommando(verdi) {
-
-            if (verdi == "C") {
-                reset();
-            }
-        }
-
-        function reset() {
-
-            resultatTekst = "";
-            skriv();
-
-        }
-
-        function resultat() {
-            var view = rom[romnr].view[viewnr].areas[areanr];
-            if (Number(resultatTekst) == Number(view.kode)) {
-
-                last_rom(view.nesterom);
-                document.getElementById('ModalSafe').style.display = "none";
-                document.getElementById("tilbake").style.display = "block";
-
-            }
-            else {
-                alert("FEIL");
-            }
-            reset();
-        }
-    </script>
-
+    <script src="js/spillet.js"></script>
+    <script src="js/spillside.js"></script>
 
 </head>
 
 <body>
+    <!--Navbar-->
     <div id="topp">
-        <div id="navn">jesper</div>
         <div id="klokke">60 : 00</div>
-        <div id="hint">hint</div>
+        <div id="hint"><div id="hintTekst">hint</div>
+        <input onclick="fjernHint()" id="taVekk" type="checkbox"></input></div>
     </div>
 
+    <!--Spillet-->
     <div id="hoved">
-        <div id="motvenstre" onclick="venstre()"><span id="venstre">&#8249;</span></div>
+            <div id="motvenstre" onclick="venstre()"><span class="piler" id="venstre">&#8249;</span></div>
+
         <div id="spill">
-            <img id="hovedbilde" height="578" width="1028" usemap="#Map">
+            <div id=hovedbildeytter><img id="hovedbilde" height="578" width="1028" usemap="#Map"></div>
             <map name="Map" id="Map">
                 <area alt="" title="" href="#" shape="poly" coords="77,311,135,317,166,275,161,225,109,217,67,248"
                     onclick="vis('boks')" />
-                <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156" onclick="vis('kjoleskap')" />
+                <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156"
+                    onclick="vis('kjoleskap')" />
             </map>
-            <button id="tilbake" onclick="tilbake()">Tilbake</button>
+            <center>
+                <div id="tilbake" onclick="tilbake()"><span class="piler" id="nedtilbake">&#8250;</span></div>
+            </center>
+        
         </div>
-        <div id="mothoyre" onclick="hoyre()"><span id="hoyre">&#8250;</span></div>
-    </div>
-    <div id="detalj" onclick="skjul()">detalj</div>
+        <div id="mothoyre" onclick="hoyre()"><span class="rotate" class="piler" id="hoyre">&#8250;</span></div>
 
+
+    </div>
+    <!--Detaljebilder-->
+    <div id="detalj" onclick="skjul()">detalj</div>
+    <!--Boks der info om deljebilder eller lås vises i-->
     <div id="container">
         <div id="imagearea">
         </div>
@@ -415,7 +56,7 @@
     </div>
     <div id="myModal" class="modal">
 
-        <!-- Modal content -->
+        <!-- Kode content -->
         <div class="modal-content">
             <span class="close">&times;</span>
             <div id="detailedinfo"></div>
@@ -424,64 +65,64 @@
 
     <div id="ModalSafe" class="modal">
 
-        <!-- Modal content -->
+        <!-- Kode content -->
         <div class="modal-contentdoor">
             <span class="close">&times;</span>
             <div id="kodesynlig">
-                
-                    <div class="posisjon" maxlength="4" id="resultat"></div><br><br>
-                    <button class="knapp" onclick="klikk('1')">1</button>
-                    <button class="knapp" onclick="klikk('2')">2</button>
-                    <button class="knapp" onclick="klikk('3')">3</button>
-                    <br>
-                    <button class="knapp" onclick="klikk('4')">4</button>
-                    <button class="knapp" onclick="klikk('5')">5</button>
-                    <button class="knapp" onclick="klikk('6')">6</button>
-                    <br>
-                    <button class="knapp" onclick="klikk('7')">7</button>
-                    <button class="knapp" onclick="klikk('8')">8</button>
-                    <button class="knapp" onclick="klikk('9')">9</button>
-                    <br>
-                    <button class="knapp" onclick="klikk('0')">0</button>
-                    <button class="knapp" onclick="kommando('C')">C</button>
-                    <br><br>
-                    <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
-    
+
+                <div class="posisjon" maxlength="4" id="resultat"></div><br><br>
+                <button class="knapp" onclick="klikk('1')">1</button>
+                <button class="knapp" onclick="klikk('2')">2</button>
+                <button class="knapp" onclick="klikk('3')">3</button>
+                <br>
+                <button class="knapp" onclick="klikk('4')">4</button>
+                <button class="knapp" onclick="klikk('5')">5</button>
+                <button class="knapp" onclick="klikk('6')">6</button>
+                <br>
+                <button class="knapp" onclick="klikk('7')">7</button>
+                <button class="knapp" onclick="klikk('8')">8</button>
+                <button class="knapp" onclick="klikk('9')">9</button>
+                <br>
+                <button class="knapp" onclick="klikk('0')">0</button>
+                <button class="knapp" onclick="kommando('C')">C</button>
+                <br><br>
+                <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
+
             </div>
         </div>
     </div>
 
-        <script>
-            last_rom(0);
-        </script>
+    <script>
+        last_rom(0);
+    </script>
+    <script>
+        //Kode ting
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        var modalSafe = document.getElementById('ModalSafe');
 
-        <script>
-            // Get the modal
-            var modal = document.getElementById('myModal');
-            var modalSafe = document.getElementById('ModalSafe');
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
+        var spanSafe = document.getElementsByClassName("close")[1];
 
-            var spanSafe = document.getElementsByClassName("close")[1];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
 
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
+        }
+        spanSafe.onclick = function () {
+            modalSafe.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
-                
+            } else if (event.target == modalSafe) {
+                modalSafe.style.display = "none";
             }
-            spanSafe.onclick = function () {
-                modalSafe.style.display = "none";   
-            }
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                } else if(event.target == modalSafe){
-                    modalSafe.style.display = "none";
-                }
-            }
-        </script>
+        }
+    </script>
 </body>
 
 </html>
