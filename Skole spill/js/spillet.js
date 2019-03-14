@@ -7,18 +7,18 @@ var rom = [
         //Rom 1
         view: [
             {
-                img: "./provebilder/provebilder_ferdig/Left0_ferdig.jpg",
+                img: "./bilder/EFRoom0Venstre0.jpg",
                 areas: [{
-                    coords: "442,247,443,234,483,234,479,174,414,174,349,174,351,233,408,233,409,246",
+                    coords: "362,80,544,77,549,162,499,164,497,197,449,200,440,169,368,17",
                     type: "bilde",
-                    img: "./provebilder/provebilder_ferdig/CloseupTaskLeft0_ferdig.jpg",
+                    img: "./bilder/EFRoom0VenstreSiffer.jpg",
                     message: "Dette er sifferet"
                 }]
             },
             {
-                img: "./provebilder/Door0.JPG",
+                img: "./bilder/EFDoor0Last.jpg",
                 areas: [{
-                    coords: "370,577,671,575,662,14,367,24",
+                    coords: "296,1,630,0,623,576,315,575",
                     kode: 3574,
                     type: "dør",
                     laast: true,
@@ -26,17 +26,33 @@ var rom = [
                     message: "Dette er døren"
                 },
                 {
-                    coords: "370,577,671,575,662,14,367,24,687,149,719,173",
+                    coords: "650,144,671,144,671,162,651,163",
                     type: "lys"
-                }]
+                },
+]
             },
             {
-                img: "./provebilder/provebilder_ferdig/Right0_ferdig.jpg",
+                img: "./bilder/EFRoom0Hoyre.jpg",
                 areas: [{
-                    coords: "380,389,381,401,404,403,404,389",
+                    coords: "254,143,375,144,374,205,251,205",
                     type: "bilde",
-                    img: "./provebilder/provebilder_ferdig/Closeup0Tabell_ferdig.jpg",
+                    img: "./bilder/EFRoom0HoyreBoks3.jpg",
                     message: "Dette er diagrammet"
+                },
+                {
+                    coords: "535,304,527,344,613,347,615,313",
+                    type: "bilde",
+                    img: "./bilder/EFRoom0HoyreBoks1.jpg"    
+                },
+                {
+                    coords: "127,157,147,158,156,206,129,212",
+                    type: "bilde",
+                    img: "./bilder/EFRoom0HoyreFigur.jpg"     
+                },
+                {
+                    coords: "305,490,303,509,277,509,278,488",
+                    type: "bilde",
+                    img: "./provebilder/provebilder_ferdig/Closeup0Tabell_ferdig.jpg"
                 }]
             }
         ],
@@ -46,7 +62,7 @@ var rom = [
         //Rom 2
         view: [
             {
-                img: "./provebilder/provebilder_ferdig/Left1_ferdig.JPG",
+                img: "./bilder/EFRoom1Venstre.jpg",
                 areas: [{
                     coords: "570,314,570,335,583,343,600,339,671,307,668,286,657,279",
                     type: "bilde",
@@ -55,7 +71,7 @@ var rom = [
                 }]
             },
             {
-                img: "./provebilder/provebilder_ferdig/Door1_ferdig.JPG",
+                img: "./bilder/EFRoom1.jpg",
                 areas: [{
                     coords: "475,117,602,119,601,376,475,374",
                     kode: 2507,
@@ -75,7 +91,7 @@ var rom = [
             },
 
             {
-                img: "./provebilder/provebilder_ferdig/Right1_ferdig.JPG",
+                img: "./bilder/EFRoom1Hoyre1.jpg",
                 areas: [{
                     coords: "80,310,133,314,164,271,159,220,106,211,64,244",
                     type: 1,
@@ -89,12 +105,12 @@ var rom = [
         //Rom 3
         view: [
             {
-                img: "./provebilder/provebilder_ferdig/Left0_ferdig.JPG",
+                img: "./bilder/EFRoom2.jpg",
                 areas: [{
                 }]
             },
             {
-                img: "./provebilder/provebilder_ferdig/Door0_ferdig.JPG",
+                img: "./bilder/EFRoom2DoorLast.jpg",
                 areas: [{
                     coords: "475,117,602,119,601,376,475,374",
                     kode: 5067,
@@ -108,7 +124,38 @@ var rom = [
             },
 
             {
-                img: "./provebilder/provebilder_ferdig/Right0_ferdig.JPG",
+                img: "./bilder/provebilder_ferdig/Right0_ferdig.JPG",
+                areas: [{
+
+                }]
+            }
+        ],
+        startview: 1
+    },
+    {   
+        //Rom 4
+        view: [
+            {
+                img: "./bilder/EFRoom3.jpg",
+                areas: [{
+                }]
+            },
+            {
+                img: "./bilder/EFRoomKorridor.jpg",
+                areas: [{
+                    coords: "475,117,602,119,601,376,475,374",
+                    kode: 5067,
+                    type: "dør",
+                    laast: true,
+                    nesterom: 4,
+                    message: "Dette er døren"
+
+                }],
+                sistrom: 2
+            },
+
+            {
+                img: "./bilder/provebilder_ferdig/Right0_ferdig.JPG",
                 areas: [{
 
                 }]
