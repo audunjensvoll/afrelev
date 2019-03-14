@@ -152,20 +152,32 @@ var rom = [
         //Rom 4
         view: [
             {
-                img: "./bilder/EFRoom3.jpg",
+                img: "./bilder/EFRoom3Closeup1.jpg",
                 areas: [{
+                    coords: "2,125,23,136,35,156,43,193,43,221,75,213,82,218,37,229",
+                    type: "bilde",
+                    img: "./bilder/EFRoom3Figur1.jpg"
+                },
+                {
+                    coords: "184,421,207,426,231,368,209,342,227,221,222,214,195,333,187,326,181,332,191,348,186,404",
+                    type:"bilde",
+                    img:"./bilder/EFRoom3Figur2.jpg"
                 }]
             },
             {
                 img: "./bilder/EFRoomKorridor.jpg",
                 areas: [{
-                    coords: "475,117,602,119,601,376,475,374",
+                    coords: "433,127,583,129,583,391,441,392",
                     kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 4,
                     message: "Dette er døren"
 
+                },
+                {
+                    coords: "433,127,583,129,583,391,441,392",
+                    type: "rom"
                 }],
                 sistrom: 2
             }
