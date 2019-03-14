@@ -96,7 +96,12 @@ var rom = [
                     coords: "931,222,927,249,950,259,1020,261,1020,227",
                     type: "bilde",
                     img: "./bilder/EFRoom1HoyreNokkelboks.jpg",
-                    message: "Nøkkelboks"
+                    message: "Nøkkelboks",
+                    areas: [{
+                        coords: "235,181,163,230,183,345,815,329,827,221,735,173",
+                        type: "bilde",
+                        img: "./bilder/EFRoom1HoyreNokkelboksApen.jpg"
+                    }]
                 },
                 {
                     coords: "571,314,577,314,581,325,583,358,567,359,567,334,565,325",

@@ -20,6 +20,7 @@ function sjekkType(Rnr, Vnr, Anr) {
     } else if (view.type == "bilde") {
         document.getElementById('myModal').style.display = "block";
         document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
+        nytt_area(viewnr, areanr)
     } else if (view.type == "lys") {
         document.getElementById("hovedbildeytter").style.filter = "brightness(100%)";
     }
@@ -50,6 +51,18 @@ function nytt_view(view_nr) {
     } else {
         document.getElementById("tilbake").style.display = "block";
     }
+}
+
+function nytt_area(view_nr, area_nr) {
+    var rommet = rom[romnr]; // samme rom som før
+    var view = rommet.view[view_nr];
+    viewnr = view_nr;
+    document.getElementById("detailedinfo").src = view.areas[area_nr].img;
+    var resultat = ""
+    for (var i = 0; i < view.areas.length; i++) {
+        resultat = resultat + getArea(view.areas[i].coords, romnr, viewnr, i)
+    }
+    document.getElementById("Map").innerHTML = resultat
 }
 
 //Viser detaljbilder etter du trykker på Mapet
