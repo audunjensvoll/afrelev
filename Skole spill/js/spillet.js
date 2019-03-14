@@ -107,12 +107,27 @@ var rom = [
             {
                 img: "./bilder/EFRoom2.jpg",
                 areas: [{
+                    coords: "1028,411,925,410,732,321,948,321,1027,346",
+                    type: "bilde",
+                    img: "./bilder/EFRoom2Biljardbord.jpg"
+                },
+                {
+                    coords:"190,423,128,450,101,429,80,431,59,442,57,333,65,321,115,334",
+                    type: "bilde",
+                    img: "./bilder/EFRoom2Dartspill.jpg"
+
+                }, 
+                {
+                    coords:"724,537,641,546,615,506,702,507",
+                    type: "bilde",
+                    img: "./bilder/EFRoom2Closeup1.jpg"
+
                 }]
             },
             {
                 img: "./bilder/EFRoom2DoorLast.jpg",
                 areas: [{
-                    coords: "475,117,602,119,601,376,475,374",
+                    coords: "712,1,322,2,341,577,702,575",
                     kode: 5067,
                     type: "dør",
                     laast: true,
@@ -130,7 +145,7 @@ var rom = [
                 }]
             }
         ],
-        startview: 1
+        startview: 0
     },
     {   
         //Rom 4
