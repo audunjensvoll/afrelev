@@ -1,14 +1,15 @@
 // helper som lager area-html'en til mappen
-function getArea(inner, romnr, viewnr, areanr) {
-    return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
+function getArea(inner, romnr, viewnr, areanr, inareanr) {
+    return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ", " + inareanr + ")\">";
 }
 
 //Sjekker type (om det er et bilde eller en dør
-function sjekkType(Rnr, Vnr, Anr) {
+function sjekkType(Rnr, Vnr, Anr, inAnr) {
     romnr = Rnr;
     viewnr = Vnr;
     areanr = Anr;
-    var view = rom[Rnr].view[Vnr].areas[Anr];
+    inareanr = inAnr
+    var view = rom[Rnr].view[Vnr].areas[Anr].areas[inAnr];
     if (view.type == "dør") {
         if (view.laast) {
             document.getElementById('ModalSafe').style.display = "block";
