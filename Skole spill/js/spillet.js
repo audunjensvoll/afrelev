@@ -113,7 +113,7 @@ var rom = [
         startview: 1
     }
 ];
-//Holder på informasjon om hint
+//Holder på informasjon om <
 var hint = [{
     tekst: "Hint 1",
     tid: 5000
