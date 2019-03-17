@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/northtrack_kalender.css">
+    <title>Northtrack</title>
+</head>
+
+<body>
+    <div class="toppfelt">
+        <div id="northtracklogo">
+            <img src="../images/northtrack_as.jpg" alt="northtrack_as">
+        </div>
+    </div>
+
+    <div class="meny">
+        <ul>
+            <h3>Meny</h3>
+            <li><a href="../northtrack_index.html">Hjem</a></li>
+            <li><a href="./northtrack_om_oss.html">Om Oss</a></li>
+            <li><a href="./northtrack_kontakt_oss.html">Kontakt</a></li>
+            <li><a class="active" href="./northtrack_kalender.html">Kalender</a></li>
+            <li><a href="./northtrack_vare_merker.html">Våre Merker</a></li>
+            <li><a href="./northtrack_media.html">Media</a></li>
+            <li><a href="./northtrack_profilartikler.html">Profilartikler</a></li>
+            <li><a href="#diverse">Diverse</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="container">
+        <div class="tekstboks">
+            <div class="text">
+                <h1>Kalender</h1>
+                <p>Her er oversikten for når vi er på innkjøp / messer etc.</p>
+            </div>
+        </div>
+        <div class="kalenderdel">
+            <div id ="calendar"></div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script src="../js/jquery-ui-1.12.1/jquery-ui.js"></script>
+            <script>
+                $('#calendar').datepicker({
+                    inline: true,
+                    firstDay: 1,
+                    showOtherMonths: true,
+                    dayNamesMin: ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør']
+                });
+            </script>
+        </div>
+        <div class="kalenderinformasjonsdel">
+            <div class="kalenderskrift">
+                <h3>Events denne dagen/perioden:</h3>
+            </div>
+            <div id ="kalenderinformasjon"></div>
+        </div>
+    </div>
+</body>
+
+</html>

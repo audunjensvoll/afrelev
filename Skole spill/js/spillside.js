@@ -1,13 +1,14 @@
 // helper som lager area-html'en til mappen
-function getArea(inner, romnr, viewnr, areanr) {
-    return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
+function getArea(inner, romnr, viewnr, areanr, inareanr) {
+    return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ", " + inareanr + ")\">";
 }
 
 //Sjekker type (om det er et bilde eller en dør
-function sjekkType(Rnr, Vnr, Anr) {
+function sjekkType(Rnr, Vnr, Anr, inAnr) {
     romnr = Rnr;
     viewnr = Vnr;
     areanr = Anr;
+    inareanr = inAnr
     var view = rom[Rnr].view[Vnr].areas[Anr];
     if (view.type == "dør") {
         if (view.laast) {
@@ -20,7 +21,10 @@ function sjekkType(Rnr, Vnr, Anr) {
     } else if (view.type == "bilde") {
         document.getElementById('myModal').style.display = "block";
         document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
-    }
+        nytt_area(viewnr, areanr)
+    } else if (view.type == "lys") {
+        document.getElementById("hovedbildeytter").style.filter = "brightness(100%)";
+    } 
 }
 
 //Laster rom
@@ -48,6 +52,18 @@ function nytt_view(view_nr) {
     } else {
         document.getElementById("tilbake").style.display = "block";
     }
+}
+
+function nytt_area(view_nr, area_nr) {
+    var rommet = rom[romnr]; // samme rom som før
+    var view = rommet.view[view_nr];
+    viewnr = view_nr;
+    document.getElementById("detailedinfo").src = view.areas[area_nr].img;
+    var resultat = ""
+    for (var i = 0; i < view.areas.length; i++) {
+        resultat = resultat + getArea(view.areas[i].coords, romnr, viewnr, i)
+    }
+    document.getElementById("Map").innerHTML = resultat
 }
 
 //Viser detaljbilder etter du trykker på Mapet
@@ -201,29 +217,3 @@ function resultat() {
     reset();
 }
 
-//Kode ting
-        // Get the modal
-        var modal = document.getElementById('myModal');
-        var modalSafe = document.getElementById('ModalSafe');
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        var spanSafe = document.getElementsByClassName("close")[1];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-
-        }
-        spanSafe.onclick = function () {
-            modalSafe.style.display = "none";
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            } else if (event.target == modalSafe) {
-                modalSafe.style.display = "none";
-            }
-        }

@@ -1,0 +1,181 @@
+body {
+    font-family: sans-serif;
+    margin:0;
+    }
+
+    .toppfelt
+    {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 14px;        
+        width: 100%;
+        position: fixed;
+        border-bottom: 1px solid;
+        border-bottom-color: rgb(235, 235, 235);
+        z-index: +2;
+    }
+ 
+    .meny {
+        text-align: center;
+        z-index: +1;
+    }
+
+    .meny ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        top: 76px;
+        width: 10%;
+        background-color: #ffffff;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+        border-right: 1px solid;
+        border-right-color: rgb(235, 235, 235);
+    }
+
+    .meny li a {
+        display: block;
+        color: #000;
+        padding: 12px 16px;
+        text-decoration: none;
+    }
+
+    .meny li a.active {
+        background-color: skyblue;
+        color: white;
+    }
+    
+    .meny li a:hover:not(.active) {
+        background-color: rgba(51, 51, 51, 0.363);
+        color: white;
+    }
+
+    .container {
+        left: 10%;
+        top: 76px;
+        bottom: 100%;
+        right: 0%;
+    }
+
+    .text 
+    {
+        text-align: center;
+        position: relative;
+        font-size: 1.2em;
+        line-height: 1.6;
+        cursor: default;
+    }
+
+    .tekstboks
+    {
+        position: absolute;
+        left: 17%;
+        right: 10%;
+        top: 76px;
+        border-bottom: 1px solid;
+        border-bottom-color: rgb(235, 235, 235);
+    }
+
+    .ansattedel
+    {
+        position: absolute;
+        top: 42%;
+        left: 12%;
+    }
+
+    .ansatteoverskrift
+    {
+        position: relative;
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 1.6;
+        cursor: default;
+    }
+
+    .ansatte
+    {
+        position: relative;
+        margin: 5px;
+        display: flex;
+        max-width: 100%;
+        min-height: 48%;
+        max-height: 50%;
+    }
+
+    .bildeansatte
+    {
+        text-align: center;
+    }
+
+    .bildeansatte img
+    {
+        border-radius: 2%;
+    }
+
+    .ansattnavn
+    {
+        text-align: center;
+        transform: translate( 0%, -66%);
+        font-size: 1.6em;
+        word-spacing: 0.1em;
+        cursor: default;
+    }
+
+    .ansattbeskrivelse
+    {
+        font-size: 1.2em;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: default;
+    }
+
+    .ansatt0
+    {
+        position: relative;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        bottom: 5%;
+        margin-right: 0.5%;
+        max-width: 20%;
+    }
+
+    .ansatt1
+    {
+        position: relative;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        bottom: 5%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        max-width: 20%;
+    }
+
+    .ansatt2
+    {
+        position: relative;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        bottom: 5%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        max-width: 20%;
+    }
+
+    .ansatt3
+    {
+        position: relative;
+        background: rgb(235, 235, 235);
+        padding-top: 30px;
+        padding-bottom: 60px;
+        border-radius: 2%;
+        margin-left: 0.5%;
+        max-width: 20%;
+    }
