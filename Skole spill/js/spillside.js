@@ -128,11 +128,11 @@ function hoyre() {
     viewnr = viewnr + 1;
 
     if (viewnr == 2) {
-        document.getElementById("mothoyre").style.display = "none";
+        document.getElementById("mothoyre").style.visibility = "hidden";
     } else {
-        document.getElementById("mothoyre").style.display = "inline-block";
+        document.getElementById("mothoyre").style.visibility = "visible";
     }
-    document.getElementById("motvenstre").style.display = "inline-block";
+    document.getElementById("motvenstre").style.visibility = "visible";
     nytt_view(viewnr);
 
 
@@ -143,11 +143,11 @@ function venstre() {
     viewnr = viewnr - 1;
 
     if (viewnr == 0) {
-        document.getElementById("motvenstre").style.display = "none";
+        document.getElementById("motvenstre").style.visibility = "hidden";
     } else {
-        document.getElementById("motvenstre").style.display = "inline-block";
+        document.getElementById("motvenstre").style.visibility = "visible";
     }
-    document.getElementById("mothoyre").style.display = "inline-block";
+    document.getElementById("mothoyre").style.visibility = "visible";
     nytt_view(viewnr);
 }
 
