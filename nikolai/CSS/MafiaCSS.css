@@ -1,0 +1,141 @@
+.Login {
+    display: none;
+    margin: 5px;
+}
+
+.Login > button {
+    background-color: white;
+    color: black;
+    border: solid 1px;
+    border-color: black;
+    height: 19px;
+}
+
+.Login > button:hover {
+    background-color: black;
+    color: white;
+}
+.Hjørne {
+    display: none;
+}
+
+.Hjørne > button {
+    background-color: white;
+    border: solid 1px;
+    border-color: black;
+    color: black;
+    margin-left: 5px;
+}
+
+.Hjørne > button:hover {
+    background-color: black;
+    color: white;
+}
+
+.Annonser {
+    display: none;
+    background-color: whitegray;
+}
+
+.Roller {
+    display: none;
+}
+
+.Roller > button {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: white;
+    color: black;
+    border: solid 1px;
+    border-color: black;
+}
+
+.Roller > button:hover {
+   background-color: black;
+   color: white;
+   border: 0px; 
+}
+
+.Beskrivelse {
+    display: none;
+}
+
+Table > text {
+    display: none;
+}
+
+input[type=text] {
+    background-color: lightgray;
+    color: black;
+    border: 0px;
+}
+
+input[type=password] {
+    background-color: white;
+    border: solid 1px;
+    border-color: black;
+}
+
+table {
+    display: none;
+    margin-left: 1px;
+}
+
+ul {
+    margin: 5px;
+    padding: 0px;
+    border: solid 1px;
+    border-color: black;
+}
+
+li {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+
+li > button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    color: black;
+    border: 10px;
+    border-color: black;
+    background-color: white;
+}
+
+li > button:hover {
+    background-color: grey;
+    color: white;
+}
+
+.active {
+    background-color: black;
+    color: white;
+}
+
+.Dodbutton {
+    background-color: white;
+}
+
+.Virus {
+    display: none;
+}
+
+.Virus > p {
+    text-align: center;
+    width: 300px;
+    background-color: red;
+    color: black;
+    border: solid 1px;
+    padding: 50px;
+    margin: auto;
+    font-family: monospace;
+    font-size: 30px;
+}
