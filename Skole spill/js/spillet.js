@@ -165,17 +165,10 @@ var rom = [
                     nesterom: 3,
                     message: "Dette er døren"
 
-                }],
-                sistrom: 1
-            },
-
-            {
-                img: "./bilder/provebilder_ferdig/Right0_ferdig.JPG",
-                areas: [{
-
                 }]
             }
         ],
+        sistrom: 1,
         startview: 0
     },
     {   

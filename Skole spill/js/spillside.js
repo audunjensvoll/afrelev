@@ -16,7 +16,6 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
             document.getElementById("kodesynlig").style.display = "block";
         } else {
             last_rom(view.nesterom);
-
         }
     } else if (view.type == "bilde") {
         document.getElementById('myModal').style.display = "block";
@@ -156,8 +155,10 @@ function tilbake() {
     var view = rom[romnr].view[viewnr];
     rom[0].view[1].img = "./bilder/EFDoor0Apen.jpg"
     rom[1].view[1].img = "./bilder/EFRoom1DoorApen.jpg"
-    rom[2].view[1].img = "./bilder/EFRoom2DoorApen.jpg"
+    rom[2].view[2].img = "./bilder/EFRoom2DoorApen.jpg"
+    rom[2].startview = 2;
     last_rom(view.sistrom);
+    console.log(rom[2]);
 }
 //Setter sammen hint info + tid for når de skal viser på alle hintene
 function setupHint() {
