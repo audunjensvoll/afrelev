@@ -15,47 +15,6 @@ body {
         word-spacing: 10px;
         color:white;
     }
-    
-    
-    .text {
-        font-size:1.2em;
-        line-height: 1.6;
-        padding-right: 60px;
-        padding-left: 60px;
-        padding-top: 20px;
-        text-align: center;
-    }
-    
-    .meny {
-        text-align: center;
-    }
-    
-    .meny li {
-        display: inline-block;
-    }
-    .active {
-        background-color: rgba(100, 100, 100, 0.75);
-    }
-    
-    
-    .meny ul {
-        list-style-type: none;
-        margin: 0;
-        overflow: hidden;
-        background-color: #333;
-    }
-    
-    .meny li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding:14px 16px;
-        text-decoration: none;
-    }
-    
-    .meny li a:hover {
-        background-color: rgba(140, 140, 140, 0.75)
-    }
 
     .rute1, .rute2, .rute3, .rute4, .rute5, .rute6, .rute7, .rute8, .rute9, .rute10, .rute11, .rute12, .rute13, .rute14, .rute15, .rute16, .rute17, .rute18, .rute19, .rute20, .rute21, .rute22, .rute23, .rute24, .rute25  
         {
@@ -194,7 +153,7 @@ body {
     .container{
         width: 100%;
         position: absolute;
-        top: 350px;
+        top: 200px;
         bottom: 0%;
     }
 

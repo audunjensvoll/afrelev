@@ -203,17 +203,17 @@ var rom = [
 //Holder på informasjon om hint
 var hint = [{
     tekst: "Hint 1",
-    tid: 5000
+    tid: 120000
 }, {
     tekst: "Hint 2",
-    tid: 10000
+    tid: 240000
 }, {
     tekst: "Hint 3",
-    tid: 15000
+    tid: 360000
 }, {
     tekst: "Hint 4",
-    tid: 20000
+    tid: 480000
 }, {
     tekst: "Hint 5",
-    tid: 100000
+    tid: 600000
 }];
