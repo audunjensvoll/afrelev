@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ringsaker By</title>
+
+    <link rel="stylesheet" href="../CSS/MafiaCSS.css">
+
+    <script>
+        var current = "Resultat"
+
+        function Show(Id) {
+            Hide(current)
+            current = Id
+            document.getElementById(Id).style.display = "inline";
+        }
+
+        function Hide(Id) {
+            document.getElementById(Id).style.display = "none";
+        }
+
+        function Vis(Id) {
+            document.getElementById(Id).style.display = "inline";
+        }
+
+        var Roller = [
+            { Id: "Gud", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Mafia", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Gudfar", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" },
+            { Id: "Mafioso", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Utpresser", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Seriemorder", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" },
+            { Id: "Lensmann", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Dusørjeger", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Liv Vakt", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" },
+            { Id: "Prest", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Heksedoktor", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Hoffnarr", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" },
+            { Id: "Tvilling", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Veteran", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Dement", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" },
+            { Id: "Pyroman", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Overlever", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Bøddel", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" },
+            { Id: "Borgervern", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Monsterjeger", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }, { Id: "Vampyr", Text: "Hallo", Bilde: "../Bilder/julenisse.jpg" },
+            { Id: "Varulv", Text: "Heisann", Bilde: "../Bilder/julenisse.jpg" }
+        ]
+
+        function VisBeskrivelse(indeks) {
+            document.getElementById('H').innerHTML = Roller[indeks].Id;
+            document.getElementById('I').src = Roller[indeks].Bilde;
+            document.getElementById('P').innerHTML = Roller[indeks].Text;
+
+        }
+
+        function IntrantCaelum() {
+            var passord = "h"
+            if (document.getElementById("pswrd").value == passord) {
+                Show('Gud')
+            }
+            else {
+                Show('Virus')
+            }
+        }
+
+        var Rad = 0
+
+        function Add() {
+            var table = document.getElementById("Bord");
+            Rad = Rad + 1
+            var NavnId = "Navn" + Rad
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            var cell9 = row.insertCell(8);
+            var cell10 = row.insertCell(9);
+            cell1.innerHTML = "<input type='Text'>";
+            cell2.innerHTML = "<input type='Text' id='" + NavnId + "'>";
+            cell3.innerHTML = "<input type='Text'>";
+            cell4.innerHTML = "<input type='Text'>";
+            cell5.innerHTML = "<input type='Text'>";
+            cell6.innerHTML = "<input type='Text'>";
+            cell7.innerHTML = "<input type='Text'>";
+            cell8.innerHTML = "<input type='Text'>";
+            cell9.innerHTML = "<input type='Text'>";
+            cell10.innerHTML = "<button style='background-color:Black; color: white; border: none;' type='submit' onclick='Dod(\"" + NavnId + "\")'> Død </button>"
+        }
+
+        function Dod(Id) {
+            var Navn = document.getElementById(Id).value;
+            Dode.push(Navn)
+        }
+
+        var Dode = []
+
+        function Refresh() {
+            document.getElementById("Død").innerHTML = Dode.toString();
+        }
+
+        function Farge(id) {
+            document.getElementById("RR").classList.remove("active")
+            document.getElementById("DA").classList.remove("active")
+            document.getElementById("GLH").classList.remove("active")
+            document.getElementById(id).classList.add("active")
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <ul>
+        <li><button id="RR" onclick="Show('Regler'); Farge(id)">Roller og Relger</button></li>
+        <li><button id="DA" onclick="Refresh(); Show('Død'); Farge(id)">Dødsannonser</button></li>
+        <li><button id="GLH" onclick="Show('Login'); Farge(id)">Gud's lille hjørne</button></li>
+    </ul>
+
+    <div id="Død" class="Annonser">
+
+
+    </div>
+
+    <div id="Regler" class="Roller">
+        <button onclick="Show('Detalj'); VisBeskrivelse(0);">Gud</button> <button onclick="Show('Detalj'); VisBeskrivelse(1);">Mafia</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(2);">Gudfar</button> <button onclick="Show('Detalj'); VisBeskrivelse(3);">Mafioso</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(4);">Utpresser</button> <button onclick="Show('Detalj'); VisBeskrivelse(5);">Seriemorder</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(6);">Lensmann</button> <button onclick="Show('Detalj'); VisBeskrivelse(7);">Dusørjeger</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(8);">Livvakt</button> <button onclick="Show('Detalj'); VisBeskrivelse(9);">Prest</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(10);">Heksedoktor</button> <button onclick="Show('Detalj'); VisBeskrivelse(11);">Hoffnarr</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(12);">Tvilling</button> <button onclick="Show('Detalj'); VisBeskrivelse(13);">Veteran</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(14);">Dement</button> <button onclick="Show('Detalj'); VisBeskrivelse(15);">Pyroman</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(16);">Overlever</button> <button onclick="Show('Detalj'); VisBeskrivelse(17);">Bøddel</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(18);">Borgervern</button> <button onclick="Show('Detalj'); VisBeskrivelse(19);">Monsterjeger</button>
+        <button onclick="Show('Detalj'); VisBeskrivelse(20);">Vampyr</button> <button onclick="Show('Detalj'); VisBeskrivelse(21);">Varulv</button>
+
+    </div>
+
+    <div id="Detalj" class="Beskrivelse">
+
+        <h1 id="H"></h1>
+        <img id="I" src="">
+        <p id="P"></p>
+
+
+    </div>
+
+    <div id="Login" class="Login">
+        <input id="pswrd" type="password" name="Passord"> <button onclick="IntrantCaelum()">Login</button>
+
+    </div>
+
+    <div id="Gud" class="Hjørne">
+        <table id="idk">
+            <tbody id="Bord">
+                <tr>
+                    <th>Rolle</th>
+                    <th>Navn</th>
+                    <th>Mandag</th>
+                    <th>Tirsdag</th>
+                    <th>Onsdag</th>
+                    <th>Torsdag</th>
+                    <th>Fredag</th>
+                    <th>Lørdag</th>
+                    <th>Søndag</th>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="Add(); Vis('idk')">Ny spiller</button>
+    </div>
+
+    <div id="Resultat"></div>
+
+    <div id="Virus" Class="Virus">
+
+        <p>Wrong Password</p>
+
+    </div>
+</body>
+
+</html>
