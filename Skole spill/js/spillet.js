@@ -165,10 +165,10 @@ var rom = [
                     nesterom: 3,
                     message: "Dette er døren"
 
-                }]
+                }],
+                sistrom: 1
             }
         ],
-        sistrom: 1,
         startview: 0
     },
     {   
