@@ -22,6 +22,7 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    apendoor: "./bilder/EFDoor0Apen.jpg",
                     nesterom: 1,
                     message: "Dette er døren"
                 },
@@ -77,6 +78,7 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    apendoor: "./bilder/EFRoom1DoorApen.jpg", 
                     nesterom: 2,
                     message: "Dette er døren"
 
@@ -132,8 +134,10 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    tilbakeview: 0,
                     nesterom: 4
-                }]
+                }],
+                sistrom: 1
             },
             {
                 img: "./bilder/EFRoom2.jpg",
@@ -162,11 +166,10 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    apendoor: "./bilder/EFRoom2DoorApen.jpg", 
                     nesterom: 3,
                     message: "Dette er døren"
-
-                }],
-                sistrom: 1
+                }]
             }
         ],
         startview: 0
@@ -180,13 +183,15 @@ var rom = [
                     coords: "2,125,23,136,35,156,43,193,43,221,75,213,82,218,37,229",
                     type: "bilde",
                     img: "./bilder/EFRoom3Figur1.jpg"
+                    
                 },
                 {
                     coords: "184,421,207,426,231,368,209,342,227,221,222,214,195,333,187,326,181,332,191,348,186,404",
                     type:"bilde",
                     img:"./bilder/EFRoom3Figur2.jpg"
                 }],
-                sistrom: 2
+                sistrom: 2,
+                tilbakeview: 2
             }
         ],
         startview: 0

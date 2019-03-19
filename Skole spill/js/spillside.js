@@ -27,11 +27,16 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
 }
 
 //Laster rom
-function last_rom(nr) {
+function last_rom(nr, tilbakeview) {
     var rommet = rom[nr];
-    var view = rommet.view[rommet.startview];
+    var viewnr;
+    if(tilbakeview == undefined){
+        viewnr = rommet.startview;
+    } else {
+        viewnr = tilbakeview;
+    }
     romnr = nr;
-    viewnr = rommet.startview;
+    
     nytt_view(viewnr)
 }
 
@@ -150,11 +155,7 @@ function venstre() {
 //For å komme tilbake til sist rom
 function tilbake() {
     var view = rom[romnr].view[viewnr];
-    rom[0].view[1].img = "./bilder/EFDoor0Apen.jpg"
-    rom[1].view[1].img = "./bilder/EFRoom1DoorApen.jpg"
-    rom[2].view[2].img = "./bilder/EFRoom2DoorApen.jpg"
-    rom[2].startview = 2;
-    last_rom(view.sistrom);
+    last_rom(view.sistrom, view.tilbakeview);
 }
 //Setter sammen hint info + tid for når de skal viser på alle hintene
 function setupHint() {
@@ -204,7 +205,7 @@ function reset() {
 function resultat() {
     var area = rom[romnr].view[viewnr].areas[areanr];
     if (Number(resultatTekst) == Number(area.kode)) {
-
+        rom[romnr].view[viewnr].img = area.apendoor;
         last_rom(area.nesterom);
         area.laast = false;
         document.getElementById('ModalSafe').style.display = "none";
