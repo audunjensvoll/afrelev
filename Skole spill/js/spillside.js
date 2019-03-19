@@ -51,6 +51,19 @@ function nytt_view(view_nr) {
     } else {
         document.getElementById("tilbake").style.display = "block";
     }
+    var lengde = rommet.view.length;
+
+    if (viewnr >= lengde-1) {
+        document.getElementById("mothoyre").style.visibility = "hidden";
+    } else {
+        document.getElementById("mothoyre").style.visibility = "visible";
+    }
+
+    if (viewnr <= 0) {
+        document.getElementById("motvenstre").style.visibility = "hidden";
+    } else {
+        document.getElementById("motvenstre").style.visibility = "visible";
+    }
 }
 
 function nytt_area(view_nr, area_nr) {
@@ -125,28 +138,12 @@ function skrivtid(tid) {
 function hoyre() {
 
     viewnr = viewnr + 1;
-
-    if (viewnr == 2) {
-        document.getElementById("mothoyre").style.visibility = "hidden";
-    } else {
-        document.getElementById("mothoyre").style.visibility = "visible";
-    }
-    document.getElementById("motvenstre").style.visibility = "visible";
     nytt_view(viewnr);
-
-
 }
 
 //Beveger seg til bildet til venstre
 function venstre() {
     viewnr = viewnr - 1;
-
-    if (viewnr == 0) {
-        document.getElementById("motvenstre").style.visibility = "hidden";
-    } else {
-        document.getElementById("motvenstre").style.visibility = "visible";
-    }
-    document.getElementById("mothoyre").style.visibility = "visible";
     nytt_view(viewnr);
 }
 
