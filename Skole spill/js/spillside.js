@@ -154,9 +154,11 @@ function venstre() {
 //For å komme tilbake til sist rom
 function tilbake() {
     var view = rom[romnr].view[viewnr];
+    rom[0].view[1].img = "./bilder/EFDoor0Apen.jpg"
+    rom[1].view[1].img = "./bilder/EFRoom1DoorApen.jpg"
+    rom[2].view[1].img = "./bilder/EFRoom2DoorApen.jpg"
     last_rom(view.sistrom);
 }
-
 //Setter sammen hint info + tid for når de skal viser på alle hintene
 function setupHint() {
     for (var i = 0; i < hint.length; i++) {
