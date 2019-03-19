@@ -1,13 +1,14 @@
 // helper som lager area-html'en til mappen
-function getArea(inner, romnr, viewnr, areanr) {
-    return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ")\">";
+function getArea(inner, romnr, viewnr, areanr, inareanr) {
+    return "<area shape='poly' coords='" + inner + "' onclick=\"sjekkType(" + romnr + ", " + viewnr + ", " + areanr + ", " + inareanr + ")\">";
 }
 
 //Sjekker type (om det er et bilde eller en dør
-function sjekkType(Rnr, Vnr, Anr) {
+function sjekkType(Rnr, Vnr, Anr, inAnr) {
     romnr = Rnr;
     viewnr = Vnr;
     areanr = Anr;
+    inareanr = inAnr
     var view = rom[Rnr].view[Vnr].areas[Anr];
     if (view.type == "dør") {
         if (view.laast) {
@@ -15,14 +16,14 @@ function sjekkType(Rnr, Vnr, Anr) {
             document.getElementById("kodesynlig").style.display = "block";
         } else {
             last_rom(view.nesterom);
-
         }
     } else if (view.type == "bilde") {
         document.getElementById('myModal').style.display = "block";
         document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
+        nytt_area(viewnr, areanr)
     } else if (view.type == "lys") {
         document.getElementById("hovedbildeytter").style.filter = "brightness(100%)";
-    }
+    } 
 }
 
 //Laster rom
@@ -50,6 +51,18 @@ function nytt_view(view_nr) {
     } else {
         document.getElementById("tilbake").style.display = "block";
     }
+}
+
+function nytt_area(view_nr, area_nr) {
+    var rommet = rom[romnr]; // samme rom som før
+    var view = rommet.view[view_nr];
+    viewnr = view_nr;
+    document.getElementById("detailedinfo").src = view.areas[area_nr].img;
+    var resultat = ""
+    for (var i = 0; i < view.areas.length; i++) {
+        resultat = resultat + getArea(view.areas[i].coords, romnr, viewnr, i)
+    }
+    document.getElementById("Map").innerHTML = resultat
 }
 
 //Viser detaljbilder etter du trykker på Mapet
@@ -114,11 +127,11 @@ function hoyre() {
     viewnr = viewnr + 1;
 
     if (viewnr == 2) {
-        document.getElementById("mothoyre").style.display = "none";
+        document.getElementById("mothoyre").style.visibility = "hidden";
     } else {
-        document.getElementById("mothoyre").style.display = "inline-block";
+        document.getElementById("mothoyre").style.visibility = "visible";
     }
-    document.getElementById("motvenstre").style.display = "inline-block";
+    document.getElementById("motvenstre").style.visibility = "visible";
     nytt_view(viewnr);
 
 
@@ -129,20 +142,23 @@ function venstre() {
     viewnr = viewnr - 1;
 
     if (viewnr == 0) {
-        document.getElementById("motvenstre").style.display = "none";
+        document.getElementById("motvenstre").style.visibility = "hidden";
     } else {
-        document.getElementById("motvenstre").style.display = "inline-block";
+        document.getElementById("motvenstre").style.visibility = "visible";
     }
-    document.getElementById("mothoyre").style.display = "inline-block";
+    document.getElementById("mothoyre").style.visibility = "visible";
     nytt_view(viewnr);
 }
 
 //For å komme tilbake til sist rom
 function tilbake() {
     var view = rom[romnr].view[viewnr];
+    rom[0].view[1].img = "./bilder/EFDoor0Apen.jpg"
+    rom[1].view[1].img = "./bilder/EFRoom1DoorApen.jpg"
+    rom[2].view[2].img = "./bilder/EFRoom2DoorApen.jpg"
+    rom[2].startview = 2;
     last_rom(view.sistrom);
 }
-
 //Setter sammen hint info + tid for når de skal viser på alle hintene
 function setupHint() {
     for (var i = 0; i < hint.length; i++) {

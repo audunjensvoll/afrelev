@@ -96,7 +96,12 @@ var rom = [
                     coords: "931,222,927,249,950,259,1020,261,1020,227",
                     type: "bilde",
                     img: "./bilder/EFRoom1HoyreNokkelboks.jpg",
-                    message: "Nøkkelboks"
+                    message: "Nøkkelboks",
+                    areas: [{
+                        coords: "235,181,163,230,183,345,815,329,827,221,735,173",
+                        type: "bilde",
+                        img: "./bilder/EFRoom1HoyreNokkelboksApen.jpg"
+                    }]
                 },
                 {
                     coords: "571,314,577,314,581,325,583,358,567,359,567,334,565,325",
@@ -121,6 +126,16 @@ var rom = [
         //Rom 3
         view: [
             {
+                img: "./bilder/EFRoomKorridor.jpg",
+                areas: [{
+                    coords: "433,127,583,129,583,391,441,392",
+                    kode: 1,
+                    type: "dør",
+                    laast: true,
+                    nesterom: 4
+                }]
+            },
+            {
                 img: "./bilder/EFRoom2.jpg",
                 areas: [{
                     coords: "1028,411,925,410,732,321,948,321,1027,346",
@@ -144,7 +159,7 @@ var rom = [
                 img: "./bilder/EFRoom2DoorLast.jpg",
                 areas: [{
                     coords: "712,1,322,2,341,577,702,575",
-                    kode: 5067,
+                    kode: 1,
                     type: "dør",
                     laast: true,
                     nesterom: 3,
@@ -152,13 +167,6 @@ var rom = [
 
                 }],
                 sistrom: 1
-            },
-
-            {
-                img: "./bilder/provebilder_ferdig/Right0_ferdig.JPG",
-                areas: [{
-
-                }]
             }
         ],
         startview: 0
@@ -177,30 +185,14 @@ var rom = [
                     coords: "184,421,207,426,231,368,209,342,227,221,222,214,195,333,187,326,181,332,191,348,186,404",
                     type:"bilde",
                     img:"./bilder/EFRoom3Figur2.jpg"
-                }]
-            },
-            {
-                img: "./bilder/EFRoomKorridor.jpg",
-                areas: [{
-                    coords: "433,127,583,129,583,391,441,392",
-                    kode: 1,
-                    type: "dør",
-                    laast: true,
-                    nesterom: 4,
-                    message: "Dette er døren"
-
-                },
-                {
-                    coords: "433,127,583,129,583,391,441,392",
-                    type: "rom"
                 }],
                 sistrom: 2
             }
         ],
-        startview: 1
+        startview: 0
     }
 ];
-//Holder på informasjon om hint
+//Holder på informasjon om <
 var hint = [{
     tekst: "Hint 1",
     tid: 120000
