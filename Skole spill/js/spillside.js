@@ -184,7 +184,11 @@ function skriv() {
 
 function klikk(verdi) {
 
-    resultatTekst += verdi;
+    if(resultatTekst == "&nbsp;"){
+        resultatTekst = verdi;
+    } else {
+        resultatTekst += verdi;
+    }    
     skriv();
 }
 
@@ -197,7 +201,7 @@ function kommando(verdi) {
 
 function reset() {
 
-    resultatTekst = "";
+    resultatTekst = "&nbsp;";
     skriv();
 
 }
