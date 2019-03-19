@@ -158,7 +158,6 @@ function tilbake() {
     rom[2].view[2].img = "./bilder/EFRoom2DoorApen.jpg"
     rom[2].startview = 2;
     last_rom(view.sistrom);
-    console.log(rom[2]);
 }
 //Setter sammen hint info + tid for når de skal viser på alle hintene
 function setupHint() {
