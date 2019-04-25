@@ -84,10 +84,11 @@ var rom = [
 
                 },
                 {
-                    coords: "647,227,641,238,649,240,655,231",
-                    type: "bilde",
+                    coords: "655,69,679,60,675,327,647,329",
+                    type: "låstdør",
+                    laast: true,
                     img: "./bilder/EFRoom1Rom2.jpg",
-                    message: "Dette er røret"
+                    message: "røret"
                 }],
                 sistrom: 0
             },
@@ -97,13 +98,9 @@ var rom = [
                 areas: [{
                     coords: "931,222,927,249,950,259,1020,261,1020,227",
                     type: "bilde",
-                    img: "./bilder/EFRoom1HoyreNokkelboks.jpg",
-                    message: "Nøkkelboks",
-                    areas: [{
-                        coords: "235,181,163,230,183,345,815,329,827,221,735,173",
-                        type: "bilde",
-                        img: "./bilder/EFRoom1HoyreNokkelboksApen.jpg"
-                    }]
+                    åpen: false,
+                    img: "./bilder/EFRoom1HoyreNokkelboksApen.jpg",
+                    message: "Nøkkelboks"
                 },
                 {
                     coords: "571,314,577,314,581,325,583,358,567,359,567,334,565,325",

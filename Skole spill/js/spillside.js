@@ -23,7 +23,13 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
         nytt_area(viewnr, areanr)
     } else if (view.type == "lys") {
         document.getElementById("hovedbildeytter").style.filter = "brightness(100%)";
-    } 
+    } else if (view.type == "låstdør"){
+        if(view.laast){
+            document.getElementById('myModal').style.display = "block";
+            document.getElementById("detailedinfo").innerHTML = "<p>Døren er låst</p>";
+        }
+        
+    }
 }
 
 //Laster rom
