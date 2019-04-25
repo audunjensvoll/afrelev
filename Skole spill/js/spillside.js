@@ -28,8 +28,7 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
             document.getElementById('myModal').style.display = "block";
             document.getElementById("detailedinfo").innerHTML = "<p>Døren er låst</p>";
         } else {
-            document.getElementById('myModal').style.display = "block";
-            document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
+            last_rom(view.nesterom);
         }
         
     } else if (view.type == "bildenøkkel"){

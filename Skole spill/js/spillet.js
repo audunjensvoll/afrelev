@@ -79,7 +79,7 @@ var rom = [
                     type: "dør",
                     laast: true,
                     apendoor: "./bilder/EFRoom1DoorApen.jpg", 
-                    nesterom: 2,
+                    nesterom: 3,
                     message: "Dette er døren"
 
                 },
@@ -87,7 +87,7 @@ var rom = [
                     coords: "655,69,679,60,675,327,647,329",
                     type: "låstdør",
                     laast: true,
-                    img: "./bilder/EFRoom1Rom2.jpg",
+                    nesterom: 2,
                     message: "røret"
                 }],
                 sistrom: 0
@@ -120,8 +120,23 @@ var rom = [
         ],
         startview: 1
     },
-    {   
+    {
         //Rom 3
+        view: [
+            {
+                img: "./bilder/EFRoom1Rom2.jpg",
+                areas: [{
+                    coords: "402,352,497,364,495,410,397,395",
+                    type: "bilde",
+                    img:"./provebilder/CloseupLikninger1.jpg"
+                }],
+                sistrom: 1
+            }
+        ],
+        startview: 0
+    },
+    {   
+        //Rom 4
         view: [
             {
                 img: "./bilder/EFRoomKorridor.jpg",
@@ -131,7 +146,7 @@ var rom = [
                     type: "dør",
                     laast: true,
                     tilbakeview: 0,
-                    nesterom: 4
+                    nesterom: 5
                 }],
                 sistrom: 1
             },
@@ -163,7 +178,7 @@ var rom = [
                     type: "dør",
                     laast: true,
                     apendoor: "./bilder/EFRoom2DoorApen.jpg", 
-                    nesterom: 3,
+                    nesterom: 4,
                     message: "Dette er døren"
                 }]
             }
@@ -171,7 +186,7 @@ var rom = [
         startview: 0
     },
     {   
-        //Rom 4
+        //Rom 5
         view: [
             {
                 img: "./bilder/EFRoom3Closeup1.jpg",
@@ -186,33 +201,33 @@ var rom = [
                     type:"bilde",
                     img:"./bilder/EFRoom3Figur2.jpg"
                 }],
-                sistrom: 2,
+                sistrom: 3,
                 tilbakeview: 2
             }
         ],
         startview: 0
     }
 ];
-//Holder på informasjon om <
+//Holder på informasjon om 
 var hint = [{
     tekst: "Hint 1",
     tid: 150000
 }, {
-    tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet", 4min
+    tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet 4min", 
     tid: 300000
 }, {
-    tekst: "Positivt eller negativt, hvilken side? Tenk deg om når ditt svar begynner å stride", 8min
+    tekst: "Positivt eller negativt, hvilken side? Tenk deg om når ditt svar begynner å stride", 
     tid: 900000
 }, {
-    tekst: "Om du løser oppgaven og kommer ingen vei, vil den blå skriften hjelpe deg", 12min
+    tekst: "Om du løser oppgaven og kommer ingen vei, vil den blå skriften hjelpe deg", 
     tid: 1200000
 }, {
-    tekst: "Den hvite kulen, umarkert og fri. Denne kulen har et siffer uten verdi", 16min
+    tekst: "Den hvite kulen, umarkert og fri. Denne kulen har et siffer uten verdi", 
     tid: 1500000
 }, {
-    tekst: "Tykkelse og posisjonering, en viktig peker. Kombiner det med kuleparene, og gjør slutt på Ola's onde leker", 18min
+    tekst: "Tykkelse og posisjonering, en viktig peker. Kombiner det med kuleparene, og gjør slutt på Ola's onde leker 18min", 
     tid: 1800000
 }, {
-    tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri", 26min
+    tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri 26min", 
     tid: 2100000
 }];
