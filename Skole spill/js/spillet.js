@@ -22,6 +22,7 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    apendoor: "./bilder/EFDoor0Apen.jpg",
                     nesterom: 1,
                     message: "Dette er døren"
                 },
@@ -77,15 +78,17 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    apendoor: "./bilder/EFRoom1DoorApen.jpg", 
                     nesterom: 2,
                     message: "Dette er døren"
 
                 },
                 {
-                    coords: "647,227,641,238,649,240,655,231",
-                    type: "bilde",
+                    coords: "655,69,679,60,675,327,647,329",
+                    type: "låstdør",
+                    laast: true,
                     img: "./bilder/EFRoom1Rom2.jpg",
-                    message: "Dette er røret"
+                    message: "røret"
                 }],
                 sistrom: 0
             },
@@ -95,13 +98,9 @@ var rom = [
                 areas: [{
                     coords: "931,222,927,249,950,259,1020,261,1020,227",
                     type: "bilde",
-                    img: "./bilder/EFRoom1HoyreNokkelboks.jpg",
-                    message: "Nøkkelboks",
-                    areas: [{
-                        coords: "235,181,163,230,183,345,815,329,827,221,735,173",
-                        type: "bilde",
-                        img: "./bilder/EFRoom1HoyreNokkelboksApen.jpg"
-                    }]
+                    åpen: false,
+                    img: "./bilder/EFRoom1HoyreNokkelboksApen.jpg",
+                    message: "Nøkkelboks"
                 },
                 {
                     coords: "571,314,577,314,581,325,583,358,567,359,567,334,565,325",
@@ -132,8 +131,10 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    tilbakeview: 0,
                     nesterom: 4
-                }]
+                }],
+                sistrom: 1
             },
             {
                 img: "./bilder/EFRoom2.jpg",
@@ -162,11 +163,10 @@ var rom = [
                     kode: 1,
                     type: "dør",
                     laast: true,
+                    apendoor: "./bilder/EFRoom2DoorApen.jpg", 
                     nesterom: 3,
                     message: "Dette er døren"
-
-                }],
-                sistrom: 1
+                }]
             }
         ],
         startview: 0
@@ -180,13 +180,15 @@ var rom = [
                     coords: "2,125,23,136,35,156,43,193,43,221,75,213,82,218,37,229",
                     type: "bilde",
                     img: "./bilder/EFRoom3Figur1.jpg"
+                    
                 },
                 {
                     coords: "184,421,207,426,231,368,209,342,227,221,222,214,195,333,187,326,181,332,191,348,186,404",
                     type:"bilde",
                     img:"./bilder/EFRoom3Figur2.jpg"
                 }],
-                sistrom: 2
+                sistrom: 2,
+                tilbakeview: 2
             }
         ],
         startview: 0
@@ -195,17 +197,23 @@ var rom = [
 //Holder på informasjon om <
 var hint = [{
     tekst: "Hint 1",
-    tid: 120000
+    tid: 150000
 }, {
-    tekst: "Hint 2",
-    tid: 240000
+    tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet",
+    tid: 300000
 }, {
-    tekst: "Hint 3",
-    tid: 360000
+    tekst: "Positivt eller negativt, hvilken side? Tenk deg om når ditt svar begynner å stride",
+    tid: 900000
 }, {
-    tekst: "Hint 4",
-    tid: 480000
+    tekst: "Om du løser oppgaven og kommer ingen vei, vil den blå skriften hjelpe deg",
+    tid: 1200000
 }, {
-    tekst: "Hint 5",
-    tid: 600000
+    tekst: "Den hvite kulen, umarkert og fri. Denne kulen har et siffer uten verdi",
+    tid: 1500000
+}, {
+    tekst: "Tykkelse og posisjonering, en viktig peker. Kombiner det med kuleparene, og gjør slutt på Ola's onde leker",
+    tid: 1800000
+}, {
+    tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri",
+    tid: 2100000
 }];

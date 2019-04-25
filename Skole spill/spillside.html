@@ -20,7 +20,7 @@
     <!--Navbar-->
     <div id="topp">
         <div id="klokke">60 : 00</div>
-        <div id="hint"><div id="hintTekst">hint</div>
+        <div id="hint"><div id="hintTekst">Hint</div>
         <input onclick="skrivHint()" id="taVekk" type="checkbox"></input></div>
     </div>
 
@@ -71,7 +71,7 @@
             <span class="close">&times;</span>
             <div id="kodesynlig">
 
-                <div class="posisjon" maxlength="4" id="resultat"></div><br><br>
+                <div class="posisjon" maxlength="4" id="resultat">&nbsp;</div><br><br>
                 <button class="knapp" onclick="klikk('1')">1</button>
                 <button class="knapp" onclick="klikk('2')">2</button>
                 <button class="knapp" onclick="klikk('3')">3</button>
@@ -123,6 +123,10 @@
                 modalSafe.style.display = "none";
             }
         }
+
+        //Nøkkel ting som leder til rom 
+        //Legg animasjon på piler
+        //Legg inn hint
     </script>
 </body>
 
