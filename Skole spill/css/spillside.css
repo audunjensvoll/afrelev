@@ -131,17 +131,18 @@ img {
     
 }
 
-#klokke{
+#klokkeheader{
     height: 100px;
     width: 49%;
     text-align: center;
     border: 1px darkgrey;
     background-color:darkred;
     display: inline-block;
-    line-height: 200%;
+    line-height: 125%;
     font-size: 300%;
     
 }
+
 #hint{
     height: 100px;
     width: 50%;
@@ -253,4 +254,11 @@ img {
   #hoyre {
     font-size: 100px;
     
+  }
+
+  #nøkkel {
+      width: 30px;
+      height: 30px;
+      margin-left: 680px;
+      display: none;
   }

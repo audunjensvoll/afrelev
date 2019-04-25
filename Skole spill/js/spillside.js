@@ -27,8 +27,15 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
         if(view.laast){
             document.getElementById('myModal').style.display = "block";
             document.getElementById("detailedinfo").innerHTML = "<p>Døren er låst</p>";
+        } else {
+            last_rom(view.nesterom);
         }
         
+    } else if (view.type == "bildenøkkel"){
+        document.getElementById('myModal').style.display = "block";
+        document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
+        document.getElementById('nøkkel').style.display = "block";
+        rom[1].view[1].areas[1].laast = false; 
     }
 }
 
