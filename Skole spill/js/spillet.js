@@ -198,21 +198,21 @@ var hint = [{
     tekst: "Hint 1",
     tid: 150000
 }, {
-    tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet",
+    tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet", 4min
     tid: 300000
 }, {
-    tekst: "Positivt eller negativt, hvilken side? Tenk deg om når ditt svar begynner å stride",
+    tekst: "Positivt eller negativt, hvilken side? Tenk deg om når ditt svar begynner å stride", 8min
     tid: 900000
 }, {
-    tekst: "Om du løser oppgaven og kommer ingen vei, vil den blå skriften hjelpe deg",
+    tekst: "Om du løser oppgaven og kommer ingen vei, vil den blå skriften hjelpe deg", 12min
     tid: 1200000
 }, {
-    tekst: "Den hvite kulen, umarkert og fri. Denne kulen har et siffer uten verdi",
+    tekst: "Den hvite kulen, umarkert og fri. Denne kulen har et siffer uten verdi", 16min
     tid: 1500000
 }, {
-    tekst: "Tykkelse og posisjonering, en viktig peker. Kombiner det med kuleparene, og gjør slutt på Ola's onde leker",
+    tekst: "Tykkelse og posisjonering, en viktig peker. Kombiner det med kuleparene, og gjør slutt på Ola's onde leker", 18min
     tid: 1800000
 }, {
-    tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri",
+    tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri", 26min
     tid: 2100000
 }];
