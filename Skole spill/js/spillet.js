@@ -143,7 +143,7 @@ var rom = [
                 areas: [{
                     coords: "433,127,583,129,583,391,441,392",
                     kode: 1,
-                    type: "dør",
+                    type: "spesieldør",
                     laast: true,
                     tilbakeview: 0,
                     nesterom: 5
@@ -211,23 +211,23 @@ var rom = [
 //Holder på informasjon om 
 var hint = [{
     tekst: "Hint 1",
-    tid: 150000
+    tid: 240000
 }, {
-    tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet 4min", 
-    tid: 300000
+    tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet", 
+    tid: 480000
 }, {
     tekst: "Positivt eller negativt, hvilken side? Tenk deg om når ditt svar begynner å stride", 
-    tid: 900000
+    tid: 720000
 }, {
     tekst: "Om du løser oppgaven og kommer ingen vei, vil den blå skriften hjelpe deg", 
-    tid: 1200000
+    tid: 960000
 }, {
     tekst: "Den hvite kulen, umarkert og fri. Denne kulen har et siffer uten verdi", 
-    tid: 1500000
+    tid: 1200000
 }, {
-    tekst: "Tykkelse og posisjonering, en viktig peker. Kombiner det med kuleparene, og gjør slutt på Ola's onde leker 18min", 
-    tid: 1800000
+    tekst: "Tykkelse og posisjonering, en viktig peker. Kombiner det med kuleparene, og gjør slutt på Ola's onde leker", 
+    tid: 1320000
 }, {
-    tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri 26min", 
-    tid: 2100000
+    tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri", 
+    tid: 1560000
 }];

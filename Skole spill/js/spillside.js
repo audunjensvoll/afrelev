@@ -36,6 +36,13 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
         document.getElementById("detailedinfo").innerHTML = "<img src='" + view.img + "'>";
         document.getElementById('nøkkel').style.display = "block";
         rom[1].view[1].areas[1].laast = false; 
+    } else if (view.type == "spesieldør"){
+        if(view.laast){
+            document.getElementById('myModal').style.display = "block";
+        } else{
+            document.getElementById('myModal').style.display = "block";
+            document.getElementById("detailedinfo").innerHTML = "<p>Du har vunnet</p>";
+        }
     }
 }
 
@@ -107,7 +114,7 @@ function skjul() {
 }
 
 //Klokke til linje 259
-var sek = 3600;
+var sek = 1800;
 
 var fortsett = true;
 
@@ -150,6 +157,11 @@ function skrivtid(tid) {
     sekunder = tid - 60 * minutter;
 
     document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
+    console.log(Number(tallTilTekst(minutter)));
+    console.log(Number(tallTilTekst(sekunder)));
+    if(Number(tallTilTekst(minutter)) == 0 && Number(tallTilTekst(sekunder)) == 0){
+        document.getElementById('hoved').innerHTML = "<img src='./bilder/EFDoor0Apen.jpg'>";
+    }
 }
 
 //Beveger seg til bildet til høyre
@@ -233,4 +245,5 @@ function resultat() {
     }
     reset();
 }
+
 
