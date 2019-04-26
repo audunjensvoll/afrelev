@@ -95,6 +95,15 @@
         </div>
     </div>
 
+    <div id="modal" class="modal">
+
+            <!-- Kode content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="info"></div>
+            </div>
+        </div>
+
     <script>
         last_rom(0);
     </script>
@@ -103,11 +112,14 @@
         // Get the modal
         var modal = document.getElementById('myModal');
         var modalSafe = document.getElementById('ModalSafe');
+        var moda = document.getElementById('modal');
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
         var spanSafe = document.getElementsByClassName("close")[1];
+
+        var spanEnd = document.getElementsByClassName("close")[2];
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
@@ -116,6 +128,9 @@
         }
         spanSafe.onclick = function () {
             modalSafe.style.display = "none";
+        }
+        spanEnd.onclick = function () {
+            moda.style.display = "none";
         }
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {

@@ -141,8 +141,9 @@ var rom = [
             {
                 img: "./bilder/EFRoomKorridor.jpg",
                 areas: [{
-                    coords: "433,127,583,129,583,391,441,392",
+                    coords: "434,128,584,129,585,392,441,393",
                     kode: 1,
+                    img: "./bilder/sistelås.PNG",
                     type: "spesieldør",
                     laast: true,
                     tilbakeview: 0,
@@ -210,7 +211,7 @@ var rom = [
 ];
 //Holder på informasjon om 
 var hint = [{
-    tekst: "Diagrammet og sifferene har begge like stemmer legg disse samme for å få det du trenger",
+    tekst: "De stummes stemme er skinnende klar, diagrammets sum vil gi deg ditt svar",
     tid: 240000
 }, {
     tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet", 
