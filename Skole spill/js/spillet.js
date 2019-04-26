@@ -143,7 +143,6 @@ var rom = [
                 areas: [{
                     coords: "434,128,584,129,585,392,441,393",
                     kode: 1,
-                    img: "./bilder/sistelås.PNG",
                     type: "spesieldør",
                     laast: true,
                     tilbakeview: 0,
