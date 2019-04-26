@@ -210,7 +210,7 @@ var rom = [
 ];
 //Holder på informasjon om 
 var hint = [{
-    tekst: "Hint 1",
+    tekst: "Diagrammet og sifferene har begge like stemmer legg disse samme for å få det du trenger",
     tid: 240000
 }, {
     tekst: "Bak en låst dør venter neste gåte, finn nøkkelen for å opprettholde håpet", 
