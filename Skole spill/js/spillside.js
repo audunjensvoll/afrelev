@@ -38,8 +38,7 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
         rom[1].view[1].areas[1].laast = false; 
     } else if (view.type == "spesieldør"){
         if(view.laast){
-            document.getElementById('modal').style.display = "block";
-            document.getElementById("info").innerHTML = "<img src='" + view.img + "'>";
+            document.getElementById('modals').style.display = "block";
         } else{
             document.getElementById('hoved').innerHTML = "<p>Du har vunnet</p>";
         }
@@ -242,6 +241,10 @@ function resultat() {
         alert("FEIL");
     }
     reset();
+}
+
+function figurValg(id){
+    document.getElementById(id).style.backgroundColor = blue;
 }
 
 
