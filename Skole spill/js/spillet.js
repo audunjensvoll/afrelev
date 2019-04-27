@@ -19,7 +19,7 @@ var rom = [
                 img: "./bilder/EFDoor0Last.jpg",
                 areas: [{
                     coords: "296,1,630,0,623,576,315,575",
-                    kode: 1,
+                    kode: 3574,
                     type: "dør",
                     laast: true,
                     apendoor: "./bilder/EFDoor0Apen.jpg",
@@ -75,7 +75,7 @@ var rom = [
                 img: "./bilder/EFRoom1.jpg",
                 areas: [{
                     coords: "391,81,538,85,541,369,399,371",
-                    kode: 1,
+                    kode: 2507,
                     type: "dør",
                     laast: true,
                     apendoor: "./bilder/EFRoom1DoorApen.jpg", 
@@ -174,7 +174,7 @@ var rom = [
                 img: "./bilder/EFRoom2DoorLast.jpg",
                 areas: [{
                     coords: "712,1,322,2,341,577,702,575",
-                    kode: 1,
+                    kode: 5067,
                     type: "dør",
                     laast: true,
                     apendoor: "./bilder/EFRoom2DoorApen.jpg", 
