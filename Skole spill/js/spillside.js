@@ -157,7 +157,7 @@ function skrivtid(tid) {
 
     document.getElementById("klokke").innerHTML = tallTilTekst(minutter) + " " + ":" + " " + tallTilTekst(sekunder);
     if(Number(tallTilTekst(minutter)) == 0 && Number(tallTilTekst(sekunder)) == 0){
-        document.getElementById('hoved').innerHTML = "<img src='./bilder/EFDoor0Apen.jpg'>";
+        document.getElementById('hoved').innerHTML = "<img src='./bilder/end.jpg'>";
     }
 }
 
