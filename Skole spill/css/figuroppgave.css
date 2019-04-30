@@ -5,11 +5,10 @@ body {
 
     .rute1, .rute2, .rute3, .rute4, .rute5, .rute6, .rute7, .rute8, .rute9, .rute10, .rute11, .rute12, .rute13, .rute14, .rute15, .rute16, .rute17, .rute18, .rute19, .rute20, .rute21, .rute22, .rute23, .rute24, .rute25  
         {
-            height: 100px;
-            width: 100px;
+            height: 120px;
+            width: 120px;
             border: solid;
             display: inline-block;
-            cursor: pointer;
         }
 
     .rute1
@@ -148,4 +147,9 @@ body {
     .figurbrett{
         position: relative;
         text-align: center;
+    }
+
+    .fint{
+        width: 40px;
+        height: 40px;
     }

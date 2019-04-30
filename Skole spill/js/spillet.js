@@ -142,9 +142,10 @@ var rom = [
                 img: "./bilder/EFRoomKorridor.jpg",
                 areas: [{
                     coords: "434,128,584,129,585,392,441,393",
-                    kode: 1,
+                    kode: "hbxgo",
                     type: "spesieldør",
                     laast: true,
+                    apendoor: "./bilder/EFRoomKorridorUtgangsdorApen.jpg",
                     tilbakeview: 0,
                     nesterom: 5
                 }],
@@ -230,4 +231,56 @@ var hint = [{
 }, {
     tekst: "På din reise gjennom Helvete har du sett mange venner, husk de alle og de vil hjelpe deg til å bli fri", 
     tid: 1560000
+}];
+
+var figurbilder = [{
+    img: "./bilder/olashevn/figur1.png"
+}, {
+    img: "./bilder/olashevn/figur2.png"
+}, {
+    img: "./bilder/olashevn/figur3.png"
+}, {
+    img: "./bilder/olashevn/Figur4.png"
+}, {
+    img: "./bilder/olashevn/Figur5.png"
+}, {
+    img: "./bilder/olashevn/figur6.png"
+}, {
+    img: "./bilder/olashevn/Figur7.png"
+}, {
+    img: "./bilder/olashevn/figur8.png"
+}, {
+    img: "./bilder/olashevn/figur9.png"
+}, {
+    img: "./bilder/olashevn/Figur10.png"
+}, {
+    img: "./bilder/olashevn/Figur11.png"
+}, {
+    img: "./bilder/olashevn/Figur12.png"
+}, {
+    img: "./bilder/olashevn/Figur13.png"
+}, {
+    img: "./bilder/olashevn/Figur14.png"
+}, {
+    img: "./bilder/olashevn/Figur15.png"
+}, {
+    img: "./bilder/olashevn/Figur16.png"
+}, {
+    img: "./bilder/olashevn/Figur17.png"
+}, {
+    img: "./bilder/olashevn/Figur18.png"
+}, {
+    img: "./bilder/olashevn/Figur19.png"
+}, {
+    img: "./bilder/olashevn/Figur20.png"
+}, {
+    img: "./bilder/olashevn/Figur21.png"
+}, {
+    img: "./bilder/olashevn/Figur22.png"
+}, {
+    img: "./bilder/olashevn/Figur23.png"
+}, {
+    img: "./bilder/olashevn/Figur24.png"
+}, {
+    img: "./bilder/olashevn/Figur25.png"
 }];

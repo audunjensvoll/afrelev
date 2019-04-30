@@ -40,7 +40,7 @@ function sjekkType(Rnr, Vnr, Anr, inAnr) {
         if(view.laast){
             document.getElementById('modals').style.display = "block";
         } else{
-            document.getElementById('hoved').innerHTML = "<p>Du har vunnet</p>";
+            document.getElementById('hoved').innerHTML = "<p>Gratulerer du er fri</p><br><img src='" +  + "'>";
         }
     }
 }
@@ -197,10 +197,13 @@ function fjernHint(){
 
 //Kode til linje 359
 var resultatTekst = "";
+var figurTekst = "";
+var figursvar = "";
 
 function skriv() {
 
     document.getElementById("resultat").innerHTML = resultatTekst;
+    document.getElementById("figursvar").innerHTML = figurTekst;
 
 }
 
@@ -210,7 +213,20 @@ function klikk(verdi) {
         resultatTekst = verdi;
     } else {
         resultatTekst += verdi;
-    }    
+    }
+    skriv();
+}
+
+function hikk(verdi){
+    var bilde = verdi.charCodeAt(0) - 97;
+    var view = figurbilder[bilde]; 
+    if(figurTekst == "&nbsp;"){
+        figurTekst = "<img class='fint' src='" + view.img + "'>"; 
+        figursvar = verdi;
+    } else {
+        figurTekst += "<img class='fint' src='" + view.img + "'>"; 
+        figursvar += verdi; 
+    }
     skriv();
 }
 
@@ -224,6 +240,8 @@ function kommando(verdi) {
 function reset() {
 
     resultatTekst = "&nbsp;";
+    figurTekst = "&nbsp;";
+    figursvar = "";
     skriv();
 
 }
@@ -241,10 +259,24 @@ function resultat() {
         alert("FEIL");
     }
     reset();
+} 
+
+function figurresultat() {
+    var area = rom[romnr].view[viewnr].areas[areanr];
+    if (figursvar == area.kode) {
+        rom[romnr].view[viewnr].img = area.apendoor;
+        area.laast = false
+        area.coords = "276,2,669,1,650,575,295,575";
+        last_rom(3);
+        document.getElementById('modals').style.display = "none";
+    }
+    else {
+        alert("FEIL");
+    }
+    reset();
 }
 
-function figurValg(id){
-    document.getElementById(id).style.backgroundColor = blue;
-}
+
+
 
 
