@@ -8,6 +8,9 @@ body {
             height: 100px;
             width: 100px;
             border: solid;
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover;
             display: inline-block;
         }
 
