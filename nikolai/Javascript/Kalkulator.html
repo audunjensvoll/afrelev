@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulator</title>
+    <script>
+        var resultattekst = "0";
+        var tall1 = 0;
+        var tall2 = 0;
+        var operasjon = '';
+
+        function kommando(verdi) {
+            if (verdi == "C") {
+                reset();
+            }
+            else if (verdi == ".") {
+                //gjør det umulig å få flere enn ett desimal komma.
+                if (resultattekst.includes('.')) { }
+                else if (resultattekst == "0") {
+                    resultattekst = '0.';
+                    skriv();
+                }
+                else {
+                    klikk('.')
+                }
+            }
+            else if (verdi == "0") {
+                if (resultattekst = '0') {
+                    resultattekst = verdi;
+                }
+                else {
+                    klikk('0')
+                }
+            }
+            //kalkulering
+            else if (verdi == '+') {
+                tall1 = Number(resultattekst);
+                operasjon = '+';
+                reset();
+            }
+            else if (verdi == '-') {
+                tall1 = Number(resultattekst);
+                operasjon = '-'
+                reset();
+            }
+            else if (verdi == '*') {
+                tall1 = Number(resultattekst);
+                operasjon = '*'
+                reset();
+            }
+            else if (verdi == ':') {
+                tall1 = Number(resultattekst);
+                operasjon = ':'
+                reset();
+            }
+            else if (verdi == '=') {
+                tall2 = Number(resultattekst)
+                if (operasjon == '+') {
+                    resultattekst = tall1 + tall2;
+                }
+                else if (operasjon == '-') {
+                    resultattekst = tall1 - tall2;
+                }
+                else if (operasjon == '*') {
+                    resultattekst = tall1 * tall2;
+                }
+                else if (operasjon == ':') {
+                    resultattekst = tall1 / tall2;
+                }
+                skriv();
+            }
+        }
+
+        function skriv() {
+            document.getElementById("resultat").innerHTML = resultattekst;
+        }
+
+        function klikk(verdi) {
+            if (resultattekst == 0) {
+                resultattekst = verdi;
+            }
+            else {
+                resultattekst += verdi;
+            }
+            skriv();
+        }
+        function reset() {
+            resultattekst = "0";
+            skriv();
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div id="resultat">0</div>
+    <div>
+        <button onclick="klikk('7')">7</button>
+        <button onclick="klikk('8')">8</button>
+        <button onclick="klikk('9')">7</button>
+        <button onclick="kommando('=')">=</button>
+        <br>
+        <button onclick="klikk('4')">4</button>
+        <button onclick="klikk('5')">5</button>
+        <button onclick="klikk('6')">6</button>
+        <button onclick="kommando('+')">+</button>
+        <br>
+        <button onclick="klikk('1')">1</button>
+        <button onclick="klikk('2')">2</button>
+        <button onclick="klikk('3')">3</button>
+        <button onclick="kommando('-')">-</button>
+        <br>
+        <button onclick="kommando('0')">0</button>
+        <button onclick="kommando('.')">.</button>
+        <button onclick="kommando('C')">C</button>
+        <button onclick="kommando('*')">*</button>
+        <button onclick="kommando(':')">:</button>
+    </div>
+</body>
+
+</html>

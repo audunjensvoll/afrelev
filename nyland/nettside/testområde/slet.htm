@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test av webtjenester</title>
+    <script>
+        function skriv(id, innhold) {
+            document.getElementById(id).innerHTML = innhold;
+        }
+
+        function html(element, innhold) {
+            return "<" + element + ">" + innhold + "</" + element + ">";
+        }
+
+        function get(url, onOk) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    onOk(JSON.parse(this.responseText));
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }        
+    </script>
+    <script>
+
+        var enbruker = {
+            id: 123,
+            navn: "Anders",
+            epost: "anders@test.no"
+        }
+
+        var brukerliste = [
+            { id: 123, navn: "Anders", epost: "anders@test.no" },
+            { id: 111, navn: "Emma", epost: "emma@test.no" },
+            { id: 123, navn: "Peder", epost: "peder@test.no" }
+        ];
+
+        function skrivListe() {
+            var tekst = "";
+            var rad = "";
+            for (var i in brukerliste) {
+                rad =
+                    html("td", brukerliste[i].navn)
+                    + html("td", brukerliste[i].id)
+                    + html("td", brukerliste[i].epost);
+
+                rad = html("tr", rad);
+                tekst = tekst + rad;
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+
+
+
+        function behandle(liste) {
+            var tekst = "";
+            var rad = "";
+            for (var i in liste) {
+                rad =
+                    html("td", liste[i].name)
+                    + html("td", liste[i].id)
+                    + html("td", liste[i].email);
+
+                rad = html("tr", rad);
+                tekst = tekst + rad;
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+
+
+        function skrivBruker(bruker) {
+            var brukertekst = html("li", bruker.navn)
+                + html("li", bruker.id)
+                + html("li", bruker.epost);
+
+            skriv("resultat", html("ul", brukertekst));
+        }
+
+    </script>
+        <script>
+                aboliste = [];
+        
+                function lagre() {
+                    var abonnent = {
+                        navn: document.getElementById("input_navn").value,
+                        brukernavn: document.getElementById("input_brukernavn").value,
+                        tlf: document.getElementById("input_tlf").value,
+                        passord: document.getElementById("input_passord").value
+        
+                    }
+                    aboliste.push(abonnent);
+        skrivAbo();
+                }
+                function skrivAbo() {
+                    var res = "";
+                    for (var i in aboliste) {
+                        var abo = aboliste[i]
+                        res = res + html("li",abo.navn+","+abo.brukernavn+","+abo.tlf+","+abo.passord);
+                    }
+                    res=html("ul",res)
+                    skriv("resultat", res);
+        
+                }
+        
+        
+            </script>
+
+</head>
+
+<body>
+        <h2>ny abonnent</h2>
+        Navn: <input type="navn" id="input_navn"> <br>
+        Bruker Navn: <input type="navn" id="input_brukernavn"> <br>
+        TLF: <input type="tel" id="input_tlf"> <br>
+        Passord: <input type="password" id="input_passord"> <br>
+    
+        <button onclick="lagre()">lagre</button>
+        <hr>
+        <div id="resultat"></div>
+        <div id="resultat"></div>
+    
+    
+
+
+
+
+</body>
+
+</html>

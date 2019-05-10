@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bondesjakk</title>
+<style>
+.firkant {
+height: 100px;
+width: 100px;
+border-style:solid;
+border-radius: 1px;
+margin: 2px;
+display: inline-block;
+
+
+
+}
+
+
+</style>
+</head>
+<body>
+<script>
+var farge1 = "red";
+var farge2 = "blue";
+
+var farge = farge1;
+function skiftFarge(id){
+
+    document.getElementById(id).style.backgroundColor = farge;
+    if(farge == farge1){
+
+farge = farge2;
+
+    }
+    else {
+farge = farge1;
+
+    }
+}
+
+function reset ()
+
+    
+
+
+
+
+
+
+</script>
+<div id = "rute1" class = "firkant" onclick="skiftFarge('rute1')"></div>
+<div id = "rute2" class = "firkant" onclick="skiftFarge('rute2')"></div>
+<div id = "rute3" class = "firkant" onclick="skiftFarge('rute3')"></div>
+<br>
+<div id = "rute4" class = "firkant" onclick="skiftFarge('rute4')"></div>
+<div id = "rute5" class = "firkant" onclick="skiftFarge('rute5')"></div>
+<div id = "rute6" class = "firkant" onclick="skiftFarge('rute6')"></div>
+<br>
+<div id = "rute7" class = "firkant" onclick="skiftFarge('rute7')"></div>
+<div id = "rute8" class = "firkant" onclick="skiftFarge('rute8')"></div>
+<div id = "rute9" class = "firkant" onclick="skiftFarge('rute9')"></div>
+
+
+<button></button>
+
+</body>
+</html>

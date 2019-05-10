@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test av webtjenesten</title>
+    
+<script src="C:\work\afr\afrelev\nyland\nettside\javascript\stuf.js"></script>
+    
+    <script>
+        // gamel versjon
+        var id = 123
+        var navn = "anders"
+        var epost = "anders@test.no"
+
+        //bra versjon
+        var enbruker = {
+            id: 123,
+            navn: "anders",
+            epost: "anders@test.no",
+        }
+
+        var brukerliste = [
+            { id: 123, navn: "anders", epost: "anders@test.no" },
+            { id: 123, navn: "emma", epost: "emma@test.no" },
+            { id: 123, navn: "peder", epost: "peder@test.no" },
+        ];
+
+
+        function skrivListe() {
+            var tekst = "";
+            var rad = "";
+            for (var i in brukerliste) {
+                rad =
+                    html("td", brukerliste[i].navn)
+                    + html("td", brukerliste[i].id)
+                    + html("td", brukerliste[i].epost)
+
+                rad = html("tr", rad);
+                tekst = tekst + rad;
+
+
+
+                /*tekst = tekst
+                    + html("h3", brukerliste[i].navn)
+                    + html("p", brukerliste[i].id)
+                    + html("p", brukerliste[i].epost);*/
+            }
+            tekst = html("table", tekst)
+            skriv("resultat", tekst);
+        }
+
+        function hentFraServer() {
+            get("https://jsonplaceholder.typicode.com/users", behandle)
+        }
+
+        function behandle(liste) {
+            var tekst = "";
+            var rad = "";
+            for (var i in liste) {
+                rad =
+                    html("td", liste[i].name)
+                    + html("td", liste[i].id)
+                    + html("td", liste[i].email)
+                    + html("td", liste[i].address.city);
+
+                rad = html("tr", rad);
+                tekst = tekst + rad;
+            }
+            tekst = html("table", tekst);
+            skriv("resultat", tekst);
+        }
+
+        function skrivBruker(bruker) {
+            var brukertekst =
+                html("li", bruker.navn)
+                + html("li", bruker.id)
+                + html("li", bruker.epost)
+
+            skriv("resultat", html("ul", brukertekst));
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>test av webtjenesten</h1>
+
+    <button onclick="skrivBruker(enbruker)">skriv en bruker</button>
+    <button onclick="skrivListe()">skriv alle bruker</button>
+    <button onclick="hentFraServer()">Hent fra server</button>
+    <div id="resultat"></div>
+</body>
+
+</html>

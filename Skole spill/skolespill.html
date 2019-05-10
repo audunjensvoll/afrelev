@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="./css/skolespill.css">
+    <script src="./js/skolespill.js"></script>
+    <style> 
+        p{ 
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        #navn{
+            text-align: center;
+        }
+        #video{
+            text-align: center;
+        }
+    </style>
+   
+    <title>KJELLEREN PÅ AFR</title>
+    <script>
+        //Navnet til brukeren
+        function NyttNavn() {
+            var element = {
+                navn: document.getElementById("navnet").value,
+                tid: 0
+            }
+            var navn = document.getElementById("navn").innerHTML = "Brukernavn: " + element.navn + "";
+            document.getElementById("video").innerHTML = '<iframe width="1000" height="550" src="https://www.youtube.com/embed/bZo7RGcO85s?autoplay=1&iv_load_policy=3&loop=1&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> <p><a href="spillside.html" id = "">Play</a></p>'
+        }
+    </script>
+
+</head>
+<body>
+    <div id="overskrift">
+        <h1>KJELLERN PÅ AFR</h1>
+    </div>
+    <p>Velkommen til vårt spill </p>
+
+    <div id="navn"><input id="navnet" type="text"><button id="knapp" onclick="NyttNavn()">Send inn</button></div>
+    <br>
+    <div id="video">
+         
+    <div>
+
+    
+
+
+
+
+
+</body>
+</html>

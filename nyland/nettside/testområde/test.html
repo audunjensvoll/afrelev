@@ -1,99 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>javacript</title>
+
+
+
+
+
     <script>
-        function test1() {
-            document.getElementById("resultat").innerHTML = "her er test"
-        }
 
-        function test2(koko) {
-            document.getElementById("resultat").innerHTML = koko
-        }
-        //fungsjon
-        function test3(koko, kaka) {
-            var resultat = "";
-            resultat = koko + kaka
-            document.getElementById("resultat").innerHTML = resultat;
-        }
+        //luke 22
+        function spill() {
 
-        function test4(tall1, tall2) {
-            var kommode = [];
-            kommode[0] = tall1;
-            kommode[1] = tall2;
-
-            var resultat = "";
-            resultat = kommode[0] + kommode[1];
-            document.getElementById("resultat").innerHTML = resultat;
-        }
-        function test5() {
-            var kommode = [];
-            kommode[0] = 'per';
-            kommode[1] = 'anna';
-            kommode[2] = 'jon';
-            kommode[3] = 6;
-
-            var resultat = kommode.sort().join(' - ');
-
-            document.getElementById("resultat").innerHTML = resultat;
-        }
-
-        function test6() {
-
-            var biler = ["audi", "ford", "opel", "bmw"]
-
-            document.getElementById("resultat").innerHTML = array2ul(biler)
-        }
-
-        function test7() {
-            var navn = ["per", "tove", "hans", "anne"]
-            document.getElementById("resultat").innerHTML = array2ul(navn.sort())
+            var sang = document.getElementById("julesang");
+            sang.play();
 
         }
-        function array2ul(arr) {
-            var resultat = "<ul>"
+    
 
-            //byt i nr2 med 1
-            for (var i = 0; i < biler.length; i++) {
-                resultat = resultat + "<li>" + arr[i] + "</li>"
+        // Denne variabelen skal være true hvis den spiller, false ellers
+
+        var spiller = false; 
+
+        function nospill() {
+            var sang = document.getElementById("julesang");
+            // sjekker her om sangen spiller eller ikke
+            // hvis den spiller stoppes den, hves den ikke spiller startes den
+            if (spiller)
+            {
+                // stopper sangen
+                sang.pause();
+                // oppdaterer spiller-variablen slik at den er riktig neste gang
+                spiller = false; 
             }
-            resultat = resultat + "</ul>"
-            return resultat
+            else 
+            {
+                // starter sangen
+                sang.play(); 
+                // oppdaterer spiller-variabelen slik at den er riktig neste gang. 
+                spiller = true; 
+            }
+            
+
+/*
+            if (sang == start) {
+                sang = stopp
+            }
+            else {
+                sang = start;
+            }
+            */
         }
 
-function test8(){
 
-var fyr= {
-høyde="1.84m",
-kg=75,
-trener=trenerikke
-}
-
-
-
-}
 
 
     </script>
 
-
 </head>
 
-<body>
-    <div>
-        <button onclick="test7()">mer arry test</button>
-        <button onclick="test6()">for-løkker</button>
-        <button onclick="test5()">mer arry test</button>
-        <button onclick="test4(3 , 4)">arry test</button>
-        <button onclick="test3('lala' , ' lolo')">kall fungsjon med parameter</button>
-        <button onclick="test2('lala')">kall fungsjon med parameter</button>
-        <button onclick="test1()">kall fungsjon</button>
+<body id="body">
+    
+    <audio id="julesang">
+
+        <source src="../../lyd/Bjelleklang - julesang Tinyschool Norsk.mp3" type="audio/mp3" />
+
+    </audio>
+
+
+    <div id="julekalender">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3" scope="col">julekalender</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td id="rute19" class="rute" onclick="skiftfarge('rute19')"><button onclick="nospill()">19</button></td>
+                    <td id="rute22" class="rute" onclick="skiftfarge('rute22')"><button onclick="spill()">22</button></td>
+
+                </tr>
+
+                </tr>
+            </tbody>
+        </table>
+
     </div>
-    <div>
-        <h1>resultat</h1>
-        <div id="resultat"></div>
-    </div>
+
+
+
 
 </body>

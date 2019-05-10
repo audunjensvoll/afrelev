@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<script>
+
+function spill() {
+
+var sang = document.getElementById("julesang");
+sang.play();
+
+}
+
+        //dette funker ikke hvorfor?
+        
+        var spiller = false; 
+
+        function nospill() {
+            var sang = document.getElementById("julesang");
+
+            if (spiller)
+            {
+                sang.pause();
+                spiller = false; 
+            }
+            else 
+            {
+                sang.play(); 
+                spiller = true; 
+            }
+            }
+</script>
+</head>
+<body id="body">
+    
+    <audio id="julesang">
+
+        <source src="../../lyd/Bjelleklang - julesang Tinyschool Norsk.mp3" type="audio/mp3" />
+
+    </audio>
+
+
+    <div id="julekalender">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3" scope="col">julekalender</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td id="rute19" class="rute" onclick="skiftfarge('rute19')"><button onclick="nospill()">19</button></td>
+                    <td id="rute22" class="rute" onclick="skiftfarge('rute22')"><button onclick="spill()">22</button></td>
+
+                </tr>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>  
+</body>
+</html>

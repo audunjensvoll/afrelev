@@ -1,0 +1,158 @@
+body {
+    font-family: sans-serif;
+    margin:0;
+    }
+
+    .rute1, .rute2, .rute3, .rute4, .rute5, .rute6, .rute7, .rute8, .rute9, .rute10, .rute11, .rute12, .rute13, .rute14, .rute15, .rute16, .rute17, .rute18, .rute19, .rute20, .rute21, .rute22, .rute23, .rute24, .rute25  
+        {
+            height: 100px;
+            width: 100px;
+            border: solid;
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover;
+            display: inline-block;
+        }
+
+    .rute1
+    {
+        background-image: url(../bilder/olashevn/figur1.png);
+        background-color: grey;
+    }
+
+    .rute2
+    {
+        background-image: url(../bilder/olashevn/figur2.png);
+        background-color: grey;
+    }
+    .rute3
+    {
+        background-image: url(../bilder/olashevn/figur3.png);
+        background-color: grey;
+    }
+    .rute4
+    {
+        background-image: url(../bilder/olashevn/Figur4.png);
+        background-color: grey;
+    }
+    .rute5
+    {
+        background-image: url(../bilder/olashevn/Figur5.png);
+        background-color: grey;
+    }
+    .rute6
+    {
+        background-image: url(../bilder/olashevn/figur6.png);
+        background-color: grey;
+    }
+    .rute7
+    {
+        background-image: url(../bilder/olashevn/Figur7.png);
+        background-color: grey;
+    }
+    .rute8
+    {
+        background-image: url(../bilder/olashevn/figur8.png);
+        background-color: grey;
+    }
+    .rute9
+    {
+        background-image: url(../bilder/olashevn/figur9.png);
+        background-color: grey;
+    }
+    .rute10
+    {
+        background-image: url(../bilder/olashevn/Figur10.png);
+        background-color: grey;
+    }
+    .rute11
+    {
+        background-image: url(../bilder/olashevn/Figur11.png);
+        background-color: grey;
+    }
+    .rute12
+    {
+        background-image: url(../bilder/olashevn/Figur12.png);
+        background-color: grey;
+    }
+    .rute13
+    {
+        background-image: url(../bilder/olashevn/Figur13.png);
+        background-color: grey;
+    }
+    .rute14
+    {
+        background-image: url(../bilder/olashevn/Figur14.png);
+        background-color: grey;
+    }
+    .rute15
+    {
+        background-image: url(../bilder/olashevn/Figur15.png);
+        background-color: grey;
+    }
+    .rute16
+    {
+        background-image: url(../bilder/olashevn/Figur16.png);
+        background-color: grey;
+    }
+    .rute17
+    {
+        background-image: url(../bilder/olashevn/Figur17.png);
+        background-color: grey;
+    }
+    .rute18
+    {
+        background-image: url(../bilder/olashevn/Figur18.png);
+        background-color: grey;
+    }
+    .rute19
+    {
+        background-image: url(../bilder/olashevn/Figur19.png);
+        background-color: grey;
+    }
+    .rute20
+    {
+        background-image: url(../bilder/olashevn/Figur20.png);
+        background-color: grey;
+    }
+    .rute21
+    {
+        background-image: url(../bilder/olashevn/Figur21.png);
+        background-color: grey;
+    }
+    .rute22
+    {
+        background-image: url(../bilder/olashevn/Figur22.png);
+        background-color: grey;
+    }
+    .rute23
+    {
+        background-image: url(../bilder/olashevn/Figur23.png);
+        background-color: grey;
+    }
+    .rute24
+    {
+        background-image: url(../bilder/olashevn/Figur24.png);
+        background-color: grey;
+    }
+    .rute25
+    {
+        background-image: url(../bilder/olashevn/Figur25.png);
+        background-color: grey;
+    }
+    .container{
+        width: 100%;
+        position: absolute;
+        top: 200px;
+        bottom: 0%;
+    }
+
+    .figurbrett{
+        position: relative;
+        text-align: center;
+    }
+
+    .fint{
+        width: 60px;
+        height: 60px;
+    }

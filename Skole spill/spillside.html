@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="./css/spillside.css">
+    <link rel="stylesheet" href="./css/figuroppgave.css">
+
+    <title>KJELLEREN PÅ AFR</title>
+    <style>
+    </style>
+
+    <script src="js/spillet.js"></script>
+    <script src="js/spillside.js"></script>
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <div id="topp">
+        <div id="klokkeheader"><div id="klokke">30 : 00</div>
+        <img id="nøkkel" src="./bilder/nookkel.png"></div>
+        <div id="hint"><div id="hintTekst">Hint</div>
+        <input onclick="skrivHint()" id="taVekk" type="checkbox"></input></div>
+    </div>
+    
+
+    <!--Spillet-->
+    <div id="hoved">
+            <div id="motvenstre" onclick="venstre()"><span class="piler" id="venstre">&#8249;</span></div>
+
+        <div id="spill">
+            <div id=hovedbildeytter><img id="hovedbilde" height="578" width="1028" usemap="#Map"></div>
+            <map name="Map" id="Map">
+                <area alt="" title="" href="#" shape="poly" coords="77,311,135,317,166,275,161,225,109,217,67,248"
+                    onclick="vis('boks')" />
+                <area alt="" title="" href="#" shape="poly" coords="153,149,159,217,244,224,246,156"
+                    onclick="vis('kjoleskap')" />
+            </map>
+            
+        
+        </div>
+        
+        <div id="mothoyre" onclick="hoyre()"><span class="rotate" class="piler" id="hoyre">&#8250;</span></div>
+        <center>
+            <div id="tilbake" onclick="tilbake()"><div class="rotate" id="nedtilbake">&#8250;</div></div>
+        </center>
+
+    </div>
+    <!--Detaljebilder-->
+    <div id="detalj" onclick="skjul()">detalj</div>
+    <!--Boks der info om deljebilder eller lås vises i-->
+    <div id="container">
+        <div id="imagearea">
+        </div>
+        <div id="descriptionarea">
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Kode content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="detailedinfo"></div>
+        </div>
+    </div>
+
+    <div id="ModalSafe" class="modal">
+
+        <!-- Kode content -->
+        <div class="modal-contentdoor">
+            <span class="close">&times;</span>
+            <div id="kodesynlig">
+                <div>4 siffer</div>
+                <b><div class="posisjon" maxlength="4" id="resultat">&nbsp;</div></b><br>
+                <button class="knapp" onclick="klikk('1')">1</button>
+                <button class="knapp" onclick="klikk('2')">2</button>
+                <button class="knapp" onclick="klikk('3')">3</button>
+                <br>
+                <button class="knapp" onclick="klikk('4')">4</button>
+                <button class="knapp" onclick="klikk('5')">5</button>
+                <button class="knapp" onclick="klikk('6')">6</button>
+                <br>
+                <button class="knapp" onclick="klikk('7')">7</button>
+                <button class="knapp" onclick="klikk('8')">8</button>
+                <button class="knapp" onclick="klikk('9')">9</button>
+                <br>
+                <button class="knapp" onclick="klikk('0')">0</button>
+                <button class="knapp" onclick="kommando('C')">C</button>
+                <br><br>
+                <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
+            </div>
+        </div>
+    </div>
+
+    <div id="modals" class="moda">
+
+            <!-- Kode content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                    <div class="figurbrett">
+                            <div>5 tegn</div>
+                            <div class="posisjon" maxlength="4" id="figursvar">&nbsp;</div>
+                            <button id ="rute1" class="rute1" onclick="hikk('a')"></button>
+                            <button id="rute2" class="rute2" onclick="hikk('b')"></button>
+                            <button id="rute3" class="rute3" onclick="hikk('c')"></button>
+                            <button id="rute4" class="rute4" onclick="hikk('d')"></button>
+                            <button id="rute5" class="rute5" onclick="hikk('e')"></button>
+                            <br>
+                            <button id="rute6" class="rute6" onclick="hikk('f')"></button>
+                            <button id="rute7" class="rute7" onclick="hikk('g')"></button>
+                            <button id="rute8" class="rute8" onclick="hikk('h')"></button>
+                            <button id="rute9" class="rute9" onclick="hikk('i')"></button>
+                            <button id="rute10" class="rute10" onclick="hikk('j')"></button>
+                            <br>
+                            <button id="rute11" class="rute11" onclick="hikk('k')"></button>
+                            <button id="rute12" class="rute12" onclick="hikk('l')"></button>
+                            <button id="rute13" class="rute13" onclick="hikk('m')"></button>
+                            <button id="rute14" class="rute14" onclick="hikk('n')"></button>
+                            <button id="rute15" class="rute15" onclick="hikk('o')"></button>
+                            <br>
+                            <button id="rute16" class="rute16" onclick="hikk('p')"></button>
+                            <button id="rute17" class="rute17" onclick="hikk('q')"></button>
+                            <button id="rute18" class="rute18" onclick="hikk('r')"></button>
+                            <button id="rute19" class="rute19" onclick="hikk('s')"></button>
+                            <button id="rute20" class="rute20" onclick="hikk('t')"></button>
+                            <br>                            
+                            <button id="rute21" class="rute21" onclick="hikk('u')"></button>
+                            <button id="rute22" class="rute22" onclick="hikk('v')"></button>
+                            <button id="rute23" class="rute23" onclick="hikk('w')"></button>
+                            <button id="rute24" class="rute24" onclick="hikk('x')"></button>
+                            <button id="rute25" class="rute25" onclick="hikk('y')"></button>
+                            <br><br>
+                            <button class="knapp" onclick="kommando('C')">C</button>   
+                            <button onclick="figurresultat()" class="knapp" id="figursvar">Lås opp</button><br><br>
+                             
+            </div>
+        </div>
+
+    <script>
+        last_rom(0);
+    </script>
+    <script>
+        //Kode ting
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        var modalSafe = document.getElementById('ModalSafe');
+        var modals = document.getElementById('modals');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        var spanSafe = document.getElementsByClassName("close")[1];
+
+        var spanEnd = document.getElementsByClassName("close")[2];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+
+        }
+        spanSafe.onclick = function () {
+            modalSafe.style.display = "none";
+        }
+        spanEnd.onclick = function () {
+            modals.style.display = "none"; 
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            } else if (event.target == modalSafe) {
+                modalSafe.style.display = "none";
+            } else if (event.target == modals) {
+                modals.style.display = "none";
+            }
+        }
+
+        //Nøkkel ting som leder til rom 
+        //Legg animasjon på piler
+        //Legg inn hint
+    </script>
+</body>
+
+</html>

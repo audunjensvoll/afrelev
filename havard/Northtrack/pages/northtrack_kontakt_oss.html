@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/northtrack_kontakt_oss.css">
+    <title>Northtrack</title>
+</head>
+
+<body>
+    <div class="toppfelt">
+        <div id="northtracklogo">
+            <img src="../images/northtrack_as.jpg" alt="northtrack_as">
+        </div>
+    </div>
+
+    <div class="meny">
+        <ul>
+            <h3>Meny</h3>
+            <li><a href="../northtrack_index.html">Hjem</a></li>
+            <li><a href="./northtrack_om_oss.html">Om Oss</a></li>
+            <li><a class="active" href="./northtrack_kontakt_oss.html">Kontakt</a></li>
+            <li><a href="./northtrack_kalender.html">Kalender</a></li>
+            <li><a href="./northtrack_vare_merker.html">Våre Merker</a></li>
+            <li><a href="./northtrack_media.html">Media</a></li>
+            <li><a href="./northtrack_profilartikler.html">Profilartikler</a></li>
+            <li><a href="#diverse">Diverse</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="container">
+        <div class="tekstboks">
+            <div class="text">
+                <h1>Kontakt Oss</h1>
+            </div>
+        </div>
+        <div class="kontaktskjema">
+            <div class="row">
+                <div class="column">
+                    <img src="../images/placeholderbilde6.jpg" style="width:100%">
+                </div>
+
+                <div class="column">
+                    <form action="../php/northtrack_kontakt_oss.php">
+
+                        <label for="fname">Fornavn:</label>
+                        <input type="text" id="fornavn" name="fornavn">
+
+                        <label for="lname">Etternavn:</label>
+                        <input type="text" id="etternavn" name="etternavn">
+
+                        <label for="tlf">Telefonnummer:</label>
+                        <input type="text" id="telefonnummer" name="telefonnummer">
+
+                        <label for="email">Epost-adresse:</label>
+                        <input type="text" id="epost" name="epost">
+
+                        <label for="subject">Emne:</label>
+                        <textarea id="emne" name="emne" style="height:208px"></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

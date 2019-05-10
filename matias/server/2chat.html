@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hent fra server</title>
+
+    <script src="../../js/afrlib.js"></script>
+
+    <script>
+        /*var url = "http://192.168.1.196:5000";*/
+
+        var mldliste = [];
+
+        function NyMld() {
+            var element = {
+                navn: document.getElementById("navn").value,
+                mld: document.getElementById("mld").value,
+                godkjent: false
+            }
+            /*post(url + "/tlf", JSON.stringify(element), oppdatertTlf);*/
+            mldliste.push(element);
+            Checkbox();
+        }
+
+        /*function oppdatertTlf(data) {
+            mldliste = data
+            skrivTlf();
+        }*/
+
+        /*function skrivTlf2() {
+            skriv("melding", JSON.stringify(mldliste));
+        }*/
+
+        /*function skrivTlf() {
+            var C = ""
+            for (var i in mldliste) {
+                var A = mldliste[i]
+                
+                var B = html("li" , html("strong" , "Bruker:" + A.navn) + "," + A.tlf)
+                C = C + B 
+            }
+            skriv("melding", C)
+        }*/
+
+        function Checkbox(){
+            var admin = document.getElementById("admin");
+            admin.innerHTML =  "<br><br>";
+            for (var i in mldliste){
+                var element = mldliste[i];
+                if(!element.godkjent){
+                    admin.innerHTML +=  '<input type="checkbox" id="check'+i+'" name="sjekk" value=' + mldliste[i].navn + '> ' + mldliste[i].navn + ' : ' + mldliste[i].mld + "<br>";   
+                }
+            }
+        }
+        function SjekkAvMld(){
+            for (var i=0;i<mldliste.length;i++){
+                var check = "check" + i;
+                if(document.getElementById(check) && document.getElementById(check).checked){
+                    mldliste[i].godkjent = true;  
+                } 
+            }
+            Checkbox();
+            MldGodkjent();          
+        }
+       
+        function MldGodkjent(){
+            var melding = document.getElementById("melding");
+            var admin = document.getElementById("admin");
+            
+            var mld = "";
+            var kommentar = "";
+            for(var i in mldliste){
+                var element = mldliste[i];
+                var linje = "<li>" + element.navn + " : " + element.mld + "</li>";
+                kommentar = ' <button onclick="Kommentar()">Kommentar</button> '
+                if(element.godkjent){
+                    mld = mld + linje + kommentar;
+                }
+            }
+            mld = mld + "</ul>";
+            skriv("melding", mld);
+        }
+
+        
+        function Kommentar(){
+            info.innerHTML +=  '<input type="text" id="kommentar">';
+        }
+        
+        console.log(mldliste);
+        
+    </script>
+
+</head>
+
+<body>
+
+    
+    <div>
+        <h3>Ny</h3>
+        Navn: <input id="navn" type="text"> Melding: <input id="mld" type="text">
+        <button onclick="NyMld()">Send</button>
+        <h3>Chat</h3>
+        <div id="melding"></div>
+    </div>
+    
+    <div id="admin"></div>
+    <button onclick="SjekkAvMld()">Send</button>
+</body>
+
+</html>

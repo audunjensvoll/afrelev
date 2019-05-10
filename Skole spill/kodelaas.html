@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>    
+
+    <!-- Gjemme pilene på inputfeltet -->
+    <style>
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
+        <script>
+
+
+            var resultatTekst = "0";
+            var kode = "1234";
+
+            function skriv() {
+
+                document.getElementById("resultat").innerHTML = resultatTekst;
+
+            }
+
+            function klikk(verdi) {
+
+                if (resultatTekst == "0") {
+
+                    resultatTekst = verdi;
+
+                }
+
+                else {
+
+                    resultatTekst += verdi;
+                }
+                skriv();
+
+            }
+
+            function kommando(verdi) {
+
+                if (verdi == "C") {
+                    reset();
+                }
+            }
+
+            function reset() {
+
+                resultatTekst = "0";
+                skriv();
+
+                }
+
+                function resultat() {
+
+            if (Number(resultatTekst) == Number(kode)) {
+
+                alert("RIKTIG");
+            }
+            else if (Number(resultatTekst) !== Number(kode)) {
+
+                alert("FEIL");
+            }
+        }
+              
+        </script>
+        
+    <body> 
+        
+            <style>
+                    .knapp {
+            
+                        font-size: 20px;
+                        border: solid 1px;
+                        margin: auto;
+                        width: auto;
+                        padding: 10px;
+
+                    }
+            
+                    body {
+            
+                        background-color: lightgrey;
+            
+                    }
+            
+                    .posisjon {
+            
+                        padding: 10px;
+            
+                    }
+            </style>
+
+        <div class="posisjon" maxlength = "4" id="resultat">0</div><br><br>
+
+        <button class="knapp" onclick="klikk('1')">1</button>
+        <button class="knapp" onclick="klikk('2')">2</button>
+        <button class="knapp" onclick="klikk('3')">3</button>
+
+        <br>
+
+        <button class="knapp" onclick="klikk('4')">4</button>
+        <button class="knapp" onclick="klikk('5')">5</button>
+        <button class="knapp" onclick="klikk('6')">6</button>
+
+        <br>
+
+        <button class="knapp" onclick="klikk('7')">7</button>
+        <button class="knapp" onclick="klikk('8')">8</button>
+        <button class="knapp" onclick="klikk('9')">9</button>
+
+        <br>
+
+        <button class="knapp" onclick="kommando('0')">0</button>
+        <button class="knapp" onclick="kommando('C')">C</button>
+
+        <br><br>
+
+        <button onclick="resultat()" class="knapp" id="resultat">Lås opp</button><br><br>
+        
+    </body>
+
+</html>
