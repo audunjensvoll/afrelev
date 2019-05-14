@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Julekalender</title>
+            <style>
+                body{
+                    text-align: center;
+                    background:no-repeat url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlcNp3XfIcQN_rdshKJmmVQW1P4Z6iDqUj3zHPPpXfDFB8VKCHAg);
+                    background-size: cover;
+                }
+            .rute{
+                height: 100px;
+                width: 100px;
+                display: inline-block;
+                background-color: red;
+                margin: 5px;
+                justify-content: center;
+                border: 1px solid black;
+        
+        
+        
+            }
+            .ruter{
+                height: 100px;
+                width: 100px;
+                display: inline-block;
+                background-color: green;
+                margin: 5px;
+                justify-content: center;
+                border: 1px solid black;
+        
+        
+        
+            }
+            .ruterr{
+                height: 100px;
+                width: 100px;
+                display: inline-block;
+                background-color: gold;
+                margin: 5px;
+                justify-content: center;
+                border: 1px solid black;
+        
+        
+        
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            div{
+                font-size: 72px;
+            
+            }
+            
+            
+            </style>
+            <script>
+                var farge1 = "transparent";
+                var farge2= "transparent";
+                var border = "1px black"
+                
+        
+                var farge = farge1; 
+        
+        
+            function skiftFarge(id){
+                    document.getElementById(id).style.backgroundColor=farge;
+                    document.getElementById(id).style.border= border;
+                    
+                    if (farge==farge1){
+                        farge = farge2;
+                        border;
+                    }
+                    else {
+                        farge = farge1;
+                        border;
+                    }
+            }
+            function reset(){
+        
+                document.getElementById("rute").style.backgroundColor="black";  
+            }
+            
+            </script>
+        </head>
+        <body>
+            <div class="bakgrunn">
+            
+        
+        <div class="rute" id="rute1" onclick="skiftFarge('rute1')">1</div>
+        <div class="ruter" id="rute2" onclick="skiftFarge('rute2')">2</div>
+        <div class="rute" id="rute3" onclick="skiftFarge('rute3')">3</div>
+        <div class="ruter" id="rute4" onclick="skiftFarge('rute4')">4</div><br><div class="rute" id="rute5" onclick="skiftFarge('rute5')">5</div>
+        <div class="ruter" id="rute6" onclick="skiftFarge('rute6')">6</div>
+        <div class="rute" id="rute7" onclick="skiftFarge('rute7')">7</div>
+        <div class="ruter" id="rute8" onclick="skiftFarge('rute8')">8</div><br><div class="rute" id="rute9" onclick="skiftFarge('rute9')">9</div>
+        <div class="ruter" id="rute10" onclick="skiftFarge('rute10')">10</div>
+        <div class="rute" id="rute11" onclick="skiftFarge('rute11')"><a href="https://www.youtube.com/watch?v=PqHQeu6bPqQ">11</a></div>
+        <div class="ruter" id="rute12" onclick="skiftFarge('rute12')">12</div><br><div class="rute" id="rute13" onclick="skiftFarge('rute13')">13</div>
+        <div class="ruter" id="rute14" onclick="skiftFarge('rute14')">14</div>
+        <div class="rute" id="rute15" onclick="skiftFarge('rute15')">15</div>
+        <div class="ruter" id="rute16" onclick="skiftFarge('rute16')">16</div><br><div class="rute" id="rute17" onclick="skiftFarge('rute17')">17</div>
+        <div class="ruter" id="rute18" onclick="skiftFarge('rute18')">18</div>
+        <div class="rute" id="rute19" onclick="skiftFarge('rute19')">19</div>
+        <div class="ruter" id="rute20" onclick="skiftFarge('rute20')">20</div><br><div class="rute" id="rute21" onclick="skiftFarge('rute21')">21</div>
+        <div class="ruter" id="rute22" onclick="skiftFarge('rute22')">22</div>
+        <div class="rute" id="rute23" onclick="skiftFarge('rute23')">23</div>
+        <div class="ruterr" id="rute24" onclick="skiftFarge('rute24')">24</div>
+    </div>
+        
+
+</body>
+</html>
